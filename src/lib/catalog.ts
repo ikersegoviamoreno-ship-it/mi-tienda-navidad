@@ -25,13 +25,13 @@ const images = [
 ];
 
 const description =
-  'El reno navideño que dice lo que todos pensamos en la cena de Nochebuena. Reno Aura es la decoración con humor para quien quiere una Navidad con estilo… y un poco de actitud. Perfecto como regalo de amigo invisible, para la oficina o para darle personalidad al salón.';
+  'El reno navideño que dice lo que todos pensamos en la cena de Nochebuena. Una figura luminosa de luz cálida con humor para quien quiere una Navidad con estilo… y un poco de actitud. Perfecto como regalo de amigo invisible, para la oficina o para darle personalidad al salón.';
 
 export const FALLBACK_PRODUCTS: Product[] = [
   {
     id: 'fallback-reno-aura',
     handle: 'reno-aura',
-    title: 'Reno Aura — El reno con actitud',
+    title: 'Reno Aura — La figura luminosa con actitud',
     description,
     descriptionHtml: `<p>${description}</p>`,
     availableForSale: true,

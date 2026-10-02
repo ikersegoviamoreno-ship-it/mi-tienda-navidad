@@ -43,7 +43,7 @@ export function Gallery({ images, title }: { images: Img[]; title: string }) {
         ))}
       </div>
       {images.length > 1 && (
-        <div className="flex gap-2" role="tablist" aria-label="Imágenes del producto">
+        <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none]" role="tablist" aria-label="Imágenes del producto">
           {images.map((img, i) => (
             <button
               key={img.url}
@@ -52,7 +52,7 @@ export function Gallery({ images, title }: { images: Img[]; title: string }) {
               aria-label={`Ver imagen ${i + 1}`}
               onClick={() => go(i)}
               className={cn(
-                'relative h-16 w-16 overflow-hidden rounded-lg border-2 transition sm:h-20 sm:w-20',
+                'relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border-2 transition sm:h-20 sm:w-20',
                 i === active ? 'border-ink' : 'border-transparent opacity-70 hover:opacity-100'
               )}
             >

@@ -1,8 +1,8 @@
 const rows = [
   ['Arranca risas al abrirlo', true, false],
   ['Diseño minimalista que combina', true, false],
-  ['Se reutiliza cada Navidad', true, false],
-  ['Sin montaje ni pilas', true, true],
+  ['Luz cálida de ambiente', true, false],
+  ['Sin montaje', true, true],
   ['Pack para regalar con ahorro', true, false]
 ] as const;
 
