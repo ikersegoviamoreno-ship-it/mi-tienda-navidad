@@ -13,7 +13,7 @@ export const site = {
     (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
     'http://localhost:3000',
   heroHandle: process.env.NEXT_PUBLIC_HERO_PRODUCT_HANDLE || 'reno-aura',
-  email: 'hola@renoaura.com',
+  email: 'renoauraa@gmail.com',
   currency: 'EUR',
   /** Envío gratis a partir de este importe (empuja hacia el Pack 2) */
   freeShippingThreshold: 39,
