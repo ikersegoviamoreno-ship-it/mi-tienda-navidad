@@ -1,12 +1,14 @@
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter } from 'next/font/google';
 import { AnnouncementBar } from '@/components/announcement-bar';
-import { CartDrawer } from '@/components/cart/cart-drawer';
+import { CartDrawer, type CartUpsell } from '@/components/cart/cart-drawer';
 import { CartProvider } from '@/components/cart/cart-context';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { getCurrentCart } from '@/lib/cart';
+import { getProduct } from '@/lib/shopify';
 import { site } from '@/lib/site';
+import { unitsInVariant } from '@/lib/utils';
 import './globals.css';
 
 const sans = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
@@ -21,10 +23,25 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' }
 };
 
-export const viewport: Viewport = { themeColor: '#FAF7F2', viewportFit: 'cover' };
+export const viewport: Viewport = { themeColor: '#FFFFFF', viewportFit: 'cover' };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const cart = await getCurrentCart();
+  const [cart, hero] = await Promise.all([getCurrentCart(), getProduct(site.heroHandle)]);
+  const upsell: CartUpsell | undefined =
+    hero && !hero.isFallback
+      ? {
+          handle: hero.handle,
+          title: hero.title,
+          image: hero.featuredImage?.url,
+          packs: hero.variants.map((v) => ({
+            id: v.id,
+            title: v.title,
+            units: unitsInVariant(v.title),
+            price: Number(v.price.amount),
+            available: v.availableForSale
+          }))
+        }
+      : undefined;
 
   return (
     <html lang="es" className={`${sans.variable} ${serif.variable}`}>
@@ -37,7 +54,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Header />
           <main id="main">{children}</main>
           <Footer />
-          <CartDrawer />
+          <CartDrawer upsell={upsell} />
         </CartProvider>
       </body>
     </html>

@@ -21,7 +21,7 @@ const variants = [v('1', '1 unidad', 34.95), v('2', 'Pack 2', 59.95), v('3', 'Pa
 const images = [
   { url: '/images/reno-aura.svg', altText: 'Reno Aura, el reno navideño con actitud', width: 800, height: 800 },
   { url: '/images/reno-aura-pine.svg', altText: 'Reno Aura sobre fondo verde abeto', width: 800, height: 800 },
-  { url: '/images/reno-aura-berry.svg', altText: 'Reno Aura sobre fondo rojo baya', width: 800, height: 800 }
+  { url: '/images/reno-aura-red.svg', altText: 'Reno Aura sobre fondo rojo baya', width: 800, height: 800 }
 ];
 
 const description =

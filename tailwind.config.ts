@@ -1,25 +1,23 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * Paleta Reno Aura — Navidad minimalista.
- * - snow / mist: base marfil cálida (calma, premium, deja respirar al producto)
- * - ink: texto casi negro cálido (legibilidad AA+)
- * - pine: verde abeto (confianza, marca, elementos informativos)
- * - berry: rojo baya (acción/urgencia → SOLO CTAs y precios de oferta)
- * - gold: oro apagado (detalles premium, estrellas, con moderación)
+ * Paleta Reno Aura — Navidad minimalista en blanco, negro y rojo.
+ * - snow  #FFFFFF  fondo principal
+ * - cream #F7F4EF  secciones alternas / decoración
+ * - ink   #111111  textos, menú y fondo secundario
+ * - red   #C1121F  botones, ofertas y elementos importantes (rojo = acción)
+ * - red.dark #8B0000  hover, detalles y contrastes
  */
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        snow: '#FAF7F2',
-        mist: '#F1ECE3',
-        line: '#E3DCD0',
-        ink: { DEFAULT: '#1C1A17', soft: '#5B554C' },
-        pine: { DEFAULT: '#1F3D2B', light: '#2E5A40', tint: '#E6EDE8' },
-        berry: { DEFAULT: '#B3261E', dark: '#8F1D17', tint: '#F8E7E5' },
-        gold: { DEFAULT: '#C8A24A', tint: '#F5EDD8' }
+        snow: '#FFFFFF',
+        cream: '#F7F4EF',
+        line: '#E7E2DA',
+        ink: { DEFAULT: '#111111', soft: '#5C5C5C' },
+        red: { DEFAULT: '#C1121F', dark: '#8B0000', tint: '#FBEAEB' }
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

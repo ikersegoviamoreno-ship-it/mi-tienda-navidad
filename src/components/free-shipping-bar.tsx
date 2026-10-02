@@ -14,11 +14,11 @@ export function FreeShippingBar({ subtotal }: { subtotal: number }) {
             Te faltan <strong>{formatMoney(money(remaining))}</strong> para el <strong>envío gratis</strong>
           </>
         ) : (
-          <strong className="text-pine">🎉 ¡Tienes envío gratis!</strong>
+          <strong className="text-red">🎉 ¡Tienes envío gratis!</strong>
         )}
       </p>
       <div className="h-1.5 w-full overflow-hidden rounded-full bg-line" role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100}>
-        <div className="h-full rounded-full bg-pine transition-[width] duration-500" style={{ width: `${pct}%` }} />
+        <div className="h-full rounded-full bg-red transition-[width] duration-500" style={{ width: `${pct}%` }} />
       </div>
     </div>
   );

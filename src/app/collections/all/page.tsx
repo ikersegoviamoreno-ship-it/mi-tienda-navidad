@@ -19,7 +19,7 @@ export default async function Catalog() {
         {products.map((p) => (
           <li key={p.id}>
             <Link href={`/products/${p.handle}`} className="group block space-y-3">
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-mist">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-cream">
                 {p.featuredImage && (
                   <Image src={p.featuredImage.url} alt={p.featuredImage.altText || p.title} fill sizes="(min-width:1024px) 280px, 50vw"
                     className="object-cover transition duration-500 group-hover:scale-105" />

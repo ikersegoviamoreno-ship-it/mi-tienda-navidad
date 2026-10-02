@@ -12,10 +12,10 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="mt-8 border-t border-line bg-mist">
+    <footer className="mt-8 border-t border-line bg-cream">
       <div className="container-site grid gap-10 py-14 md:grid-cols-3">
         <div className="space-y-3">
-          <p className="font-serif text-2xl">Reno<span className="text-berry">.</span>Aura</p>
+          <p className="font-serif text-2xl">Reno<span className="text-red">.</span>Aura</p>
           <p className="max-w-xs text-sm text-ink-soft">{site.tagline}</p>
         </div>
         <nav aria-label="Ayuda" className="grid grid-cols-2 gap-2 text-sm">

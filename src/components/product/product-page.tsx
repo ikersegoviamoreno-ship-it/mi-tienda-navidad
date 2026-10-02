@@ -5,13 +5,13 @@ import { Comparison } from '@/components/sections/comparison';
 import { Faq, faqJsonLd } from '@/components/sections/faq';
 import { FinalCta } from '@/components/sections/final-cta';
 import { Guarantee } from '@/components/sections/guarantee';
-import { Reviews, reviewSummary } from '@/components/sections/reviews';
+import { Reviews } from '@/components/sections/reviews';
 import { UseCases } from '@/components/sections/use-cases';
+import { getReviews, summarize, type ReviewSummary } from '@/lib/reviews';
 import type { Product } from '@/lib/shopify/types';
 import { site } from '@/lib/site';
 
-function productJsonLd(p: Product) {
-  const rating = reviewSummary();
+function productJsonLd(p: Product, rating: ReviewSummary) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -26,23 +26,25 @@ function productJsonLd(p: Product) {
       highPrice: p.priceRange.maxVariantPrice.amount,
       availability: p.availableForSale ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'
     },
-    ...(rating && { aggregateRating: { '@type': 'AggregateRating', ratingValue: rating.value.toFixed(1), reviewCount: rating.count } })
+    ...(rating.count > 0 && { aggregateRating: { '@type': 'AggregateRating', ratingValue: rating.average.toFixed(1), reviewCount: rating.count } })
   };
 }
 
-export function ProductPage({ product }: { product: Product }) {
+export async function ProductPage({ product }: { product: Product }) {
   const imgs = product.images;
+  const reviews = product.isFallback ? [] : await getReviews(product.handle);
+  const summary = summarize(reviews);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([productJsonLd(product), faqJsonLd()]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([productJsonLd(product, summary), faqJsonLd()]) }} />
 
-      <section id="producto" className="container-site scroll-mt-20 py-6 sm:py-12">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
-          <div className="lg:sticky lg:top-24 lg:self-start">
+      <section id="producto" className="container-site scroll-mt-20 py-4 sm:py-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-10">
+          <div className="lg:sticky lg:top-20 lg:self-start">
             <Gallery images={imgs} title={product.title} />
           </div>
-          <div className="space-y-8">
-            <BuyBox product={product} rating={reviewSummary()} />
+          <div className="space-y-6">
+            <BuyBox product={product} rating={summary.count ? { value: summary.average, count: summary.count } : undefined} />
             {product.descriptionHtml && (
               <div
                 className="prose-sm max-w-none border-t border-line pt-6 text-sm leading-relaxed text-ink-soft [&_li]:ml-4 [&_li]:list-disc [&_p]:mb-3"
@@ -56,7 +58,7 @@ export function ProductPage({ product }: { product: Product }) {
       <UseCases />
       <Benefits image={imgs[1] ?? imgs[0]} />
       <Comparison />
-      <Reviews />
+      <Reviews reviews={reviews} summary={summary} handle={product.handle} />
       <Guarantee />
       <Faq />
       <FinalCta image={imgs[2] ?? imgs[0]} />

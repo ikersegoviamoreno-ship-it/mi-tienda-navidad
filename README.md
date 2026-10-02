@@ -57,7 +57,7 @@ src/
 | `berry` | `#B3261E` | Rojo baya: **solo** CTAs y ahorro → el ojo va directo a la acción |
 | `gold` | `#C8A24A` | Detalles premium (estrellas, acentos) |
 
-- Pack 2 preseleccionado y marcado "Más elegido" + envío gratis desde 40 € → sube el ticket medio.
+- Pack 2 preseleccionado y marcado "Más elegido" + envío gratis desde 39 € (el Pack 2 cuesta 39,95 €) → sube el ticket medio.
 - Barra de envío gratis en el carrito, CTA fijo en móvil, cuenta atrás **real** hasta la fecha límite de entrega navideña.
 - Reseñas: la sección solo aparece cuando añades reseñas reales en `src/lib/site.ts` (o integras Judge.me). No se inventan reseñas ni stock.
 - Precios tachados: usa `compareAtPrice` en Shopify solo si es el precio más bajo de los últimos 30 días (Directiva Ómnibus). Sin él, el ahorro mostrado es el real del pack frente a comprar unidades sueltas.

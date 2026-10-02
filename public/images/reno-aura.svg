@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Ilustración del reno Reno Aura">
-  <rect width="800" height="800" fill="#F1ECE3"/>
-  <circle cx="400" cy="430" r="250" fill="#E6EDE8"/>
-  <g fill="none" stroke="#1F3D2B" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="800" height="800" fill="#F7F4EF"/>
+  <circle cx="400" cy="430" r="250" fill="#FFFFFF"/>
+  <g fill="none" stroke="#111111" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
     <path d="M300 250 C270 190 250 160 210 140 M268 200 C240 190 220 196 200 214 M300 250 C300 200 310 170 330 140"/>
     <path d="M500 250 C530 190 550 160 590 140 M532 200 C560 190 580 196 600 214 M500 250 C500 200 490 170 470 140"/>
   </g>
@@ -11,10 +11,10 @@
   <path d="M340 470 C340 440 370 425 400 425 C430 425 460 440 460 470 C460 510 430 530 400 530 C370 530 340 510 340 470 Z" fill="#C9AE8E"/>
   <circle cx="355" cy="345" r="14" fill="#1C1A17"/>
   <path d="M432 347 q14 -12 28 0" stroke="#1C1A17" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <circle cx="400" cy="440" r="26" fill="#B3261E"/>
+  <circle cx="400" cy="440" r="26" fill="#C1121F"/>
   <circle cx="392" cy="432" r="7" fill="#fff" opacity=".55"/>
   <path d="M378 495 q22 14 44 0" stroke="#1C1A17" stroke-width="7" fill="none" stroke-linecap="round"/>
   <path d="M560 600 l0 -70 q0 -14 14 -14 q14 0 14 14 l0 40" fill="#8B6B4E"/>
   <rect x="530" y="580" width="90" height="70" rx="26" fill="#8B6B4E"/>
-  <g fill="#C8A24A"><circle cx="160" cy="560" r="6"/><circle cx="650" cy="380" r="5"/><circle cx="210" cy="420" r="4"/><circle cx="620" cy="250" r="4"/></g>
+  <g fill="#C1121F"><circle cx="160" cy="560" r="6"/><circle cx="650" cy="380" r="5"/><circle cx="210" cy="420" r="4"/><circle cx="620" cy="250" r="4"/></g>
 </svg>

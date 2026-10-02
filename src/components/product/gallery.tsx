@@ -20,14 +20,14 @@ export function Gallery({ images, title }: { images: Img[]; title: string }) {
     if (el) setActive(Math.round(el.scrollLeft / el.clientWidth));
   };
 
-  if (!images.length) return <div className="aspect-square rounded-2xl bg-mist" />;
+  if (!images.length) return <div className="aspect-square rounded-2xl bg-cream" />;
 
   return (
     <div className="space-y-3">
       <div
         ref={track}
         onScroll={onScroll}
-        className="flex aspect-square snap-x snap-mandatory overflow-x-auto rounded-2xl bg-mist [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex aspect-square snap-x snap-mandatory overflow-x-auto rounded-2xl bg-cream [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {images.map((img, i) => (
           <div key={img.url} className="relative aspect-square w-full shrink-0 snap-center">

@@ -12,7 +12,7 @@ export const site = {
   email: 'hola@renoaura.com',
   currency: 'EUR',
   /** Envío gratis a partir de este importe (empuja hacia el Pack 2) */
-  freeShippingThreshold: 40,
+  freeShippingThreshold: 39,
   /** Último día para pedir y recibir antes de Nochebuena (ajústalo a tu proveedor) */
   christmasCutoff: '2026-12-12T23:59:59+01:00',
   shippingDays: '5–9 días laborables',
@@ -20,7 +20,7 @@ export const site = {
 };
 
 export const announcements = [
-  'Envío GRATIS a partir de 40 €',
+  `Envío GRATIS a partir de ${site.freeShippingThreshold} €`,
   'Pide antes del 12 de diciembre y llega antes de Nochebuena',
   `${site.returnDays} días de devolución sin preguntas`
 ];
@@ -85,10 +85,3 @@ export const faqs = [
     a: 'Tarjeta, Apple Pay, Google Pay, PayPal y Shop Pay a través del checkout seguro de Shopify.'
   }
 ];
-
-/**
- * Reseñas: añade SOLO reseñas reales de clientes (la normativa europea de consumo
- * prohíbe reseñas inventadas). Mientras esté vacío, la sección no se muestra.
- * Alternativa recomendada: integrar Judge.me / Shopify Product Reviews vía metafields.
- */
-export const reviews: { name: string; city?: string; rating: number; text: string }[] = [];

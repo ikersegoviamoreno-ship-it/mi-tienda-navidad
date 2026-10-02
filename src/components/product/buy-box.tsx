@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { useCart } from '@/components/cart/cart-context';
 import { Countdown } from '@/components/countdown';
 import { PaymentIcons } from '@/components/payment-icons';
+import { Stars } from '@/components/stars';
 import type { Product, ProductVariant } from '@/lib/shopify/types';
 import { site } from '@/lib/site';
 import { cn, formatMoney, money, unitsInVariant } from '@/lib/utils';
@@ -54,23 +55,27 @@ export function BuyBox({ product, rating }: { product: Product; rating?: { value
         : `Añadir al carrito · ${formatMoney(offer.variant.price)}`;
 
   return (
-    <div className="space-y-6">
-      <div className="space-y-3">
+    <div className="space-y-4">
+      <div className="space-y-2">
         <p className="eyebrow">Edición Navidad {new Date(site.christmasCutoff).getFullYear()}</p>
-        <h1 className="text-3xl leading-tight sm:text-4xl">{product.title}</h1>
-        {rating && rating.count > 0 && (
-          <a href="#resenas" className="flex items-center gap-2 text-sm">
-            <span className="text-gold" aria-hidden>★★★★★</span>
-            <span className="text-ink-soft">{rating.value.toFixed(1)} · {rating.count} reseñas</span>
-          </a>
-        )}
+        <h1 className="text-2xl leading-tight sm:text-3xl">{product.title}</h1>
+        <a href="#resenas" className="flex items-center gap-2 text-sm">
+          {rating ? (
+            <>
+              <Stars value={rating.value} />
+              <span className="text-ink-soft underline-offset-2 hover:underline">{rating.value.toFixed(1)} · {rating.count} {rating.count === 1 ? 'reseña' : 'reseñas'}</span>
+            </>
+          ) : (
+            <span className="text-ink-soft underline underline-offset-2">Sé el primero en dejar una reseña</span>
+          )}
+        </a>
         {offer && (
           <div className="flex items-baseline gap-3">
             <span className="text-2xl font-semibold">{formatMoney(offer.variant.price)}</span>
             {offer.savings > 0 && (
               <>
                 <s className="text-ink-soft">{formatMoney(money(offer.reference))}</s>
-                <span className="rounded-full bg-berry-tint px-2.5 py-0.5 text-xs font-semibold text-berry">
+                <span className="rounded-full bg-red-tint px-2.5 py-0.5 text-xs font-semibold text-red">
                   Ahorras {formatMoney(money(offer.savings))}
                 </span>
               </>
@@ -81,13 +86,13 @@ export function BuyBox({ product, rating }: { product: Product; rating?: { value
       </div>
 
       {offers.length > 1 && (
-        <fieldset className="space-y-2.5">
+        <fieldset className="space-y-2">
           <legend className="mb-2 text-sm font-semibold">{isBundle ? 'Elige tu pack' : product.options[0]?.name}</legend>
           {offers.map((o, i) => (
             <label
               key={o.variant.id}
               className={cn(
-                'relative flex cursor-pointer items-center justify-between gap-3 rounded-xl border-2 bg-white px-4 py-3.5 transition',
+                'relative flex cursor-pointer items-center justify-between gap-3 rounded-xl border-2 bg-white px-4 py-3 transition',
                 i === selected ? 'border-ink shadow-sm' : 'border-line hover:border-ink-soft',
                 !o.variant.availableForSale && 'cursor-not-allowed opacity-50'
               )}
@@ -101,7 +106,7 @@ export function BuyBox({ product, rating }: { product: Product; rating?: { value
                 onChange={() => setSelected(i)}
               />
               {i === popularIdx && (
-                <span className="absolute -top-2.5 right-4 rounded-full bg-pine px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-snow">
+                <span className="absolute -top-2.5 right-4 rounded-full bg-ink px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-snow">
                   Más elegido
                 </span>
               )}
@@ -120,25 +125,25 @@ export function BuyBox({ product, rating }: { product: Product; rating?: { value
               </span>
               <span className="text-right">
                 <span className="block font-semibold">{formatMoney(o.variant.price)}</span>
-                {o.savings > 0 && <span className="block text-xs font-medium text-berry">−{formatMoney(money(o.savings))}</span>}
+                {o.savings > 0 && <span className="block text-xs font-medium text-red">−{formatMoney(money(o.savings))}</span>}
               </span>
             </label>
           ))}
         </fieldset>
       )}
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         <button ref={ctaRef} onClick={onAdd} disabled={!purchasable || isPending} className="btn-primary w-full">
           {ctaLabel}
         </button>
-        {error && <p className="text-sm text-berry" role="alert">{error}</p>}
+        {error && <p className="text-sm text-red" role="alert">{error}</p>}
         <Countdown to={site.christmasCutoff} label="🎄 Llega antes de Navidad si pides en" />
       </div>
 
       <ul className="grid grid-cols-3 gap-2 text-center text-xs text-ink-soft">
-        <li className="rounded-xl bg-mist px-2 py-3"><span className="mb-1 block text-lg">🚚</span>Envío {site.shippingDays}</li>
-        <li className="rounded-xl bg-mist px-2 py-3"><span className="mb-1 block text-lg">↩️</span>{site.returnDays} días de devolución</li>
-        <li className="rounded-xl bg-mist px-2 py-3"><span className="mb-1 block text-lg">🔒</span>Pago 100% seguro</li>
+        <li className="rounded-xl bg-cream px-2 py-2.5"><span className="mb-1 block text-lg">🚚</span>Envío {site.shippingDays}</li>
+        <li className="rounded-xl bg-cream px-2 py-2.5"><span className="mb-1 block text-lg">↩️</span>{site.returnDays} días de devolución</li>
+        <li className="rounded-xl bg-cream px-2 py-2.5"><span className="mb-1 block text-lg">🔒</span>Pago 100% seguro</li>
       </ul>
       <PaymentIcons />
 
