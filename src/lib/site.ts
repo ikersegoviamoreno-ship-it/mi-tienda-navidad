@@ -66,7 +66,7 @@ export const faqs = [
   },
   {
     q: '¿Y si no me convence?',
-    a: `Tienes ${site.returnDays} días para devolverlo. Escríbenos a ${site.email} y te ayudamos sin preguntas.`
+    a: `Tienes ${site.returnDays} días para devolverlo. Escríbenos a ${site.email} y te ayudamos sin preguntas. Los gastos de envío de la devolución corren de tu cuenta, salvo que el producto llegue defectuoso.`
   },
   {
     q: '¿Cómo se ilumina? ¿Lleva pilas?',

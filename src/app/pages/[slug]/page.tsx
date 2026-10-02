@@ -15,9 +15,15 @@ export default function Page({ params }: Props) {
   const page = legalPages[params.slug];
   if (!page) notFound();
   return (
-    <article className="container-site section max-w-2xl space-y-6">
-      <h1 className="text-4xl">{page.title}</h1>
-      {page.body.map((p, i) => <p key={i} className="leading-relaxed text-ink-soft">{p}</p>)}
+    <article className="container-site section max-w-2xl space-y-4">
+      <h1 className="text-3xl">{page.title}</h1>
+      {page.body.map((p, i) =>
+        p.startsWith('## ') ? (
+          <h2 key={i} className="pt-2 font-sans text-base font-semibold">{p.slice(3)}</h2>
+        ) : (
+          <p key={i} className="text-sm leading-relaxed text-ink-soft">{p}</p>
+        )
+      )}
     </article>
   );
 }

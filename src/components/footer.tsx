@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { PaymentIcons } from '@/components/payment-icons';
+import { owner } from '@/lib/legal';
 import { site } from '@/lib/site';
 
 const links = [
@@ -7,7 +8,8 @@ const links = [
   { href: '/pages/devoluciones', label: 'Devoluciones' },
   { href: '/pages/contacto', label: 'Contacto' },
   { href: '/pages/privacidad', label: 'Privacidad' },
-  { href: '/pages/terminos', label: 'Términos' }
+  { href: '/pages/terminos', label: 'Condiciones de venta' },
+  { href: '/pages/aviso-legal', label: 'Aviso legal' }
 ];
 
 export function Footer() {
@@ -29,7 +31,7 @@ export function Footer() {
         </div>
       </div>
       <p className="border-t border-line py-5 text-center text-xs text-ink-soft">
-        © {new Date().getFullYear()} {site.name}. Todos los derechos reservados.
+        © {new Date().getFullYear()} {site.name} · {owner.name} · NIF {owner.nif}
       </p>
     </footer>
   );
