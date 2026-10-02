@@ -12,6 +12,7 @@ export const productFragment = /* GraphQL */ `
     id
     handle
     title
+    vendor
     description
     descriptionHtml
     availableForSale

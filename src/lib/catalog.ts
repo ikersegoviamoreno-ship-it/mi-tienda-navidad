@@ -32,6 +32,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     id: 'fallback-reno-aura',
     handle: 'reno-aura',
     title: 'Reno Aura — La figura luminosa con actitud',
+    vendor: 'Reno Aura',
     description,
     descriptionHtml: `<p>${description}</p>`,
     availableForSale: true,

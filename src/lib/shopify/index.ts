@@ -1,5 +1,6 @@
 import 'server-only';
 import { FALLBACK_PRODUCTS } from '@/lib/catalog';
+import { site } from '@/lib/site';
 import {
   addToCartMutation,
   createCartMutation,
@@ -50,6 +51,9 @@ export async function shopifyFetch<T>({ query, variables, tags, cache = 'force-c
 
 const flatten = <T>(c: { edges: { node: T }[] }) => c.edges.map((e) => e.node);
 
+/** La web solo muestra productos de la marca (campo "Proveedor" en Shopify). */
+const isBrandProduct = (p: { vendor: string }) => p.vendor.trim().toLowerCase() === site.name.toLowerCase();
+
 function reshapeProduct(p: ShopifyProduct): Product {
   return { ...p, images: flatten(p.images), variants: flatten(p.variants) };
 }
@@ -71,7 +75,7 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
       variables: { handle },
       tags: [TAGS.products]
     });
-    if (data.product) return reshapeProduct(data.product);
+    if (data.product) return isBrandProduct(data.product) ? reshapeProduct(data.product) : undefined;
   } catch (e) {
     console.error('[shopify] getProduct', handle, e);
   }
@@ -84,7 +88,7 @@ export async function getProducts(): Promise<Product[]> {
       query: getProductsQuery,
       tags: [TAGS.products]
     });
-    const products = flatten(data.products).map(reshapeProduct);
+    const products = flatten(data.products).filter(isBrandProduct).map(reshapeProduct);
     if (products.length) return products;
   } catch (e) {
     console.error('[shopify] getProducts', e);
