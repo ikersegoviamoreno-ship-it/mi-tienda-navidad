@@ -7,7 +7,11 @@ export const site = {
   tagline: 'La Navidad, con un poco de actitud.',
   description:
     'Reno Aura: el reno navideño con actitud que saca los dedos. Decoración navideña minimalista y con humor. Envío rápido a España.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://renoaura.com',
+  // En Vercel se detecta sola la URL de producción; NEXT_PUBLIC_SITE_URL es opcional (dominio propio)
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
+    'http://localhost:3000',
   heroHandle: process.env.NEXT_PUBLIC_HERO_PRODUCT_HANDLE || 'reno-aura',
   email: 'hola@renoaura.com',
   currency: 'EUR',
