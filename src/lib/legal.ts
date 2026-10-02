@@ -72,6 +72,20 @@ export const legalPages: Record<string, { title: string; body: string[] }> = {
       `Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a ${owner.email}. Si consideras que no hemos atendido correctamente tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).`
     ]
   },
+  cookies: {
+    title: 'Política de cookies',
+    body: [
+      '## Qué son las cookies',
+      'Las cookies son pequeños archivos que se guardan en tu navegador cuando visitas una web.',
+      '## Cookies que usamos',
+      'Técnicas (necesarias): guardan tu carrito y tu elección sobre cookies. No requieren consentimiento.',
+      'Publicitarias y de medición (de terceros), solo si las aceptas: Meta Pixel (Meta Platforms Ireland Ltd.) y TikTok Pixel (TikTok Technology Ltd.). Nos permiten saber qué anuncios generan visitas y compras, y mostrar anuncios relevantes. Pueden implicar transferencias internacionales de datos con las garantías previstas por estos proveedores.',
+      '## Cómo aceptarlas, rechazarlas o cambiar tu elección',
+      'Al entrar en la web puedes aceptar o rechazar las cookies publicitarias. Puedes cambiar tu elección en cualquier momento desde el enlace "Configurar cookies" al pie de la página, o borrarlas desde la configuración de tu navegador.',
+      '## Más información',
+      `Para cualquier duda escríbenos a ${owner.email}. Consulta también nuestra Política de privacidad.`
+    ]
+  },
   terminos: {
     title: 'Condiciones de venta',
     body: [

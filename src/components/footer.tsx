@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CookieSettingsButton } from '@/components/analytics/cookie-banner';
 import { PaymentIcons } from '@/components/payment-icons';
 import { owner } from '@/lib/legal';
 import { site } from '@/lib/site';
@@ -8,6 +9,7 @@ const links = [
   { href: '/pages/devoluciones', label: 'Devoluciones' },
   { href: '/pages/contacto', label: 'Contacto' },
   { href: '/pages/privacidad', label: 'Privacidad' },
+  { href: '/pages/cookies', label: 'Cookies' },
   { href: '/pages/terminos', label: 'Condiciones de venta' },
   { href: '/pages/aviso-legal', label: 'Aviso legal' }
 ];
@@ -24,6 +26,7 @@ export function Footer() {
           {links.map((l) => (
             <Link key={l.href} href={l.href} className="text-ink-soft hover:text-ink">{l.label}</Link>
           ))}
+          <CookieSettingsButton />
         </nav>
         <div className="space-y-3 text-sm text-ink-soft">
           <p>¿Dudas? Escríbenos a <a className="text-ink underline" href={`mailto:${site.email}`}>{site.email}</a></p>

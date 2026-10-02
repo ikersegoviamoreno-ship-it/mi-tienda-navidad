@@ -6,6 +6,7 @@ import { Countdown } from '@/components/countdown';
 import { LockIcon, ReturnIcon, TruckIcon } from '@/components/icons';
 import { PaymentIcons } from '@/components/payment-icons';
 import { Stars } from '@/components/stars';
+import { track } from '@/lib/analytics';
 import type { Product, ProductVariant } from '@/lib/shopify/types';
 import { site } from '@/lib/site';
 import { cn, formatMoney, money, unitsInVariant } from '@/lib/utils';
@@ -45,7 +46,17 @@ export function BuyBox({ product, rating }: { product: Product; rating?: { value
     return () => io.disconnect();
   }, []);
 
-  const onAdd = () => startTransition(async () => void (await add(offer.variant.id, 1)));
+  useEffect(() => {
+    if (product.isFallback) return;
+    const p = product.priceRange.minVariantPrice;
+    track('view', { id: product.id, value: Number(p.amount), currency: p.currencyCode });
+  }, [product]);
+
+  const onAdd = () =>
+    startTransition(async () => {
+      const ok = await add(offer.variant.id, 1);
+      if (ok) track('add', { id: product.id, value: offer.price, currency: offer.variant.price.currencyCode });
+    });
 
   const ctaLabel = product.isFallback
     ? 'Disponible muy pronto'

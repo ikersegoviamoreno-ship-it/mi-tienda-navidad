@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter } from 'next/font/google';
+import { CookieBanner } from '@/components/analytics/cookie-banner';
+import { Pixels } from '@/components/analytics/pixels';
 import { AnnouncementBar } from '@/components/announcement-bar';
 import { CartDrawer, type CartUpsell } from '@/components/cart/cart-drawer';
 import { CartProvider } from '@/components/cart/cart-context';
@@ -55,6 +57,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <main id="main">{children}</main>
           <Footer />
           <CartDrawer upsell={upsell} />
+          <CookieBanner />
+          <Pixels />
         </CartProvider>
       </body>
     </html>

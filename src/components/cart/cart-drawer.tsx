@@ -5,6 +5,7 @@ import { useEffect, useRef, useTransition } from 'react';
 import { Countdown } from '@/components/countdown';
 import { FreeShippingBar } from '@/components/free-shipping-bar';
 import { PaymentIcons } from '@/components/payment-icons';
+import { track } from '@/lib/analytics';
 import { site } from '@/lib/site';
 import { formatMoney, money, unitsInVariant } from '@/lib/utils';
 import { useCart } from './cart-context';
@@ -149,7 +150,18 @@ export function CartDrawer({ upsell }: { upsell?: CartUpsell }) {
               <span className="text-sm">Subtotal <span className="text-xs text-ink-soft">(IVA incl.)</span></span>
               <strong className="text-lg">{formatMoney(cart.cost.subtotalAmount)}</strong>
             </div>
-            <a href={cart.checkoutUrl} className="btn-primary w-full">
+            <a
+              href={cart.checkoutUrl}
+              onClick={() =>
+                track('checkout', {
+                  id: cart.id,
+                  value: Number(cart.cost.totalAmount.amount),
+                  currency: cart.cost.totalAmount.currencyCode,
+                  quantity: cart.totalQuantity
+                })
+              }
+              className="btn-primary w-full"
+            >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
               Finalizar compra · {formatMoney(cart.cost.totalAmount)}
             </a>

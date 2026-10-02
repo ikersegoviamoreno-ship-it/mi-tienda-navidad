@@ -20,7 +20,13 @@ export const site = {
   /** Último día para pedir y recibir antes de Nochebuena (ajústalo a tu proveedor) */
   christmasCutoff: '2026-12-12T23:59:59+01:00',
   shippingDays: '5–9 días laborables',
-  returnDays: 30
+  returnDays: 30,
+  /**
+   * Píxeles de anuncios (son IDs públicos). Déjalos vacíos para desactivarlos.
+   * Solo se cargan si el visitante acepta las cookies.
+   */
+  metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || '',
+  tiktokPixelId: process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID || ''
 };
 
 export const announcements = [
