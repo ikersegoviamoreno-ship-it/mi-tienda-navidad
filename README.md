@@ -62,6 +62,11 @@ src/
 - Reseñas: la sección solo aparece cuando añades reseñas reales en `src/lib/site.ts` (o integras Judge.me). No se inventan reseñas ni stock.
 - Precios tachados: usa `compareAtPrice` en Shopify solo si es el precio más bajo de los últimos 30 días (Directiva Ómnibus). Sin él, el ahorro mostrado es el real del pack frente a comprar unidades sueltas.
 
-## Despliegue
+## Despliegue (Vercel)
 
-Vercel: importa el repo, añade las variables de `.env.example` y despliega.
+1. Importa el repo en Vercel.
+2. En **Settings → Environment Variables** añade `SHOPIFY_STORE_DOMAIN` y `SHOPIFY_STOREFRONT_ACCESS_TOKEN`
+   (y opcionalmente `SHOPIFY_ADMIN_ACCESS_TOKEN` para las reseñas). Las `NEXT_PUBLIC_*` son opcionales y
+   no pueden marcarse como *Sensitive*.
+3. Cada push a la rama de producción despliega automáticamente. Los cambios de variables
+   solo se aplican en el siguiente despliegue.
