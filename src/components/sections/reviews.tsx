@@ -13,7 +13,7 @@ export function Reviews({ reviews, summary, handle }: { reviews: Review[]; summa
           <h2 className="text-2xl sm:text-3xl">{summary.count ? 'Lo que dicen quienes ya lo tienen' : 'Sé el primero en opinar'}</h2>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
+        <div className={reviews.length ? 'grid gap-6 lg:grid-cols-[300px_1fr]' : 'mx-auto max-w-md'}>
           <aside className="space-y-4 rounded-2xl bg-snow p-5">
             {summary.count > 0 ? (
               <>
