@@ -129,10 +129,10 @@ export function CartDrawer({ upsell }: { upsell?: CartUpsell }) {
 
           {upgradeLine && nextPack && upgradeExtra > 0 && (
             <div className="mb-4 flex items-center gap-3 rounded-2xl border-2 border-dashed border-red/40 bg-red-tint p-3">
-              <span className="text-2xl" aria-hidden>🎁</span>
+              
               <div className="min-w-0 flex-1 text-sm">
-                <p className="font-semibold">Pásate al {nextPack.title} por +{formatMoney(money(upgradeExtra))}</p>
-                {upgradeSaving > 0 && <p className="text-xs text-red-dark">Ahorras {formatMoney(money(upgradeSaving))}: uno para ti y otro para regalar.</p>}
+                <p className="font-semibold">Pásate a {nextPack.title.toLowerCase()} por solo +{formatMoney(money(upgradeExtra))}</p>
+                {upgradeSaving > 0 && <p className="text-xs text-red-dark">Ahorras {formatMoney(money(upgradeSaving))}: {nextPack.units === 2 ? 'uno para ti y otro para regalar' : 'regalos para todo el grupo'}.</p>}
               </div>
               <button onClick={() => update(upgradeLine.id, nextPack.id, 1)} className="rounded-full bg-red px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-red-dark">
                 Mejorar
@@ -144,7 +144,7 @@ export function CartDrawer({ upsell }: { upsell?: CartUpsell }) {
         {lines.length > 0 && cart && (
           <footer className="space-y-3 border-t border-line px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
             {error && <p className="text-sm text-red" role="alert">{error}</p>}
-            <Countdown to={site.christmasCutoff} label="🎄 Llega antes de Navidad" />
+            <Countdown to={site.christmasCutoff} label="Llega antes de Navidad · pide en" />
             <div className="flex items-baseline justify-between">
               <span className="text-sm">Subtotal <span className="text-xs text-ink-soft">(IVA incl.)</span></span>
               <strong className="text-lg">{formatMoney(cart.cost.subtotalAmount)}</strong>
@@ -154,8 +154,9 @@ export function CartDrawer({ upsell }: { upsell?: CartUpsell }) {
               Finalizar compra · {formatMoney(cart.cost.totalAmount)}
             </a>
             <ul className="flex justify-center gap-4 text-[11px] text-ink-soft">
-              <li>🚚 Envío {site.shippingDays}</li>
-              <li>↩️ {site.returnDays} días devolución</li>
+              <li>Envío {site.shippingDays}</li>
+              <li aria-hidden>·</li>
+              <li>{site.returnDays} días de devolución</li>
             </ul>
             <PaymentIcons />
           </footer>

@@ -29,9 +29,9 @@ export function Countdown({ to, label }: { to: string; label: string }) {
   const pad = (n: number) => String(n).padStart(2, '0');
   return (
     <div className="flex items-center justify-between gap-3 rounded-xl bg-cream px-4 py-2.5 text-sm text-red">
-      <span className="font-medium">{label}</span>
-      <span className="font-semibold tabular-nums" aria-live="off">
-        {t.d}d {pad(t.h)}h {pad(t.m)}m {pad(t.s)}s
+      <span className="min-w-0 truncate font-medium">{label}</span>
+      <span className="shrink-0 whitespace-nowrap font-semibold tabular-nums" aria-live="off">
+        {t.d}d {pad(t.h)}:{pad(t.m)}:{pad(t.s)}
       </span>
     </div>
   );

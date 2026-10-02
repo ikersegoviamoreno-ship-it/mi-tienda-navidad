@@ -14,7 +14,7 @@ export function FreeShippingBar({ subtotal }: { subtotal: number }) {
             Te faltan <strong>{formatMoney(money(remaining))}</strong> para el <strong>envío gratis</strong>
           </>
         ) : (
-          <strong className="text-red">🎉 ¡Tienes envío gratis!</strong>
+          <strong className="text-red">✓ ¡Tienes envío gratis!</strong>
         )}
       </p>
       <div className="h-1.5 w-full overflow-hidden rounded-full bg-line" role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100}>

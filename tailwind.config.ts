@@ -9,6 +9,7 @@ import type { Config } from 'tailwindcss';
  * - red.dark #8B0000  hover, detalles y contrastes
  */
 const config: Config = {
+  future: { hoverOnlyWhenSupported: true },
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {

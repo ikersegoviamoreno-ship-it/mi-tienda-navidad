@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { useCart } from '@/components/cart/cart-context';
 import { Countdown } from '@/components/countdown';
+import { LockIcon, ReturnIcon, TruckIcon } from '@/components/icons';
 import { PaymentIcons } from '@/components/payment-icons';
 import { Stars } from '@/components/stars';
 import type { Product, ProductVariant } from '@/lib/shopify/types';
@@ -137,13 +138,20 @@ export function BuyBox({ product, rating }: { product: Product; rating?: { value
           {ctaLabel}
         </button>
         {error && <p className="text-sm text-red" role="alert">{error}</p>}
-        <Countdown to={site.christmasCutoff} label="🎄 Llega antes de Navidad si pides en" />
+        <Countdown to={site.christmasCutoff} label="Llega antes de Navidad · pide en" />
       </div>
 
-      <ul className="grid grid-cols-3 gap-2 text-center text-xs text-ink-soft">
-        <li className="rounded-xl bg-cream px-2 py-2.5"><span className="mb-1 block text-lg">🚚</span>Envío {site.shippingDays}</li>
-        <li className="rounded-xl bg-cream px-2 py-2.5"><span className="mb-1 block text-lg">↩️</span>{site.returnDays} días de devolución</li>
-        <li className="rounded-xl bg-cream px-2 py-2.5"><span className="mb-1 block text-lg">🔒</span>Pago 100% seguro</li>
+      <ul className="grid grid-cols-3 gap-2 text-center text-[11px] leading-tight text-ink-soft">
+        {[
+          [<TruckIcon key="t" />, `Envío ${site.shippingDays}`],
+          [<ReturnIcon key="r" />, `${site.returnDays} días de devolución`],
+          [<LockIcon key="l" />, 'Pago 100% seguro']
+        ].map(([icon, text]) => (
+          <li key={String(text)} className="flex flex-col items-center gap-1.5 rounded-xl bg-cream px-2 py-2.5">
+            <span className="text-ink">{icon}</span>
+            {text}
+          </li>
+        ))}
       </ul>
       <PaymentIcons />
 
