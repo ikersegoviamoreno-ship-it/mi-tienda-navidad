@@ -5,7 +5,9 @@
     "cervia-header": {
       "type": "cervia-header",
       "settings": {
-        "logo": "shopify://shop_images/cervia-logo.png",
+        "anuncio": "Envío gratis · 30 días para probarlo",
+        "logo_texto": "Suave Ritual",
+        "destino_logo": "inicio",
         "menu": "main-menu"
       }
     }

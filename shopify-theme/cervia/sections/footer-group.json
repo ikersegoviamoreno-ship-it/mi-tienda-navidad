@@ -5,7 +5,14 @@
     "cervia-footer": {
       "type": "cervia-footer",
       "settings": {
-        "logo": "shopify://shop_images/cervia-logo-claro.png"
+        "banda_titulo": "Tu ritual capilar empieza hoy",
+        "banda_sub": "Envío gratis a toda España",
+        "cta_texto": "Quiero mi peine · [[precio]]",
+        "cta_micro": "Envío gratis · Pago seguro · 30 días para probarlo",
+        "nombre": "Suave Ritual",
+        "frase": "Pequeños rituales para cuidar tu pelo cada día.",
+        "texto_legal": "© [[año]] Suave Ritual. Todos los derechos reservados.",
+        "texto_eco": "suave ritual"
       },
       "blocks": {
         "promesa_0": {
@@ -18,8 +25,8 @@
         "promesa_1": {
           "type": "promesa",
           "settings": {
-            "icono": "luna",
-            "texto": "[Días] noches de prueba"
+            "icono": "ciclo",
+            "texto": "30 días para probarlo"
           }
         },
         "promesa_2": {
@@ -32,15 +39,15 @@
         "promesa_3": {
           "type": "promesa",
           "settings": {
-            "icono": "almohada",
-            "texto": "Memory foam con contorno"
+            "icono": "hoja",
+            "texto": "Directo a la raíz"
           }
         },
         "promesa_4": {
           "type": "promesa",
           "settings": {
-            "icono": "ciclo",
-            "texto": "Devolución fácil"
+            "icono": "regalo",
+            "texto": "Un regalo ideal"
           }
         },
         "confianza_5": {
@@ -56,7 +63,7 @@
           "settings": {
             "icono": "ciclo",
             "titulo": "Prueba sin riesgo",
-            "texto": "[Días] noches para decidir con calma."
+            "texto": "30 días para decidir con calma."
           }
         },
         "confianza_7": {
@@ -72,19 +79,7 @@
           "settings": {
             "icono": "chat",
             "titulo": "Te ayudamos",
-            "texto": "Escríbenos a [tu email] y te respondemos."
-          }
-        },
-        "red_9": {
-          "type": "red",
-          "settings": {
-            "red": "instagram"
-          }
-        },
-        "red_10": {
-          "type": "red",
-          "settings": {
-            "red": "tiktok"
+            "texto": "Escríbenos desde la página de contacto."
           }
         },
         "legal_11": {
@@ -133,8 +128,6 @@
         "confianza_6",
         "confianza_7",
         "confianza_8",
-        "red_9",
-        "red_10",
         "legal_11",
         "legal_12",
         "legal_13",
