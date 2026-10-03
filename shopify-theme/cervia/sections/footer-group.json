@@ -4,7 +4,9 @@
   "sections": {
     "cervia-footer": {
       "type": "cervia-footer",
-      "settings": {},
+      "settings": {
+        "logo": "shopify://shop_images/cervia-logo-claro.png"
+      },
       "blocks": {
         "promesa_0": {
           "type": "promesa",

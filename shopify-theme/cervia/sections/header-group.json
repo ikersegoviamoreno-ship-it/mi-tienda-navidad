@@ -4,7 +4,10 @@
   "sections": {
     "cervia-header": {
       "type": "cervia-header",
-      "settings": {}
+      "settings": {
+        "logo": "shopify://shop_images/cervia-logo.png",
+        "menu": "main-menu"
+      }
     }
   },
   "order": [
