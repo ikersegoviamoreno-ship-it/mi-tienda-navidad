@@ -1,0 +1,13 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "cervia-header": {
+      "type": "cervia-header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "cervia-header"
+  ]
+}

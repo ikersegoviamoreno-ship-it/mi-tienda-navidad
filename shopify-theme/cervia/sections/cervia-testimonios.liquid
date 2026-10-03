@@ -1,0 +1,1054 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} { content-visibility: auto !important; contain-intrinsic-size: auto 700px !important; }
+  #shopify-section-{{ section.id }} .cervia-s {
+    --c-fondo: {{ section.settings.color_fondo }}; --c-fondo-2: {{ section.settings.color_fondo_2 }}; --angulo: {{ section.settings.angulo }}deg;
+    --c-texto: {{ section.settings.color_texto }}; --c-suave: {{ section.settings.color_suave }}; --c-acento: {{ section.settings.color_acento }};
+    --c-tarjeta: {{ section.settings.color_tarjeta }}; --c-borde: {{ section.settings.color_borde }};
+    --radius: {{ section.settings.radius }}px; --ancho: {{ section.settings.ancho }}px; --lateral: {{ section.settings.lateral_movil }}px;
+    --h2: {{ section.settings.tam_titulo_movil }}px; --sub: {{ section.settings.tam_sub_movil }}px; --ease: cubic-bezier(.22,.8,.35,1);
+    --gap: 12px; --pad-card: 20px; --h3: 18px; --cuerpo: 16px; --icono: 24px;
+    padding-top: {{ section.settings.padding_superior_movil }}px !important; padding-bottom: {{ section.settings.padding_inferior_movil }}px !important;
+    background: {% if section.settings.gradiente %}linear-gradient(var(--angulo), var(--c-fondo), var(--c-fondo-2)){% else %}var(--c-fondo){% endif %} !important;
+    color: var(--c-texto) !important; font-family: var(--font-body, var(--font-body-family)) !important; scroll-margin-top: 16px !important;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .cervia-s { --h2: {{ section.settings.tam_titulo }}px; --sub: {{ section.settings.tam_sub }}px; --lateral: 40px; --gap: 24px; --pad-card: 24px; --h3: 20px; --cuerpo: 17px; --icono: 28px; padding-top: {{ section.settings.padding_superior }}px !important; padding-bottom: {{ section.settings.padding_inferior }}px !important; }
+    #shopify-section-{{ section.id }} .cervia-s.is-oculto-escritorio { display: none !important; }
+  }
+  @media screen and (max-width: 749px) { #shopify-section-{{ section.id }} .cervia-s.is-oculto-movil { display: none !important; } }
+  #shopify-section-{{ section.id }} .cervia-s *, #shopify-section-{{ section.id }} .cervia-s *::before, #shopify-section-{{ section.id }} .cervia-s *::after { box-sizing: border-box !important; }
+  #shopify-section-{{ section.id }} .cervia-s :where(p, h2, h3, ul, ol, figure) { margin: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-s__contenedor { max-width: var(--ancho) !important; margin-inline: auto !important; padding-inline: var(--lateral) !important; }
+  #shopify-section-{{ section.id }} .cervia-s__cabecera { text-align: {{ section.settings.alin_cabecera }} !important; max-width: {{ section.settings.ancho_titulo }}px !important; margin-bottom: 28px !important; {% if section.settings.alin_cabecera == 'center' %}margin-inline: auto !important;{% elsif section.settings.alin_cabecera == 'right' %}margin-left: auto !important;{% endif %} }
+  #shopify-section-{{ section.id }} .cervia-s__eyebrow { font-size: 12px !important; font-weight: 600 !important; letter-spacing: .08em !important; text-transform: uppercase !important; color: var(--c-acento) !important; margin-bottom: 10px !important; }
+  #shopify-section-{{ section.id }} .cervia-s__titulo { font-family: var(--font-heading, var(--font-heading-family)) !important; font-size: var(--h2) !important; font-weight: 600 !important; line-height: 1.15 !important; letter-spacing: {{ section.settings.espaciado_letras }}px !important; color: var(--c-texto) !important; overflow-wrap: anywhere !important; min-width: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-s__titulo span { color: var(--c-acento) !important; }
+  #shopify-section-{{ section.id }} .cervia-s__sub { margin-top: 12px !important; font-size: var(--sub) !important; line-height: 1.5 !important; color: var(--c-suave) !important; }
+  #shopify-section-{{ section.id }} .cervia-i { width: var(--icono) !important; height: var(--icono) !important; fill: none !important; stroke: currentColor !important; stroke-width: 1.75 !important; stroke-linecap: round !important; stroke-linejoin: round !important; flex-shrink: 0 !important; display: block !important; }
+  #shopify-section-{{ section.id }} .cervia-s [hidden] { display: none !important; }
+  #shopify-section-{{ section.id }} .cervia-s :focus-visible { outline: 2px solid var(--c-acento) !important; outline-offset: 2px !important; }
+  #shopify-section-{{ section.id }} .cervia-s.is-anim .cervia-anim { opacity: 0 !important; transition: opacity .6s var(--ease), transform .6s var(--ease) !important; }
+  #shopify-section-{{ section.id }} .cervia-s.is-anim.is-slide .cervia-anim { transform: translateY(20px) !important; }
+  #shopify-section-{{ section.id }} .cervia-s.is-anim.is-visible .cervia-anim { opacity: 1 !important; transform: none !important; }
+  #shopify-section-{{ section.id }} .cervia-media { position: relative !important; overflow: hidden !important; border-radius: var(--radius) !important; background: color-mix(in srgb, var(--c-borde) 45%, transparent) !important; }
+  #shopify-section-{{ section.id }} .cervia-media img, #shopify-section-{{ section.id }} .cervia-media .placeholder-svg { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+  #shopify-section-{{ section.id }} .cervia-media__guia { position: absolute !important; inset-inline: 12px !important; bottom: 12px !important; padding: 8px 12px !important; border-radius: 8px !important; background: color-mix(in srgb, var(--c-texto) 80%, transparent) !important; color: var(--c-fondo) !important; font-size: 13px !important; line-height: 1.3 !important; text-align: center !important; pointer-events: none !important; }
+  @media (prefers-reduced-motion: reduce) { #shopify-section-{{ section.id }} .cervia-s * { transition-duration: .01ms !important; } #shopify-section-{{ section.id }} .cervia-s.is-anim .cervia-anim { opacity: 1 !important; transform: none !important; } }
+  #shopify-section-{{ section.id }} .cervia-test__resumen { display: flex !important; align-items: center !important; justify-content: center !important; gap: 12px !important; margin: -8px 0 28px !important; flex-wrap: wrap !important; }
+  #shopify-section-{{ section.id }} .cervia-test__nota { font-family: var(--font-heading, var(--font-heading-family)) !important; font-size: 32px !important; font-weight: 700 !important; line-height: 1 !important; }
+  #shopify-section-{{ section.id }} .cervia-test__num { font-size: 14px !important; color: var(--c-suave) !important; }
+  #shopify-section-{{ section.id }} .cervia-estrellas { position: relative !important; display: inline-block !important; line-height: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-estrellas__fondo, #shopify-section-{{ section.id }} .cervia-estrellas__llenas { display: inline-flex !important; gap: 2px !important; white-space: nowrap !important; }
+  #shopify-section-{{ section.id }} .cervia-estrellas__fondo { color: {{ section.settings.color_estrella_vacia }} !important; }
+  #shopify-section-{{ section.id }} .cervia-estrellas__llenas { position: absolute !important; inset: 0 auto 0 0 !important; overflow: hidden !important; color: {{ section.settings.color_estrellas }} !important; }
+  #shopify-section-{{ section.id }} .cervia-estrellas svg { width: 16px !important; height: 16px !important; fill: currentColor !important; flex-shrink: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-test__resumen .cervia-estrellas svg { width: 20px !important; height: 20px !important; }
+  #shopify-section-{{ section.id }} .cervia-test__lista { list-style: none !important; padding: 0 !important; display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: var(--gap) !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-test__lista { grid-template-columns: repeat({{ section.settings.columnas }}, minmax(0, 1fr)) !important; } }
+  @media screen and (max-width: 749px) { #shopify-section-{{ section.id }} .cervia-test__lista.is-carrusel { display: flex !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; scrollbar-width: none !important; margin-inline: calc(-1 * var(--lateral)) !important; padding-inline: var(--lateral) !important; scroll-padding-inline: var(--lateral) !important; } #shopify-section-{{ section.id }} .cervia-test__lista.is-carrusel > li { flex: 0 0 {{ section.settings.ancho_tarjeta }}% !important; scroll-snap-align: start !important; } #shopify-section-{{ section.id }} .cervia-test__lista::-webkit-scrollbar { display: none !important; } }
+  #shopify-section-{{ section.id }} .cervia-resena { height: 100% !important; background: var(--c-tarjeta) !important; border: 1px solid var(--c-borde) !important; border-radius: var(--radius) !important; overflow: hidden !important; display: flex !important; flex-direction: column !important; }
+  #shopify-section-{{ section.id }} .cervia-resena .cervia-media { border-radius: 0 !important; aspect-ratio: {{ section.settings.ratio }} !important; }
+  #shopify-section-{{ section.id }} .cervia-resena__cuerpo { padding: var(--pad-card) !important; display: grid !important; gap: 10px !important; align-content: start !important; flex: 1 !important; }
+  #shopify-section-{{ section.id }} .cervia-resena__texto { font-size: var(--cuerpo) !important; line-height: 1.5 !important; }
+  #shopify-section-{{ section.id }} .cervia-resena__pie { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 8px !important; margin-top: auto !important; font-size: 13px !important; color: var(--c-suave) !important; }
+  #shopify-section-{{ section.id }} .cervia-resena__nombre { font-weight: 600 !important; color: var(--c-texto) !important; }
+  #shopify-section-{{ section.id }} .cervia-resena__verif { display: inline-flex !important; align-items: center !important; gap: 4px !important; font-size: 12px !important; color: var(--c-acento) !important; }
+  #shopify-section-{{ section.id }} .cervia-resena__verif .cervia-i { width: 14px !important; height: 14px !important; }
+  #shopify-section-{{ section.id }} .cervia-test__cta { margin-top: 32px !important; }
+  #shopify-section-{{ section.id }} .cervia-cta { display: grid !important; gap: 10px !important; justify-items: var(--cta-justify, center) !important; --cta-alto: {{ section.settings.cta_alto_movil }}px; --cta-tam: {{ section.settings.cta_tam_movil }}px; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-cta { --cta-alto: {{ section.settings.cta_alto }}px; --cta-tam: {{ section.settings.cta_tam }}px; } }
+  #shopify-section-{{ section.id }} .cervia-cta__boton { min-height: var(--cta-alto) !important; padding: 0 28px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; border-radius: {{ section.settings.cta_radius }}px !important; border: 1.5px solid {{ section.settings.cta_borde }} !important; background: {% if section.settings.cta_estilo == 'contorno' %}transparent{% else %}{{ section.settings.cta_fondo }}{% endif %} !important; color: {% if section.settings.cta_estilo == 'contorno' %}{{ section.settings.cta_borde }}{% else %}{{ section.settings.cta_color }}{% endif %} !important; font-family: inherit !important; font-size: var(--cta-tam) !important; font-weight: 600 !important; letter-spacing: .01em !important; cursor: pointer !important; white-space: nowrap !important; text-decoration: none !important; transition: transform .15s var(--ease), opacity .15s var(--ease) !important; width: {% if section.settings.cta_completo_movil %}100%{% else %}auto{% endif %} !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-cta__boton { width: {% if section.settings.cta_completo_escritorio %}100%{% else %}auto{% endif %} !important; min-width: 320px !important; } }
+  #shopify-section-{{ section.id }} .cervia-cta__boton:hover { background: {{ section.settings.cta_fondo_hover }} !important; color: {{ section.settings.cta_color_hover }} !important; border-color: {{ section.settings.cta_fondo_hover }} !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__boton:active { transform: translateY(1px) !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__boton[disabled] { opacity: .5 !important; cursor: not-allowed !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__spinner { width: 18px !important; height: 18px !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__micro { font-size: 13px !important; color: var(--c-suave) !important; text-align: center !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__error { font-size: 13px !important; color: #B3261E !important; }
+  #shopify-section-{{ section.id }} .cervia-aviso { padding: 8px 12px !important; border-radius: 8px !important; background: color-mix(in srgb, var(--c-acento) 14%, transparent) !important; font-size: 13px !important; }
+{%- endstyle -%}
+  <svg hidden aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><symbol id="cervia-i-check-{{ section.id }}" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="cervia-i-check_circulo-{{ section.id }}" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.8 2.8L16 9.5"/></symbol><symbol id="cervia-i-escudo_check-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol><symbol id="cervia-i-camion-{{ section.id }}" viewBox="0 0 24 24"><path d="M3 6.5h11v9.5H3zM14 9.5h3.8l3.2 3.2V16H14"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></symbol><symbol id="cervia-i-caja-{{ section.id }}" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"/></symbol><symbol id="cervia-i-candado-{{ section.id }}" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol><symbol id="cervia-i-ciclo-{{ section.id }}" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.5L20 16M20 20v-4h-4"/></symbol><symbol id="cervia-i-chat-{{ section.id }}" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20z"/><path d="M8.5 10.5h7"/></symbol><symbol id="cervia-i-hoja-{{ section.id }}" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19l7-7"/></symbol><symbol id="cervia-i-luna-{{ section.id }}" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol><symbol id="cervia-i-estrella-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></symbol><symbol id="cervia-i-regalo-{{ section.id }}" viewBox="0 0 24 24"><rect x="4" y="8.5" width="16" height="4" rx="1"/><path d="M5.5 12.5V20h13v-7.5M12 8.5V20M12 8.5c-1.5-3-5-3.5-5-1.2s3 1.2 5 1.2c2 0 5 1.1 5-1.2s-3.5-1.8-5 1.2z"/></symbol><symbol id="cervia-i-corazon-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol><symbol id="cervia-i-reloj-{{ section.id }}" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="cervia-i-tarjeta-{{ section.id }}" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14.5h3"/></symbol><symbol id="cervia-i-info-{{ section.id }}" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol><symbol id="cervia-i-almohada-{{ section.id }}" viewBox="0 0 24 24"><path d="M4 9.5C4 7.5 5.5 6.5 7.5 7c3 .8 6 .8 9 0 2-.5 3.5.5 3.5 2.5v5c0 2-1.5 3-3.5 2.5-3-.8-6-.8-9 0C5.5 17.5 4 16.5 4 14.5z"/><path d="M8 12c2.6.7 5.4.7 8 0"/></symbol><symbol id="cervia-i-chevron-{{ section.id }}" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="cervia-i-plus-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol></svg>
+{%- liquid
+  assign sec_ancla = 'cervia-' | append: section.id
+  if section.settings.ancla != blank
+    assign sec_ancla = section.settings.ancla
+  endif
+-%}
+<section id="{{ sec_ancla | escape }}" class="cervia-s cervia-testimonios{% if section.settings.ocultar_movil %} is-oculto-movil{% endif %}{% if section.settings.ocultar_escritorio %} is-oculto-escritorio{% endif %}{% if section.settings.animacion == 'slide' %} is-slide{% endif %} {{ section.settings.clases | escape }}" data-anim="{{ section.settings.animacion }}" data-tracking="{{ section.settings.activar_tracking }}">
+  <div class="cervia-s__contenedor">
+    {%- if section.settings.titulo != blank or section.settings.eyebrow != blank -%}
+      <div class="cervia-s__cabecera cervia-anim">
+        {%- if section.settings.mostrar_eyebrow and section.settings.eyebrow != blank -%}<p class="cervia-s__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.titulo != blank -%}<{{ section.settings.etiqueta }} class="cervia-s__titulo">{{ section.settings.titulo }}</{{ section.settings.etiqueta }}>{%- endif -%}
+        {%- if section.settings.mostrar_sub and section.settings.sub != blank -%}<p class="cervia-s__sub">{{ section.settings.sub }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.mostrar_resumen -%}
+      {%- liquid
+        assign nota = section.settings.nota
+        assign num = section.settings.num_resenas
+        if section.settings.usar_app and product.metafields.reviews.rating.value != blank
+          assign nota = product.metafields.reviews.rating.value.rating
+          assign num = product.metafields.reviews.rating_count
+        endif
+        assign ancho_media = nota | times: 20 | round: 1
+        assign texto_num = section.settings.texto_num | replace: '[[n]]', num
+      -%}
+      <div class="cervia-test__resumen cervia-anim">
+        <span class="cervia-test__nota">{{ nota }}</span>
+        <span class="cervia-estrellas" aria-hidden="true"><span class="cervia-estrellas__fondo">{%- for i in (1..5) -%}<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.4.8-4.7 4.5 1.2 6.3L12 17.1l-5.7 3.1 1.2-6.3-4.7-4.5 6.4-.8z"/></svg>{%- endfor -%}</span><span class="cervia-estrellas__llenas" style="width: {{ ancho_media }}%;">{%- for i in (1..5) -%}<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.4.8-4.7 4.5 1.2 6.3L12 17.1l-5.7 3.1 1.2-6.3-4.7-4.5 6.4-.8z"/></svg>{%- endfor -%}</span></span>
+        <span class="cervia-test__num">{{ texto_num }}</span>
+      </div>
+    {%- endif -%}
+    <ul class="cervia-test__lista cervia-anim{% if section.settings.estilo_movil == 'carrusel' %} is-carrusel{% endif %}" role="list">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.mostrar -%}
+          {%- assign ancho_r = block.settings.estrellas | times: 20 -%}
+          <li {{ block.shopify_attributes }}>
+            <article class="cervia-resena">
+              {%- if section.settings.layout == 'ugc' -%}<div class="cervia-media">
+  {%- if block.settings.imagen != blank -%}
+    {{ block.settings.imagen | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 33vw, 100vw', widths: '375, 550, 750, 1100, 1600' }}
+  {%- else -%}
+    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- if request.design_mode and section.settings.guia_foto != blank -%}<span class="cervia-media__guia">{{ section.settings.guia_foto }}</span>{%- endif -%}
+  {%- endif -%}
+</div>{%- endif -%}
+              <div class="cervia-resena__cuerpo">
+                <span role="img" aria-label="{{ block.settings.estrellas }} / 5"><span class="cervia-estrellas" aria-hidden="true"><span class="cervia-estrellas__fondo">{%- for i in (1..5) -%}<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.4.8-4.7 4.5 1.2 6.3L12 17.1l-5.7 3.1 1.2-6.3-4.7-4.5 6.4-.8z"/></svg>{%- endfor -%}</span><span class="cervia-estrellas__llenas" style="width: {{ ancho_r }}%;">{%- for i in (1..5) -%}<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.4.8-4.7 4.5 1.2 6.3L12 17.1l-5.7 3.1 1.2-6.3-4.7-4.5 6.4-.8z"/></svg>{%- endfor -%}</span></span></span>
+                <p class="cervia-resena__texto">{{ block.settings.texto }}</p>
+                <div class="cervia-resena__pie">
+                  <span><span class="cervia-resena__nombre">{{ block.settings.nombre }}</span>{%- if block.settings.fecha != blank -%} · {{ block.settings.fecha }}{%- endif -%}</span>
+                  {%- if block.settings.verificado -%}<span class="cervia-resena__verif"><svg class="cervia-i" aria-hidden="true" focusable="false"><use href="#cervia-i-{{ 'check_circulo' }}-{{ section.id }}"></use></svg>{{ section.settings.texto_verificado }}</span>{%- endif -%}
+                </div>
+              </div>
+            </article>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+    <div class="cervia-test__cta cervia-anim">
+{%- if section.settings.cta_mostrar -%}
+  {%- liquid
+    assign cta_v = product.selected_or_first_available_variant
+    assign cta_total = cta_v.price | times: section.settings.cta_cantidad
+    assign cta_precio = cta_total | money
+    assign cta_texto = section.settings.cta_texto | replace: '[[precio]]', cta_precio
+  -%}
+  <cervia-cta class="cervia-cta" data-accion="{{ section.settings.cta_accion }}" data-url="{{ section.settings.cta_url | escape }}" data-cantidad="{{ section.settings.cta_cantidad }}" data-variant-id="{{ cta_v.id }}" data-precio="{{ cta_v.price }}" data-disponible="{{ cta_v.available }}" data-texto="{{ section.settings.cta_texto | escape }}" data-texto-cargando="{{ section.settings.cta_cargando | escape }}" data-texto-agotado="{{ section.settings.cta_agotado | escape }}" data-tracking="{{ section.settings.activar_tracking }}">
+    <button type="button" class="cervia-cta__boton" data-boton{% unless cta_v.available %} disabled{% endunless %}>
+      <span data-texto-boton>{%- if cta_v.available or section.settings.cta_accion == 'formulario' or section.settings.cta_accion == 'url' -%}{{ cta_texto }}{%- else -%}{{ section.settings.cta_agotado }}{%- endif -%}</span>
+      <svg class="cervia-cta__spinner" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="40 60"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg>
+    </button>
+    <p class="cervia-cta__error" role="alert" hidden></p>
+    {%- if section.settings.cta_micro_mostrar and section.settings.cta_micro != blank -%}<p class="cervia-cta__micro">{{ section.settings.cta_micro }}</p>{%- endif -%}
+    {%- if request.design_mode and settings.cart_type != 'drawer' and section.settings.cta_accion == 'carrito' -%}<p class="cervia-aviso">{{ section.settings.aviso_drawer }}</p>{%- endif -%}
+  </cervia-cta>
+{%- endif -%}
+    </div>
+  </div>
+</section>
+<script>
+  (() => {
+    const s = document.querySelector('#shopify-section-{{ section.id }} .cervia-s');
+    if (!s || s.dataset.anim === 'ninguna' || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.Shopify && Shopify.designMode) return;
+    s.classList.add('is-anim');
+    const io = new IntersectionObserver((e) => { if (e[0].isIntersecting) { s.classList.add('is-visible'); io.disconnect(); } }, { threshold: 0.15 });
+    io.observe(s);
+  })();
+</script>
+<script>
+  (() => {
+    if (!window.marcaCervia) {
+      const money = (cents) => new Intl.NumberFormat(document.documentElement.lang || 'es', { style: 'currency', currency: (window.Shopify && Shopify.currency && Shopify.currency.active) || 'EUR' }).format((cents || 0) / 100);
+      const track = (activo, evento, variantId, quantity, priceCents) => {
+        if (!activo) return;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: evento, variant_id: variantId, quantity, value: ((priceCents || 0) * quantity) / 100, currency: (window.Shopify && Shopify.currency && Shopify.currency.active) || 'EUR' });
+      };
+      async function addToCart(variantId, quantity, source) {
+        const cart = document.querySelector('cart-drawer') || document.querySelector('cart-notification');
+        if (!cart) {
+          const r = await fetch(routes.cart_add_url, { ...fetchConfig('javascript'), body: JSON.stringify({ items: [{ id: variantId, quantity }] }) });
+          const s = await r.json();
+          if (!s.status) window.location.href = routes.cart_url;
+          return s;
+        }
+        const body = { items: [{ id: variantId, quantity }], sections: cart.getSectionsToRender().map((s) => s.id), sections_url: window.location.pathname };
+        const response = await fetch(routes.cart_add_url, { ...fetchConfig('javascript'), body: JSON.stringify(body) });
+        const state = await response.json();
+        if (state.status) {
+          publish(PUB_SUB_EVENTS.cartError, { source, productVariantId: variantId, errors: state.errors || state.description, message: state.message });
+          return state;
+        }
+        publish(PUB_SUB_EVENTS.cartUpdate, { source, productVariantId: variantId, cartData: state });
+        cart.renderContents(state);
+        cart.classList.remove('is-empty');
+        cart.querySelector('.drawer__inner')?.classList.remove('is-empty');
+        return state;
+      }
+      window.marcaCervia = { money, track, addToCart };
+    }
+    if (customElements.get('cervia-cta')) return;
+    class CerviaCta extends HTMLElement {
+      connectedCallback() {
+        this.boton = this.querySelector('[data-boton]');
+        this.texto = this.querySelector('[data-texto-boton]');
+        this.spinner = this.querySelector('.cervia-cta__spinner');
+        this.error = this.querySelector('.cervia-cta__error');
+        this.variantId = Number(this.dataset.variantId);
+        this.precio = Number(this.dataset.precio);
+        this.disponible = this.dataset.disponible === 'true';
+        this.boton?.addEventListener('click', () => this.accion());
+        if (typeof subscribe === 'function') {
+          this.unsubscribe = subscribe(PUB_SUB_EVENTS.variantChange, ({ data }) => {
+            if (!data.variant) { this.disponible = false; this.render(); return; }
+            this.variantId = data.variant.id; this.precio = data.variant.price; this.disponible = data.variant.available; this.render();
+          });
+        }
+      }
+      disconnectedCallback() { this.unsubscribe?.(); }
+      idActual() {
+        const input = document.querySelector('form[id^="product-form-"] input[name="id"]');
+        return input && input.value ? Number(input.value) : this.variantId;
+      }
+      render() {
+        if (!this.boton || !this.texto) return;
+        const sinCompra = this.dataset.accion === 'formulario' || this.dataset.accion === 'url';
+        if (!this.disponible && !sinCompra) { this.boton.disabled = true; this.texto.textContent = this.dataset.textoAgotado || ''; return; }
+        this.boton.disabled = false;
+        this.texto.textContent = (this.dataset.texto || '').replace('[[precio]]', window.marcaCervia.money(this.precio * (Number(this.dataset.cantidad) || 1)));
+      }
+      async accion() {
+        const accion = this.dataset.accion;
+        const u = Number(this.dataset.cantidad) || 1;
+        const id = this.idActual();
+        const activo = this.dataset.tracking === 'true';
+        if (accion === 'url' && this.dataset.url) { window.location.href = this.dataset.url; return; }
+        if (accion === 'formulario' || !id) {
+          const destino = document.querySelector('.cervia-packs') || document.querySelector('form[id^="product-form-"]') || document.querySelector('product-info');
+          destino?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        if (accion === 'checkout') { window.marcaCervia.track(activo, 'marca_initiate_checkout', id, u, this.precio); window.location.href = `${routes.cart_url}/${id}:${u}`; return; }
+        this.error.hidden = true;
+        this.boton.disabled = true;
+        this.boton.setAttribute('aria-busy', 'true');
+        this.spinner.hidden = false;
+        this.texto.textContent = this.dataset.textoCargando || '';
+        try {
+          const state = await window.marcaCervia.addToCart(id, u, 'cervia-cta');
+          if (state && state.status) { this.error.textContent = state.description || state.message || ''; this.error.hidden = false; }
+          else window.marcaCervia.track(activo, 'marca_add_to_cart', id, u, this.precio);
+        } catch (e) { this.error.textContent = e.message || 'Error'; this.error.hidden = false; }
+        finally { this.boton.removeAttribute('aria-busy'); this.spinner.hidden = true; this.render(); }
+      }
+    }
+    customElements.define('cervia-cta', CerviaCta);
+  })();
+</script>
+{% schema %}
+{
+  "name": "Cervia Testimonios",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Cabecera"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_eyebrow",
+      "label": "Mostrar frase superior",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Frase superior",
+      "default": "Opiniones"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Lo que cuentan <span>quienes ya duermen</span> con ella",
+      "info": "Pon entre <span> la palabra que quieras destacar con el color de acento"
+    },
+    {
+      "type": "select",
+      "id": "etiqueta",
+      "label": "Etiqueta del título",
+      "options": [
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "div",
+          "label": "Texto"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_sub",
+      "label": "Mostrar subtítulo",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sub",
+      "label": "Subtítulo"
+    },
+    {
+      "type": "select",
+      "id": "alin_cabecera",
+      "label": "Alineación de la cabecera",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "tam_titulo",
+      "label": "Título (escritorio)",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_titulo_movil",
+      "label": "Título (móvil)",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "default": 26,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_sub",
+      "label": "Subtítulo (escritorio)",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_sub_movil",
+      "label": "Subtítulo (móvil)",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "ancho_titulo",
+      "label": "Ancho máximo del título",
+      "min": 400,
+      "max": 1000,
+      "step": 20,
+      "default": 760,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "espaciado_letras",
+      "label": "Espaciado de letras del título",
+      "min": -2,
+      "max": 2,
+      "step": 0.5,
+      "default": -0.5
+    },
+    {
+      "type": "header",
+      "content": "Resumen"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_resumen",
+      "label": "Mostrar nota media",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "nota",
+      "label": "Nota media",
+      "min": 1,
+      "max": 5,
+      "step": 0.1,
+      "default": 4.8,
+      "info": "Pon tu nota real"
+    },
+    {
+      "type": "text",
+      "id": "num_resenas",
+      "label": "Nº de reseñas",
+      "default": "[Nº]"
+    },
+    {
+      "type": "text",
+      "id": "texto_num",
+      "label": "Texto",
+      "default": "[[n]] reseñas verificadas",
+      "info": "[[n]] se cambia por el número"
+    },
+    {
+      "type": "checkbox",
+      "id": "usar_app",
+      "label": "Usar nota de mi app de reseñas",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Tarjetas"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Diseño",
+      "options": [
+        {
+          "value": "ugc",
+          "label": "Con foto"
+        },
+        {
+          "value": "texto",
+          "label": "Solo texto"
+        }
+      ],
+      "default": "ugc"
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Proporción de la foto",
+      "options": [
+        {
+          "value": "1 / 1",
+          "label": "Cuadrada"
+        },
+        {
+          "value": "3 / 4",
+          "label": "Vertical 3:4"
+        },
+        {
+          "value": "4 / 5",
+          "label": "Vertical 4:5"
+        }
+      ],
+      "default": "4 / 5"
+    },
+    {
+      "type": "text",
+      "id": "guia_foto",
+      "label": "Guía de las fotos",
+      "default": "Aquí va la foto que te mandó el cliente con su almohada"
+    },
+    {
+      "type": "text",
+      "id": "texto_verificado",
+      "label": "Texto de compra verificada",
+      "default": "Compra verificada"
+    },
+    {
+      "type": "select",
+      "id": "columnas",
+      "label": "Columnas (escritorio)",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "estilo_movil",
+      "label": "En móvil",
+      "options": [
+        {
+          "value": "carrusel",
+          "label": "Carrusel"
+        },
+        {
+          "value": "lista",
+          "label": "Una debajo de otra"
+        }
+      ],
+      "default": "carrusel"
+    },
+    {
+      "type": "range",
+      "id": "ancho_tarjeta",
+      "label": "Ancho de tarjeta en carrusel",
+      "min": 60,
+      "max": 90,
+      "step": 5,
+      "default": 85,
+      "unit": "%"
+    },
+    {
+      "type": "color",
+      "id": "color_estrellas",
+      "label": "Estrellas",
+      "default": "#7A6A57"
+    },
+    {
+      "type": "color",
+      "id": "color_estrella_vacia",
+      "label": "Estrellas vacías",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "header",
+      "content": "Botón"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_mostrar",
+      "label": "Mostrar botón",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_texto",
+      "label": "Texto del botón",
+      "default": "Quiero mi Cervia · [[precio]]",
+      "info": "[[precio]] se cambia por el precio real"
+    },
+    {
+      "type": "select",
+      "id": "cta_accion",
+      "label": "Al pulsar",
+      "options": [
+        {
+          "value": "carrito",
+          "label": "Añadir y abrir el carrito"
+        },
+        {
+          "value": "checkout",
+          "label": "Ir directo al pago"
+        },
+        {
+          "value": "formulario",
+          "label": "Subir a los packs"
+        },
+        {
+          "value": "url",
+          "label": "Ir a un enlace"
+        }
+      ],
+      "default": "carrito"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Enlace (si eliges «Ir a un enlace»)"
+    },
+    {
+      "type": "select",
+      "id": "cta_cantidad",
+      "label": "Unidades que añade",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "cta_cargando",
+      "label": "Texto mientras añade",
+      "default": "Añadiendo…"
+    },
+    {
+      "type": "text",
+      "id": "cta_agotado",
+      "label": "Texto agotado",
+      "default": "Agotado"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_micro_mostrar",
+      "label": "Mostrar texto bajo el botón",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "cta_micro",
+      "label": "Texto bajo el botón",
+      "default": "Envío gratis · Pago seguro · Devolución fácil"
+    },
+    {
+      "type": "select",
+      "id": "cta_estilo",
+      "label": "Estilo",
+      "options": [
+        {
+          "value": "solido",
+          "label": "Sólido"
+        },
+        {
+          "value": "contorno",
+          "label": "Contorno"
+        }
+      ],
+      "default": "solido"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_completo_movil",
+      "label": "Ancho completo en móvil",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_completo_escritorio",
+      "label": "Ancho completo en escritorio",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "cta_alto",
+      "label": "Alto (escritorio)",
+      "min": 44,
+      "max": 64,
+      "step": 2,
+      "default": 56,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_alto_movil",
+      "label": "Alto (móvil)",
+      "min": 44,
+      "max": 64,
+      "step": 2,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_tam",
+      "label": "Texto (escritorio)",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_tam_movil",
+      "label": "Texto (móvil)",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_radius",
+      "label": "Radio del botón",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "cta_fondo",
+      "label": "Fondo del botón",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "Texto del botón",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "cta_borde",
+      "label": "Borde del botón",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "cta_fondo_hover",
+      "label": "Fondo (hover)",
+      "default": "#4A443D"
+    },
+    {
+      "type": "color",
+      "id": "cta_color_hover",
+      "label": "Texto (hover)",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "checkbox",
+      "id": "activar_tracking",
+      "label": "Enviar eventos (dataLayer)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "aviso_drawer",
+      "label": "Aviso en el editor",
+      "default": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón"
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "color_fondo",
+      "label": "Fondo",
+      "default": "#F3EDE3"
+    },
+    {
+      "type": "checkbox",
+      "id": "gradiente",
+      "label": "Fondo con degradado",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color_fondo_2",
+      "label": "Segundo color del degradado",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "range",
+      "id": "angulo",
+      "label": "Ángulo del degradado",
+      "min": 0,
+      "max": 360,
+      "step": 15,
+      "default": 180,
+      "unit": "°"
+    },
+    {
+      "type": "color",
+      "id": "color_texto",
+      "label": "Texto",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "color_suave",
+      "label": "Texto secundario",
+      "default": "#7A7268"
+    },
+    {
+      "type": "color",
+      "id": "color_acento",
+      "label": "Acento",
+      "default": "#7A6A57"
+    },
+    {
+      "type": "color",
+      "id": "color_tarjeta",
+      "label": "Fondo de tarjetas",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "color_borde",
+      "label": "Bordes",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "range",
+      "id": "ancho",
+      "label": "Ancho máximo del contenido",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "default": 1400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "lateral_movil",
+      "label": "Margen lateral en móvil",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "Radio de esquinas",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_superior",
+      "label": "Espacio superior (escritorio)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_inferior",
+      "label": "Espacio inferior (escritorio)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_superior_movil",
+      "label": "Espacio superior (móvil)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_inferior_movil",
+      "label": "Espacio inferior (móvil)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Avanzado"
+    },
+    {
+      "type": "text",
+      "id": "ancla",
+      "label": "Id de ancla",
+      "default": "resenas",
+      "info": "Para enlazar a esta sección con #id"
+    },
+    {
+      "type": "select",
+      "id": "animacion",
+      "label": "Animación de entrada",
+      "options": [
+        {
+          "value": "ninguna",
+          "label": "Ninguna"
+        },
+        {
+          "value": "fade",
+          "label": "Aparecer"
+        },
+        {
+          "value": "slide",
+          "label": "Subir"
+        }
+      ],
+      "default": "fade"
+    },
+    {
+      "type": "checkbox",
+      "id": "ocultar_movil",
+      "label": "Ocultar en móvil",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "ocultar_escritorio",
+      "label": "Ocultar en escritorio",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "clases",
+      "label": "Clases CSS extra",
+      "info": "Solo si sabes lo que haces"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "resena",
+      "name": "Reseña",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "mostrar",
+          "label": "Mostrar",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "imagen",
+          "label": "Foto del cliente"
+        },
+        {
+          "type": "range",
+          "id": "estrellas",
+          "label": "Estrellas",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "texto",
+          "label": "Reseña",
+          "default": "[Escribe aquí una reseña real de 1–2 frases]",
+          "info": "Ejemplo: sustitúyela por reseñas reales de tus clientes. Sin inventar."
+        },
+        {
+          "type": "text",
+          "id": "nombre",
+          "label": "Nombre",
+          "default": "[Nombre del cliente]"
+        },
+        {
+          "type": "text",
+          "id": "fecha",
+          "label": "Fecha",
+          "default": "[Fecha]"
+        },
+        {
+          "type": "checkbox",
+          "id": "verificado",
+          "label": "Compra verificada",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Cervia Testimonios",
+      "blocks": [
+        {
+          "type": "resena",
+          "settings": {
+            "texto": "Las primeras noches se me hizo rara, pero a la semana ya me levantaba con el cuello mucho menos cargado.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        {
+          "type": "resena",
+          "settings": {
+            "texto": "Duermo de lado y por fin el hombro no se queda encajado. La funda se lava sin problema.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        {
+          "type": "resena",
+          "settings": {
+            "texto": "Llegó envasada y tardó un día en coger forma. Algo firme al principio, ahora no la cambio.",
+            "estrellas": 4,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        {
+          "type": "resena",
+          "settings": {
+            "texto": "Compré dos, una para mí y otra para mi pareja. Los dos estamos encantados con el cambio.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        {
+          "type": "resena",
+          "settings": {
+            "texto": "Me sorprendió lo bien que mantiene la forma. Nada que ver con la de fibra que tenía antes.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        {
+          "type": "resena",
+          "settings": {
+            "texto": "Buena almohada. Recomiendo airearla al sacarla porque el primer día huele un poco a nuevo.",
+            "estrellas": 4,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

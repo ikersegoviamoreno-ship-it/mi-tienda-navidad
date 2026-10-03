@@ -1,0 +1,1310 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .cervia-f { --c-fondo: {{ section.settings.color_fondo }}; --c-texto: {{ section.settings.color_texto }}; --c-suave: {{ section.settings.color_suave }}; --c-acento: {{ section.settings.color_acento }}; --c-borde: color-mix(in srgb, {{ section.settings.color_texto }} 18%, transparent); --ancho: {{ section.settings.ancho }}px; --lateral: {{ section.settings.lateral_movil }}px; --ease: cubic-bezier(.22,.8,.35,1); --radius: {{ section.settings.radius }}px; --icono: 24px;
+    background: var(--c-fondo) !important; color: var(--c-texto) !important; font-family: var(--font-body, var(--font-body-family)) !important; overflow: hidden !important; position: relative !important; padding-bottom: {{ section.settings.padding_inferior_movil }}px !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-f { --lateral: 40px; --icono: 28px; padding-bottom: {{ section.settings.padding_inferior }}px !important; } }
+  #shopify-section-{{ section.id }} .cervia-f *, #shopify-section-{{ section.id }} .cervia-f *::before, #shopify-section-{{ section.id }} .cervia-f *::after { box-sizing: border-box !important; }
+  #shopify-section-{{ section.id }} .cervia-f :where(p, h2, ul) { margin: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-f [hidden] { display: none !important; }
+  #shopify-section-{{ section.id }} .cervia-f a:focus-visible, #shopify-section-{{ section.id }} .cervia-f button:focus-visible { outline: 2px solid var(--c-texto) !important; outline-offset: 2px !important; }
+  #shopify-section-{{ section.id }} .cervia-f__cont { max-width: var(--ancho) !important; margin-inline: auto !important; padding-inline: var(--lateral) !important; }
+  #shopify-section-{{ section.id }} .cervia-i, #shopify-section-{{ section.id }} .cervia-f__red svg { width: var(--icono) !important; height: var(--icono) !important; fill: none !important; stroke: currentColor !important; stroke-width: 1.75 !important; stroke-linecap: round !important; stroke-linejoin: round !important; display: block !important; flex-shrink: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-f__banda { position: relative !important; overflow: hidden !important; color: {{ section.settings.banda_texto }} !important; background: linear-gradient(135deg, {{ section.settings.banda_1 }}, {{ section.settings.banda_2 }}) !important; padding: {{ section.settings.padding_superior_movil }}px 0 !important; text-align: center !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-f__banda { padding: {{ section.settings.padding_superior }}px 0 !important; } }
+  #shopify-section-{{ section.id }} .cervia-f__banda-bg { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; pointer-events: none !important; }
+  #shopify-section-{{ section.id }} .cervia-f__banda .cervia-f__cont { position: relative !important; display: grid !important; gap: 14px !important; justify-items: center !important; }
+  #shopify-section-{{ section.id }} .cervia-f__banda-titulo { font-family: var(--font-heading, var(--font-heading-family)) !important; font-size: {{ section.settings.tam_banda_movil }}px !important; font-weight: 600 !important; line-height: 1.1 !important; letter-spacing: -0.02em !important; max-width: 820px !important; overflow-wrap: anywhere !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-f__banda-titulo { font-size: {{ section.settings.tam_banda }}px !important; } }
+  #shopify-section-{{ section.id }} .cervia-f__banda-sub { font-size: 16px !important; opacity: .85 !important; }
+  #shopify-section-{{ section.id }} .cervia-f__marquee { background: {{ section.settings.marquee_fondo }} !important; color: {{ section.settings.marquee_texto }} !important; overflow: hidden !important; padding: 14px 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-f__pista { display: flex !important; width: max-content !important; will-change: transform !important; }
+  #shopify-section-{{ section.id }} .cervia-f__grupo { display: flex !important; flex-shrink: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-f__promesa { display: inline-flex !important; align-items: center !important; gap: 10px !important; padding-inline: 22px !important; font-size: 15px !important; font-weight: 500 !important; white-space: nowrap !important; }
+  #shopify-section-{{ section.id }} .cervia-f__promesa .cervia-i { width: 20px !important; height: 20px !important; }
+  #shopify-section-{{ section.id }} .cervia-f__confianza { list-style: none !important; padding: 48px 0 !important; display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 24px 12px !important; border-bottom: 1px solid var(--c-borde) !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-f__confianza { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 24px !important; padding: 64px 0 !important; } }
+  #shopify-section-{{ section.id }} .cervia-f__conf-item { display: grid !important; gap: 10px !important; justify-items: start !important; }
+  #shopify-section-{{ section.id }} .cervia-f.is-anim .cervia-f__conf-item { opacity: 0 !important; transform: translateY(16px) !important; transition: opacity .5s var(--ease), transform .5s var(--ease) !important; }
+  #shopify-section-{{ section.id }} .cervia-f.is-anim .cervia-f__conf-item.is-visible { opacity: 1 !important; transform: none !important; }
+  #shopify-section-{{ section.id }} .cervia-f__conf-icono { color: var(--c-acento) !important; }
+  #shopify-section-{{ section.id }} .cervia-f__conf-titulo { font-size: 16px !important; font-weight: 600 !important; }
+  #shopify-section-{{ section.id }} .cervia-f__conf-texto { font-size: 14px !important; color: var(--c-suave) !important; line-height: 1.45 !important; }
+  #shopify-section-{{ section.id }} .cervia-f__marca { padding: 40px 0 28px !important; display: grid !important; gap: 20px !important; justify-items: center !important; text-align: center !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-f__marca { grid-template-columns: minmax(0, 1fr) auto !important; justify-items: start !important; text-align: left !important; align-items: center !important; } }
+  #shopify-section-{{ section.id }} .cervia-f__logo img { height: {{ section.settings.alto_logo }}px !important; width: auto !important; display: block !important; }
+  #shopify-section-{{ section.id }} .cervia-f__logo-texto { font-family: var(--font-heading, var(--font-heading-family)) !important; font-size: 28px !important; font-weight: 600 !important; }
+  #shopify-section-{{ section.id }} .cervia-f__frase { margin-top: 8px !important; font-size: 15px !important; color: var(--c-suave) !important; max-width: 420px !important; }
+  #shopify-section-{{ section.id }} .cervia-f__redes { list-style: none !important; padding: 0 !important; display: flex !important; gap: 8px !important; }
+  #shopify-section-{{ section.id }} .cervia-f__red { width: 44px !important; height: 44px !important; border-radius: 50% !important; border: 1px solid var(--c-borde) !important; display: grid !important; place-items: center !important; color: var(--c-texto) !important; transition: transform .2s var(--ease), opacity .2s var(--ease) !important; }
+  #shopify-section-{{ section.id }} .cervia-f__red:hover { transform: translateY(-2px) !important; }
+  #shopify-section-{{ section.id }} .cervia-f__red svg { width: 20px !important; height: 20px !important; }
+  #shopify-section-{{ section.id }} .cervia-f__pagos { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 6px !important; padding-bottom: 20px !important; }
+  #shopify-section-{{ section.id }} .cervia-f__pago { height: 24px !important; width: auto !important; display: block !important; }
+  #shopify-section-{{ section.id }} .cervia-f__legal { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px 18px !important; font-size: 13px !important; color: var(--c-suave) !important; padding-top: 20px !important; border-top: 1px solid var(--c-borde) !important; }
+  #shopify-section-{{ section.id }} .cervia-f__legal a { color: var(--c-suave) !important; text-decoration: none !important; }
+  #shopify-section-{{ section.id }} .cervia-f__legal a:hover { color: var(--c-texto) !important; text-decoration: underline !important; }
+  #shopify-section-{{ section.id }} .cervia-f__eco { display: block !important; text-align: center !important; font-family: var(--font-heading, var(--font-heading-family)) !important; font-weight: 700 !important; font-size: {{ section.settings.tam_eco_movil }}px !important; line-height: .78 !important; letter-spacing: -0.04em !important; color: var(--c-texto) !important; opacity: {{ section.settings.opacidad_eco | divided_by: 100.0 }} !important; margin-top: 28px !important; margin-bottom: calc(-1 * {{ section.settings.padding_inferior_movil }}px - .12em) !important; white-space: nowrap !important; user-select: none !important; pointer-events: none !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-f__eco { font-size: {{ section.settings.tam_eco }}px !important; margin-bottom: calc(-1 * {{ section.settings.padding_inferior }}px - .12em) !important; } }
+  @media (prefers-reduced-motion: reduce) { #shopify-section-{{ section.id }} .cervia-f * { transition-duration: .01ms !important; } }
+  #shopify-section-{{ section.id }} .cervia-cta { display: grid !important; gap: 10px !important; justify-items: var(--cta-justify, center) !important; --cta-alto: {{ section.settings.cta_alto_movil }}px; --cta-tam: {{ section.settings.cta_tam_movil }}px; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-cta { --cta-alto: {{ section.settings.cta_alto }}px; --cta-tam: {{ section.settings.cta_tam }}px; } }
+  #shopify-section-{{ section.id }} .cervia-cta__boton { min-height: var(--cta-alto) !important; padding: 0 28px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; border-radius: {{ section.settings.cta_radius }}px !important; border: 1.5px solid {{ section.settings.cta_borde }} !important; background: {% if section.settings.cta_estilo == 'contorno' %}transparent{% else %}{{ section.settings.cta_fondo }}{% endif %} !important; color: {% if section.settings.cta_estilo == 'contorno' %}{{ section.settings.cta_borde }}{% else %}{{ section.settings.cta_color }}{% endif %} !important; font-family: inherit !important; font-size: var(--cta-tam) !important; font-weight: 600 !important; letter-spacing: .01em !important; cursor: pointer !important; white-space: nowrap !important; text-decoration: none !important; transition: transform .15s var(--ease), opacity .15s var(--ease) !important; width: {% if section.settings.cta_completo_movil %}100%{% else %}auto{% endif %} !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-cta__boton { width: {% if section.settings.cta_completo_escritorio %}100%{% else %}auto{% endif %} !important; min-width: 320px !important; } }
+  #shopify-section-{{ section.id }} .cervia-cta__boton:hover { background: {{ section.settings.cta_fondo_hover }} !important; color: {{ section.settings.cta_color_hover }} !important; border-color: {{ section.settings.cta_fondo_hover }} !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__boton:active { transform: translateY(1px) !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__boton[disabled] { opacity: .5 !important; cursor: not-allowed !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__spinner { width: 18px !important; height: 18px !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__micro { font-size: 13px !important; color: var(--c-suave) !important; text-align: center !important; }
+  #shopify-section-{{ section.id }} .cervia-cta__error { font-size: 13px !important; color: #B3261E !important; }
+  #shopify-section-{{ section.id }} .cervia-aviso { padding: 8px 12px !important; border-radius: 8px !important; background: color-mix(in srgb, var(--c-acento) 14%, transparent) !important; font-size: 13px !important; }
+{%- endstyle -%}
+<footer class="cervia-f" data-marquee-vel="{{ section.settings.velocidad }}" data-pausa="{{ section.settings.pausa_hover }}" data-anim-conf="{{ section.settings.animar_confianza }}">
+  <svg hidden aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><symbol id="cervia-i-check-{{ section.id }}" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="cervia-i-check_circulo-{{ section.id }}" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.8 2.8L16 9.5"/></symbol><symbol id="cervia-i-escudo_check-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol><symbol id="cervia-i-camion-{{ section.id }}" viewBox="0 0 24 24"><path d="M3 6.5h11v9.5H3zM14 9.5h3.8l3.2 3.2V16H14"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></symbol><symbol id="cervia-i-caja-{{ section.id }}" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"/></symbol><symbol id="cervia-i-candado-{{ section.id }}" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol><symbol id="cervia-i-ciclo-{{ section.id }}" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.5L20 16M20 20v-4h-4"/></symbol><symbol id="cervia-i-chat-{{ section.id }}" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20z"/><path d="M8.5 10.5h7"/></symbol><symbol id="cervia-i-hoja-{{ section.id }}" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19l7-7"/></symbol><symbol id="cervia-i-luna-{{ section.id }}" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol><symbol id="cervia-i-estrella-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></symbol><symbol id="cervia-i-regalo-{{ section.id }}" viewBox="0 0 24 24"><rect x="4" y="8.5" width="16" height="4" rx="1"/><path d="M5.5 12.5V20h13v-7.5M12 8.5V20M12 8.5c-1.5-3-5-3.5-5-1.2s3 1.2 5 1.2c2 0 5 1.1 5-1.2s-3.5-1.8-5 1.2z"/></symbol><symbol id="cervia-i-corazon-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol><symbol id="cervia-i-reloj-{{ section.id }}" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="cervia-i-tarjeta-{{ section.id }}" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14.5h3"/></symbol><symbol id="cervia-i-info-{{ section.id }}" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol><symbol id="cervia-i-almohada-{{ section.id }}" viewBox="0 0 24 24"><path d="M4 9.5C4 7.5 5.5 6.5 7.5 7c3 .8 6 .8 9 0 2-.5 3.5.5 3.5 2.5v5c0 2-1.5 3-3.5 2.5-3-.8-6-.8-9 0C5.5 17.5 4 16.5 4 14.5z"/><path d="M8 12c2.6.7 5.4.7 8 0"/></symbol><symbol id="cervia-i-chevron-{{ section.id }}" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol><symbol id="cervia-i-plus-{{ section.id }}" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="cervia-r-instagram-{{ section.id }}" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></symbol><symbol id="cervia-r-tiktok-{{ section.id }}" viewBox="0 0 24 24"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 4c.5 2.5 2.2 4 5 4.2"/></symbol><symbol id="cervia-r-facebook-{{ section.id }}" viewBox="0 0 24 24"><path d="M14.5 8H17V4.5h-2.5C12 4.5 10.5 6 10.5 8.5V11H8v3.5h2.5V20H14v-5.5h2.5L17 11h-3V8.8c0-.5.2-.8.5-.8z"/></symbol><symbol id="cervia-r-youtube-{{ section.id }}" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3.5"/><path d="M10.5 9.5l4 2.5-4 2.5z"/></symbol><symbol id="cervia-r-pinterest-{{ section.id }}" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M11 10.5l-2 9M10.5 13c.5 1 1.5 1.5 2.5 1.5 2 0 3.5-1.8 3.5-4.2 0-2.3-2-4.3-4.6-4.3-3 0-4.9 2.1-4.9 4.6 0 1 .4 2 1 2.4"/></symbol></svg>
+  {%- if section.settings.mostrar_banda -%}
+    <div class="cervia-f__banda">
+      {%- if section.settings.animar_gradiente -%}
+        <svg class="cervia-f__banda-bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><radialGradient id="CerviaBrillo-{{ section.id }}" cx="30%" cy="30%" r="60%"><stop offset="0" stop-color="{{ section.settings.banda_texto }}" stop-opacity=".16"/><stop offset="1" stop-color="{{ section.settings.banda_texto }}" stop-opacity="0"/></radialGradient></defs><rect x="-50" y="-50" width="200" height="200" fill="url(#CerviaBrillo-{{ section.id }})"><animateTransform attributeName="transform" type="translate" values="0 0; 40 20; 0 0" dur="14s" repeatCount="indefinite"/></rect></svg>
+      {%- endif -%}
+      <div class="cervia-f__cont">
+        <p class="cervia-f__banda-titulo">{{ section.settings.banda_titulo }}</p>
+        {%- if section.settings.banda_sub != blank -%}<p class="cervia-f__banda-sub">{{ section.settings.banda_sub }}</p>{%- endif -%}
+{%- if section.settings.cta_mostrar -%}
+  {%- liquid
+    assign cta_v = product.selected_or_first_available_variant
+    assign cta_total = cta_v.price | times: section.settings.cta_cantidad
+    assign cta_precio = cta_total | money
+    assign cta_texto = section.settings.cta_texto | replace: '[[precio]]', cta_precio
+  -%}
+  <cervia-cta class="cervia-cta" data-accion="{{ section.settings.cta_accion }}" data-url="{{ section.settings.cta_url | escape }}" data-cantidad="{{ section.settings.cta_cantidad }}" data-variant-id="{{ cta_v.id }}" data-precio="{{ cta_v.price }}" data-disponible="{{ cta_v.available }}" data-texto="{{ section.settings.cta_texto | escape }}" data-texto-cargando="{{ section.settings.cta_cargando | escape }}" data-texto-agotado="{{ section.settings.cta_agotado | escape }}" data-tracking="{{ section.settings.activar_tracking }}">
+    <button type="button" class="cervia-cta__boton" data-boton{% unless cta_v.available %} disabled{% endunless %}>
+      <span data-texto-boton>{%- if cta_v.available or section.settings.cta_accion == 'formulario' or section.settings.cta_accion == 'url' -%}{{ cta_texto }}{%- else -%}{{ section.settings.cta_agotado }}{%- endif -%}</span>
+      <svg class="cervia-cta__spinner" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="40 60"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg>
+    </button>
+    <p class="cervia-cta__error" role="alert" hidden></p>
+    {%- if section.settings.cta_micro_mostrar and section.settings.cta_micro != blank -%}<p class="cervia-cta__micro">{{ section.settings.cta_micro }}</p>{%- endif -%}
+    {%- if request.design_mode and settings.cart_type != 'drawer' and section.settings.cta_accion == 'carrito' -%}<p class="cervia-aviso">{{ section.settings.aviso_drawer }}</p>{%- endif -%}
+  </cervia-cta>
+{%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+  {%- assign promesas = section.blocks | where: 'type', 'promesa' -%}
+  {%- if section.settings.mostrar_marquee and promesas.size > 0 -%}
+    <div class="cervia-f__marquee" aria-label="{{ section.settings.texto_marquee | escape }}">
+      <div class="cervia-f__pista" data-pista>
+        {%- for n in (1..2) -%}
+          <div class="cervia-f__grupo"{% if n == 2 %} aria-hidden="true"{% endif %}>
+            {%- for block in promesas -%}
+              <span class="cervia-f__promesa" {% if n == 1 %}{{ block.shopify_attributes }}{% endif %}>{%- if block.settings.icono != 'ninguno' -%}<svg class="cervia-i" aria-hidden="true" focusable="false"><use href="#cervia-i-{{ block.settings.icono }}-{{ section.id }}"></use></svg>{%- endif -%}{{ block.settings.texto }}</span>
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+  <div class="cervia-f__cont">
+    {%- assign confs = section.blocks | where: 'type', 'confianza' -%}
+    {%- if section.settings.mostrar_confianza and confs.size > 0 -%}
+      <ul class="cervia-f__confianza" role="list">
+        {%- for block in confs -%}
+          <li class="cervia-f__conf-item" style="transition-delay: {{ forloop.index0 | times: 90 }}ms" {{ block.shopify_attributes }}>
+            {%- if block.settings.icono != 'ninguno' -%}<span class="cervia-f__conf-icono"><svg class="cervia-i" aria-hidden="true" focusable="false"><use href="#cervia-i-{{ block.settings.icono }}-{{ section.id }}"></use></svg></span>{%- endif -%}
+            <span class="cervia-f__conf-titulo">{{ block.settings.titulo }}</span>
+            <span class="cervia-f__conf-texto">{{ block.settings.texto }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+    {%- if section.settings.mostrar_marca -%}
+      <div class="cervia-f__marca">
+        <div>
+          <div class="cervia-f__logo">
+            {%- if section.settings.logo != blank -%}
+              {{ section.settings.logo | image_url: width: 600 | image_tag: alt: section.settings.nombre, loading: 'lazy' }}
+            {%- else -%}
+              <span class="cervia-f__logo-texto">{{ section.settings.nombre }}</span>
+            {%- endif -%}
+          </div>
+          {%- if section.settings.frase != blank -%}<p class="cervia-f__frase">{{ section.settings.frase }}</p>{%- endif -%}
+        </div>
+        {%- assign redes = section.blocks | where: 'type', 'red' -%}
+        {%- if redes.size > 0 -%}
+          <ul class="cervia-f__redes" role="list">
+            {%- for block in redes -%}
+              {%- if block.settings.url != blank -%}
+                <li {{ block.shopify_attributes }}><a class="cervia-f__red" href="{{ block.settings.url }}" target="_blank" rel="noopener" aria-label="{{ block.settings.red | capitalize }}"><svg aria-hidden="true" focusable="false"><use href="#cervia-r-{{ block.settings.red }}-{{ section.id }}"></use></svg></a></li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.mostrar_pagos -%}
+      <div class="cervia-f__pagos">
+          {%- if section.settings.logo_visa -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="Visa"><rect width="38" height="24" rx="4" fill="#FFFFFF" stroke="#E2E2E2"/><text x="19" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" font-style="italic" fill="#1A1F71">VISA</text></svg>{%- endif -%}
+          {%- if section.settings.logo_mastercard -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="Mastercard"><rect width="38" height="24" rx="4" fill="#FFFFFF" stroke="#E2E2E2"/><circle cx="15.5" cy="12" r="6" fill="#EB001B"/><circle cx="22.5" cy="12" r="6" fill="#F79E1B" fill-opacity=".9"/></svg>{%- endif -%}
+          {%- if section.settings.logo_amex -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="American Express"><rect width="38" height="24" rx="4" fill="#2E77BC"/><text x="19" y="15.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.5" font-weight="700" fill="#FFFFFF">AMEX</text></svg>{%- endif -%}
+          {%- if section.settings.logo_paypal -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="PayPal"><rect width="38" height="24" rx="4" fill="#FFFFFF" stroke="#E2E2E2"/><text x="19" y="15.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" font-style="italic" fill="#003087">Pay<tspan fill="#009CDE">Pal</tspan></text></svg>{%- endif -%}
+          {%- if section.settings.logo_apple_pay -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="Apple Pay"><rect width="38" height="24" rx="4" fill="#000000"/><text x="19" y="15.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="600" fill="#FFFFFF">Apple Pay</text></svg>{%- endif -%}
+          {%- if section.settings.logo_google_pay -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="Google Pay"><rect width="38" height="24" rx="4" fill="#FFFFFF" stroke="#E2E2E2"/><text x="19" y="15.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="600" fill="#5F6368"><tspan fill="#4285F4">G</tspan> Pay</text></svg>{%- endif -%}
+          {%- if section.settings.logo_bizum -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="Bizum"><rect width="38" height="24" rx="4" fill="#05C3DD"/><text x="19" y="15.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="700" fill="#FFFFFF">bizum</text></svg>{%- endif -%}
+          {%- if section.settings.logo_klarna -%}<svg class="cervia-f__pago" viewBox="0 0 38 24" role="img" aria-label="Klarna"><rect width="38" height="24" rx="4" fill="#FFB3C7"/><text x="19" y="15.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#0B051D">Klarna</text></svg>{%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="cervia-f__legal">
+      {%- assign legales = section.blocks | where: 'type', 'legal' -%}
+      {%- for block in legales -%}
+        {%- liquid
+          assign href = block.settings.url
+          if href == blank
+            case block.settings.tipo
+              when 'privacidad'
+                assign href = shop.privacy_policy.url
+              when 'devoluciones'
+                assign href = shop.refund_policy.url
+              when 'envio'
+                assign href = shop.shipping_policy.url
+              when 'terminos'
+                assign href = shop.terms_of_service.url
+              when 'contacto'
+                assign href = shop.contact_policy.url | default: '/pages/contact'
+            endcase
+          endif
+        -%}
+        {%- if href != blank -%}<a href="{{ href }}" {{ block.shopify_attributes }}>{{ block.settings.texto }}</a>{%- endif -%}
+      {%- endfor -%}
+      {%- assign anio = 'now' | date: '%Y' -%}
+      {%- assign texto_legal = section.settings.texto_legal | replace: '[[año]]', anio -%}
+      <span>{{ texto_legal }}</span>
+    </div>
+  </div>
+  {%- if section.settings.mostrar_eco and section.settings.texto_eco != blank -%}
+    <span class="cervia-f__eco" aria-hidden="true">{{ section.settings.texto_eco }}</span>
+  {%- endif -%}
+</footer>
+<script>
+  (() => {
+    const f = document.querySelector('#shopify-section-{{ section.id }} .cervia-f');
+    if (!f) return;
+    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pista = f.querySelector('[data-pista]');
+    if (pista && !reducido) {
+      let x = 0; let pausa = false; let ultimo = performance.now(); let visible = true;
+      const vel = Number(f.dataset.marqueeVel) || 30;
+      if (f.dataset.pausa === 'true') { pista.addEventListener('mouseenter', () => { pausa = true; }); pista.addEventListener('mouseleave', () => { pausa = false; }); }
+      if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(pista);
+      const paso = (t) => {
+        const dt = t - ultimo; ultimo = t;
+        const ancho = pista.firstElementChild ? pista.firstElementChild.offsetWidth : 0;
+        if (!pausa && visible && ancho > 0) { x -= (ancho / (vel * 1000)) * dt; if (-x >= ancho) x += ancho; pista.style.transform = `translate3d(${x}px,0,0)`; }
+        requestAnimationFrame(paso);
+      };
+      requestAnimationFrame(paso);
+    }
+    if (f.dataset.animConf === 'true' && !reducido && 'IntersectionObserver' in window && !(window.Shopify && Shopify.designMode)) {
+      const items = f.querySelectorAll('.cervia-f__conf-item');
+      if (!items.length) return;
+      f.classList.add('is-anim');
+      const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } }), { threshold: 0.2 });
+      items.forEach((i) => io.observe(i));
+    }
+  })();
+</script>
+<script>
+  (() => {
+    if (!window.marcaCervia) {
+      const money = (cents) => new Intl.NumberFormat(document.documentElement.lang || 'es', { style: 'currency', currency: (window.Shopify && Shopify.currency && Shopify.currency.active) || 'EUR' }).format((cents || 0) / 100);
+      const track = (activo, evento, variantId, quantity, priceCents) => {
+        if (!activo) return;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: evento, variant_id: variantId, quantity, value: ((priceCents || 0) * quantity) / 100, currency: (window.Shopify && Shopify.currency && Shopify.currency.active) || 'EUR' });
+      };
+      async function addToCart(variantId, quantity, source) {
+        const cart = document.querySelector('cart-drawer') || document.querySelector('cart-notification');
+        if (!cart) {
+          const r = await fetch(routes.cart_add_url, { ...fetchConfig('javascript'), body: JSON.stringify({ items: [{ id: variantId, quantity }] }) });
+          const s = await r.json();
+          if (!s.status) window.location.href = routes.cart_url;
+          return s;
+        }
+        const body = { items: [{ id: variantId, quantity }], sections: cart.getSectionsToRender().map((s) => s.id), sections_url: window.location.pathname };
+        const response = await fetch(routes.cart_add_url, { ...fetchConfig('javascript'), body: JSON.stringify(body) });
+        const state = await response.json();
+        if (state.status) {
+          publish(PUB_SUB_EVENTS.cartError, { source, productVariantId: variantId, errors: state.errors || state.description, message: state.message });
+          return state;
+        }
+        publish(PUB_SUB_EVENTS.cartUpdate, { source, productVariantId: variantId, cartData: state });
+        cart.renderContents(state);
+        cart.classList.remove('is-empty');
+        cart.querySelector('.drawer__inner')?.classList.remove('is-empty');
+        return state;
+      }
+      window.marcaCervia = { money, track, addToCart };
+    }
+    if (customElements.get('cervia-cta')) return;
+    class CerviaCta extends HTMLElement {
+      connectedCallback() {
+        this.boton = this.querySelector('[data-boton]');
+        this.texto = this.querySelector('[data-texto-boton]');
+        this.spinner = this.querySelector('.cervia-cta__spinner');
+        this.error = this.querySelector('.cervia-cta__error');
+        this.variantId = Number(this.dataset.variantId);
+        this.precio = Number(this.dataset.precio);
+        this.disponible = this.dataset.disponible === 'true';
+        this.boton?.addEventListener('click', () => this.accion());
+        if (typeof subscribe === 'function') {
+          this.unsubscribe = subscribe(PUB_SUB_EVENTS.variantChange, ({ data }) => {
+            if (!data.variant) { this.disponible = false; this.render(); return; }
+            this.variantId = data.variant.id; this.precio = data.variant.price; this.disponible = data.variant.available; this.render();
+          });
+        }
+      }
+      disconnectedCallback() { this.unsubscribe?.(); }
+      idActual() {
+        const input = document.querySelector('form[id^="product-form-"] input[name="id"]');
+        return input && input.value ? Number(input.value) : this.variantId;
+      }
+      render() {
+        if (!this.boton || !this.texto) return;
+        const sinCompra = this.dataset.accion === 'formulario' || this.dataset.accion === 'url';
+        if (!this.disponible && !sinCompra) { this.boton.disabled = true; this.texto.textContent = this.dataset.textoAgotado || ''; return; }
+        this.boton.disabled = false;
+        this.texto.textContent = (this.dataset.texto || '').replace('[[precio]]', window.marcaCervia.money(this.precio * (Number(this.dataset.cantidad) || 1)));
+      }
+      async accion() {
+        const accion = this.dataset.accion;
+        const u = Number(this.dataset.cantidad) || 1;
+        const id = this.idActual();
+        const activo = this.dataset.tracking === 'true';
+        if (accion === 'url' && this.dataset.url) { window.location.href = this.dataset.url; return; }
+        if (accion === 'formulario' || !id) {
+          const destino = document.querySelector('.cervia-packs') || document.querySelector('form[id^="product-form-"]') || document.querySelector('product-info');
+          destino?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        if (accion === 'checkout') { window.marcaCervia.track(activo, 'marca_initiate_checkout', id, u, this.precio); window.location.href = `${routes.cart_url}/${id}:${u}`; return; }
+        this.error.hidden = true;
+        this.boton.disabled = true;
+        this.boton.setAttribute('aria-busy', 'true');
+        this.spinner.hidden = false;
+        this.texto.textContent = this.dataset.textoCargando || '';
+        try {
+          const state = await window.marcaCervia.addToCart(id, u, 'cervia-cta');
+          if (state && state.status) { this.error.textContent = state.description || state.message || ''; this.error.hidden = false; }
+          else window.marcaCervia.track(activo, 'marca_add_to_cart', id, u, this.precio);
+        } catch (e) { this.error.textContent = e.message || 'Error'; this.error.hidden = false; }
+        finally { this.boton.removeAttribute('aria-busy'); this.spinner.hidden = true; this.render(); }
+      }
+    }
+    customElements.define('cervia-cta', CerviaCta);
+  })();
+</script>
+{% schema %}
+{
+  "name": "Cervia Footer",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banda de cierre"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_banda",
+      "label": "Mostrar banda de cierre",
+      "default": false,
+      "info": "Actívala si quitas la sección Cervia CTA Final"
+    },
+    {
+      "type": "text",
+      "id": "banda_titulo",
+      "label": "Titular",
+      "default": "Duerme mejor desde esta noche"
+    },
+    {
+      "type": "text",
+      "id": "banda_sub",
+      "label": "Subtítulo",
+      "default": "Envío gratis a toda España"
+    },
+    {
+      "type": "color",
+      "id": "banda_1",
+      "label": "Color 1",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "banda_2",
+      "label": "Color 2",
+      "default": "#4A443D"
+    },
+    {
+      "type": "color",
+      "id": "banda_texto",
+      "label": "Texto",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "checkbox",
+      "id": "animar_gradiente",
+      "label": "Brillo animado",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "tam_banda",
+      "label": "Titular (escritorio)",
+      "min": 28,
+      "max": 72,
+      "step": 2,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_banda_movil",
+      "label": "Titular (móvil)",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "default": 34,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Botón"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_mostrar",
+      "label": "Mostrar botón",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_texto",
+      "label": "Texto del botón",
+      "default": "Quiero mi Cervia · [[precio]]",
+      "info": "[[precio]] se cambia por el precio real"
+    },
+    {
+      "type": "select",
+      "id": "cta_accion",
+      "label": "Al pulsar",
+      "options": [
+        {
+          "value": "carrito",
+          "label": "Añadir y abrir el carrito"
+        },
+        {
+          "value": "checkout",
+          "label": "Ir directo al pago"
+        },
+        {
+          "value": "formulario",
+          "label": "Subir a los packs"
+        },
+        {
+          "value": "url",
+          "label": "Ir a un enlace"
+        }
+      ],
+      "default": "carrito"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Enlace (si eliges «Ir a un enlace»)"
+    },
+    {
+      "type": "select",
+      "id": "cta_cantidad",
+      "label": "Unidades que añade",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "cta_cargando",
+      "label": "Texto mientras añade",
+      "default": "Añadiendo…"
+    },
+    {
+      "type": "text",
+      "id": "cta_agotado",
+      "label": "Texto agotado",
+      "default": "Agotado"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_micro_mostrar",
+      "label": "Mostrar texto bajo el botón",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "cta_micro",
+      "label": "Texto bajo el botón",
+      "default": "Envío gratis · Pago seguro · Devolución fácil"
+    },
+    {
+      "type": "select",
+      "id": "cta_estilo",
+      "label": "Estilo",
+      "options": [
+        {
+          "value": "solido",
+          "label": "Sólido"
+        },
+        {
+          "value": "contorno",
+          "label": "Contorno"
+        }
+      ],
+      "default": "solido"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_completo_movil",
+      "label": "Ancho completo en móvil",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_completo_escritorio",
+      "label": "Ancho completo en escritorio",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "cta_alto",
+      "label": "Alto (escritorio)",
+      "min": 44,
+      "max": 64,
+      "step": 2,
+      "default": 56,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_alto_movil",
+      "label": "Alto (móvil)",
+      "min": 44,
+      "max": 64,
+      "step": 2,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_tam",
+      "label": "Texto (escritorio)",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_tam_movil",
+      "label": "Texto (móvil)",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "cta_radius",
+      "label": "Radio del botón",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "cta_fondo",
+      "label": "Fondo del botón",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "Texto del botón",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "cta_borde",
+      "label": "Borde del botón",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "cta_fondo_hover",
+      "label": "Fondo (hover)",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "color",
+      "id": "cta_color_hover",
+      "label": "Texto (hover)",
+      "default": "#5C554D"
+    },
+    {
+      "type": "checkbox",
+      "id": "activar_tracking",
+      "label": "Enviar eventos (dataLayer)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "aviso_drawer",
+      "label": "Aviso en el editor",
+      "default": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón"
+    },
+    {
+      "type": "header",
+      "content": "Cinta de promesas"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_marquee",
+      "label": "Mostrar cinta",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "velocidad",
+      "label": "Duración de una vuelta",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "default": 30,
+      "unit": "s"
+    },
+    {
+      "type": "checkbox",
+      "id": "pausa_hover",
+      "label": "Pausar al pasar el ratón",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "texto_marquee",
+      "label": "Texto accesible",
+      "default": "Nuestras promesas"
+    },
+    {
+      "type": "color",
+      "id": "marquee_fondo",
+      "label": "Fondo",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "color",
+      "id": "marquee_texto",
+      "label": "Texto",
+      "default": "#5C554D"
+    },
+    {
+      "type": "header",
+      "content": "Fila de confianza"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_confianza",
+      "label": "Mostrar fila",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "animar_confianza",
+      "label": "Animar al aparecer",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Marca"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_marca",
+      "label": "Mostrar logo y frase",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "Sube cervia-logo-claro.png (versión clara para fondo oscuro)"
+    },
+    {
+      "type": "text",
+      "id": "nombre",
+      "label": "Nombre en texto",
+      "default": "Cervia"
+    },
+    {
+      "type": "range",
+      "id": "alto_logo",
+      "label": "Alto del logo",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "frase",
+      "label": "Frase de marca",
+      "default": "Almohadas pensadas para que tu cuello descanse recto."
+    },
+    {
+      "type": "header",
+      "content": "Métodos de pago"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_pagos",
+      "label": "Mostrar métodos de pago",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_visa",
+      "label": "Visa",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_mastercard",
+      "label": "Mastercard",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_amex",
+      "label": "American Express",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_paypal",
+      "label": "PayPal",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_apple_pay",
+      "label": "Apple Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_google_pay",
+      "label": "Google Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_bizum",
+      "label": "Bizum",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_klarna",
+      "label": "Klarna",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Legal"
+    },
+    {
+      "type": "text",
+      "id": "texto_legal",
+      "label": "Texto legal",
+      "default": "© [[año]] Cervia. Todos los derechos reservados.",
+      "info": "[[año]] pone el año actual"
+    },
+    {
+      "type": "header",
+      "content": "Eco de marca"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_eco",
+      "label": "Mostrar nombre gigante",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "texto_eco",
+      "label": "Texto",
+      "default": "cervia"
+    },
+    {
+      "type": "range",
+      "id": "tam_eco",
+      "label": "Tamaño (escritorio)",
+      "min": 120,
+      "max": 400,
+      "step": 10,
+      "default": 300,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_eco_movil",
+      "label": "Tamaño (móvil)",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "default": 130,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "opacidad_eco",
+      "label": "Opacidad",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "default": 8,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "color_fondo",
+      "label": "Fondo",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "color_texto",
+      "label": "Texto",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "color_suave",
+      "label": "Texto secundario",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "color",
+      "id": "color_acento",
+      "label": "Acento",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "range",
+      "id": "ancho",
+      "label": "Ancho máximo",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "default": 1400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "lateral_movil",
+      "label": "Margen lateral en móvil",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "Radio",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_superior",
+      "label": "Espacio de la banda (escritorio)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_inferior",
+      "label": "Espacio inferior (escritorio)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_superior_movil",
+      "label": "Espacio de la banda (móvil)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_inferior_movil",
+      "label": "Espacio inferior (móvil)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promesa",
+      "name": "Promesa (cinta)",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icono",
+          "label": "Icono",
+          "options": [
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "check_circulo",
+              "label": "Check en círculo"
+            },
+            {
+              "value": "escudo_check",
+              "label": "Escudo con check"
+            },
+            {
+              "value": "camion",
+              "label": "Camión"
+            },
+            {
+              "value": "caja",
+              "label": "Caja"
+            },
+            {
+              "value": "candado",
+              "label": "Candado"
+            },
+            {
+              "value": "ciclo",
+              "label": "Devolución"
+            },
+            {
+              "value": "chat",
+              "label": "Chat"
+            },
+            {
+              "value": "hoja",
+              "label": "Hoja"
+            },
+            {
+              "value": "luna",
+              "label": "Luna"
+            },
+            {
+              "value": "estrella",
+              "label": "Estrella"
+            },
+            {
+              "value": "regalo",
+              "label": "Regalo"
+            },
+            {
+              "value": "corazon",
+              "label": "Corazón"
+            },
+            {
+              "value": "reloj",
+              "label": "Reloj"
+            },
+            {
+              "value": "tarjeta",
+              "label": "Tarjeta"
+            },
+            {
+              "value": "info",
+              "label": "Info"
+            },
+            {
+              "value": "almohada",
+              "label": "Almohada"
+            },
+            {
+              "value": "ninguno",
+              "label": "Ninguno"
+            }
+          ],
+          "default": "check_circulo"
+        },
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "Envío gratis"
+        }
+      ]
+    },
+    {
+      "type": "confianza",
+      "name": "Confianza",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icono",
+          "label": "Icono",
+          "options": [
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "check_circulo",
+              "label": "Check en círculo"
+            },
+            {
+              "value": "escudo_check",
+              "label": "Escudo con check"
+            },
+            {
+              "value": "camion",
+              "label": "Camión"
+            },
+            {
+              "value": "caja",
+              "label": "Caja"
+            },
+            {
+              "value": "candado",
+              "label": "Candado"
+            },
+            {
+              "value": "ciclo",
+              "label": "Devolución"
+            },
+            {
+              "value": "chat",
+              "label": "Chat"
+            },
+            {
+              "value": "hoja",
+              "label": "Hoja"
+            },
+            {
+              "value": "luna",
+              "label": "Luna"
+            },
+            {
+              "value": "estrella",
+              "label": "Estrella"
+            },
+            {
+              "value": "regalo",
+              "label": "Regalo"
+            },
+            {
+              "value": "corazon",
+              "label": "Corazón"
+            },
+            {
+              "value": "reloj",
+              "label": "Reloj"
+            },
+            {
+              "value": "tarjeta",
+              "label": "Tarjeta"
+            },
+            {
+              "value": "info",
+              "label": "Info"
+            },
+            {
+              "value": "almohada",
+              "label": "Almohada"
+            },
+            {
+              "value": "ninguno",
+              "label": "Ninguno"
+            }
+          ],
+          "default": "escudo_check"
+        },
+        {
+          "type": "text",
+          "id": "titulo",
+          "label": "Título",
+          "default": "Pago seguro"
+        },
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "Tus datos van cifrados."
+        }
+      ]
+    },
+    {
+      "type": "red",
+      "name": "Red social",
+      "settings": [
+        {
+          "type": "select",
+          "id": "red",
+          "label": "Red",
+          "options": [
+            {
+              "value": "instagram",
+              "label": "Instagram"
+            },
+            {
+              "value": "tiktok",
+              "label": "TikTok"
+            },
+            {
+              "value": "facebook",
+              "label": "Facebook"
+            },
+            {
+              "value": "youtube",
+              "label": "YouTube"
+            },
+            {
+              "value": "pinterest",
+              "label": "Pinterest"
+            }
+          ],
+          "default": "instagram"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Enlace",
+          "info": "Sin enlace, no se muestra"
+        }
+      ]
+    },
+    {
+      "type": "legal",
+      "name": "Enlace legal",
+      "settings": [
+        {
+          "type": "select",
+          "id": "tipo",
+          "label": "Página",
+          "options": [
+            {
+              "value": "privacidad",
+              "label": "Privacidad"
+            },
+            {
+              "value": "devoluciones",
+              "label": "Devoluciones"
+            },
+            {
+              "value": "envio",
+              "label": "Envíos"
+            },
+            {
+              "value": "terminos",
+              "label": "Términos"
+            },
+            {
+              "value": "contacto",
+              "label": "Contacto"
+            },
+            {
+              "value": "otro",
+              "label": "Otro"
+            }
+          ],
+          "default": "privacidad"
+        },
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "Privacidad"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Enlace",
+          "info": "Vacío = usa la política de tu tienda"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 30,
+  "presets": [
+    {
+      "name": "Cervia Footer",
+      "blocks": [
+        {
+          "type": "promesa",
+          "settings": {
+            "icono": "camion",
+            "texto": "Envío gratis a toda España"
+          }
+        },
+        {
+          "type": "promesa",
+          "settings": {
+            "icono": "luna",
+            "texto": "[Días] noches de prueba"
+          }
+        },
+        {
+          "type": "promesa",
+          "settings": {
+            "icono": "candado",
+            "texto": "Pago 100 % seguro"
+          }
+        },
+        {
+          "type": "promesa",
+          "settings": {
+            "icono": "almohada",
+            "texto": "Memory foam con contorno"
+          }
+        },
+        {
+          "type": "promesa",
+          "settings": {
+            "icono": "ciclo",
+            "texto": "Devolución fácil"
+          }
+        },
+        {
+          "type": "confianza",
+          "settings": {
+            "icono": "camion",
+            "titulo": "Envío gratis",
+            "texto": "Preparamos tu pedido en 1–3 días laborables."
+          }
+        },
+        {
+          "type": "confianza",
+          "settings": {
+            "icono": "ciclo",
+            "titulo": "Prueba sin riesgo",
+            "texto": "[Días] noches para decidir con calma."
+          }
+        },
+        {
+          "type": "confianza",
+          "settings": {
+            "icono": "escudo_check",
+            "titulo": "Pago seguro",
+            "texto": "Tarjeta, PayPal, Bizum y más, con cifrado."
+          }
+        },
+        {
+          "type": "confianza",
+          "settings": {
+            "icono": "chat",
+            "titulo": "Te ayudamos",
+            "texto": "Escríbenos a [tu email] y te respondemos."
+          }
+        },
+        {
+          "type": "red",
+          "settings": {
+            "red": "instagram"
+          }
+        },
+        {
+          "type": "red",
+          "settings": {
+            "red": "tiktok"
+          }
+        },
+        {
+          "type": "legal",
+          "settings": {
+            "tipo": "privacidad",
+            "texto": "Privacidad"
+          }
+        },
+        {
+          "type": "legal",
+          "settings": {
+            "tipo": "devoluciones",
+            "texto": "Devoluciones"
+          }
+        },
+        {
+          "type": "legal",
+          "settings": {
+            "tipo": "envio",
+            "texto": "Envíos"
+          }
+        },
+        {
+          "type": "legal",
+          "settings": {
+            "tipo": "terminos",
+            "texto": "Términos"
+          }
+        },
+        {
+          "type": "legal",
+          "settings": {
+            "tipo": "contacto",
+            "texto": "Contacto"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

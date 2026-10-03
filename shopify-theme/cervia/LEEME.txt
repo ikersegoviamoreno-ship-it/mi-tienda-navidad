@@ -1,0 +1,32 @@
+CERVIA - ARCHIVOS DEL TEMA (Dawn)
+
+Trabaja SOLO en el tema "Cervia" (duplicado del Dawn sin tocar).
+Nunca pegues nada encima de otro archivo de Dawn, salvo main-product.liquid y theme.liquid.
+
+1) sections/main-product.liquid
+   -> En Editar codigo, abre sections/main-product.liquid (ya existe).
+      Ctrl+A, borra, pega este archivo y Guardar.
+
+2) Los otros 12 archivos de la carpeta "sections"
+   -> sections -> Anadir nueva seccion -> escribe el nombre SIN ".liquid"
+      (por ejemplo: cervia-header), borra lo que trae, pega y Guardar.
+      Orden: cervia-header, cervia-confianza, cervia-problema, cervia-posturas,
+      cervia-beneficios, cervia-comparativa, cervia-testimonios, cervia-garantia,
+      cervia-faq, cervia-cta-final, cervia-footer, cervia-barra-compra
+
+3) assets/cervia-carrito.css
+   -> assets -> Anadir un nuevo recurso -> Crear en blanco -> tipo .css,
+      nombre: cervia-carrito. Pega y Guardar.
+
+4) layout/theme.liquid  (pegar justo encima de </head> y Guardar)
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+<style>:root{--font-heading:'DM Sans',sans-serif;--font-body:'DM Sans',sans-serif;}</style>
+{{ 'cervia-carrito.css' | asset_url | stylesheet_tag }}
+
+5) logos
+   -> cervia-logo.png: subelo en la seccion Cervia Header.
+   -> cervia-logo-claro.png: subelo en la seccion Cervia Footer.
+   -> cervia-logo.svg: para redes o imprenta.

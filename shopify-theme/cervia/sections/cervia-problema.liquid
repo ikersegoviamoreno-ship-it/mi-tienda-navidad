@@ -1,0 +1,611 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} { content-visibility: auto !important; contain-intrinsic-size: auto 700px !important; }
+  #shopify-section-{{ section.id }} .cervia-s {
+    --c-fondo: {{ section.settings.color_fondo }}; --c-fondo-2: {{ section.settings.color_fondo_2 }}; --angulo: {{ section.settings.angulo }}deg;
+    --c-texto: {{ section.settings.color_texto }}; --c-suave: {{ section.settings.color_suave }}; --c-acento: {{ section.settings.color_acento }};
+    --c-tarjeta: {{ section.settings.color_tarjeta }}; --c-borde: {{ section.settings.color_borde }};
+    --radius: {{ section.settings.radius }}px; --ancho: {{ section.settings.ancho }}px; --lateral: {{ section.settings.lateral_movil }}px;
+    --h2: {{ section.settings.tam_titulo_movil }}px; --sub: {{ section.settings.tam_sub_movil }}px; --ease: cubic-bezier(.22,.8,.35,1);
+    --gap: 12px; --pad-card: 20px; --h3: 18px; --cuerpo: 16px; --icono: 24px;
+    padding-top: {{ section.settings.padding_superior_movil }}px !important; padding-bottom: {{ section.settings.padding_inferior_movil }}px !important;
+    background: {% if section.settings.gradiente %}linear-gradient(var(--angulo), var(--c-fondo), var(--c-fondo-2)){% else %}var(--c-fondo){% endif %} !important;
+    color: var(--c-texto) !important; font-family: var(--font-body, var(--font-body-family)) !important; scroll-margin-top: 16px !important;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .cervia-s { --h2: {{ section.settings.tam_titulo }}px; --sub: {{ section.settings.tam_sub }}px; --lateral: 40px; --gap: 24px; --pad-card: 24px; --h3: 20px; --cuerpo: 17px; --icono: 28px; padding-top: {{ section.settings.padding_superior }}px !important; padding-bottom: {{ section.settings.padding_inferior }}px !important; }
+    #shopify-section-{{ section.id }} .cervia-s.is-oculto-escritorio { display: none !important; }
+  }
+  @media screen and (max-width: 749px) { #shopify-section-{{ section.id }} .cervia-s.is-oculto-movil { display: none !important; } }
+  #shopify-section-{{ section.id }} .cervia-s *, #shopify-section-{{ section.id }} .cervia-s *::before, #shopify-section-{{ section.id }} .cervia-s *::after { box-sizing: border-box !important; }
+  #shopify-section-{{ section.id }} .cervia-s :where(p, h2, h3, ul, ol, figure) { margin: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-s__contenedor { max-width: var(--ancho) !important; margin-inline: auto !important; padding-inline: var(--lateral) !important; }
+  #shopify-section-{{ section.id }} .cervia-s__cabecera { text-align: {{ section.settings.alin_cabecera }} !important; max-width: {{ section.settings.ancho_titulo }}px !important; margin-bottom: 28px !important; {% if section.settings.alin_cabecera == 'center' %}margin-inline: auto !important;{% elsif section.settings.alin_cabecera == 'right' %}margin-left: auto !important;{% endif %} }
+  #shopify-section-{{ section.id }} .cervia-s__eyebrow { font-size: 12px !important; font-weight: 600 !important; letter-spacing: .08em !important; text-transform: uppercase !important; color: var(--c-acento) !important; margin-bottom: 10px !important; }
+  #shopify-section-{{ section.id }} .cervia-s__titulo { font-family: var(--font-heading, var(--font-heading-family)) !important; font-size: var(--h2) !important; font-weight: 600 !important; line-height: 1.15 !important; letter-spacing: {{ section.settings.espaciado_letras }}px !important; color: var(--c-texto) !important; overflow-wrap: anywhere !important; min-width: 0 !important; }
+  #shopify-section-{{ section.id }} .cervia-s__titulo span { color: var(--c-acento) !important; }
+  #shopify-section-{{ section.id }} .cervia-s__sub { margin-top: 12px !important; font-size: var(--sub) !important; line-height: 1.5 !important; color: var(--c-suave) !important; }
+  #shopify-section-{{ section.id }} .cervia-i { width: var(--icono) !important; height: var(--icono) !important; fill: none !important; stroke: currentColor !important; stroke-width: 1.75 !important; stroke-linecap: round !important; stroke-linejoin: round !important; flex-shrink: 0 !important; display: block !important; }
+  #shopify-section-{{ section.id }} .cervia-s [hidden] { display: none !important; }
+  #shopify-section-{{ section.id }} .cervia-s :focus-visible { outline: 2px solid var(--c-acento) !important; outline-offset: 2px !important; }
+  #shopify-section-{{ section.id }} .cervia-s.is-anim .cervia-anim { opacity: 0 !important; transition: opacity .6s var(--ease), transform .6s var(--ease) !important; }
+  #shopify-section-{{ section.id }} .cervia-s.is-anim.is-slide .cervia-anim { transform: translateY(20px) !important; }
+  #shopify-section-{{ section.id }} .cervia-s.is-anim.is-visible .cervia-anim { opacity: 1 !important; transform: none !important; }
+  #shopify-section-{{ section.id }} .cervia-media { position: relative !important; overflow: hidden !important; border-radius: var(--radius) !important; background: color-mix(in srgb, var(--c-borde) 45%, transparent) !important; }
+  #shopify-section-{{ section.id }} .cervia-media img, #shopify-section-{{ section.id }} .cervia-media .placeholder-svg { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+  #shopify-section-{{ section.id }} .cervia-media__guia { position: absolute !important; inset-inline: 12px !important; bottom: 12px !important; padding: 8px 12px !important; border-radius: 8px !important; background: color-mix(in srgb, var(--c-texto) 80%, transparent) !important; color: var(--c-fondo) !important; font-size: 13px !important; line-height: 1.3 !important; text-align: center !important; pointer-events: none !important; }
+  @media (prefers-reduced-motion: reduce) { #shopify-section-{{ section.id }} .cervia-s * { transition-duration: .01ms !important; } #shopify-section-{{ section.id }} .cervia-s.is-anim .cervia-anim { opacity: 1 !important; transform: none !important; } }
+  #shopify-section-{{ section.id }} .cervia-problema__grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: var(--gap) !important; }
+  @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-problema__grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+  #shopify-section-{{ section.id }} .cervia-problema__col { padding: var(--pad-card) !important; border-radius: var(--radius) !important; border: 1px solid var(--c-borde) !important; background: var(--c-tarjeta) !important; display: grid !important; align-content: start !important; gap: 16px !important; height: 100% !important; }
+  #shopify-section-{{ section.id }} .cervia-problema__col.is-con { background: {{ section.settings.color_con_fondo }} !important; border-color: {{ section.settings.color_con_fondo }} !important; color: {{ section.settings.color_con_texto }} !important; }
+  #shopify-section-{{ section.id }} .cervia-problema__h { font-size: var(--h3) !important; font-weight: 600 !important; line-height: 1.25 !important; }
+  #shopify-section-{{ section.id }} .cervia-problema__lista { list-style: none !important; padding: 0 !important; display: grid !important; gap: 12px !important; }
+  #shopify-section-{{ section.id }} .cervia-problema__item { display: flex !important; align-items: flex-start !important; gap: 12px !important; font-size: var(--cuerpo) !important; line-height: 1.45 !important; }
+  #shopify-section-{{ section.id }} .cervia-problema__marca { width: 26px !important; height: 26px !important; border-radius: 50% !important; display: grid !important; place-items: center !important; flex-shrink: 0 !important; background: color-mix(in srgb, var(--c-suave) 16%, transparent) !important; color: var(--c-suave) !important; }
+  #shopify-section-{{ section.id }} .is-con .cervia-problema__marca { background: color-mix(in srgb, {{ section.settings.color_con_texto }} 18%, transparent) !important; color: {{ section.settings.color_con_texto }} !important; }
+  #shopify-section-{{ section.id }} .cervia-problema__marca svg { width: 14px !important; height: 14px !important; fill: none !important; stroke: currentColor !important; stroke-width: 2.25 !important; stroke-linecap: round !important; }
+  #shopify-section-{{ section.id }} .cervia-problema__col .cervia-media { aspect-ratio: 16 / 10 !important; }
+{%- endstyle -%}
+{%- liquid
+  assign sec_ancla = 'cervia-' | append: section.id
+  if section.settings.ancla != blank
+    assign sec_ancla = section.settings.ancla
+  endif
+-%}
+<section id="{{ sec_ancla | escape }}" class="cervia-s cervia-problema{% if section.settings.ocultar_movil %} is-oculto-movil{% endif %}{% if section.settings.ocultar_escritorio %} is-oculto-escritorio{% endif %}{% if section.settings.animacion == 'slide' %} is-slide{% endif %} {{ section.settings.clases | escape }}" data-anim="{{ section.settings.animacion }}">
+  <div class="cervia-s__contenedor">
+    {%- if section.settings.titulo != blank or section.settings.eyebrow != blank -%}
+      <div class="cervia-s__cabecera cervia-anim">
+        {%- if section.settings.mostrar_eyebrow and section.settings.eyebrow != blank -%}<p class="cervia-s__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.titulo != blank -%}<{{ section.settings.etiqueta }} class="cervia-s__titulo">{{ section.settings.titulo }}</{{ section.settings.etiqueta }}>{%- endif -%}
+        {%- if section.settings.mostrar_sub and section.settings.sub != blank -%}<p class="cervia-s__sub">{{ section.settings.sub }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="cervia-problema__grid cervia-anim">
+      <div class="cervia-problema__col is-sin">
+        {%- if section.settings.mostrar_imagen_sin -%}
+          <div class="cervia-media">
+  {%- if section.settings.imagen_sin != blank -%}
+    {{ section.settings.imagen_sin | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 33vw, 100vw', widths: '375, 550, 750, 1100, 1600' }}
+  {%- else -%}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- if request.design_mode and section.settings.guia_sin != blank -%}<span class="cervia-media__guia">{{ section.settings.guia_sin }}</span>{%- endif -%}
+  {%- endif -%}
+</div>
+        {%- endif -%}
+        <p class="cervia-problema__h">{{ section.settings.titulo_sin }}</p>
+        <ul class="cervia-problema__lista" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.columna == 'sin' -%}
+              <li class="cervia-problema__item" {{ block.shopify_attributes }}>
+                <span class="cervia-problema__marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg></span>
+                <span>{{ block.settings.texto }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="cervia-problema__col is-con">
+        {%- if section.settings.mostrar_imagen_con -%}
+          <div class="cervia-media">
+  {%- if section.settings.imagen_con != blank -%}
+    {{ section.settings.imagen_con | image_url: width: 1600 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 33vw, 100vw', widths: '375, 550, 750, 1100, 1600' }}
+  {%- else -%}
+    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- if request.design_mode and section.settings.guia_con != blank -%}<span class="cervia-media__guia">{{ section.settings.guia_con }}</span>{%- endif -%}
+  {%- endif -%}
+</div>
+        {%- endif -%}
+        <p class="cervia-problema__h">{{ section.settings.titulo_con }}</p>
+        <ul class="cervia-problema__lista" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.columna == 'con' -%}
+              <li class="cervia-problema__item" {{ block.shopify_attributes }}>
+                <span class="cervia-problema__marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                <span>{{ block.settings.texto }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  (() => {
+    const s = document.querySelector('#shopify-section-{{ section.id }} .cervia-s');
+    if (!s || s.dataset.anim === 'ninguna' || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.Shopify && Shopify.designMode) return;
+    s.classList.add('is-anim');
+    const io = new IntersectionObserver((e) => { if (e[0].isIntersecting) { s.classList.add('is-visible'); io.disconnect(); } }, { threshold: 0.15 });
+    io.observe(s);
+  })();
+</script>
+{% schema %}
+{
+  "name": "Cervia Problema",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Cabecera"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_eyebrow",
+      "label": "Mostrar frase superior",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Frase superior",
+      "default": "El problema"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "titulo",
+      "label": "Título",
+      "default": "¿Te levantas con el <span>cuello cargado</span>?",
+      "info": "Pon entre <span> la palabra que quieras destacar con el color de acento"
+    },
+    {
+      "type": "select",
+      "id": "etiqueta",
+      "label": "Etiqueta del título",
+      "options": [
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "div",
+          "label": "Texto"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_sub",
+      "label": "Mostrar subtítulo",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sub",
+      "label": "Subtítulo",
+      "default": "Muchas veces no es el cuello: es la almohada que lo dobla toda la noche."
+    },
+    {
+      "type": "select",
+      "id": "alin_cabecera",
+      "label": "Alineación de la cabecera",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "tam_titulo",
+      "label": "Título (escritorio)",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_titulo_movil",
+      "label": "Título (móvil)",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "default": 26,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_sub",
+      "label": "Subtítulo (escritorio)",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "default": 17,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "tam_sub_movil",
+      "label": "Subtítulo (móvil)",
+      "min": 13,
+      "max": 22,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "ancho_titulo",
+      "label": "Ancho máximo del título",
+      "min": 400,
+      "max": 1000,
+      "step": 20,
+      "default": 760,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "espaciado_letras",
+      "label": "Espaciado de letras del título",
+      "min": -2,
+      "max": 2,
+      "step": 0.5,
+      "default": -0.5
+    },
+    {
+      "type": "header",
+      "content": "Columnas"
+    },
+    {
+      "type": "text",
+      "id": "titulo_sin",
+      "label": "Título columna 1",
+      "default": "Con una almohada normal"
+    },
+    {
+      "type": "text",
+      "id": "titulo_con",
+      "label": "Título columna 2",
+      "default": "Con Cervia"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_imagen_sin",
+      "label": "Imagen en columna 1",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "imagen_sin",
+      "label": "Imagen columna 1",
+      "info": "Persona tocándose el cuello al despertar"
+    },
+    {
+      "type": "text",
+      "id": "guia_sin",
+      "label": "Guía de la imagen 1",
+      "default": "Aquí va una foto de alguien tocándose el cuello al despertar"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_imagen_con",
+      "label": "Imagen en columna 2",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "imagen_con",
+      "label": "Imagen columna 2",
+      "info": "Persona durmiendo de lado sobre la almohada"
+    },
+    {
+      "type": "text",
+      "id": "guia_con",
+      "label": "Guía de la imagen 2",
+      "default": "Aquí va una foto durmiendo de lado sobre Cervia"
+    },
+    {
+      "type": "color",
+      "id": "color_con_fondo",
+      "label": "Fondo columna 2",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "color_con_texto",
+      "label": "Texto columna 2",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "color_fondo",
+      "label": "Fondo",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "checkbox",
+      "id": "gradiente",
+      "label": "Fondo con degradado",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color_fondo_2",
+      "label": "Segundo color del degradado",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "range",
+      "id": "angulo",
+      "label": "Ángulo del degradado",
+      "min": 0,
+      "max": 360,
+      "step": 15,
+      "default": 180,
+      "unit": "°"
+    },
+    {
+      "type": "color",
+      "id": "color_texto",
+      "label": "Texto",
+      "default": "#5C554D"
+    },
+    {
+      "type": "color",
+      "id": "color_suave",
+      "label": "Texto secundario",
+      "default": "#7A7268"
+    },
+    {
+      "type": "color",
+      "id": "color_acento",
+      "label": "Acento",
+      "default": "#7A6A57"
+    },
+    {
+      "type": "color",
+      "id": "color_tarjeta",
+      "label": "Fondo de tarjetas",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "color_borde",
+      "label": "Bordes",
+      "default": "#E8DDCC"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "range",
+      "id": "ancho",
+      "label": "Ancho máximo del contenido",
+      "min": 900,
+      "max": 1800,
+      "step": 20,
+      "default": 1400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "lateral_movil",
+      "label": "Margen lateral en móvil",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "Radio de esquinas",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_superior",
+      "label": "Espacio superior (escritorio)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_inferior",
+      "label": "Espacio inferior (escritorio)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_superior_movil",
+      "label": "Espacio superior (móvil)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_inferior_movil",
+      "label": "Espacio inferior (móvil)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Avanzado"
+    },
+    {
+      "type": "text",
+      "id": "ancla",
+      "label": "Id de ancla",
+      "info": "Para enlazar a esta sección con #id"
+    },
+    {
+      "type": "select",
+      "id": "animacion",
+      "label": "Animación de entrada",
+      "options": [
+        {
+          "value": "ninguna",
+          "label": "Ninguna"
+        },
+        {
+          "value": "fade",
+          "label": "Aparecer"
+        },
+        {
+          "value": "slide",
+          "label": "Subir"
+        }
+      ],
+      "default": "fade"
+    },
+    {
+      "type": "checkbox",
+      "id": "ocultar_movil",
+      "label": "Ocultar en móvil",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "ocultar_escritorio",
+      "label": "Ocultar en escritorio",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "clases",
+      "label": "Clases CSS extra",
+      "info": "Solo si sabes lo que haces"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "punto",
+      "name": "Punto",
+      "settings": [
+        {
+          "type": "select",
+          "id": "columna",
+          "label": "Columna",
+          "options": [
+            {
+              "value": "sin",
+              "label": "Columna 1 (problema)"
+            },
+            {
+              "value": "con",
+              "label": "Columna 2 (solución)"
+            }
+          ],
+          "default": "sin"
+        },
+        {
+          "type": "text",
+          "id": "texto",
+          "label": "Texto",
+          "default": "Te despiertas con el cuello rígido"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Cervia Problema",
+      "blocks": [
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "Te despiertas con el cuello rígido"
+          }
+        },
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "Das vueltas buscando la postura"
+          }
+        },
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "El hombro queda aplastado de lado"
+          }
+        },
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "Se aplasta a mitad de noche"
+          }
+        },
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "El contorno sostiene la curva del cuello"
+          }
+        },
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "Una altura para cada postura"
+          }
+        },
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "Hueco para el hombro al dormir de lado"
+          }
+        },
+        {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "Recupera su forma cada mañana"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

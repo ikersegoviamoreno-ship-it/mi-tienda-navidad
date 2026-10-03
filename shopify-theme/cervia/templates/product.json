@@ -1,0 +1,557 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "cervia_titulo": {
+          "type": "cervia_titulo",
+          "settings": {}
+        },
+        "cervia_precio": {
+          "type": "cervia_precio",
+          "settings": {}
+        },
+        "cervia_checks": {
+          "type": "cervia_checks",
+          "settings": {}
+        },
+        "cervia_separador": {
+          "type": "cervia_separador",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "cervia_packs": {
+          "type": "cervia_packs",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "cervia_microcopy": {
+          "type": "cervia_microcopy",
+          "settings": {}
+        },
+        "cervia_pagos": {
+          "type": "cervia_pagos",
+          "settings": {}
+        },
+        "cervia_garantias": {
+          "type": "cervia_garantias",
+          "settings": {}
+        },
+        "cervia_envio": {
+          "type": "cervia_envio",
+          "settings": {}
+        },
+        "cervia_desplegables": {
+          "type": "cervia_desplegables",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "cervia_titulo",
+        "cervia_precio",
+        "cervia_checks",
+        "cervia_separador",
+        "variant_picker",
+        "cervia_packs",
+        "quantity_selector",
+        "buy_buttons",
+        "cervia_microcopy",
+        "cervia_pagos",
+        "cervia_garantias",
+        "cervia_envio",
+        "cervia_desplegables"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "confianza": {
+      "type": "cervia-confianza",
+      "settings": {},
+      "blocks": {
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "icono": "camion",
+            "titulo": "Envío gratis",
+            "texto": "A toda España"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icono": "luna",
+            "titulo": "[Días] noches de prueba",
+            "texto": "Sin riesgo"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icono": "candado",
+            "titulo": "Pago seguro",
+            "texto": "Datos cifrados"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icono": "hoja",
+            "titulo": "Funda lavable",
+            "texto": "Se quita y se lava"
+          }
+        }
+      },
+      "block_order": [
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3"
+      ]
+    },
+    "problema": {
+      "type": "cervia-problema",
+      "settings": {},
+      "blocks": {
+        "punto_0": {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "Te despiertas con el cuello rígido"
+          }
+        },
+        "punto_1": {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "Das vueltas buscando la postura"
+          }
+        },
+        "punto_2": {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "El hombro queda aplastado de lado"
+          }
+        },
+        "punto_3": {
+          "type": "punto",
+          "settings": {
+            "columna": "sin",
+            "texto": "Se aplasta a mitad de noche"
+          }
+        },
+        "punto_4": {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "El contorno sostiene la curva del cuello"
+          }
+        },
+        "punto_5": {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "Una altura para cada postura"
+          }
+        },
+        "punto_6": {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "Hueco para el hombro al dormir de lado"
+          }
+        },
+        "punto_7": {
+          "type": "punto",
+          "settings": {
+            "columna": "con",
+            "texto": "Recupera su forma cada mañana"
+          }
+        }
+      },
+      "block_order": [
+        "punto_0",
+        "punto_1",
+        "punto_2",
+        "punto_3",
+        "punto_4",
+        "punto_5",
+        "punto_6",
+        "punto_7"
+      ]
+    },
+    "posturas": {
+      "type": "cervia-posturas",
+      "settings": {},
+      "blocks": {
+        "postura_0": {
+          "type": "postura",
+          "settings": {
+            "titulo": "De lado",
+            "texto": "Apoya la cabeza en el borde alto: rellena el hueco entre hombro y oreja y el cuello queda recto.",
+            "guia": "Aquí va una foto durmiendo de lado sobre Cervia"
+          }
+        },
+        "postura_1": {
+          "type": "postura",
+          "settings": {
+            "titulo": "Boca arriba",
+            "texto": "El centro rebajado acoge la cabeza y el borde bajo sostiene la curva de la nuca.",
+            "guia": "Aquí va una foto durmiendo boca arriba sobre Cervia"
+          }
+        },
+        "postura_2": {
+          "type": "postura",
+          "settings": {
+            "titulo": "Boca abajo",
+            "texto": "Usa la zona central, la más baja, para que el cuello gire lo menos posible.",
+            "guia": "Aquí va una foto durmiendo boca abajo sobre Cervia"
+          }
+        }
+      },
+      "block_order": [
+        "postura_0",
+        "postura_1",
+        "postura_2"
+      ]
+    },
+    "beneficios": {
+      "type": "cervia-beneficios",
+      "settings": {},
+      "blocks": {
+        "beneficio_0": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "almohada",
+            "titulo": "Contorno ergonómico",
+            "texto": "Diseñada para mantener cuello y columna en línea mientras duermes."
+          }
+        },
+        "beneficio_1": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "luna",
+            "titulo": "Para cualquier postura",
+            "texto": "De lado, boca arriba o boca abajo: cada zona tiene su altura."
+          }
+        },
+        "beneficio_2": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "hoja",
+            "titulo": "Memory foam que se adapta",
+            "texto": "Se amolda poco a poco al calor y al peso de tu cabeza."
+          }
+        },
+        "beneficio_3": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "ciclo",
+            "titulo": "Recupera su forma",
+            "texto": "Cada mañana vuelve a su forma original, sin aplastarse."
+          }
+        },
+        "beneficio_4": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "check_circulo",
+            "titulo": "Funda lavable",
+            "texto": "Se quita en un momento y va a la lavadora a 30 °C."
+          }
+        },
+        "beneficio_5": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "corazon",
+            "titulo": "Tacto suave",
+            "texto": "Funda agradable al tacto para dormir más a gusto."
+          }
+        }
+      },
+      "block_order": [
+        "beneficio_0",
+        "beneficio_1",
+        "beneficio_2",
+        "beneficio_3",
+        "beneficio_4",
+        "beneficio_5"
+      ]
+    },
+    "comparativa": {
+      "type": "cervia-comparativa",
+      "settings": {},
+      "blocks": {
+        "fila_0": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Sostiene la curva del cuello",
+            "marca": "si",
+            "marca_texto": "Sí",
+            "otros": "no",
+            "otros_texto": "No"
+          }
+        },
+        "fila_1": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Una altura para cada postura",
+            "marca": "si",
+            "marca_texto": "Sí",
+            "otros": "no",
+            "otros_texto": "No"
+          }
+        },
+        "fila_2": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Hueco para el hombro",
+            "marca": "si",
+            "marca_texto": "Sí",
+            "otros": "no",
+            "otros_texto": "No"
+          }
+        },
+        "fila_3": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Recupera su forma",
+            "marca": "si",
+            "marca_texto": "Sí",
+            "otros": "texto",
+            "otros_texto": "Se aplasta"
+          }
+        },
+        "fila_4": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Funda lavable",
+            "marca": "si",
+            "marca_texto": "Sí",
+            "otros": "texto",
+            "otros_texto": "Depende"
+          }
+        },
+        "fila_5": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Prueba en casa sin riesgo",
+            "marca": "texto",
+            "marca_texto": "[Días] noches",
+            "otros": "no",
+            "otros_texto": "No"
+          }
+        }
+      },
+      "block_order": [
+        "fila_0",
+        "fila_1",
+        "fila_2",
+        "fila_3",
+        "fila_4",
+        "fila_5"
+      ]
+    },
+    "testimonios": {
+      "type": "cervia-testimonios",
+      "settings": {},
+      "blocks": {
+        "resena_0": {
+          "type": "resena",
+          "settings": {
+            "texto": "Las primeras noches se me hizo rara, pero a la semana ya me levantaba con el cuello mucho menos cargado.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        "resena_1": {
+          "type": "resena",
+          "settings": {
+            "texto": "Duermo de lado y por fin el hombro no se queda encajado. La funda se lava sin problema.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        "resena_2": {
+          "type": "resena",
+          "settings": {
+            "texto": "Llegó envasada y tardó un día en coger forma. Algo firme al principio, ahora no la cambio.",
+            "estrellas": 4,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        "resena_3": {
+          "type": "resena",
+          "settings": {
+            "texto": "Compré dos, una para mí y otra para mi pareja. Los dos estamos encantados con el cambio.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        "resena_4": {
+          "type": "resena",
+          "settings": {
+            "texto": "Me sorprendió lo bien que mantiene la forma. Nada que ver con la de fibra que tenía antes.",
+            "estrellas": 5,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        },
+        "resena_5": {
+          "type": "resena",
+          "settings": {
+            "texto": "Buena almohada. Recomiendo airearla al sacarla porque el primer día huele un poco a nuevo.",
+            "estrellas": 4,
+            "nombre": "[Nombre del cliente]",
+            "fecha": "[Fecha]"
+          }
+        }
+      },
+      "block_order": [
+        "resena_0",
+        "resena_1",
+        "resena_2",
+        "resena_3",
+        "resena_4",
+        "resena_5"
+      ]
+    },
+    "garantia": {
+      "type": "cervia-garantia",
+      "settings": {}
+    },
+    "faq": {
+      "type": "cervia-faq",
+      "settings": {},
+      "blocks": {
+        "pregunta_0": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Sirve si duermo de lado o boca abajo?",
+            "respuesta": "<p>Sí. De lado usas el borde alto, boca arriba el centro rebajado y boca abajo la zona más baja, para girar menos el cuello.</p>"
+          }
+        },
+        "pregunta_1": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cuánto se tarda en acostumbrarse?",
+            "respuesta": "<p>Lo normal es notarla distinta las primeras noches. La mayoría se adapta en una o dos semanas, mientras el cuello se acostumbra a ir recto.</p>"
+          }
+        },
+        "pregunta_2": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Es normal que huela al sacarla?",
+            "respuesta": "<p>Sí, pasa con toda la espuma viscoelástica. Viene envasada al vacío: déjala airear 24–48 h y el olor desaparece mientras recupera su forma.</p>"
+          }
+        },
+        "pregunta_3": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Qué medidas tiene?",
+            "respuesta": "<p>[Medidas exactas que da tu proveedor, por ejemplo 60 × 35 × 11 cm]. Cabe en una funda de almohada estándar.</p>"
+          }
+        },
+        "pregunta_4": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Se puede lavar?",
+            "respuesta": "<p>La funda sí: se quita y va a la lavadora a 30 °C. La espuma no se mete en la lavadora; límpiala con un paño húmedo y déjala secar al aire.</p>"
+          }
+        },
+        "pregunta_5": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cuándo me llega?",
+            "respuesta": "<p>El envío es gratis. Preparamos el pedido en 1–3 días laborables y lo recibes en [días] días laborables.</p>"
+          }
+        },
+        "pregunta_6": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Es un pago único?",
+            "respuesta": "<p>Sí. Pagas una vez y ya está: sin suscripciones ni cargos sorpresa.</p>"
+          }
+        },
+        "pregunta_7": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Y si no me convence?",
+            "respuesta": "<p>Tienes [días] noches para probarla. Escríbenos a [tu email] y te explicamos cómo devolverla.</p>"
+          }
+        },
+        "pregunta_8": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Es seguro pagar aquí?",
+            "respuesta": "<p>Sí. El pago se procesa con cifrado y puedes usar tarjeta, PayPal, Apple Pay, Google Pay o Bizum.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "pregunta_0",
+        "pregunta_1",
+        "pregunta_2",
+        "pregunta_3",
+        "pregunta_4",
+        "pregunta_5",
+        "pregunta_6",
+        "pregunta_7",
+        "pregunta_8"
+      ]
+    },
+    "cta-final": {
+      "type": "cervia-cta-final",
+      "settings": {}
+    },
+    "barra-compra": {
+      "type": "cervia-barra-compra",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "confianza",
+    "problema",
+    "posturas",
+    "beneficios",
+    "comparativa",
+    "testimonios",
+    "garantia",
+    "faq",
+    "cta-final",
+    "barra-compra"
+  ]
+}
