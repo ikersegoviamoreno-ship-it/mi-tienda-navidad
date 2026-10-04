@@ -8,7 +8,9 @@
         "logo": "shopify://shop_images/cervia-logo-claro.png",
         "banda_titulo": "Cuida tu cuello desde hoy",
         "frase": "Descanso y alivio para tu cuello, cada día.",
-        "cta_texto": "Ver la almohada · [[precio]]"
+        "cta_texto": "Ver la almohada · [[precio]]",
+        "padding_superior_movil": 28,
+        "padding_inferior_movil": 28
       },
       "blocks": {
         "promesa_0": {

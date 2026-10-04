@@ -73,7 +73,8 @@
       #MainProduct-{{ section.id }} .product__media-list::-webkit-scrollbar { display: none !important; }
       #MainProduct-{{ section.id }} .product__media-item { flex: 0 0 100% !important; width: 100% !important; scroll-snap-align: start !important; padding: 0 !important; }
       #MainProduct-{{ section.id }} .product-media-container { border-radius: 0 !important; aspect-ratio: {{ section.settings.marca_galeria_ratio }} !important; }
-      #MainProduct-{{ section.id }} .product-media-container img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+      #MainProduct-{{ section.id }} .product-media-container { background: #FFFFFF !important; }
+      #MainProduct-{{ section.id }} .product-media-container img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
       #MainProduct-{{ section.id }} .slider-buttons, #MainProduct-{{ section.id }} .slider-counter { display: none !important; }
       #MainProduct-{{ section.id }} .thumbnail-slider { display: block !important; margin-top: 8px !important; overflow: hidden !important; }
       #MainProduct-{{ section.id }} .thumbnail-slider .slider-button { display: none !important; }

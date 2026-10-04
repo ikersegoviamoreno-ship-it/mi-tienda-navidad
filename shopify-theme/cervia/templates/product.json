@@ -428,7 +428,7 @@
         "marca_padding_superior": 36,
         "marca_padding_inferior": 48,
         "marca_padding_superior_movil": 0,
-        "marca_padding_inferior_movil": 32,
+        "marca_padding_inferior_movil": 16,
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "large",
@@ -518,8 +518,8 @@
         "radius": 12,
         "padding_superior": 32,
         "padding_inferior": 32,
-        "padding_superior_movil": 24,
-        "padding_inferior_movil": 24,
+        "padding_superior_movil": 16,
+        "padding_inferior_movil": 16,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -633,8 +633,8 @@
         "radius": 12,
         "padding_superior": 72,
         "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -736,8 +736,8 @@
         "radius": 12,
         "padding_superior": 72,
         "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -799,7 +799,8 @@
         "color_texto": "#1b1f5e",
         "color_acento": "#ef4423",
         "padding_superior": 48,
-        "padding_inferior": 48
+        "padding_inferior": 48,
+        "padding_movil": 20
       }
     },
     "beneficios": {
@@ -895,8 +896,8 @@
         "radius": 12,
         "padding_superior": 72,
         "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -1021,8 +1022,8 @@
         "radius": 12,
         "padding_superior": 72,
         "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -1090,8 +1091,8 @@
         "radius": 12,
         "padding_superior": 72,
         "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -1363,8 +1364,8 @@
         "radius": 12,
         "padding_superior": 40,
         "padding_inferior": 40,
-        "padding_superior_movil": 24,
-        "padding_inferior_movil": 24,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "resenas",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -1677,8 +1678,8 @@
         "margin_bottom": 0,
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 32,
+        "padding_bottom": 32,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "width": "page",
@@ -1803,8 +1804,8 @@
         "radius": 12,
         "padding_superior": 72,
         "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -1841,7 +1842,7 @@
         "banda_texto": "#fff8f2",
         "banda_acento": "#ffe3d6",
         "padding_caja": 56,
-        "padding_caja_movil": 28,
+        "padding_caja_movil": 20,
         "mostrar_pagos": true,
         "logo_visa": true,
         "logo_mastercard": true,
@@ -1889,8 +1890,8 @@
         "radius": 12,
         "padding_superior": 72,
         "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "",
         "animacion": "fade",
         "ocultar_movil": false,
@@ -2085,6 +2086,7 @@
         "resena_ae_10",
         "resena_ae_11"
       ],
+      "disabled": true,
       "settings": {
         "content_align": "center",
         "content_align_mobile": "center",
@@ -2162,8 +2164,8 @@
         "margin_bottom": 0,
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
-        "padding_top": 48,
-        "padding_bottom": 48,
+        "padding_top": 32,
+        "padding_bottom": 32,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "width": "page",
@@ -2171,53 +2173,6 @@
         "border_thickness": 0,
         "section_radius": 0,
         "lazy": true
-      },
-      "disabled": true
-    },
-    "resenas_judgeme": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "barra-compra": {
-      "type": "cervia-barra-compra",
-      "settings": {
-        "mostrar_movil": true,
-        "mostrar_escritorio": false,
-        "mostrar_miniatura": true,
-        "mostrar_titulo": true,
-        "titulo_corto": "",
-        "mostrar_tachado": true,
-        "usar_pack": true,
-        "posicion": "abajo",
-        "umbral": 1.2,
-        "cta_texto": "Comprar · [[precio]]",
-        "cta_accion": "carrito",
-        "cta_url": "",
-        "cta_cantidad": "1",
-        "cta_cargando": "Añadiendo…",
-        "cta_agotado": "Agotado",
-        "cta_alto": 56,
-        "cta_alto_movil": 52,
-        "cta_tam": 17,
-        "cta_tam_movil": 16,
-        "cta_radius": 30,
-        "cta_fondo": "#ef4423",
-        "cta_color": "#fff8f2",
-        "cta_borde": "#ef4423",
-        "cta_fondo_hover": "#c9321a",
-        "cta_color_hover": "#fff8f2",
-        "activar_tracking": true,
-        "color_fondo": "#fff8f2",
-        "color_texto": "#1b1f5e",
-        "color_borde": "#ffe3d6",
-        "sombra": true,
-        "ancho": 1400,
-        "padding_superior": 12,
-        "padding_inferior": 12,
-        "padding_superior_movil": 10,
-        "padding_inferior_movil": 10
       }
     },
     "opiniones_abajo": {
@@ -2230,7 +2185,7 @@
             "estrellas": 5,
             "texto": "Una almohada para el cuello absolutamente excelente, se duerme muy cómodamente con ella. Y el precio también es muy bueno. Llevo 3 semanas durmiendo con esta almohada todos los días, y puedo decir que es realmente buena.",
             "nombre": "M***l",
-            "fecha": "12 jul 2026 · AliExpress · artículo similar",
+            "fecha": "12 jul 2026",
             "verificado": false
           }
         },
@@ -2241,7 +2196,7 @@
             "estrellas": 5,
             "texto": "Envío muy rápido. Almohada tal como se describe. La mejor almohada para evitar dolores de cabeza relacionados con el cuello por la mañana.",
             "nombre": "Anónimo",
-            "fecha": "19 sep 2026 · AliExpress · artículo similar",
+            "fecha": "19 sep 2026",
             "verificado": false
           }
         },
@@ -2252,7 +2207,7 @@
             "estrellas": 5,
             "texto": "Muy bien fabricado. Tengo 4 hernias cervicales y puedo asegurar que cada noche que duermo con esta almohada el cuello se levanta \"reseteado\". Encantadísimo con ella. No he encontrado forros adicionales para ir lavando el original, usaré camisetas!!",
             "nombre": "j***r",
-            "fecha": "28 sep 2026 · AliExpress · artículo similar",
+            "fecha": "28 sep 2026",
             "verificado": false
           }
         },
@@ -2263,7 +2218,7 @@
             "estrellas": 5,
             "texto": "Almohada increíble, ya no tengo dolor de cuello y por fin duermo toda la noche.",
             "nombre": "B***i",
-            "fecha": "14 jul 2026 · AliExpress · artículo similar",
+            "fecha": "14 jul 2026",
             "verificado": false
           }
         },
@@ -2274,7 +2229,7 @@
             "estrellas": 5,
             "texto": "Envío rápido, el producto es válido y resistente. Excelente relación calidad-precio.",
             "nombre": "D***i",
-            "fecha": "01 oct 2026 · AliExpress · artículo similar",
+            "fecha": "01 oct 2026",
             "verificado": false
           }
         },
@@ -2285,7 +2240,7 @@
             "estrellas": 5,
             "texto": "Muy cómodo, excelente ajuste, muy satisfecho con la compra.",
             "nombre": "G***t",
-            "fecha": "20 jul 2026 · AliExpress · artículo similar",
+            "fecha": "20 jul 2026",
             "verificado": false
           }
         },
@@ -2296,7 +2251,7 @@
             "estrellas": 5,
             "texto": "Muy contenta con mi almohada, es suave y muy ligera para mis brazos y mi cuello... la recomiendo.",
             "nombre": "Anónimo",
-            "fecha": "17 sep 2026 · AliExpress · artículo similar",
+            "fecha": "17 sep 2026",
             "verificado": false
           }
         },
@@ -2307,7 +2262,7 @@
             "estrellas": 5,
             "texto": "Artículo tal como se describe - excelente precio - envío rápido. Vendedor recomendado.",
             "nombre": "M***i",
-            "fecha": "16 sep 2026 · AliExpress · artículo similar",
+            "fecha": "16 sep 2026",
             "verificado": false
           }
         },
@@ -2318,7 +2273,7 @@
             "estrellas": 5,
             "texto": "Muy bien hecho y coincide con lo anunciado.",
             "nombre": "Anónimo",
-            "fecha": "20 jul 2026 · AliExpress · artículo similar",
+            "fecha": "20 jul 2026",
             "verificado": false
           }
         },
@@ -2329,7 +2284,7 @@
             "estrellas": 5,
             "texto": "Mejor artículo que he comprado.",
             "nombre": "Anónimo",
-            "fecha": "28 jul 2026 · AliExpress · artículo similar",
+            "fecha": "28 jul 2026",
             "verificado": false
           }
         },
@@ -2340,7 +2295,7 @@
             "estrellas": 5,
             "texto": "Se ve bien de calidad, falta probarla. Es tal y como se describe. Vendedor 100% recomendable.",
             "nombre": "Anónimo",
-            "fecha": "AliExpress · artículo similar",
+            "fecha": "",
             "verificado": false
           }
         },
@@ -2351,7 +2306,7 @@
             "estrellas": 5,
             "texto": "¡Excelente producto, lo recomiendo! 👍😋",
             "nombre": "Anónimo",
-            "fecha": "AliExpress · artículo similar",
+            "fecha": "",
             "verificado": false
           }
         }
@@ -2373,10 +2328,10 @@
       "settings": {
         "mostrar_eyebrow": true,
         "eyebrow": "Opiniones de compradores",
-        "titulo": "Lo que dicen <span>quienes duermen con ella</span>",
+        "titulo": "Lo que dicen quienes duermen con ella",
         "etiqueta": "h2",
         "mostrar_sub": true,
-        "sub": "Reseñas reales de compradores de esta almohada en AliExpress (artículo similar).",
+        "sub": "Reseñas reales de compradores de esta almohada en Cervia.",
         "alin_cabecera": "center",
         "tam_titulo": 36,
         "tam_titulo_movil": 26,
@@ -2436,13 +2391,59 @@
         "radius": 12,
         "padding_superior": 40,
         "padding_inferior": 40,
-        "padding_superior_movil": 24,
-        "padding_inferior_movil": 24,
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
         "ancla": "opiniones",
         "animacion": "fade",
         "ocultar_movil": false,
         "ocultar_escritorio": false,
         "clases": ""
+      }
+    },
+    "resenas_judgeme": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "barra-compra": {
+      "type": "cervia-barra-compra",
+      "settings": {
+        "mostrar_movil": true,
+        "mostrar_escritorio": false,
+        "mostrar_miniatura": true,
+        "mostrar_titulo": true,
+        "titulo_corto": "",
+        "mostrar_tachado": true,
+        "usar_pack": true,
+        "posicion": "abajo",
+        "umbral": 1.2,
+        "cta_texto": "Comprar · [[precio]]",
+        "cta_accion": "carrito",
+        "cta_url": "",
+        "cta_cantidad": "1",
+        "cta_cargando": "Añadiendo…",
+        "cta_agotado": "Agotado",
+        "cta_alto": 56,
+        "cta_alto_movil": 52,
+        "cta_tam": 17,
+        "cta_tam_movil": 16,
+        "cta_radius": 30,
+        "cta_fondo": "#ef4423",
+        "cta_color": "#fff8f2",
+        "cta_borde": "#ef4423",
+        "cta_fondo_hover": "#c9321a",
+        "cta_color_hover": "#fff8f2",
+        "activar_tracking": true,
+        "color_fondo": "#fff8f2",
+        "color_texto": "#1b1f5e",
+        "color_borde": "#ffe3d6",
+        "sombra": true,
+        "ancho": 1400,
+        "padding_superior": 12,
+        "padding_inferior": 12,
+        "padding_superior_movil": 10,
+        "padding_inferior_movil": 10
       }
     }
   },

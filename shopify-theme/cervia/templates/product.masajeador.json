@@ -6,9 +6,9 @@
         "cervia_titulo": {
           "type": "cervia_titulo",
           "settings": {
-            "mostrar_valoracion": false,
             "eyebrow": "Adiós a la tensión de cuello y hombros",
-            "subtitulo": "Amasado 4D con calor, sin cables, para relajarte donde quieras"
+            "subtitulo": "Amasado 4D con calor, sin cables, para relajarte donde quieras",
+            "mostrar_valoracion": false
           }
         },
         "cervia_precio": {
@@ -24,8 +24,8 @@
             "texto_1": "Amasado 4D que imita unas manos",
             "texto_2": "Calor relajante con 2 niveles",
             "texto_3": "Sin cables: unos 70 min por carga",
-            "texto_4": "30 días para probarlo",
-            "mostrar_4": true
+            "mostrar_4": true,
+            "texto_4": "30 días para probarlo"
           }
         },
         "cervia_separador": {
@@ -42,19 +42,19 @@
         "cervia_packs": {
           "type": "cervia_packs",
           "settings": {
+            "pack1_precio": 0,
             "pack1_etiqueta": "1 masajeador",
             "pack1_sub": "Para ti",
-            "pack1_precio": 0,
+            "pack2_descuento": 10,
+            "pack2_precio": 0,
             "pack2_etiqueta": "2 masajeadores",
             "pack2_sub": "Uno para ti y otro para regalar",
             "pack2_badge": "Ahorra 10 %",
-            "pack2_precio": 0,
-            "pack2_descuento": 10,
+            "pack3_descuento": 15,
+            "pack3_precio": 0,
             "pack3_etiqueta": "3 masajeadores",
             "pack3_sub": "Para toda la familia",
             "pack3_badge": "Ahorra 15 %",
-            "pack3_precio": 0,
-            "pack3_descuento": 15,
             "pack_defecto": "1",
             "microcopy": "Envío gratis · Pago seguro · 30 días para probarlo"
           }
@@ -126,12 +126,12 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "marca_padding_inferior_movil": 16
       }
     },
     "confianza": {
       "type": "cervia-confianza",
-      "settings": {},
       "blocks": {
         "item_0": {
           "type": "item",
@@ -171,16 +171,14 @@
         "item_1",
         "item_2",
         "item_3"
-      ]
+      ],
+      "settings": {
+        "padding_superior_movil": 16,
+        "padding_inferior_movil": 16
+      }
     },
     "problema": {
       "type": "cervia-problema",
-      "settings": {
-        "titulo": "¿Acabas el día con el <span>cuello cargado</span>?",
-        "sub": "Horas de ordenador, móvil y estrés se acumulan en cervicales y hombros.",
-        "titulo_sin": "Sin masajeador",
-        "titulo_con": "Con Cervia"
-      },
       "blocks": {
         "punto_0": {
           "type": "punto",
@@ -248,44 +246,44 @@
         "punto_5",
         "punto_6",
         "punto_7"
-      ]
+      ],
+      "settings": {
+        "titulo": "¿Acabas el día con el <span>cuello cargado</span>?",
+        "sub": "Horas de ordenador, móvil y estrés se acumulan en cervicales y hombros.",
+        "titulo_sin": "Sin masajeador",
+        "titulo_con": "Con Cervia",
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20
+      }
     },
     "posturas": {
       "type": "cervia-posturas",
-      "settings": {
-        "mostrar_imagenes": true,
-        "eyebrow": "Cómo se usa",
-        "titulo": "Relájate en <span>3 pasos</span>",
-        "sub": "Listo en segundos, en casa o en la oficina.",
-        "cta_texto": "Quiero relajar mi cuello · [[precio]]",
-        "ratio": "1 / 1"
-      },
       "blocks": {
         "postura_0": {
           "type": "postura",
           "settings": {
-            "titulo": "Colócalo",
-            "texto": "Apóyalo sobre cuello y hombros y ajusta las correas a tu medida.",
+            "imagen": "shopify://shop_images/masajeador-cuello-verde.jpg",
             "guia": "Foto colocándose el masajeador en el cuello",
-            "imagen": "shopify://shop_images/masajeador-cuello-verde.jpg"
+            "titulo": "Colócalo",
+            "texto": "Apóyalo sobre cuello y hombros y ajusta las correas a tu medida."
           }
         },
         "postura_1": {
           "type": "postura",
           "settings": {
-            "titulo": "Elige",
-            "texto": "Escoge entre 3 intensidades de masaje y 2 niveles de calor.",
+            "imagen": "shopify://shop_images/masajeador-principal-v2.jpg",
             "guia": "Foto eligiendo intensidad o calor en los botones",
-            "imagen": "shopify://shop_images/masajeador-principal-v2.jpg"
+            "titulo": "Elige",
+            "texto": "Escoge entre 3 intensidades de masaje y 2 niveles de calor."
           }
         },
         "postura_2": {
           "type": "postura",
           "settings": {
-            "titulo": "Relájate",
-            "texto": "Disfruta de una sesión de unos 10 minutos y nota cómo se suelta la tensión.",
+            "imagen": "shopify://shop_images/masajeador-brazo-verde.jpg",
             "guia": "Foto relajándose con el masajeador puesto",
-            "imagen": "shopify://shop_images/masajeador-brazo-verde.jpg"
+            "titulo": "Relájate",
+            "texto": "Disfruta de una sesión de unos 10 minutos y nota cómo se suelta la tensión."
           }
         }
       },
@@ -293,15 +291,20 @@
         "postura_0",
         "postura_1",
         "postura_2"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Cómo se usa",
+        "titulo": "Relájate en <span>3 pasos</span>",
+        "sub": "Listo en segundos, en casa o en la oficina.",
+        "mostrar_imagenes": true,
+        "ratio": "1 / 1",
+        "cta_texto": "Quiero relajar mi cuello · [[precio]]",
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20
+      }
     },
     "beneficios": {
       "type": "cervia-beneficios",
-      "settings": {
-        "eyebrow": "Por qué Cervia",
-        "titulo": "Lo que notas <span>desde el primer uso</span>",
-        "sub": "Un masaje de verdad, sin citas ni esperas."
-      },
       "blocks": {
         "beneficio_0": {
           "type": "beneficio",
@@ -359,15 +362,17 @@
         "beneficio_3",
         "beneficio_4",
         "beneficio_5"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Por qué Cervia",
+        "titulo": "Lo que notas <span>desde el primer uso</span>",
+        "sub": "Un masaje de verdad, sin citas ni esperas.",
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20
+      }
     },
     "comparativa": {
       "type": "cervia-comparativa",
-      "settings": {
-        "titulo": "Mejor que un <span>masaje casero</span>",
-        "sub": "Lo que cambia cuando el masaje está pensado para tu cuello.",
-        "col_otros": "Masaje casero"
-      },
       "blocks": {
         "fila_0": {
           "type": "fila",
@@ -437,17 +442,23 @@
         "fila_3",
         "fila_4",
         "fila_5"
-      ]
+      ],
+      "settings": {
+        "titulo": "Mejor que un <span>masaje casero</span>",
+        "sub": "Lo que cambia cuando el masaje está pensado para tu cuello.",
+        "col_otros": "Masaje casero",
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20
+      }
     },
     "testimonios": {
       "type": "cervia-testimonios",
-      "settings": {},
       "blocks": {
         "resena_0": {
           "type": "resena",
           "settings": {
-            "texto": "[Pega aquí una reseña real]",
             "estrellas": 5,
+            "texto": "[Pega aquí una reseña real]",
             "nombre": "[Nombre del cliente]",
             "fecha": "[Fecha]"
           }
@@ -455,8 +466,8 @@
         "resena_1": {
           "type": "resena",
           "settings": {
-            "texto": "[Pega aquí una reseña real]",
             "estrellas": 5,
+            "texto": "[Pega aquí una reseña real]",
             "nombre": "[Nombre del cliente]",
             "fecha": "[Fecha]"
           }
@@ -464,8 +475,8 @@
         "resena_2": {
           "type": "resena",
           "settings": {
-            "texto": "[Pega aquí una reseña real]",
             "estrellas": 5,
+            "texto": "[Pega aquí una reseña real]",
             "nombre": "[Nombre del cliente]",
             "fecha": "[Fecha]"
           }
@@ -473,8 +484,8 @@
         "resena_3": {
           "type": "resena",
           "settings": {
-            "texto": "[Pega aquí una reseña real]",
             "estrellas": 5,
+            "texto": "[Pega aquí una reseña real]",
             "nombre": "[Nombre del cliente]",
             "fecha": "[Fecha]"
           }
@@ -482,8 +493,8 @@
         "resena_4": {
           "type": "resena",
           "settings": {
-            "texto": "[Pega aquí una reseña real]",
             "estrellas": 5,
+            "texto": "[Pega aquí una reseña real]",
             "nombre": "[Nombre del cliente]",
             "fecha": "[Fecha]"
           }
@@ -491,8 +502,8 @@
         "resena_5": {
           "type": "resena",
           "settings": {
-            "texto": "[Pega aquí una reseña real]",
             "estrellas": 5,
+            "texto": "[Pega aquí una reseña real]",
             "nombre": "[Nombre del cliente]",
             "fecha": "[Fecha]"
           }
@@ -506,23 +517,26 @@
         "resena_4",
         "resena_5"
       ],
-      "disabled": true
+      "disabled": true,
+      "settings": {
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20
+      }
     },
     "garantia": {
       "type": "cervia-garantia",
       "settings": {
-        "dias": 30,
         "titulo": "Pruébalo <span>[[dias]] días</span> en casa",
-        "unidad_sello": "días",
+        "dias": 30,
         "texto": "<p>Úsalo, nota la diferencia y decide con calma. Si en [[dias]] días no es para ti, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>",
-        "cta_texto": "Probarlo sin riesgo · [[precio]]"
+        "unidad_sello": "días",
+        "cta_texto": "Probarlo sin riesgo · [[precio]]",
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20
       }
     },
     "faq": {
       "type": "cervia-faq",
-      "settings": {
-        "sub": "¿Te queda alguna duda? Escríbenos desde la página de contacto."
-      },
       "blocks": {
         "pregunta_0": {
           "type": "pregunta",
@@ -590,7 +604,12 @@
         "pregunta_5",
         "pregunta_6",
         "pregunta_7"
-      ]
+      ],
+      "settings": {
+        "sub": "¿Te queda alguna duda? Escríbenos desde la página de contacto.",
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20
+      }
     },
     "cta-final": {
       "type": "cervia-cta-final",
@@ -598,11 +617,14 @@
         "eyebrow": "Completa tu descanso",
         "titulo": "Y por la noche: <span>almohada cervical</span>",
         "sub": "Memory foam con contorno que mantiene tu cuello alineado mientras duermes. Envío gratis a toda España.",
+        "producto": "butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow",
         "guia": "",
         "cta_texto": "Añadir almohada · [[precio]]",
-        "producto": "butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow",
+        "cta_accion": "carrito",
         "cta_cantidad": "1",
-        "cta_accion": "carrito"
+        "padding_superior_movil": 20,
+        "padding_inferior_movil": 20,
+        "padding_caja_movil": 20
       }
     },
     "barra-compra": {
@@ -669,18 +691,18 @@
         "foto_2",
         "foto_3"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Momentos Cervia",
         "titulo": "Descanso que <span>se nota</span>",
         "sub": "Para tu cuello, de día y de noche.",
+        "duracion": 70,
         "ratio": "4 / 5",
-        "duracion": 70
-      },
-      "disabled": true
+        "padding_movil": 20
+      }
     },
     "opiniones_clientes": {
       "type": "ss-testimonials-48",
-      "disabled": false,
       "blocks": {
         "sub_heading": {
           "type": "sub_heading",
@@ -697,10 +719,10 @@
             "heading": "<h2>Lo que dicen <strong>quienes lo usan</strong></h2>",
             "heading_font": "dm_sans_n7",
             "heading_accent_font": "dm_sans_n7",
-            "heading_color": "#1B1F5E",
-            "heading_accent_color": "#EF4423",
             "heading_size": 40,
-            "heading_size_mobile": 28
+            "heading_size_mobile": 28,
+            "heading_color": "#1B1F5E",
+            "heading_accent_color": "#EF4423"
           }
         },
         "text": {
@@ -708,9 +730,9 @@
           "settings": {
             "text": "<p>Reseñas reales de compradores de este masajeador en AliExpress (artículo similar).</p>",
             "text_font": "dm_sans_n4",
-            "text_color": "#585C85",
             "text_size": 17,
-            "text_size_mobile": 15
+            "text_size_mobile": 15,
+            "text_color": "#585C85"
           }
         },
         "resena_ae_0": {
@@ -820,15 +842,19 @@
         "resena_ae_9"
       ],
       "settings": {
+        "scrolling_velocity": 120,
+        "scrolling_velocity_mobile": 100,
+        "pause_hover": true,
+        "card_shadow_color": "#F2C4B3",
         "author_font": "dm_sans_n7",
         "subcopy_author_font": "dm_sans_n4",
+        "subcopy_text_length": 60,
         "text_font": "dm_sans_n4",
         "text_color": "#1B1F5E",
         "author_color": "#1B1F5E",
         "subcopy_author_color": "#585C85",
         "card_bg_color": "#FFFFFF",
         "card_border_color": "#F2C4B3",
-        "card_shadow_color": "#F2C4B3",
         "slide_stars_color": "#FFFFFF",
         "slide_stars_bg_color": "#FFB400",
         "slide_stars_bg_half_color": "#F2C4B3",
@@ -836,12 +862,8 @@
         "author_image_bg_color": "#EF4423",
         "background_color": "#FFF8F2",
         "border_color": "#F2C4B3",
-        "pause_hover": true,
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "scrolling_velocity": 120,
-        "scrolling_velocity_mobile": 100,
-        "subcopy_text_length": 60
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     }
   },

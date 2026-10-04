@@ -12,6 +12,7 @@
   #shopify-section-{{ section.id }} .cervia-gm__pista { display: flex; gap: {{ section.settings.separacion }}px; width: max-content; animation: cerviaGm-{{ section.id }} {{ section.settings.duracion }}s linear infinite; }
   #shopify-section-{{ section.id }} .cervia-gm__item { flex: 0 0 auto; width: {{ section.settings.ancho_movil }}px; aspect-ratio: {{ section.settings.ratio }}; border-radius: 16px; overflow: hidden; background: {{ section.settings.color_acento }}1a; }
   @media (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-gm__item { width: {{ section.settings.ancho }}px; } }
+  @media (max-width: 749px) { #shopify-section-{{ section.id }} .cervia-gm { padding: {{ section.settings.padding_movil }}px 0; } #shopify-section-{{ section.id }} .cervia-gm__cabecera { margin-bottom: 16px; } }
   #shopify-section-{{ section.id }} .cervia-gm__item img { width: 100%; height: 100%; object-fit: cover; display: block; }
   #shopify-section-{{ section.id }} .cervia-gm__item .placeholder-svg { width: 100%; height: 100%; }
   @keyframes cerviaGm-{{ section.id }} { from { transform: translateX(0); } to { transform: translateX(calc(-50% - {{ section.settings.separacion | divided_by: 2.0 }}px)); } }
@@ -59,24 +60,167 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Frase superior", "default": "Momentos Cervia" },
-    { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "Descanso que <span>se nota</span>" },
-    { "type": "text", "id": "sub", "label": "Subtítulo" },
-    { "type": "range", "id": "duracion", "label": "Velocidad (segundos por vuelta, más = más lento)", "min": 10, "max": 120, "step": 5, "unit": "s", "default": 70 },
-    { "type": "range", "id": "ancho", "label": "Ancho de cada foto (escritorio)", "min": 180, "max": 460, "step": 10, "unit": "px", "default": 320 },
-    { "type": "range", "id": "ancho_movil", "label": "Ancho de cada foto (móvil)", "min": 140, "max": 340, "step": 10, "unit": "px", "default": 220 },
-    { "type": "range", "id": "separacion", "label": "Separación", "min": 0, "max": 40, "step": 2, "unit": "px", "default": 16 },
-    { "type": "select", "id": "ratio", "label": "Formato de las fotos", "options": [{ "value": "4 / 5", "label": "Vertical 4:5" }, { "value": "3 / 4", "label": "Vertical 3:4" }, { "value": "1 / 1", "label": "Cuadrado" }], "default": "4 / 5" },
-    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFF8F2" },
-    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#1B1F5E" },
-    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#EF4423" },
-    { "type": "range", "id": "padding_superior", "label": "Espacio superior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
-    { "type": "range", "id": "padding_inferior", "label": "Espacio inferior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Frase superior",
+      "default": "Momentos Cervia"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Descanso que <span>se nota</span>"
+    },
+    {
+      "type": "text",
+      "id": "sub",
+      "label": "Subtítulo"
+    },
+    {
+      "type": "range",
+      "id": "duracion",
+      "label": "Velocidad (segundos por vuelta, más = más lento)",
+      "min": 10,
+      "max": 120,
+      "step": 5,
+      "unit": "s",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "ancho",
+      "label": "Ancho de cada foto (escritorio)",
+      "min": 180,
+      "max": 460,
+      "step": 10,
+      "unit": "px",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "ancho_movil",
+      "label": "Ancho de cada foto (móvil)",
+      "min": 140,
+      "max": 340,
+      "step": 10,
+      "unit": "px",
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "separacion",
+      "label": "Separación",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Formato de las fotos",
+      "options": [
+        {
+          "value": "4 / 5",
+          "label": "Vertical 4:5"
+        },
+        {
+          "value": "3 / 4",
+          "label": "Vertical 3:4"
+        },
+        {
+          "value": "1 / 1",
+          "label": "Cuadrado"
+        }
+      ],
+      "default": "4 / 5"
+    },
+    {
+      "type": "color",
+      "id": "color_fondo",
+      "label": "Fondo",
+      "default": "#FFF8F2"
+    },
+    {
+      "type": "color",
+      "id": "color_texto",
+      "label": "Texto",
+      "default": "#1B1F5E"
+    },
+    {
+      "type": "color",
+      "id": "color_acento",
+      "label": "Acento",
+      "default": "#EF4423"
+    },
+    {
+      "type": "range",
+      "id": "padding_superior",
+      "label": "Espacio superior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_inferior",
+      "label": "Espacio inferior",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_movil",
+      "label": "Espacio arriba y abajo (móvil)",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
   ],
   "blocks": [
-    { "type": "foto", "name": "Foto", "settings": [ { "type": "image_picker", "id": "imagen", "label": "Imagen" } ] }
+    {
+      "type": "foto",
+      "name": "Foto",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imagen",
+          "label": "Imagen"
+        }
+      ]
+    }
   ],
   "max_blocks": 20,
-  "presets": [{ "name": "Cervia Galería móvil", "blocks": [{ "type": "foto" }, { "type": "foto" }, { "type": "foto" }, { "type": "foto" }, { "type": "foto" }] }]
+  "presets": [
+    {
+      "name": "Cervia Galería móvil",
+      "blocks": [
+        {
+          "type": "foto"
+        },
+        {
+          "type": "foto"
+        },
+        {
+          "type": "foto"
+        },
+        {
+          "type": "foto"
+        },
+        {
+          "type": "foto"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
