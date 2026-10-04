@@ -1469,31 +1469,19 @@
         "foto_1": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/momento-durmiendo-almohada.jpg"
+            "imagen": "shopify://shop_images/momento-abrazo-almohada.jpg"
           }
         },
         "foto_2": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/momento-abrazo-almohada.jpg"
+            "imagen": "shopify://shop_images/momento-chico-almohada.jpg"
           }
         },
         "foto_3": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/almohada-boca-arriba-cama.webp"
-          }
-        },
-        "foto_4": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/momento-chico-almohada.jpg"
-          }
-        },
-        "foto_5": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/masajeador-cuello-verde.jpg"
+            "imagen": "shopify://shop_images/momento-durmiendo-almohada.jpg"
           }
         }
       },
@@ -1501,9 +1489,7 @@
         "foto_0",
         "foto_1",
         "foto_2",
-        "foto_3",
-        "foto_4",
-        "foto_5"
+        "foto_3"
       ],
       "settings": {
         "eyebrow": "Momentos Cervia",

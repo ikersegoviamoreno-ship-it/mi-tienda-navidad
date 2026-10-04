@@ -27,9 +27,9 @@
   {%- endif -%}
   <div class="cervia-gm__viewport">
     <div class="cervia-gm__pista">
-      {%- for vuelta in (1..2) -%}
+      {%- for vuelta in (1..4) -%}
         {%- for block in section.blocks -%}
-          <div class="cervia-gm__item"{% if vuelta == 2 %} aria-hidden="true"{% else %} {{ block.shopify_attributes }}{% endif %}>
+          <div class="cervia-gm__item"{% if vuelta > 1 %} aria-hidden="true"{% else %} {{ block.shopify_attributes }}{% endif %}>
             {%- if block.settings.imagen != blank -%}
               {%- assign alt = block.settings.imagen.alt | default: section.settings.titulo | strip_html -%}
               {{ block.settings.imagen | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '320px', widths: '350, 500, 700', alt: alt }}
