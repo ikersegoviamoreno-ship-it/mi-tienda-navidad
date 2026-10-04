@@ -1179,7 +1179,8 @@
         "padding_inferior": 40,
         "padding_superior_movil": 24,
         "padding_inferior_movil": 24
-      }
+      },
+      "disabled": true
     },
     "garantia": {
       "type": "cervia-garantia",
@@ -1746,7 +1747,234 @@
         "border_color": "#F2C4B3",
         "pause_hover": true,
         "padding_top": 48,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "scrolling_velocity": 130,
+        "scrolling_velocity_mobile": 110
+      }
+    },
+    "opiniones_mas": {
+      "type": "ss-testimonials-48",
+      "blocks": {
+        "sub_heading": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "<p>MÁS OPINIONES</p>",
+            "sub_heading_font": "dm_sans_n7",
+            "sub_heading_color": "#EF4423",
+            "sub_heading_bg_color": "#FFE3D6"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Qué dicen <strong>quienes ya duermen</strong> con ella</h2>",
+            "heading_font": "dm_sans_n7",
+            "heading_accent_font": "dm_sans_n7",
+            "heading_color": "#1B1F5E",
+            "heading_accent_color": "#EF4423",
+            "heading_size": 40,
+            "heading_size_mobile": 28
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Opiniones reales de compradores en AliExpress (artículo similar, medida 48 × 74 cm).</p>",
+            "text_font": "dm_sans_n4",
+            "text_color": "#585C85",
+            "text_size": 17,
+            "text_size_mobile": 15
+          }
+        },
+        "mas_resena_0": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Llegó tal como se anunciaba ❤️❤️❤️</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 15 jun 2026"
+          }
+        },
+        "mas_resena_1": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Tan pronto como lo recibí, le quité la funda y lo puse en la lavadora jaja. ¡Estoy muy emocionado por usarlo! Es un producto excelente y estoy feliz de haberlo comprado a un precio bajo.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 30 sep 2026"
+          }
+        },
+        "mas_resena_2": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Dormí maravillosamente con esta fantástica almohada.</p>",
+            "author": "l***s",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 27 ago 2026"
+          }
+        },
+        "mas_resena_3": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Super cómoda y funcional. Ahora se descansa mejor.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 20 sep 2026"
+          }
+        },
+        "mas_resena_4": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 3,
+            "text": "<p>La calidad no es la mejor. En esta foto se puede ver la diferencia entre la almohada de mi esposo, que es de alta calidad, más gruesa y resistente, y la que yo compré. Sigo teniendo problemas graves de cuello después de usarla durante 5 días.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 08 sep 2026"
+          }
+        },
+        "mas_resena_5": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Una almohada muy buena, es cómoda para dormir. Gracias y saludos cordiales.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 01 sep 2026"
+          }
+        },
+        "mas_resena_6": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Lo recomiendo encarecidamente.</p>",
+            "author": "D***k",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 03 ago 2026"
+          }
+        },
+        "mas_resena_7": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Sueño muy reparador. Excelente producto.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 19 ago 2026"
+          }
+        },
+        "mas_resena_8": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Estoy muy satisfecho. Trabajo de calidad y entrega rápida. A la República Checa en 5 días. Gracias.</p>",
+            "author": "V***t",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 27 ago 2026"
+          }
+        },
+        "mas_resena_9": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Súper cómodo, gracias.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 25 ago 2026"
+          }
+        },
+        "mas_resena_10": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Genial, muy conveniente.</p>",
+            "author": "P***r",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 24 ago 2026"
+          }
+        },
+        "mas_resena_11": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Es muy bueno, recomiendo al vendedor y el producto; envío y entrega rápidos.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · AliExpress"
+          }
+        },
+        "mas_resena_12": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Estoy muy satisfecho.</p>",
+            "author": "7***r",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 10 ago 2026"
+          }
+        },
+        "mas_resena_13": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Espectacular.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 03 sep 2026"
+          }
+        },
+        "mas_resena_14": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Impecable, recomiendo al vendedor y el producto.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 06 sep 2026"
+          }
+        },
+        "mas_resena_15": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Es un buen y muy bonito pilo.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 29 ago 2026"
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading",
+        "heading",
+        "text",
+        "mas_resena_0",
+        "mas_resena_1",
+        "mas_resena_2",
+        "mas_resena_3",
+        "mas_resena_4",
+        "mas_resena_5",
+        "mas_resena_6",
+        "mas_resena_7",
+        "mas_resena_8",
+        "mas_resena_9",
+        "mas_resena_10",
+        "mas_resena_11",
+        "mas_resena_12",
+        "mas_resena_13",
+        "mas_resena_14",
+        "mas_resena_15"
+      ],
+      "settings": {
+        "author_font": "dm_sans_n7",
+        "subcopy_author_font": "dm_sans_n4",
+        "text_font": "dm_sans_n4",
+        "text_color": "#1B1F5E",
+        "author_color": "#1B1F5E",
+        "subcopy_author_color": "#585C85",
+        "card_bg_color": "#FFFFFF",
+        "card_border_color": "#F2C4B3",
+        "card_shadow_color": "#F2C4B3",
+        "slide_stars_color": "#FFFFFF",
+        "slide_stars_bg_color": "#FFB400",
+        "slide_stars_bg_half_color": "#F2C4B3",
+        "author_image_color": "#FFFFFF",
+        "author_image_bg_color": "#EF4423",
+        "background_color": "#FFF8F2",
+        "border_color": "#F2C4B3",
+        "pause_hover": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "scrolling_velocity": 140,
+        "scrolling_velocity_mobile": 120,
+        "reverse_direction": true
       }
     }
   },
@@ -1760,6 +1988,7 @@
     "comparativa",
     "garantia",
     "testimonios",
+    "opiniones_mas",
     "faq",
     "cta-final",
     "opiniones_clientes",
