@@ -644,7 +644,7 @@
             "guia": "Aquí va una foto durmiendo de lado sobre Cervia",
             "titulo": "De lado",
             "texto": "Apoya la cabeza en el borde alto: rellena el hueco entre hombro y oreja y el cuello queda recto.",
-            "imagen": "shopify://shop_images/almohada-dormir-de-lado.jpg"
+            "imagen": "shopify://shop_images/almohada-dormir-de-lado-v2.jpg"
           }
         },
         "postura_1": {
@@ -653,7 +653,7 @@
             "guia": "Aquí va una foto durmiendo boca arriba sobre Cervia",
             "titulo": "Boca arriba",
             "texto": "El centro rebajado acoge la cabeza y el borde bajo sostiene la curva de la nuca.",
-            "imagen": "shopify://shop_images/almohada-dormir-de-espalda.jpg"
+            "imagen": "shopify://shop_images/almohada-dormir-de-espalda-v2.jpg"
           }
         },
         "postura_2": {
@@ -662,7 +662,7 @@
             "guia": "Aquí va una foto durmiendo boca abajo sobre Cervia",
             "titulo": "Boca abajo",
             "texto": "Usa la zona central, la más baja, para que el cuello gire lo menos posible.",
-            "imagen": "shopify://shop_images/almohada-dormir-boca-abajo.webp"
+            "imagen": "shopify://shop_images/almohada-dormir-boca-abajo-v2.jpg"
           }
         }
       },
