@@ -5,14 +5,10 @@
     "cervia-footer": {
       "type": "cervia-footer",
       "settings": {
-        "banda_titulo": "Tu ritual capilar empieza hoy",
-        "banda_sub": "Envío gratis a toda España",
-        "cta_texto": "Quiero mi peine · [[precio]]",
-        "cta_micro": "Envío gratis · Pago seguro · 30 días para probarlo",
-        "nombre": "Suave Ritual",
-        "frase": "Pequeños rituales para cuidar tu pelo cada día.",
-        "texto_legal": "© [[año]] Suave Ritual. Todos los derechos reservados.",
-        "texto_eco": "suave ritual"
+        "logo": "shopify://shop_images/cervia-logo-claro.png",
+        "banda_titulo": "Cuida tu cuello desde hoy",
+        "frase": "Descanso y alivio para tu cuello, cada día.",
+        "cta_texto": "Ver la almohada · [[precio]]"
       },
       "blocks": {
         "promesa_0": {
@@ -25,8 +21,8 @@
         "promesa_1": {
           "type": "promesa",
           "settings": {
-            "icono": "ciclo",
-            "texto": "30 días para probarlo"
+            "icono": "luna",
+            "texto": "30 noches de prueba"
           }
         },
         "promesa_2": {
@@ -39,15 +35,15 @@
         "promesa_3": {
           "type": "promesa",
           "settings": {
-            "icono": "hoja",
-            "texto": "Directo a la raíz"
+            "icono": "almohada",
+            "texto": "Memory foam con contorno"
           }
         },
         "promesa_4": {
           "type": "promesa",
           "settings": {
-            "icono": "regalo",
-            "texto": "Un regalo ideal"
+            "icono": "ciclo",
+            "texto": "Devolución fácil"
           }
         },
         "confianza_5": {

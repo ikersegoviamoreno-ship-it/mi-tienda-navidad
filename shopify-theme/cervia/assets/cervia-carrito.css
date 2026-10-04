@@ -1,15 +1,15 @@
 /* Cervia · carrito lateral (Dawn) */
 cart-drawer {
-  --cv-fondo: #FAF8F3;
-  --cv-superficie: #E8DDCC;
-  --cv-suave-fondo: #F3EDE3;
-  --cv-borde: #E8DDCC;
-  --cv-texto: #5C554D;
-  --cv-suave: #7A7268;
-  --cv-acento: #7A6A57;
-  --cv-boton: #5C554D;
-  --cv-boton-hover: #4A443D;
-  --cv-boton-texto: #FAF8F3;
+  --cv-fondo: #FFF8F2;
+  --cv-superficie: #FFE3D6;
+  --cv-suave-fondo: #FFF1EA;
+  --cv-borde: #FFE3D6;
+  --cv-texto: #EF4423;
+  --cv-suave: #585C85;
+  --cv-acento: #EF4423;
+  --cv-boton: #EF4423;
+  --cv-boton-hover: #C9321A;
+  --cv-boton-texto: #FFF8F2;
   --cv-ease: cubic-bezier(.22,.8,.35,1);
 }
 

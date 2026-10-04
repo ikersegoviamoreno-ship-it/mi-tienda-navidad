@@ -6,7 +6,9 @@
         "cervia_titulo": {
           "type": "cervia_titulo",
           "settings": {
-            "mostrar_valoracion": false
+            "mostrar_valoracion": false,
+            "eyebrow": "Adiós a la tensión de cuello y hombros",
+            "subtitulo": "Amasado 4D con calor, sin cables, para relajarte donde quieras"
           }
         },
         "cervia_precio": {
@@ -16,7 +18,10 @@
         "cervia_checks": {
           "type": "cervia_checks",
           "settings": {
-            "texto_4": "30 noches para probarla",
+            "texto_1": "Amasado 4D que imita unas manos",
+            "texto_2": "Calor relajante con 2 niveles",
+            "texto_3": "Sin cables: unos 70 min por carga",
+            "texto_4": "30 días para probarlo",
             "mostrar_4": true
           }
         },
@@ -34,13 +39,20 @@
         "cervia_packs": {
           "type": "cervia_packs",
           "settings": {
+            "pack1_etiqueta": "1 masajeador",
+            "pack1_sub": "Para ti",
             "pack1_precio": 0,
+            "pack2_etiqueta": "2 masajeadores",
+            "pack2_sub": "Uno para ti y otro para regalar",
+            "pack2_badge": "Ahorra 10 %",
             "pack2_precio": 0,
             "pack2_descuento": 10,
-            "pack2_badge": "Ahorra 10 %",
+            "pack3_etiqueta": "3 masajeadores",
+            "pack3_sub": "Para toda la familia",
+            "pack3_badge": "Ahorra 15 %",
             "pack3_precio": 0,
             "pack3_descuento": 15,
-            "pack3_badge": "Ahorra 15 %",
+            "pack_defecto": "1",
             "microcopy": "Envío gratis · Pago seguro · 30 días para probarlo"
           }
         },
@@ -66,7 +78,7 @@
         "cervia_garantias": {
           "type": "cervia_garantias",
           "settings": {
-            "texto_2": "30 días para probarla"
+            "texto_2": "30 días para probarlo"
           }
         },
         "cervia_envio": {
@@ -76,9 +88,21 @@
         "cervia_desplegables": {
           "type": "cervia_desplegables",
           "settings": {
-            "contenido_2": "<p>62 × 37 cm, con una altura de 8 a 12 cm según la zona. Espuma viscoelástica (memory foam) y funda de poliéster extraíble.</p>",
-            "contenido_3": "<p>Envío gratis. Preparamos tu pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>",
-            "contenido_4": "<p>Tienes 30 días para probarla. Si no te convence, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>"
+            "icono_1": "hoja",
+            "titulo_1": "Descripción",
+            "contenido_1": "<p>Masajeador de cuello y hombros con amasado 4D que imita el movimiento de unas manos. Combina el masaje con calor suave para relajar la tensión acumulada en cervicales y trapecios.</p>",
+            "icono_2": "info",
+            "titulo_2": "Características",
+            "contenido_2": "<p>3 niveles de intensidad · 2 niveles de calor · Batería de 2000 mAh (unos 70 min por carga) · Carga a 5 V · 10 W · Sesiones de 10 minutos · Peso 0,76 kg · ABS y TPR · Color verde musgo.</p><p>Úsalo en la mano o colgado con sus correas, con las manos libres.</p>",
+            "icono_3": "camion",
+            "titulo_3": "Envío",
+            "contenido_3": "<p>Envío gratis desde España. Preparamos tu pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>",
+            "icono_4": "ciclo",
+            "titulo_4": "Devoluciones y garantía",
+            "contenido_4": "<p>Tienes 30 días para probarlo. Si no te convence, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>",
+            "icono_5": "escudo_check",
+            "titulo_5": "Uso y precauciones",
+            "contenido_5": "<p>Usa sesiones de unos 10 minutos. No lo apliques sobre piel irritada o heridas. Si estás embarazada, llevas marcapasos o tienes alguna lesión, consulta antes con tu médico.</p>"
           }
         }
       },
@@ -122,14 +146,14 @@
           "settings": {
             "icono": "camion",
             "titulo": "Envío gratis",
-            "texto": "A toda España"
+            "texto": "Desde España"
           }
         },
         "item_1": {
           "type": "item",
           "settings": {
-            "icono": "luna",
-            "titulo": "30 noches de prueba",
+            "icono": "ciclo",
+            "titulo": "30 días de prueba",
             "texto": "Sin riesgo"
           }
         },
@@ -144,9 +168,9 @@
         "item_3": {
           "type": "item",
           "settings": {
-            "icono": "hoja",
-            "titulo": "Funda lavable",
-            "texto": "Se quita y se lava"
+            "icono": "regalo",
+            "titulo": "Regalo ideal",
+            "texto": "Para quien más lo necesita"
           }
         }
       },
@@ -159,62 +183,67 @@
     },
     "problema": {
       "type": "cervia-problema",
-      "settings": {},
+      "settings": {
+        "titulo": "¿Acabas el día con el <span>cuello cargado</span>?",
+        "sub": "Horas de ordenador, móvil y estrés se acumulan en cervicales y hombros.",
+        "titulo_sin": "Sin masajeador",
+        "titulo_con": "Con Cervia"
+      },
       "blocks": {
         "punto_0": {
           "type": "punto",
           "settings": {
             "columna": "sin",
-            "texto": "Te despiertas con el cuello rígido"
+            "texto": "Hombros tensos después de trabajar"
           }
         },
         "punto_1": {
           "type": "punto",
           "settings": {
             "columna": "sin",
-            "texto": "Das vueltas buscando la postura"
+            "texto": "Un masaje profesional cuesta caro"
           }
         },
         "punto_2": {
           "type": "punto",
           "settings": {
             "columna": "sin",
-            "texto": "El hombro queda aplastado de lado"
+            "texto": "Necesitas que alguien te lo dé"
           }
         },
         "punto_3": {
           "type": "punto",
           "settings": {
             "columna": "sin",
-            "texto": "Se aplasta a mitad de noche"
+            "texto": "Los aparatos con cable te atan al enchufe"
           }
         },
         "punto_4": {
           "type": "punto",
           "settings": {
             "columna": "con",
-            "texto": "El contorno sostiene la curva del cuello"
+            "texto": "Amasado 4D cuando tú quieras"
           }
         },
         "punto_5": {
           "type": "punto",
           "settings": {
             "columna": "con",
-            "texto": "Una altura para cada postura"
+            "texto": "Calor que suelta la tensión"
           }
         },
         "punto_6": {
           "type": "punto",
           "settings": {
             "columna": "con",
-            "texto": "Hueco para el hombro al dormir de lado"
+            "texto": "Manos libres gracias a sus correas"
           }
         },
         "punto_7": {
           "type": "punto",
           "settings": {
             "columna": "con",
-            "texto": "Recupera su forma cada mañana"
+            "texto": "Sin cables: sofá, oficina o coche"
           }
         }
       },
@@ -232,31 +261,35 @@
     "posturas": {
       "type": "cervia-posturas",
       "settings": {
-        "mostrar_imagenes": false
+        "mostrar_imagenes": false,
+        "eyebrow": "Cómo se usa",
+        "titulo": "Relájate en <span>3 pasos</span>",
+        "sub": "Listo en segundos, en casa o en la oficina.",
+        "cta_texto": "Quiero relajar mi cuello · [[precio]]"
       },
       "blocks": {
         "postura_0": {
           "type": "postura",
           "settings": {
-            "titulo": "De lado",
-            "texto": "Apoya la cabeza en el borde alto: rellena el hueco entre hombro y oreja y el cuello queda recto.",
-            "guia": "Aquí va una foto durmiendo de lado sobre Cervia"
+            "titulo": "Colócalo",
+            "texto": "Apóyalo sobre cuello y hombros y ajusta las correas a tu medida.",
+            "guia": ""
           }
         },
         "postura_1": {
           "type": "postura",
           "settings": {
-            "titulo": "Boca arriba",
-            "texto": "El centro rebajado acoge la cabeza y el borde bajo sostiene la curva de la nuca.",
-            "guia": "Aquí va una foto durmiendo boca arriba sobre Cervia"
+            "titulo": "Elige",
+            "texto": "Escoge entre 3 intensidades de masaje y 2 niveles de calor.",
+            "guia": ""
           }
         },
         "postura_2": {
           "type": "postura",
           "settings": {
-            "titulo": "Boca abajo",
-            "texto": "Usa la zona central, la más baja, para que el cuello gire lo menos posible.",
-            "guia": "Aquí va una foto durmiendo boca abajo sobre Cervia"
+            "titulo": "Relájate",
+            "texto": "Disfruta de una sesión de unos 10 minutos y nota cómo se suelta la tensión.",
+            "guia": ""
           }
         }
       },
@@ -268,54 +301,58 @@
     },
     "beneficios": {
       "type": "cervia-beneficios",
-      "settings": {},
+      "settings": {
+        "eyebrow": "Por qué Cervia",
+        "titulo": "Lo que notas <span>desde el primer uso</span>",
+        "sub": "Un masaje de verdad, sin citas ni esperas."
+      },
       "blocks": {
         "beneficio_0": {
           "type": "beneficio",
           "settings": {
-            "icono": "almohada",
-            "titulo": "Contorno ergonómico",
-            "texto": "Diseñada para mantener cuello y columna en línea mientras duermes."
+            "icono": "corazon",
+            "titulo": "Amasado 4D",
+            "texto": "Sus nodos giran y presionan como unas manos sobre cuello y trapecios."
           }
         },
         "beneficio_1": {
           "type": "beneficio",
           "settings": {
-            "icono": "luna",
-            "titulo": "Para cualquier postura",
-            "texto": "De lado, boca arriba o boca abajo: cada zona tiene su altura."
+            "icono": "estrella",
+            "titulo": "Calor relajante",
+            "texto": "2 niveles de calor para soltar la musculatura tensa."
           }
         },
         "beneficio_2": {
           "type": "beneficio",
           "settings": {
-            "icono": "hoja",
-            "titulo": "Memory foam que se adapta",
-            "texto": "Se amolda poco a poco al calor y al peso de tu cabeza."
+            "icono": "reloj",
+            "titulo": "Sin cables",
+            "texto": "Unos 70 minutos de uso con una carga de batería."
           }
         },
         "beneficio_3": {
           "type": "beneficio",
           "settings": {
-            "icono": "ciclo",
-            "titulo": "Recupera su forma",
-            "texto": "Cada mañana vuelve a su forma original, sin aplastarse."
+            "icono": "check_circulo",
+            "titulo": "3 intensidades",
+            "texto": "Del masaje suave al más profundo, a tu gusto."
           }
         },
         "beneficio_4": {
           "type": "beneficio",
           "settings": {
-            "icono": "check_circulo",
-            "titulo": "Funda lavable",
-            "texto": "Se quita en un momento y va a la lavadora a 30 °C."
+            "icono": "escudo_check",
+            "titulo": "Manos libres",
+            "texto": "Úsalo en la mano o colgado con sus correas."
           }
         },
         "beneficio_5": {
           "type": "beneficio",
           "settings": {
-            "icono": "corazon",
-            "titulo": "Tacto suave",
-            "texto": "Funda agradable al tacto para dormir más a gusto."
+            "icono": "regalo",
+            "titulo": "Regalo perfecto",
+            "texto": "Ideal para quien pasa horas sentado o con estrés."
           }
         }
       },
@@ -330,12 +367,16 @@
     },
     "comparativa": {
       "type": "cervia-comparativa",
-      "settings": {},
+      "settings": {
+        "titulo": "Mejor que un <span>masaje casero</span>",
+        "sub": "Lo que cambia cuando el masaje está pensado para tu cuello.",
+        "col_otros": "Masaje casero"
+      },
       "blocks": {
         "fila_0": {
           "type": "fila",
           "settings": {
-            "atributo": "Sostiene la curva del cuello",
+            "atributo": "Disponible cuando quieras",
             "marca": "si",
             "marca_texto": "Sí",
             "otros": "no",
@@ -345,7 +386,7 @@
         "fila_1": {
           "type": "fila",
           "settings": {
-            "atributo": "Una altura para cada postura",
+            "atributo": "Calor relajante",
             "marca": "si",
             "marca_texto": "Sí",
             "otros": "no",
@@ -355,39 +396,39 @@
         "fila_2": {
           "type": "fila",
           "settings": {
-            "atributo": "Hueco para el hombro",
-            "marca": "si",
-            "marca_texto": "Sí",
-            "otros": "no",
-            "otros_texto": "No"
-          }
-        },
-        "fila_3": {
-          "type": "fila",
-          "settings": {
-            "atributo": "Recupera su forma",
-            "marca": "si",
-            "marca_texto": "Sí",
-            "otros": "texto",
-            "otros_texto": "Se aplasta"
-          }
-        },
-        "fila_4": {
-          "type": "fila",
-          "settings": {
-            "atributo": "Funda lavable",
+            "atributo": "Intensidad regulable",
             "marca": "si",
             "marca_texto": "Sí",
             "otros": "texto",
             "otros_texto": "Depende"
           }
         },
+        "fila_3": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Sin ayuda de nadie",
+            "marca": "si",
+            "marca_texto": "Sí",
+            "otros": "no",
+            "otros_texto": "No"
+          }
+        },
+        "fila_4": {
+          "type": "fila",
+          "settings": {
+            "atributo": "Sin cables",
+            "marca": "si",
+            "marca_texto": "Sí",
+            "otros": "texto",
+            "otros_texto": "—"
+          }
+        },
         "fila_5": {
           "type": "fila",
           "settings": {
-            "atributo": "Prueba en casa sin riesgo",
+            "atributo": "Prueba sin riesgo",
             "marca": "texto",
-            "marca_texto": "30 noches",
+            "marca_texto": "30 días",
             "otros": "no",
             "otros_texto": "No"
           }
@@ -475,7 +516,10 @@
       "type": "cervia-garantia",
       "settings": {
         "dias": 30,
-        "texto": "<p>Duerme con ella, nota la diferencia y decide con calma. Si en [[dias]] noches no es para ti, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>"
+        "titulo": "Pruébalo <span>[[dias]] días</span> en casa",
+        "unidad_sello": "días",
+        "texto": "<p>Úsalo, nota la diferencia y decide con calma. Si en [[dias]] días no es para ti, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>",
+        "cta_texto": "Probarlo sin riesgo · [[precio]]"
       }
     },
     "faq": {
@@ -487,60 +531,53 @@
         "pregunta_0": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Sirve si duermo de lado o boca abajo?",
-            "respuesta": "<p>Sí. De lado usas el borde alto, boca arriba el centro rebajado y boca abajo la zona más baja, para girar menos el cuello.</p>"
+            "pregunta": "¿Cuánto dura la batería?",
+            "respuesta": "<p>Unos 70 minutos con una carga completa. Se carga a 5 V, con cualquier cargador USB.</p>"
           }
         },
         "pregunta_1": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Cuánto se tarda en acostumbrarse?",
-            "respuesta": "<p>Lo normal es notarla distinta las primeras noches. La mayoría se adapta en una o dos semanas, mientras el cuello se acostumbra a ir recto.</p>"
+            "pregunta": "¿Cuánto tiempo debo usarlo?",
+            "respuesta": "<p>Sesiones de unos 10 minutos. Puedes repetir a lo largo del día si lo necesitas.</p>"
           }
         },
         "pregunta_2": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Es normal que huela al sacarla?",
-            "respuesta": "<p>Sí, pasa con toda la espuma viscoelástica. Viene envasada al vacío: déjala airear 24–48 h y el olor desaparece mientras recupera su forma.</p>"
+            "pregunta": "¿Se puede usar sin calor?",
+            "respuesta": "<p>Sí. El calor es opcional y tiene 2 niveles; puedes usar solo el masaje.</p>"
           }
         },
         "pregunta_3": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Qué medidas tiene?",
-            "respuesta": "<p>62 × 37 cm, con una altura de 8 a 12 cm según la zona. Cabe en una funda de almohada estándar.</p>"
+            "pregunta": "¿Lo puedo usar en otras zonas?",
+            "respuesta": "<p>Está pensado para cuello y hombros, pero también puedes usarlo en la zona lumbar o en las piernas.</p>"
           }
         },
         "pregunta_4": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Se puede lavar?",
-            "respuesta": "<p>La funda sí: se quita y va a la lavadora a 30 °C. La espuma no se mete en la lavadora; límpiala con un paño húmedo y déjala secar al aire.</p>"
+            "pregunta": "¿Quién no debería usarlo?",
+            "respuesta": "<p>Si estás embarazada, llevas marcapasos o tienes una lesión, consulta antes con tu médico.</p>"
           }
         },
         "pregunta_5": {
           "type": "pregunta",
           "settings": {
             "pregunta": "¿Cuándo me llega?",
-            "respuesta": "<p>El envío es gratis. Preparamos el pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>"
+            "respuesta": "<p>El envío es gratis desde España. Lo recibes en 7–12 días laborables.</p>"
           }
         },
         "pregunta_6": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Es un pago único?",
-            "respuesta": "<p>Sí. Pagas una vez y ya está: sin suscripciones ni cargos sorpresa.</p>"
+            "pregunta": "¿Y si no me convence?",
+            "respuesta": "<p>Tienes 30 días para probarlo. Escríbenos desde la página de contacto y te explicamos cómo devolverlo.</p>"
           }
         },
         "pregunta_7": {
-          "type": "pregunta",
-          "settings": {
-            "pregunta": "¿Y si no me convence?",
-            "respuesta": "<p>Tienes 30 noches para probarla. Escríbenos desde la página de contacto y te explicamos cómo devolverla.</p>"
-          }
-        },
-        "pregunta_8": {
           "type": "pregunta",
           "settings": {
             "pregunta": "¿Es seguro pagar aquí?",
@@ -556,16 +593,18 @@
         "pregunta_4",
         "pregunta_5",
         "pregunta_6",
-        "pregunta_7",
-        "pregunta_8"
+        "pregunta_7"
       ]
     },
     "cta-final": {
       "type": "cervia-cta-final",
       "settings": {
-        "sub": "Envío gratis a toda España y 30 noches para probarla en casa.",
-        "imagen": "shopify://shop_images/Sc5f9ae2be29b49dba3f8fb4e1e048746Z.webp",
-        "guia": ""
+        "eyebrow": "Tu momento de desconexión",
+        "titulo": "Suelta la tensión <span>hoy mismo</span>",
+        "sub": "Envío gratis y 30 días para probarlo en casa.",
+        "imagen": "shopify://shop_images/S97975568bebd4c80a2f16ffcff7a95d8u.webp",
+        "guia": "",
+        "cta_texto": "Quiero mi masajeador · [[precio]]"
       }
     },
     "barra-compra": {
