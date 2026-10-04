@@ -37,6 +37,10 @@
   #shopify-section-{{ section.id }} .cervia-final__caja { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 28px !important; align-items: center !important; padding: {{ section.settings.padding_caja_movil }}px var(--pad-card) !important; border-radius: var(--radius) !important; background: linear-gradient({{ section.settings.angulo_banda }}deg, {{ section.settings.banda_1 }}, {{ section.settings.banda_2 }}) !important; color: {{ section.settings.banda_texto }} !important; overflow: hidden !important; }
   @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-final__caja { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 56px !important; padding: {{ section.settings.padding_caja }}px 56px !important; } }
   #shopify-section-{{ section.id }} .cervia-final__caja .cervia-media { aspect-ratio: {{ section.settings.ratio }} !important; background: color-mix(in srgb, {{ section.settings.banda_texto }} 10%, transparent) !important; }
+  {%- if section.settings.ajuste_imagen == 'contain' -%}
+  #shopify-section-{{ section.id }} .cervia-final__caja .cervia-media { background: #FFFFFF !important; }
+  #shopify-section-{{ section.id }} .cervia-final__caja .cervia-media img { object-fit: contain !important; padding: 4% !important; box-sizing: border-box !important; }
+  {%- endif -%}
   #shopify-section-{{ section.id }} .cervia-final__textos { display: grid !important; gap: 16px !important; text-align: {{ section.settings.alin_cabecera }} !important; }
   #shopify-section-{{ section.id }} .cervia-final__textos .cervia-s__cabecera { margin: 0 !important; max-width: none !important; }
   #shopify-section-{{ section.id }} .cervia-final__textos .cervia-s__titulo, #shopify-section-{{ section.id }} .cervia-final__textos .cervia-s__sub { color: {{ section.settings.banda_texto }} !important; }
@@ -452,6 +456,22 @@
         }
       ],
       "default": "1 / 1"
+    },
+    {
+      "type": "select",
+      "id": "ajuste_imagen",
+      "label": "Ajuste de la imagen",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Imagen entera (sin recortar)"
+        },
+        {
+          "value": "cover",
+          "label": "Rellenar el cuadro (recorta)"
+        }
+      ],
+      "default": "contain"
     },
     {
       "type": "header",
