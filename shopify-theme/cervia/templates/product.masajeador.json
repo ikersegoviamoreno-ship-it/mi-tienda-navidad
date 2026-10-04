@@ -267,7 +267,7 @@
             "titulo": "Colócalo",
             "texto": "Apóyalo sobre cuello y hombros y ajusta las correas a tu medida.",
             "guia": "Foto colocándose el masajeador en el cuello",
-            "imagen": "shopify://shop_images/masajeador-paso-colocalo.jpg"
+            "imagen": "shopify://shop_images/masajeador-cuello-verde.jpg"
           }
         },
         "postura_1": {
@@ -276,7 +276,7 @@
             "titulo": "Elige",
             "texto": "Escoge entre 3 intensidades de masaje y 2 niveles de calor.",
             "guia": "Foto eligiendo intensidad o calor en los botones",
-            "imagen": "shopify://shop_images/masajeador-paso-elige.jpg"
+            "imagen": "shopify://shop_images/masajeador-principal-v2.jpg"
           }
         },
         "postura_2": {
@@ -285,7 +285,7 @@
             "titulo": "Relájate",
             "texto": "Disfruta de una sesión de unos 10 minutos y nota cómo se suelta la tensión.",
             "guia": "Foto relajándose con el masajeador puesto",
-            "imagen": "shopify://shop_images/masajeador-paso-relajate.jpg"
+            "imagen": "shopify://shop_images/masajeador-brazo-verde.jpg"
           }
         }
       },
