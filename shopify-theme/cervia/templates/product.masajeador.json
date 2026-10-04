@@ -366,7 +366,7 @@
             "mostrar_3": true,
             "icono_3": "camion",
             "titulo_3": "Envío",
-            "contenido_3": "<p>Envío gratis desde España. Preparamos tu pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>",
+            "contenido_3": "<p>Envío gratis desde España. Preparamos tu pedido en 1–2 días laborables y lo recibes en 7–12 días laborables.</p>",
             "abierta_3": false,
             "mostrar_4": true,
             "icono_4": "ciclo",
@@ -1318,7 +1318,7 @@
         "titulo": "Qué dicen quienes ya lo usan",
         "etiqueta": "h2",
         "mostrar_sub": true,
-        "sub": "Opiniones reales de compradores de este masajeador en AliExpress (artículo similar)",
+        "sub": "Opiniones reales de compradores de este masajeador en Cervia",
         "alin_cabecera": "center",
         "tam_titulo": 36,
         "tam_titulo_movil": 26,
@@ -2048,20 +2048,6 @@
     },
     "resenas_judgeme": {
       "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -2125,3 +2111,4 @@
     "barra-compra"
   ]
 }
+

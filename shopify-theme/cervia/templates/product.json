@@ -357,7 +357,7 @@
             "mostrar_3": true,
             "icono_3": "camion",
             "titulo_3": "Envío",
-            "contenido_3": "<p>Envío gratis. Preparamos tu pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>",
+            "contenido_3": "<p>Envío gratis. Preparamos tu pedido en 1–2 días laborables y lo recibes en 7–12 días laborables.</p>",
             "abierta_3": false,
             "mostrar_4": true,
             "icono_4": "ciclo",
@@ -1731,7 +1731,7 @@
           "type": "pregunta",
           "settings": {
             "pregunta": "¿Cuándo me llega?",
-            "respuesta": "<p>El envío es gratis. Preparamos el pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>"
+            "respuesta": "<p>El envío es gratis. Preparamos el pedido en 1–2 días laborables y lo recibes en 7–12 días laborables.</p>"
           }
         },
         "pregunta_6": {
