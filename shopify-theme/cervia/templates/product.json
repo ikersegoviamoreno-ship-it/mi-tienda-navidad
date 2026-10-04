@@ -1515,12 +1515,11 @@
     },
     "opiniones_clientes": {
       "type": "ss-testimonials-48",
-      "disabled": true,
       "blocks": {
         "sub_heading": {
           "type": "sub_heading",
           "settings": {
-            "sub_heading": "<p>OPINIONES REALES</p>",
+            "sub_heading": "<p>OPINIONES DE COMPRADORES</p>",
             "sub_heading_font": "dm_sans_n7",
             "sub_heading_color": "#EF4423",
             "sub_heading_bg_color": "#FFE3D6"
@@ -1529,7 +1528,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<h2>Lo que dicen <strong>nuestros clientes</strong></h2>",
+            "heading": "<h2>Lo que dicen <strong>quienes duermen con ella</strong></h2>",
             "heading_font": "dm_sans_n7",
             "heading_accent_font": "dm_sans_n7",
             "heading_color": "#1B1F5E",
@@ -1541,47 +1540,119 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Reseñas de personas que ya usan Cervia.</p>",
+            "text": "<p>Reseñas reales de compradores de esta almohada en AliExpress (artículo similar).</p>",
             "text_font": "dm_sans_n4",
             "text_color": "#585C85",
             "text_size": 17,
             "text_size_mobile": 15
           }
         },
-        "testimonial_0": {
+        "resena_ae_0": {
           "type": "testimonial",
           "settings": {
             "stars_count": 5,
-            "text": "<p>[Pega aquí una reseña real de un cliente]</p>",
-            "author": "[Nombre]",
-            "subcopy_author": "Compra verificada"
+            "text": "<p>Una almohada para el cuello absolutamente excelente, se duerme muy cómodamente con ella. Y el precio también es muy bueno. Llevo 3 semanas durmiendo con esta almohada todos los días, y puedo decir que es realmente buena.</p>",
+            "author": "M***l",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 12 jul 2026"
           }
         },
-        "testimonial_1": {
+        "resena_ae_1": {
           "type": "testimonial",
           "settings": {
             "stars_count": 5,
-            "text": "<p>[Pega aquí una reseña real de un cliente]</p>",
-            "author": "[Nombre]",
-            "subcopy_author": "Compra verificada"
+            "text": "<p>Envío muy rápido. Almohada tal como se describe. La mejor almohada para evitar dolores de cabeza relacionados con el cuello por la mañana.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 19 sep 2026"
           }
         },
-        "testimonial_2": {
+        "resena_ae_2": {
           "type": "testimonial",
           "settings": {
             "stars_count": 5,
-            "text": "<p>[Pega aquí una reseña real de un cliente]</p>",
-            "author": "[Nombre]",
-            "subcopy_author": "Compra verificada"
+            "text": "<p>Muy bien fabricado. Tengo 4 hernias cervicales y puedo asegurar que cada noche que duermo con esta almohada el cuello se levanta &quot;reseteado&quot;. Encantadísimo con ella. No he encontrado forros adicionales para ir lavando el original, usaré camisetas!!</p>",
+            "author": "j***r",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 28 sep 2026"
           }
         },
-        "testimonial_3": {
+        "resena_ae_3": {
           "type": "testimonial",
           "settings": {
             "stars_count": 5,
-            "text": "<p>[Pega aquí una reseña real de un cliente]</p>",
-            "author": "[Nombre]",
-            "subcopy_author": "Compra verificada"
+            "text": "<p>Almohada increíble, ya no tengo dolor de cuello y por fin duermo toda la noche.</p>",
+            "author": "B***i",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 14 jul 2026"
+          }
+        },
+        "resena_ae_4": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Envío rápido, el producto es válido y resistente. Excelente relación calidad-precio.</p>",
+            "author": "D***i",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 01 oct 2026"
+          }
+        },
+        "resena_ae_5": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Muy cómodo, excelente ajuste, muy satisfecho con la compra.</p>",
+            "author": "G***t",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 20 jul 2026"
+          }
+        },
+        "resena_ae_6": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Muy contenta con mi almohada, es suave y muy ligera para mis brazos y mi cuello... la recomiendo.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 17 sep 2026"
+          }
+        },
+        "resena_ae_7": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Artículo tal como se describe - excelente precio - envío rápido. Vendedor recomendado.</p>",
+            "author": "M***i",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 16 sep 2026"
+          }
+        },
+        "resena_ae_8": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Muy bien hecho y coincide con lo anunciado.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 20 jul 2026"
+          }
+        },
+        "resena_ae_9": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Mejor artículo que he comprado.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 28 jul 2026"
+          }
+        },
+        "resena_ae_10": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Se ve bien de calidad, falta probarla. Es tal y como se describe. Vendedor 100% recomendable.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar"
+          }
+        },
+        "resena_ae_11": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>¡Excelente producto, lo recomiendo! 👍😋</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar"
           }
         }
       },
@@ -1589,10 +1660,18 @@
         "sub_heading",
         "heading",
         "text",
-        "testimonial_0",
-        "testimonial_1",
-        "testimonial_2",
-        "testimonial_3"
+        "resena_ae_0",
+        "resena_ae_1",
+        "resena_ae_2",
+        "resena_ae_3",
+        "resena_ae_4",
+        "resena_ae_5",
+        "resena_ae_6",
+        "resena_ae_7",
+        "resena_ae_8",
+        "resena_ae_9",
+        "resena_ae_10",
+        "resena_ae_11"
       ],
       "settings": {
         "author_font": "dm_sans_n7",
