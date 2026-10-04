@@ -56,7 +56,7 @@
             "texto_ahorro": "Ahorras [[valor]]",
             "aria_anterior": "Precio anterior",
             "mostrar_nota": true,
-            "nota": "IVA incluido · Envío gratis",
+            "nota": "Envío gratis · 30 días de prueba",
             "tam_precio": 32,
             "tam_precio_movil": 28,
             "tam_nota": 13,
@@ -72,7 +72,8 @@
             "margen_sup": 0,
             "margen_inf": 0,
             "margen_sup_movil": 0,
-            "margen_inf_movil": 0
+            "margen_inf_movil": 0,
+            "valoracion_real": true
           }
         },
         "cervia_checks": {

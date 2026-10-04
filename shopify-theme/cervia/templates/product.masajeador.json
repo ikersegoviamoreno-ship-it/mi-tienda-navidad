@@ -13,7 +13,10 @@
         },
         "cervia_precio": {
           "type": "cervia_precio",
-          "settings": {}
+          "settings": {
+            "nota": "Envío gratis · 30 días de prueba",
+            "valoracion_real": true
+          }
         },
         "cervia_checks": {
           "type": "cervia_checks",
