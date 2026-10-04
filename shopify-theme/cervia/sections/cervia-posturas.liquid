@@ -158,7 +158,7 @@
     }
     if (customElements.get('cervia-cta')) return;
     class CerviaCta extends HTMLElement {
-      connectedCallback() {
+      connectedCallback() { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (this.isConnected) this.connectedCallback(); }, { once: true }); return; }
         this.boton = this.querySelector('[data-boton]');
         this.texto = this.querySelector('[data-texto-boton]');
         this.spinner = this.querySelector('.cervia-cta__spinner');

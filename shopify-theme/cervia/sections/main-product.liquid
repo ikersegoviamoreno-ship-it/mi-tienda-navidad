@@ -301,7 +301,7 @@
 
       if (!customElements.get('marca-miniaturas')) {
         class MarcaMiniaturas extends HTMLElement {
-          connectedCallback() {
+          connectedCallback() { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (this.isConnected) this.connectedCallback(); }, { once: true }); return; }
             this.lista = this.closest('product-info')?.querySelector('.thumbnail-list');
             if (!this.lista) return;
             this.onClick = (e) => { const b = e.target.closest('.thumbnail'); if (b) requestAnimationFrame(() => b.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' })); };
@@ -316,7 +316,7 @@
 
       if (!customElements.get('marca-precio-sync')) {
         class MarcaPrecioSync extends HTMLElement {
-          connectedCallback() {
+          connectedCallback() { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (this.isConnected) this.connectedCallback(); }, { once: true }); return; }
             if (typeof subscribe !== 'function') return;
             this.unsubscribe = subscribe(PUB_SUB_EVENTS.variantChange, ({ data }) => this.render(data.variant));
           }
@@ -347,7 +347,7 @@
 
       if (!customElements.get('marca-packs')) {
         class MarcaPacks extends HTMLElement {
-          connectedCallback() {
+          connectedCallback() { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (this.isConnected) this.connectedCallback(); }, { once: true }); return; }
             this.boton = this.querySelector('[data-boton]');
             this.textoBoton = this.querySelector('[data-boton-texto]');
             this.spinner = this.querySelector('.cervia-spinner');
@@ -455,7 +455,7 @@
 
       if (!customElements.get('marca-envio')) {
         class MarcaEnvio extends HTMLElement {
-          connectedCallback() {
+          connectedCallback() { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (this.isConnected) this.connectedCallback(); }, { once: true }); return; }
             const finde = this.dataset.finde === 'true';
             const sumar = (dias) => {
               const d = new Date();
@@ -479,7 +479,7 @@
 
       if (!customElements.get('marca-desplegables')) {
         class MarcaDesplegables extends HTMLElement {
-          connectedCallback() {
+          connectedCallback() { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (this.isConnected) this.connectedCallback(); }, { once: true }); return; }
             if (this.dataset.una !== 'true') return;
             this.addEventListener('toggle', (e) => {
               const d = e.target;

@@ -220,17 +220,6 @@
             "margen_inf_movil": 0
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
         "cervia_microcopy": {
           "type": "cervia_microcopy",
           "settings": {
@@ -402,8 +391,6 @@
         "cervia_separador",
         "variant_picker",
         "cervia_packs",
-        "quantity_selector",
-        "buy_buttons",
         "cervia_microcopy",
         "cervia_pagos",
         "cervia_garantias",
