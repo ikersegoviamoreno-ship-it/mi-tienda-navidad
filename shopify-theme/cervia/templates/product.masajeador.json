@@ -654,11 +654,18 @@
           "settings": {
             "imagen": "shopify://shop_images/momento-durmiendo-almohada.jpg"
           }
+        },
+        "foto_4": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/momento-chica-cama-almohada.jpg"
+          }
         }
       },
       "block_order": [
         "foto_0",
         "foto_1",
+        "foto_4",
         "foto_2",
         "foto_3"
       ],
