@@ -261,7 +261,7 @@
     "posturas": {
       "type": "cervia-posturas",
       "settings": {
-        "mostrar_imagenes": false,
+        "mostrar_imagenes": true,
         "eyebrow": "Cómo se usa",
         "titulo": "Relájate en <span>3 pasos</span>",
         "sub": "Listo en segundos, en casa o en la oficina.",
@@ -273,7 +273,7 @@
           "settings": {
             "titulo": "Colócalo",
             "texto": "Apóyalo sobre cuello y hombros y ajusta las correas a tu medida.",
-            "guia": ""
+            "guia": "Foto colocándose el masajeador en el cuello"
           }
         },
         "postura_1": {
@@ -281,7 +281,7 @@
           "settings": {
             "titulo": "Elige",
             "texto": "Escoge entre 3 intensidades de masaje y 2 niveles de calor.",
-            "guia": ""
+            "guia": "Foto eligiendo intensidad o calor en los botones"
           }
         },
         "postura_2": {
@@ -289,7 +289,7 @@
           "settings": {
             "titulo": "Relájate",
             "texto": "Disfruta de una sesión de unos 10 minutos y nota cómo se suelta la tensión.",
-            "guia": ""
+            "guia": "Foto relajándose con el masajeador puesto"
           }
         }
       },

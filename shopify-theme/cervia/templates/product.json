@@ -232,7 +232,7 @@
     "posturas": {
       "type": "cervia-posturas",
       "settings": {
-        "mostrar_imagenes": false
+        "mostrar_imagenes": true
       },
       "blocks": {
         "postura_0": {
@@ -240,7 +240,7 @@
           "settings": {
             "titulo": "De lado",
             "texto": "Apoya la cabeza en el borde alto: rellena el hueco entre hombro y oreja y el cuello queda recto.",
-            "guia": "Aquí va una foto durmiendo de lado sobre Cervia"
+            "guia": "Foto durmiendo de lado sobre la almohada"
           }
         },
         "postura_1": {
@@ -248,7 +248,7 @@
           "settings": {
             "titulo": "Boca arriba",
             "texto": "El centro rebajado acoge la cabeza y el borde bajo sostiene la curva de la nuca.",
-            "guia": "Aquí va una foto durmiendo boca arriba sobre Cervia"
+            "guia": "Foto durmiendo boca arriba"
           }
         },
         "postura_2": {
@@ -256,7 +256,7 @@
           "settings": {
             "titulo": "Boca abajo",
             "texto": "Usa la zona central, la más baja, para que el cuello gire lo menos posible.",
-            "guia": "Aquí va una foto durmiendo boca abajo sobre Cervia"
+            "guia": "Foto durmiendo boca abajo"
           }
         }
       },
