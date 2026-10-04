@@ -18,9 +18,9 @@
         "titulo": "Tu descanso y bienestar <span>en un solo lugar</span>",
         "sub": "Especialistas en ergonomía y alivio para tu cuello y tu descanso.",
         "boton1": "Ver la almohada",
-        "enlace1": "shopify://products/butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow",
+        "enlace1": "shopify://products/almohada-cervical-cervia",
         "boton2": "Ver el masajeador",
-        "enlace2": "shopify://products/hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador",
+        "enlace2": "shopify://products/masajeador-cervical-cervia",
         "sellos": "Envío gratis a toda España | 30 días de prueba | Pago seguro",
         "padding_inferior": 4,
         "padding_inferior_movil": 4
@@ -128,18 +128,6 @@
     },
     "marca": {
       "type": "cervia-marca",
-      "settings": {
-        "imagen": "shopify://shop_images/despierta-renovado-almohada.jpg",
-        "ratio": "auto",
-        "imagen_derecha": false,
-        "eyebrow": "Nuestra marca",
-        "titulo": "Qué significa <span>Cervia</span> para nosotros",
-        "texto": "<p>Cervia nace de una idea sencilla: <strong>tu cuello lo aguanta todo</strong>. Horas frente al ordenador, el móvil, el coche, una mala postura al dormir… y casi nunca le prestamos atención.</p><p>Por eso no vendemos de todo. Elegimos pocos productos, pensados solo para cuidar tu cuello y tu descanso, y los explicamos con claridad para que sepas exactamente lo que compras.</p>",
-        "boton": "",
-        "color_fondo": "#FFF8F2",
-        "padding": 28,
-        "padding_movil": 16
-      },
       "blocks": {
         "p1": {
           "type": "punto",
@@ -167,7 +155,19 @@
         "p1",
         "p2",
         "p3"
-      ]
+      ],
+      "settings": {
+        "imagen": "shopify://shop_images/despierta-renovado-almohada.jpg",
+        "ratio": "auto",
+        "imagen_derecha": false,
+        "eyebrow": "Nuestra marca",
+        "titulo": "Qué significa <span>Cervia</span> para nosotros",
+        "texto": "<p>Cervia nace de una idea sencilla: <strong>tu cuello lo aguanta todo</strong>. Horas frente al ordenador, el móvil, el coche, una mala postura al dormir… y casi nunca le prestamos atención.</p><p>Por eso no vendemos de todo. Elegimos pocos productos, pensados solo para cuidar tu cuello y tu descanso, y los explicamos con claridad para que sepas exactamente lo que compras.</p>",
+        "boton": "",
+        "color_fondo": "#FFF8F2",
+        "padding": 28,
+        "padding_movil": 16
+      }
     },
     "beneficios": {
       "type": "cervia-beneficios",
@@ -466,6 +466,7 @@
         "texto": "<p>Para nosotros, una venta no termina cuando pagas: termina cuando estás contento. Por eso tienes <strong>[[dias]] días</strong> para probar tu producto en casa, aunque ya lo hayas usado.</p><p>Si algo no va como esperabas, escríbenos desde la página de contacto y lo solucionamos contigo.</p>",
         "mostrar_sello": true,
         "unidad_sello": "días",
+        "forma_sello": "cuadrado",
         "tam_sello": 160,
         "tam_sello_movil": 130,
         "color_sello": "#1b1f5e",
@@ -514,8 +515,7 @@
         "animacion": "fade",
         "ocultar_movil": false,
         "ocultar_escritorio": false,
-        "clases": "",
-        "forma_sello": "cuadrado"
+        "clases": ""
       }
     },
     "faq": {

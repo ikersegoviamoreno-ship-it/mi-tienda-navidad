@@ -105,7 +105,8 @@
           "type": "legal",
           "settings": {
             "tipo": "terminos",
-            "texto": "Términos"
+            "texto": "Términos",
+            "url": "/pages/terminos-y-condiciones"
           }
         },
         "legal_15": {
@@ -113,6 +114,22 @@
           "settings": {
             "tipo": "contacto",
             "texto": "Contacto"
+          }
+        },
+        "legal_nosotros": {
+          "type": "legal",
+          "settings": {
+            "tipo": "otro",
+            "texto": "Sobre nosotros",
+            "url": "/pages/sobre-nosotros"
+          }
+        },
+        "legal_seguimiento": {
+          "type": "legal",
+          "settings": {
+            "tipo": "otro",
+            "texto": "Seguimiento de pedido",
+            "url": "/pages/seguimiento-pedido"
           }
         }
       },
@@ -126,6 +143,8 @@
         "confianza_6",
         "confianza_7",
         "confianza_8",
+        "legal_nosotros",
+        "legal_seguimiento",
         "legal_11",
         "legal_12",
         "legal_13",

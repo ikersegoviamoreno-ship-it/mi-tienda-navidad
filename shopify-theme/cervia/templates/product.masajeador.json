@@ -1051,6 +1051,7 @@
         "texto": "<p>Úsalo, nota la diferencia y decide con calma. Si en [[dias]] días no es para ti, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>",
         "mostrar_sello": true,
         "unidad_sello": "días",
+        "forma_sello": "cuadrado",
         "tam_sello": 160,
         "tam_sello_movil": 130,
         "color_sello": "#1b1f5e",
@@ -1099,8 +1100,7 @@
         "animacion": "fade",
         "ocultar_movil": false,
         "ocultar_escritorio": false,
-        "clases": "",
-        "forma_sello": "cuadrado"
+        "clases": ""
       }
     },
     "testimonios": {
@@ -1521,7 +1521,7 @@
         "ancho_titulo": 760,
         "espaciado_letras": -0.5,
         "mostrar_imagen": true,
-        "producto": "butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow",
+        "producto": "almohada-cervical-cervia",
         "guia": "",
         "ratio": "1 / 1",
         "ajuste_imagen": "contain",

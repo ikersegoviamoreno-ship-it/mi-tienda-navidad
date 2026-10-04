@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -1049,6 +1058,7 @@
         "texto": "<p>Duerme con ella, nota la diferencia y decide con calma. Si en [[dias]] noches no es para ti, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>",
         "mostrar_sello": true,
         "unidad_sello": "noches",
+        "forma_sello": "cuadrado",
         "tam_sello": 160,
         "tam_sello_movil": 130,
         "color_sello": "#1b1f5e",
@@ -1097,8 +1107,7 @@
         "animacion": "fade",
         "ocultar_movil": false,
         "ocultar_escritorio": false,
-        "clases": "",
-        "forma_sello": "cuadrado"
+        "clases": ""
       }
     },
     "testimonios": {
@@ -1831,7 +1840,7 @@
         "ancho_titulo": 760,
         "espaciado_letras": -0.5,
         "mostrar_imagen": true,
-        "producto": "hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador",
+        "producto": "masajeador-cervical-cervia",
         "guia": "",
         "ratio": "1 / 1",
         "ajuste_imagen": "contain",
