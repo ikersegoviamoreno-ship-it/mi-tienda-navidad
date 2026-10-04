@@ -39,11 +39,7 @@
     {%- assign v = oferta.selected_or_first_available_variant -%}
     <div class="cervia-cx-upsell">
       <p class="cervia-cx-upsell__titulo">{{ titulo_oferta }}</p>
-      {%- if uds_cervia == 1 -%}
-        <p class="cervia-cx-upsell__ahorro">Añádelo y ahorra un <strong>10 % en los dos</strong></p>
-      {%- elsif uds_cervia == 2 -%}
-        <p class="cervia-cx-upsell__ahorro">Añádelo y tu descuento sube al <strong>15 %</strong></p>
-      {%- endif -%}
+      <p class="cervia-cx-upsell__ahorro">El complemento perfecto, con <strong>envío gratis</strong></p>
       <div class="cervia-cx-upsell__fila">
         {%- if oferta.featured_image -%}
           <a href="{{ oferta.url }}" class="cervia-cx-upsell__img">{{ oferta.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', width: 72, height: 72, alt: oferta.title }}</a>
