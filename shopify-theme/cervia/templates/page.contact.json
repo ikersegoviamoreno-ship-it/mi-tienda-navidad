@@ -12,7 +12,8 @@
     "contacto": {
       "type": "cervia-contacto",
       "settings": {
-        "correo": "ikersegoviamoreno@gmail.com"
+        "correo": "",
+        "texto": "Para cualquier duda sobre nuestros productos, envíos o tu pedido, rellena el formulario y te responderemos lo antes posible. Incluye tu número de pedido para ayudarte más rápido."
       }
     }
   },
