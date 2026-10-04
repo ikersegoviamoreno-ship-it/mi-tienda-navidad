@@ -1099,7 +1099,8 @@
         "animacion": "fade",
         "ocultar_movil": false,
         "ocultar_escritorio": false,
-        "clases": ""
+        "clases": "",
+        "forma_sello": "cuadrado"
       }
     },
     "testimonios": {
@@ -2111,4 +2112,3 @@
     "barra-compra"
   ]
 }
-
