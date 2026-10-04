@@ -840,7 +840,8 @@
         "padding_top": 48,
         "padding_bottom": 48,
         "scrolling_velocity": 120,
-        "scrolling_velocity_mobile": 100
+        "scrolling_velocity_mobile": 100,
+        "subcopy_text_length": 60
       }
     }
   },

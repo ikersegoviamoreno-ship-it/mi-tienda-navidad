@@ -73,7 +73,9 @@
             "margen_inf": 0,
             "margen_sup_movil": 0,
             "margen_inf_movil": 0,
-            "valoracion_real": true
+            "valoracion_real": true,
+            "texto_resenas_real": "reseñas",
+            "color_estrellas": "#ffb400"
           }
         },
         "cervia_checks": {
@@ -264,6 +266,37 @@
             "margen_inf_movil": 0
           }
         },
+        "cervia_envio": {
+          "type": "cervia_envio",
+          "settings": {
+            "estilo": "linea",
+            "paso1": "Pedido recibido",
+            "paso2": "Pedido tramitado",
+            "tramite_min": 1,
+            "tramite_max": 2,
+            "paso3": "Pedido entregado",
+            "dias_min": 7,
+            "dias_max": 12,
+            "excluir_finde": true,
+            "texto": "Pídelo hoy y recíbelo entre el [[fecha_min]] y el [[fecha_max]]",
+            "locale": "es-ES",
+            "icono": "camion",
+            "tam_icono": 20,
+            "tam_texto": 14,
+            "color_texto": "#1b1f5e",
+            "color_icono": "#ef4423",
+            "color_fondo": "#fff1ea",
+            "radius": 12,
+            "mostrar": true,
+            "ocultar_movil": false,
+            "ocultar_escritorio": false,
+            "alineacion": "left",
+            "margen_sup": 0,
+            "margen_inf": 0,
+            "margen_sup_movil": 0,
+            "margen_inf_movil": 0
+          }
+        },
         "cervia_garantias": {
           "type": "cervia_garantias",
           "settings": {
@@ -306,32 +339,6 @@
             "margen_inf": 0,
             "margen_sup_movil": 0,
             "margen_inf_movil": 0
-          }
-        },
-        "cervia_envio": {
-          "type": "cervia_envio",
-          "settings": {
-            "dias_min": 7,
-            "dias_max": 12,
-            "excluir_finde": true,
-            "texto": "Pídelo hoy y recíbelo entre el [[fecha_min]] y el [[fecha_max]]",
-            "locale": "es-ES",
-            "icono": "camion",
-            "tam_icono": 20,
-            "tam_texto": 14,
-            "color_texto": "#1b1f5e",
-            "color_icono": "#ef4423",
-            "color_fondo": "#fff1ea",
-            "radius": 12,
-            "mostrar": true,
-            "ocultar_movil": false,
-            "ocultar_escritorio": false,
-            "alineacion": "left",
-            "margen_sup": 0,
-            "margen_inf": 0,
-            "margen_sup_movil": 0,
-            "margen_inf_movil": 0,
-            "estilo": "linea"
           }
         },
         "cervia_desplegables": {
@@ -641,28 +648,28 @@
         "postura_0": {
           "type": "postura",
           "settings": {
+            "imagen": "shopify://shop_images/almohada-dormir-de-lado-v2.jpg",
             "guia": "Aquí va una foto durmiendo de lado sobre Cervia",
             "titulo": "De lado",
-            "texto": "Apoya la cabeza en el borde alto: rellena el hueco entre hombro y oreja y el cuello queda recto.",
-            "imagen": "shopify://shop_images/almohada-dormir-de-lado-v2.jpg"
+            "texto": "Apoya la cabeza en el borde alto: rellena el hueco entre hombro y oreja y el cuello queda recto."
           }
         },
         "postura_1": {
           "type": "postura",
           "settings": {
+            "imagen": "shopify://shop_images/almohada-dormir-de-espalda-v2.jpg",
             "guia": "Aquí va una foto durmiendo boca arriba sobre Cervia",
             "titulo": "Boca arriba",
-            "texto": "El centro rebajado acoge la cabeza y el borde bajo sostiene la curva de la nuca.",
-            "imagen": "shopify://shop_images/almohada-dormir-de-espalda-v2.jpg"
+            "texto": "El centro rebajado acoge la cabeza y el borde bajo sostiene la curva de la nuca."
           }
         },
         "postura_2": {
           "type": "postura",
           "settings": {
+            "imagen": "shopify://shop_images/almohada-dormir-boca-abajo-v2.jpg",
             "guia": "Aquí va una foto durmiendo boca abajo sobre Cervia",
             "titulo": "Boca abajo",
-            "texto": "Usa la zona central, la más baja, para que el cuello gire lo menos posible.",
-            "imagen": "shopify://shop_images/almohada-dormir-boca-abajo-v2.jpg"
+            "texto": "Usa la zona central, la más baja, para que el cuello gire lo menos posible."
           }
         }
       },
@@ -736,6 +743,63 @@
         "ocultar_movil": false,
         "ocultar_escritorio": false,
         "clases": ""
+      }
+    },
+    "galeria_movil": {
+      "type": "cervia-galeria-movil",
+      "blocks": {
+        "foto_0": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/momento-pareja-almohada.jpg"
+          }
+        },
+        "foto_1": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/momento-abrazo-almohada.jpg"
+          }
+        },
+        "foto_4": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/momento-chica-cama-almohada.jpg"
+          }
+        },
+        "foto_2": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/momento-chico-almohada.jpg"
+          }
+        },
+        "foto_3": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/momento-durmiendo-almohada.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "foto_0",
+        "foto_1",
+        "foto_4",
+        "foto_2",
+        "foto_3"
+      ],
+      "settings": {
+        "eyebrow": "Momentos Cervia",
+        "titulo": "Descanso que <span>se nota</span>",
+        "sub": "Para tu cuello, de día y de noche.",
+        "duracion": 70,
+        "ancho": 320,
+        "ancho_movil": 220,
+        "separacion": 16,
+        "ratio": "4 / 5",
+        "color_fondo": "#fff8f2",
+        "color_texto": "#1b1f5e",
+        "color_acento": "#ef4423",
+        "padding_superior": 48,
+        "padding_inferior": 48
       }
     },
     "beneficios": {
@@ -966,221 +1030,6 @@
         "clases": ""
       }
     },
-    "testimonios": {
-      "type": "cervia-testimonios",
-      "blocks": {
-        "resena_0": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Llegó tal como se anunciaba ❤️❤️❤️",
-            "nombre": "Anónimo",
-            "fecha": "15 jun 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_1": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Tan pronto como lo recibí, le quité la funda y lo puse en la lavadora jaja. ¡Estoy muy emocionado por usarlo! Es un producto excelente y estoy feliz de haberlo comprado a un precio bajo.",
-            "nombre": "Anónimo",
-            "fecha": "30 sep 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_2": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Dormí maravillosamente con esta fantástica almohada.",
-            "nombre": "l***s",
-            "fecha": "27 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_3": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Super cómoda y funcional. Ahora se descansa mejor.",
-            "nombre": "Anónimo",
-            "fecha": "20 sep 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_4": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 3,
-            "texto": "La calidad no es la mejor. En esta foto se puede ver la diferencia entre la almohada de mi esposo, que es de alta calidad, más gruesa y resistente, y la que yo compré. Sigo teniendo problemas graves de cuello después de usarla durante 5 días.",
-            "nombre": "Anónimo",
-            "fecha": "08 sep 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_5": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Una almohada muy buena, es cómoda para dormir. Gracias y saludos cordiales.",
-            "nombre": "Anónimo",
-            "fecha": "01 sep 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_6": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Lo recomiendo encarecidamente.",
-            "nombre": "D***k",
-            "fecha": "03 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_7": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Sueño muy reparador. Excelente producto.",
-            "nombre": "Anónimo",
-            "fecha": "19 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_8": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Estoy muy satisfecho. Trabajo de calidad y entrega rápida. A la República Checa en 5 días. Gracias.",
-            "nombre": "V***t",
-            "fecha": "27 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_9": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Súper cómodo, gracias.",
-            "nombre": "Anónimo",
-            "fecha": "25 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_10": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Genial, muy conveniente.",
-            "nombre": "P***r",
-            "fecha": "24 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_11": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Es muy bueno, recomiendo al vendedor y el producto; envío y entrega rápidos.",
-            "nombre": "Anónimo",
-            "fecha": "AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_12": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Estoy muy satisfecho.",
-            "nombre": "7***r",
-            "fecha": "10 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_13": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Espectacular.",
-            "nombre": "Anónimo",
-            "fecha": "03 sep 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_14": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Impecable, recomiendo al vendedor y el producto.",
-            "nombre": "Anónimo",
-            "fecha": "06 sep 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        },
-        "resena_15": {
-          "type": "resena",
-          "settings": {
-            "mostrar": true,
-            "estrellas": 5,
-            "texto": "Es un buen y muy bonito pilo.",
-            "nombre": "Anónimo",
-            "fecha": "29 ago 2026 · AliExpress · artículo similar",
-            "verificado": false
-          }
-        }
-      },
-      "block_order": [
-        "resena_0",
-        "resena_1",
-        "resena_2",
-        "resena_3",
-        "resena_4",
-        "resena_5",
-        "resena_6",
-        "resena_7",
-        "resena_8",
-        "resena_9",
-        "resena_10",
-        "resena_11",
-        "resena_12",
-        "resena_13",
-        "resena_14",
-        "resena_15"
-      ],
-      "settings": {
-        "eyebrow": "Más opiniones",
-        "titulo": "Qué dicen <span>quienes ya duermen</span> con ella",
-        "sub": "Opiniones reales de compradores en AliExpress (artículo similar, medida 48 × 74 cm).",
-        "mostrar_resumen": false,
-        "layout": "texto",
-        "texto_verificado": "",
-        "columnas": "4",
-        "estilo_movil": "lista",
-        "cta_texto": "Quiero mi almohada · [[precio]]",
-        "cta_micro": "Envío gratis · Pago seguro · 30 días de prueba",
-        "padding_superior": 40,
-        "padding_inferior": 40,
-        "padding_superior_movil": 24,
-        "padding_inferior_movil": 24
-      }
-    },
     "garantia": {
       "type": "cervia-garantia",
       "settings": {
@@ -1250,91 +1099,211 @@
         "clases": ""
       }
     },
-    "faq": {
-      "type": "cervia-faq",
+    "testimonios": {
+      "type": "cervia-testimonios",
       "blocks": {
-        "pregunta_0": {
-          "type": "pregunta",
+        "resena_0": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Sirve si duermo de lado o boca abajo?",
-            "respuesta": "<p>Sí. De lado usas el borde alto, boca arriba el centro rebajado y boca abajo la zona más baja, para girar menos el cuello.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Llegó tal como se anunciaba ❤️❤️❤️",
+            "nombre": "Anónimo",
+            "fecha": "15 jun 2026",
+            "verificado": false
           }
         },
-        "pregunta_1": {
-          "type": "pregunta",
+        "resena_1": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Cuánto se tarda en acostumbrarse?",
-            "respuesta": "<p>Lo normal es notarla distinta las primeras noches. La mayoría se adapta en una o dos semanas, mientras el cuello se acostumbra a ir recto.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Tan pronto como lo recibí, le quité la funda y lo puse en la lavadora jaja. ¡Estoy muy emocionado por usarlo! Es un producto excelente y estoy feliz de haberlo comprado a un precio bajo.",
+            "nombre": "Anónimo",
+            "fecha": "30 sep 2026",
+            "verificado": false
           }
         },
-        "pregunta_2": {
-          "type": "pregunta",
+        "resena_2": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Es normal que huela al sacarla?",
-            "respuesta": "<p>Sí, pasa con toda la espuma viscoelástica. Viene envasada al vacío: déjala airear 24–48 h y el olor desaparece mientras recupera su forma.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Dormí maravillosamente con esta fantástica almohada.",
+            "nombre": "l***s",
+            "fecha": "27 ago 2026",
+            "verificado": false
           }
         },
-        "pregunta_3": {
-          "type": "pregunta",
+        "resena_3": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Qué medidas tiene?",
-            "respuesta": "<p>62 × 37 cm, con una altura de 8 a 12 cm según la zona. Cabe en una funda de almohada estándar.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Super cómoda y funcional. Ahora se descansa mejor.",
+            "nombre": "Anónimo",
+            "fecha": "20 sep 2026",
+            "verificado": false
           }
         },
-        "pregunta_4": {
-          "type": "pregunta",
+        "resena_4": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Se puede lavar?",
-            "respuesta": "<p>La funda sí: se quita y va a la lavadora a 30 °C. La espuma no se mete en la lavadora; límpiala con un paño húmedo y déjala secar al aire.</p>"
+            "mostrar": true,
+            "estrellas": 3,
+            "texto": "La calidad no es la mejor. En esta foto se puede ver la diferencia entre la almohada de mi esposo, que es de alta calidad, más gruesa y resistente, y la que yo compré. Sigo teniendo problemas graves de cuello después de usarla durante 5 días.",
+            "nombre": "Anónimo",
+            "fecha": "08 sep 2026",
+            "verificado": false
           }
         },
-        "pregunta_5": {
-          "type": "pregunta",
+        "resena_5": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Cuándo me llega?",
-            "respuesta": "<p>El envío es gratis. Preparamos el pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Una almohada muy buena, es cómoda para dormir. Gracias y saludos cordiales.",
+            "nombre": "Anónimo",
+            "fecha": "01 sep 2026",
+            "verificado": false
           }
         },
-        "pregunta_6": {
-          "type": "pregunta",
+        "resena_6": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Es un pago único?",
-            "respuesta": "<p>Sí. Pagas una vez y ya está: sin suscripciones ni cargos sorpresa.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Lo recomiendo encarecidamente.",
+            "nombre": "D***k",
+            "fecha": "03 ago 2026",
+            "verificado": false
           }
         },
-        "pregunta_7": {
-          "type": "pregunta",
+        "resena_7": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Y si no me convence?",
-            "respuesta": "<p>Tienes 30 noches para probarla. Escríbenos desde la página de contacto y te explicamos cómo devolverla.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Sueño muy reparador. Excelente producto.",
+            "nombre": "Anónimo",
+            "fecha": "19 ago 2026",
+            "verificado": false
           }
         },
-        "pregunta_8": {
-          "type": "pregunta",
+        "resena_8": {
+          "type": "resena",
           "settings": {
-            "pregunta": "¿Es seguro pagar aquí?",
-            "respuesta": "<p>Sí. El pago se procesa con cifrado y puedes usar tarjeta, PayPal, Apple Pay, Google Pay o Bizum.</p>"
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Estoy muy satisfecho. Trabajo de calidad y entrega rápida. A la República Checa en 5 días. Gracias.",
+            "nombre": "V***t",
+            "fecha": "27 ago 2026",
+            "verificado": false
+          }
+        },
+        "resena_9": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Súper cómodo, gracias.",
+            "nombre": "Anónimo",
+            "fecha": "25 ago 2026",
+            "verificado": false
+          }
+        },
+        "resena_10": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Genial, muy conveniente.",
+            "nombre": "P***r",
+            "fecha": "24 ago 2026",
+            "verificado": false
+          }
+        },
+        "resena_11": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Es muy bueno, recomiendo al vendedor y el producto; envío y entrega rápidos.",
+            "nombre": "l***a",
+            "fecha": "24 ago 2026",
+            "verificado": false
+          }
+        },
+        "resena_12": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Estoy muy satisfecho.",
+            "nombre": "7***r",
+            "fecha": "10 ago 2026",
+            "verificado": false
+          }
+        },
+        "resena_13": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Espectacular.",
+            "nombre": "j****r",
+            "fecha": "03 sep 2026",
+            "verificado": false
+          }
+        },
+        "resena_14": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Impecable, recomiendo al vendedor y el producto.",
+            "nombre": "Anónimo",
+            "fecha": "06 sep 2026",
+            "verificado": false
+          }
+        },
+        "resena_15": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Es un buen y muy bonito pilo.",
+            "nombre": "l***s",
+            "fecha": "29 ago 2026",
+            "verificado": false
           }
         }
       },
       "block_order": [
-        "pregunta_0",
-        "pregunta_1",
-        "pregunta_2",
-        "pregunta_3",
-        "pregunta_4",
-        "pregunta_5",
-        "pregunta_6",
-        "pregunta_7",
-        "pregunta_8"
+        "resena_0",
+        "resena_1",
+        "resena_2",
+        "resena_3",
+        "resena_4",
+        "resena_5",
+        "resena_6",
+        "resena_7",
+        "resena_8",
+        "resena_9",
+        "resena_10",
+        "resena_11",
+        "resena_12",
+        "resena_13",
+        "resena_14",
+        "resena_15"
       ],
       "settings": {
         "mostrar_eyebrow": true,
-        "eyebrow": "Preguntas frecuentes",
-        "titulo": "Todo lo que <span>quieres saber</span>",
+        "eyebrow": "Más opiniones",
+        "titulo": "Qué dicen quienes ya duermen con ella",
         "etiqueta": "h2",
         "mostrar_sub": true,
-        "sub": "¿Te queda alguna duda? Escríbenos desde la página de contacto.",
+        "sub": "Opiniones reales de compradores en Cervia",
         "alin_cabecera": "center",
         "tam_titulo": 36,
         "tam_titulo_movil": 26,
@@ -1342,141 +1311,32 @@
         "tam_sub_movil": 16,
         "ancho_titulo": 760,
         "espaciado_letras": -0.5,
-        "primera_abierta": true,
-        "una_abierta": true,
-        "icono": "plus",
-        "estilo": "tarjetas",
-        "tam_pregunta": 17,
-        "tam_pregunta_movil": 16,
-        "tam_respuesta": 15,
-        "color_separador": "#ffe3d6",
-        "ancho_lista": 820,
-        "color_fondo": "#fff8f2",
-        "gradiente": false,
-        "color_fondo_2": "#ffe3d6",
-        "angulo": 180,
-        "color_texto": "#1b1f5e",
-        "color_suave": "#585c85",
-        "color_acento": "#ef4423",
-        "color_tarjeta": "#fff8f2",
-        "color_borde": "#ffe3d6",
-        "ancho": 1400,
-        "lateral_movil": 16,
-        "radius": 12,
-        "padding_superior": 72,
-        "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
-        "ancla": "",
-        "animacion": "fade",
-        "ocultar_movil": false,
-        "ocultar_escritorio": false,
-        "clases": ""
-      }
-    },
-    "cta-final": {
-      "type": "cervia-cta-final",
-      "settings": {
-        "mostrar_eyebrow": true,
-        "eyebrow": "Completa tu descanso",
-        "titulo": "Y para el día: <span>masajeador cervical</span>",
-        "etiqueta": "h2",
-        "mostrar_sub": true,
-        "sub": "Amasado 4D con calor y sin cables para soltar la tensión de cuello y hombros. Envío gratis a toda España.",
-        "alin_cabecera": "left",
-        "tam_titulo": 36,
-        "tam_titulo_movil": 26,
-        "tam_sub": 17,
-        "tam_sub_movil": 16,
-        "ancho_titulo": 760,
-        "espaciado_letras": -0.5,
-        "mostrar_imagen": true,
-        "guia": "",
-        "ratio": "1 / 1",
-        "mostrar_precio": true,
-        "texto_ahorro": "Ahorras [[valor]]",
-        "banda_1": "#ef4423",
-        "banda_2": "#3a2fa0",
-        "angulo_banda": 135,
-        "banda_texto": "#fff8f2",
-        "banda_acento": "#ffe3d6",
-        "padding_caja": 56,
-        "padding_caja_movil": 28,
-        "mostrar_pagos": true,
-        "logo_visa": true,
-        "logo_mastercard": true,
-        "logo_amex": false,
-        "logo_paypal": true,
-        "logo_apple_pay": true,
-        "logo_google_pay": true,
-        "logo_bizum": true,
-        "logo_klarna": false,
+        "mostrar_resumen": false,
+        "nota": 4.8,
+        "num_resenas": "[Nº]",
+        "texto_num": "[[n]] reseñas verificadas",
+        "usar_app": false,
+        "layout": "texto",
+        "ratio": "4 / 5",
+        "guia_foto": "Aquí va la foto que te mandó el cliente con su almohada",
+        "texto_verificado": "",
+        "columnas": "4",
+        "estilo_movil": "lista",
+        "ancho_tarjeta": 85,
+        "color_estrellas": "#ffb400",
+        "color_estrella_vacia": "#ffe3d6",
         "cta_mostrar": true,
-        "cta_texto": "Añadir masajeador · [[precio]]",
+        "cta_texto": "Quiero mi almohada · [[precio]]",
         "cta_accion": "carrito",
         "cta_url": "",
         "cta_cantidad": "1",
         "cta_cargando": "Añadiendo…",
         "cta_agotado": "Agotado",
         "cta_micro_mostrar": true,
-        "cta_micro": "Pago seguro · Envío gratis · Devolución fácil",
+        "cta_micro": "Envío gratis · Pago seguro · 30 días de prueba",
         "cta_estilo": "solido",
         "cta_completo_movil": true,
         "cta_completo_escritorio": false,
-        "cta_alto": 56,
-        "cta_alto_movil": 52,
-        "cta_tam": 17,
-        "cta_tam_movil": 16,
-        "cta_radius": 30,
-        "cta_fondo": "#fff8f2",
-        "cta_color": "#ef4423",
-        "cta_borde": "#fff8f2",
-        "cta_fondo_hover": "#ffe3d6",
-        "cta_color_hover": "#ef4423",
-        "activar_tracking": true,
-        "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
-        "color_fondo": "#fff8f2",
-        "gradiente": false,
-        "color_fondo_2": "#ffe3d6",
-        "angulo": 180,
-        "color_texto": "#1b1f5e",
-        "color_suave": "#585c85",
-        "color_acento": "#ef4423",
-        "color_tarjeta": "#fff8f2",
-        "color_borde": "#ffe3d6",
-        "ancho": 1400,
-        "lateral_movil": 16,
-        "radius": 12,
-        "padding_superior": 72,
-        "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
-        "ancla": "",
-        "animacion": "fade",
-        "ocultar_movil": false,
-        "ocultar_escritorio": false,
-        "clases": "",
-        "producto": "hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador"
-      }
-    },
-    "barra-compra": {
-      "type": "cervia-barra-compra",
-      "settings": {
-        "mostrar_movil": true,
-        "mostrar_escritorio": false,
-        "mostrar_miniatura": true,
-        "mostrar_titulo": true,
-        "titulo_corto": "",
-        "mostrar_tachado": true,
-        "usar_pack": true,
-        "posicion": "abajo",
-        "umbral": 1.2,
-        "cta_texto": "Comprar · [[precio]]",
-        "cta_accion": "carrito",
-        "cta_url": "",
-        "cta_cantidad": "1",
-        "cta_cargando": "Añadiendo…",
-        "cta_agotado": "Agotado",
         "cta_alto": 56,
         "cta_alto_movil": 52,
         "cta_tam": 17,
@@ -1488,267 +1348,28 @@
         "cta_fondo_hover": "#c9321a",
         "cta_color_hover": "#fff8f2",
         "activar_tracking": true,
-        "color_fondo": "#fff8f2",
+        "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
+        "color_fondo": "#fff1ea",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
         "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
         "color_borde": "#ffe3d6",
-        "sombra": true,
         "ancho": 1400,
-        "padding_superior": 12,
-        "padding_inferior": 12,
-        "padding_superior_movil": 10,
-        "padding_inferior_movil": 10
-      }
-    },
-    "resenas_judgeme": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "galeria_movil": {
-      "type": "cervia-galeria-movil",
-      "blocks": {
-        "foto_0": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/momento-pareja-almohada.jpg"
-          }
-        },
-        "foto_1": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/momento-abrazo-almohada.jpg"
-          }
-        },
-        "foto_2": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/momento-chico-almohada.jpg"
-          }
-        },
-        "foto_3": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/momento-durmiendo-almohada.jpg"
-          }
-        },
-        "foto_4": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/momento-chica-cama-almohada.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "foto_0",
-        "foto_1",
-        "foto_4",
-        "foto_2",
-        "foto_3"
-      ],
-      "settings": {
-        "eyebrow": "Momentos Cervia",
-        "titulo": "Descanso que <span>se nota</span>",
-        "sub": "Para tu cuello, de día y de noche.",
-        "ratio": "4 / 5",
-        "duracion": 70
-      }
-    },
-    "opiniones_clientes": {
-      "type": "ss-testimonials-48",
-      "blocks": {
-        "sub_heading": {
-          "type": "sub_heading",
-          "settings": {
-            "sub_heading": "<p>OPINIONES DE COMPRADORES</p>",
-            "sub_heading_font": "dm_sans_n7",
-            "sub_heading_color": "#EF4423",
-            "sub_heading_bg_color": "#FFE3D6"
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<h2>Lo que dicen <strong>quienes duermen con ella</strong></h2>",
-            "heading_font": "dm_sans_n7",
-            "heading_accent_font": "dm_sans_n7",
-            "heading_color": "#1B1F5E",
-            "heading_accent_color": "#EF4423",
-            "heading_size": 40,
-            "heading_size_mobile": 28
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Reseñas reales de compradores de esta almohada en AliExpress (artículo similar).</p>",
-            "text_font": "dm_sans_n4",
-            "text_color": "#585C85",
-            "text_size": 17,
-            "text_size_mobile": 15
-          }
-        },
-        "resena_ae_0": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Una almohada para el cuello absolutamente excelente, se duerme muy cómodamente con ella. Y el precio también es muy bueno. Llevo 3 semanas durmiendo con esta almohada todos los días, y puedo decir que es realmente buena.</p>",
-            "author": "M***l",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 12 jul 2026"
-          }
-        },
-        "resena_ae_1": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Envío muy rápido. Almohada tal como se describe. La mejor almohada para evitar dolores de cabeza relacionados con el cuello por la mañana.</p>",
-            "author": "Anónimo",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 19 sep 2026"
-          }
-        },
-        "resena_ae_2": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Muy bien fabricado. Tengo 4 hernias cervicales y puedo asegurar que cada noche que duermo con esta almohada el cuello se levanta &quot;reseteado&quot;. Encantadísimo con ella. No he encontrado forros adicionales para ir lavando el original, usaré camisetas!!</p>",
-            "author": "j***r",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 28 sep 2026"
-          }
-        },
-        "resena_ae_3": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Almohada increíble, ya no tengo dolor de cuello y por fin duermo toda la noche.</p>",
-            "author": "B***i",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 14 jul 2026"
-          }
-        },
-        "resena_ae_4": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Envío rápido, el producto es válido y resistente. Excelente relación calidad-precio.</p>",
-            "author": "D***i",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 01 oct 2026"
-          }
-        },
-        "resena_ae_5": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Muy cómodo, excelente ajuste, muy satisfecho con la compra.</p>",
-            "author": "G***t",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 20 jul 2026"
-          }
-        },
-        "resena_ae_6": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Muy contenta con mi almohada, es suave y muy ligera para mis brazos y mi cuello... la recomiendo.</p>",
-            "author": "Anónimo",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 17 sep 2026"
-          }
-        },
-        "resena_ae_7": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Artículo tal como se describe - excelente precio - envío rápido. Vendedor recomendado.</p>",
-            "author": "M***i",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 16 sep 2026"
-          }
-        },
-        "resena_ae_8": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Muy bien hecho y coincide con lo anunciado.</p>",
-            "author": "Anónimo",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 20 jul 2026"
-          }
-        },
-        "resena_ae_9": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Mejor artículo que he comprado.</p>",
-            "author": "Anónimo",
-            "subcopy_author": "Comprador en AliExpress · artículo similar · 28 jul 2026"
-          }
-        },
-        "resena_ae_10": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>Se ve bien de calidad, falta probarla. Es tal y como se describe. Vendedor 100% recomendable.</p>",
-            "author": "Anónimo",
-            "subcopy_author": "Comprador en AliExpress · artículo similar"
-          }
-        },
-        "resena_ae_11": {
-          "type": "testimonial",
-          "settings": {
-            "stars_count": 5,
-            "text": "<p>¡Excelente producto, lo recomiendo! 👍😋</p>",
-            "author": "Anónimo",
-            "subcopy_author": "Comprador en AliExpress · artículo similar"
-          }
-        }
-      },
-      "block_order": [
-        "sub_heading",
-        "heading",
-        "text",
-        "resena_ae_0",
-        "resena_ae_1",
-        "resena_ae_2",
-        "resena_ae_3",
-        "resena_ae_4",
-        "resena_ae_5",
-        "resena_ae_6",
-        "resena_ae_7",
-        "resena_ae_8",
-        "resena_ae_9",
-        "resena_ae_10",
-        "resena_ae_11"
-      ],
-      "settings": {
-        "author_font": "dm_sans_n7",
-        "subcopy_author_font": "dm_sans_n4",
-        "text_font": "dm_sans_n4",
-        "text_color": "#1B1F5E",
-        "author_color": "#1B1F5E",
-        "subcopy_author_color": "#585C85",
-        "card_bg_color": "#FFFFFF",
-        "card_border_color": "#F2C4B3",
-        "card_shadow_color": "#F2C4B3",
-        "slide_stars_color": "#FFFFFF",
-        "slide_stars_bg_color": "#FFB400",
-        "slide_stars_bg_half_color": "#F2C4B3",
-        "author_image_color": "#FFFFFF",
-        "author_image_bg_color": "#EF4423",
-        "background_color": "#FFF8F2",
-        "border_color": "#F2C4B3",
-        "pause_hover": true,
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "scrolling_velocity": 130,
-        "scrolling_velocity_mobile": 110
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 40,
+        "padding_inferior": 40,
+        "padding_superior_movil": 24,
+        "padding_inferior_movil": 24,
+        "ancla": "resenas",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
       }
     },
     "opiniones_mas": {
@@ -1758,31 +1379,58 @@
           "type": "sub_heading",
           "settings": {
             "sub_heading": "<p>MÁS OPINIONES</p>",
+            "sub_heading_custom": false,
             "sub_heading_font": "dm_sans_n7",
-            "sub_heading_color": "#EF4423",
-            "sub_heading_bg_color": "#FFE3D6"
+            "sub_heading_size": 12,
+            "sub_heading_size_mobile": 12,
+            "sub_heading_advanced": false,
+            "sub_heading_height": 130,
+            "sub_heading_mt": 0,
+            "sub_heading_mt_mobile": 0,
+            "background": true,
+            "sub_heading_radius": 100,
+            "sub_heading_border_thickness": 0,
+            "sub_heading_padding_horizontal": 16,
+            "sub_heading_padding_horizontal_mobile": 12,
+            "sub_heading_padding_vertical": 8,
+            "sub_heading_padding_vertical_mobile": 6,
+            "sub_heading_color": "#ef4423",
+            "sub_heading_bg_color": "#ffe3d6",
+            "sub_heading_border_color": "#121212"
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
             "heading": "<h2>Qué dicen <strong>quienes ya duermen</strong> con ella</h2>",
+            "heading_custom": false,
             "heading_font": "dm_sans_n7",
             "heading_accent_font": "dm_sans_n7",
-            "heading_color": "#1B1F5E",
-            "heading_accent_color": "#EF4423",
             "heading_size": 40,
-            "heading_size_mobile": 28
+            "heading_size_mobile": 28,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 16,
+            "heading_mt_mobile": 16,
+            "heading_color": "#1b1f5e",
+            "heading_accent_color": "#ef4423"
           }
         },
         "text": {
           "type": "text",
           "settings": {
             "text": "<p>Opiniones reales de compradores en AliExpress (artículo similar, medida 48 × 74 cm).</p>",
+            "text_custom": false,
             "text_font": "dm_sans_n4",
-            "text_color": "#585C85",
             "text_size": 17,
-            "text_size_mobile": 15
+            "text_size_mobile": 15,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_max_width": 100,
+            "text_max_width_mobile": 100,
+            "text_mt": 16,
+            "text_mt_mobile": 16,
+            "text_color": "#585c85"
           }
         },
         "mas_resena_0": {
@@ -1951,31 +1599,625 @@
         "mas_resena_14",
         "mas_resena_15"
       ],
+      "disabled": true,
       "settings": {
-        "author_font": "dm_sans_n7",
-        "subcopy_author_font": "dm_sans_n4",
-        "text_font": "dm_sans_n4",
-        "text_color": "#1B1F5E",
-        "author_color": "#1B1F5E",
-        "subcopy_author_color": "#585C85",
-        "card_bg_color": "#FFFFFF",
-        "card_border_color": "#F2C4B3",
-        "card_shadow_color": "#F2C4B3",
-        "slide_stars_color": "#FFFFFF",
-        "slide_stars_bg_color": "#FFB400",
-        "slide_stars_bg_half_color": "#F2C4B3",
-        "author_image_color": "#FFFFFF",
-        "author_image_bg_color": "#EF4423",
-        "background_color": "#FFF8F2",
-        "border_color": "#F2C4B3",
-        "pause_hover": true,
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "content_align": "center",
+        "content_align_mobile": "center",
         "scrolling_velocity": 140,
         "scrolling_velocity_mobile": 120,
-        "reverse_direction": true
+        "reverse_direction": true,
+        "pause_hover": true,
+        "slider_advanced": false,
+        "scrolling_gap": 16,
+        "scrolling_gap_mobile": 16,
+        "cards_mt": 32,
+        "cards_mt_mobile": 16,
+        "card_padding_advanced": false,
+        "card_width": 290,
+        "card_width_mobile": 290,
+        "card_padding_horizontal": 16,
+        "card_padding_horizontal_mobile": 16,
+        "card_padding_vertical": 16,
+        "card_padding_vertical_mobile": 16,
+        "card_radius": 16,
+        "card_border_thickness": 0,
+        "card_shadow": true,
+        "card_shadow_color": "#f2c4b3",
+        "card_content_align": "left",
+        "card_content_align_mobile": "left",
+        "author_image_size": 42,
+        "author_image_size_mobile": 42,
+        "author_image_radius": 40,
+        "author_image_border_thickness": 0,
+        "author_custom": false,
+        "author_font": "dm_sans_n7",
+        "author_size": 14,
+        "author_size_mobile": 14,
+        "author_height": 130,
+        "subcopy_author_custom": false,
+        "subcopy_author_font": "dm_sans_n4",
+        "subcopy_author_size": 12,
+        "subcopy_author_size_mobile": 12,
+        "subcopy_advanced": false,
+        "subcopy_author_height": 130,
+        "subcopy_author_mt": 4,
+        "subcopy_author_mt_mobile": 4,
+        "subcopy_text_length": 60,
+        "slide_stars_size": 18,
+        "slide_stars_size_mobile": 18,
+        "slide_stars_advanced": false,
+        "slide_stars_gap": 2,
+        "slide_stars_mt": 10,
+        "slide_stars_mt_mobile": 10,
+        "text_custom": false,
+        "text_font": "dm_sans_n4",
+        "text_size": 14,
+        "text_size_mobile": 14,
+        "text_advanced": false,
+        "text_height": 150,
+        "text_mt": 12,
+        "text_mt_mobile": 12,
+        "text_color": "#1b1f5e",
+        "text_bg_color": "#121212",
+        "author_color": "#1b1f5e",
+        "subcopy_author_color": "#585c85",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#f2c4b3",
+        "slide_stars_color": "#ffffff",
+        "slide_stars_bg_color": "#ffb400",
+        "slide_stars_bg_half_color": "#f2c4b3",
+        "author_image_color": "#ffffff",
+        "author_image_bg_color": "#ef4423",
+        "author_image_border_color": "#121212",
+        "background_style": "solid",
+        "background_color": "#fff8f2",
+        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
+        "border_color": "#f2c4b3",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "faq": {
+      "type": "cervia-faq",
+      "blocks": {
+        "pregunta_0": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Sirve si duermo de lado o boca abajo?",
+            "respuesta": "<p>Sí. De lado usas el borde alto, boca arriba el centro rebajado y boca abajo la zona más baja, para girar menos el cuello.</p>"
+          }
+        },
+        "pregunta_1": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cuánto se tarda en acostumbrarse?",
+            "respuesta": "<p>Lo normal es notarla distinta las primeras noches. La mayoría se adapta en una o dos semanas, mientras el cuello se acostumbra a ir recto.</p>"
+          }
+        },
+        "pregunta_2": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Es normal que huela al sacarla?",
+            "respuesta": "<p>Sí, pasa con toda la espuma viscoelástica. Viene envasada al vacío: déjala airear 24–48 h y el olor desaparece mientras recupera su forma.</p>"
+          }
+        },
+        "pregunta_3": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Qué medidas tiene?",
+            "respuesta": "<p>62 × 37 cm, con una altura de 8 a 12 cm según la zona. Cabe en una funda de almohada estándar.</p>"
+          }
+        },
+        "pregunta_4": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Se puede lavar?",
+            "respuesta": "<p>La funda sí: se quita y va a la lavadora a 30 °C. La espuma no se mete en la lavadora; límpiala con un paño húmedo y déjala secar al aire.</p>"
+          }
+        },
+        "pregunta_5": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cuándo me llega?",
+            "respuesta": "<p>El envío es gratis. Preparamos el pedido en 1–3 días laborables y lo recibes en 7–12 días laborables.</p>"
+          }
+        },
+        "pregunta_6": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Es un pago único?",
+            "respuesta": "<p>Sí. Pagas una vez y ya está: sin suscripciones ni cargos sorpresa.</p>"
+          }
+        },
+        "pregunta_7": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Y si no me convence?",
+            "respuesta": "<p>Tienes 30 noches para probarla. Escríbenos desde la página de contacto y te explicamos cómo devolverla.</p>"
+          }
+        },
+        "pregunta_8": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Es seguro pagar aquí?",
+            "respuesta": "<p>Sí. El pago se procesa con cifrado y puedes usar tarjeta, PayPal, Apple Pay, Google Pay o Bizum.</p>"
+          }
+        }
       },
-      "disabled": true
+      "block_order": [
+        "pregunta_0",
+        "pregunta_1",
+        "pregunta_2",
+        "pregunta_3",
+        "pregunta_4",
+        "pregunta_5",
+        "pregunta_6",
+        "pregunta_7",
+        "pregunta_8"
+      ],
+      "settings": {
+        "mostrar_eyebrow": true,
+        "eyebrow": "Preguntas frecuentes",
+        "titulo": "Todo lo que <span>quieres saber</span>",
+        "etiqueta": "h2",
+        "mostrar_sub": true,
+        "sub": "¿Te queda alguna duda? Escríbenos desde la página de contacto.",
+        "alin_cabecera": "center",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "primera_abierta": true,
+        "una_abierta": true,
+        "icono": "plus",
+        "estilo": "tarjetas",
+        "tam_pregunta": 17,
+        "tam_pregunta_movil": 16,
+        "tam_respuesta": 15,
+        "color_separador": "#ffe3d6",
+        "ancho_lista": 820,
+        "color_fondo": "#fff8f2",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 72,
+        "padding_inferior": 72,
+        "padding_superior_movil": 40,
+        "padding_inferior_movil": 40,
+        "ancla": "",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
+      }
+    },
+    "cta-final": {
+      "type": "cervia-cta-final",
+      "settings": {
+        "mostrar_eyebrow": true,
+        "eyebrow": "Completa tu descanso",
+        "titulo": "Y para el día: <span>masajeador cervical</span>",
+        "etiqueta": "h2",
+        "mostrar_sub": true,
+        "sub": "Amasado 4D con calor y sin cables para soltar la tensión de cuello y hombros. Envío gratis a toda España.",
+        "alin_cabecera": "left",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "mostrar_imagen": true,
+        "producto": "hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador",
+        "guia": "",
+        "ratio": "1 / 1",
+        "ajuste_imagen": "contain",
+        "mostrar_precio": true,
+        "texto_ahorro": "Ahorras [[valor]]",
+        "banda_1": "#ef4423",
+        "banda_2": "#3a2fa0",
+        "angulo_banda": 135,
+        "banda_texto": "#fff8f2",
+        "banda_acento": "#ffe3d6",
+        "padding_caja": 56,
+        "padding_caja_movil": 28,
+        "mostrar_pagos": true,
+        "logo_visa": true,
+        "logo_mastercard": true,
+        "logo_amex": false,
+        "logo_paypal": true,
+        "logo_apple_pay": true,
+        "logo_google_pay": true,
+        "logo_bizum": true,
+        "logo_klarna": false,
+        "cta_mostrar": true,
+        "cta_texto": "Añadir masajeador · [[precio]]",
+        "cta_accion": "carrito",
+        "cta_url": "",
+        "cta_cantidad": "1",
+        "cta_cargando": "Añadiendo…",
+        "cta_agotado": "Agotado",
+        "cta_micro_mostrar": true,
+        "cta_micro": "Pago seguro · Envío gratis · Devolución fácil",
+        "cta_estilo": "solido",
+        "cta_completo_movil": true,
+        "cta_completo_escritorio": false,
+        "cta_alto": 56,
+        "cta_alto_movil": 52,
+        "cta_tam": 17,
+        "cta_tam_movil": 16,
+        "cta_radius": 30,
+        "cta_fondo": "#fff8f2",
+        "cta_color": "#ef4423",
+        "cta_borde": "#fff8f2",
+        "cta_fondo_hover": "#ffe3d6",
+        "cta_color_hover": "#ef4423",
+        "activar_tracking": true,
+        "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
+        "color_fondo": "#fff8f2",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 72,
+        "padding_inferior": 72,
+        "padding_superior_movil": 40,
+        "padding_inferior_movil": 40,
+        "ancla": "",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
+      }
+    },
+    "opiniones_clientes": {
+      "type": "ss-testimonials-48",
+      "blocks": {
+        "sub_heading": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "<p>OPINIONES DE COMPRADORES</p>",
+            "sub_heading_custom": false,
+            "sub_heading_font": "dm_sans_n7",
+            "sub_heading_size": 12,
+            "sub_heading_size_mobile": 12,
+            "sub_heading_advanced": false,
+            "sub_heading_height": 130,
+            "sub_heading_mt": 0,
+            "sub_heading_mt_mobile": 0,
+            "background": true,
+            "sub_heading_radius": 100,
+            "sub_heading_border_thickness": 0,
+            "sub_heading_padding_horizontal": 16,
+            "sub_heading_padding_horizontal_mobile": 12,
+            "sub_heading_padding_vertical": 8,
+            "sub_heading_padding_vertical_mobile": 6,
+            "sub_heading_color": "#ef4423",
+            "sub_heading_bg_color": "#ffe3d6",
+            "sub_heading_border_color": "#121212"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Lo que dicen <strong>quienes duermen con ella</strong></h2>",
+            "heading_custom": false,
+            "heading_font": "dm_sans_n7",
+            "heading_accent_font": "dm_sans_n7",
+            "heading_size": 40,
+            "heading_size_mobile": 28,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 16,
+            "heading_mt_mobile": 16,
+            "heading_color": "#1b1f5e",
+            "heading_accent_color": "#ef4423"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Reseñas reales de compradores de esta almohada en AliExpress (artículo similar).</p>",
+            "text_custom": false,
+            "text_font": "dm_sans_n4",
+            "text_size": 17,
+            "text_size_mobile": 15,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_max_width": 100,
+            "text_max_width_mobile": 100,
+            "text_mt": 16,
+            "text_mt_mobile": 16,
+            "text_color": "#585c85"
+          }
+        },
+        "resena_ae_0": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Una almohada para el cuello absolutamente excelente, se duerme muy cómodamente con ella. Y el precio también es muy bueno. Llevo 3 semanas durmiendo con esta almohada todos los días, y puedo decir que es realmente buena.</p>",
+            "author": "M***l",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 12 jul 2026"
+          }
+        },
+        "resena_ae_1": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Envío muy rápido. Almohada tal como se describe. La mejor almohada para evitar dolores de cabeza relacionados con el cuello por la mañana.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 19 sep 2026"
+          }
+        },
+        "resena_ae_2": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Muy bien fabricado. Tengo 4 hernias cervicales y puedo asegurar que cada noche que duermo con esta almohada el cuello se levanta &quot;reseteado&quot;. Encantadísimo con ella. No he encontrado forros adicionales para ir lavando el original, usaré camisetas!!</p>",
+            "author": "j***r",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 28 sep 2026"
+          }
+        },
+        "resena_ae_3": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Almohada increíble, ya no tengo dolor de cuello y por fin duermo toda la noche.</p>",
+            "author": "B***i",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 14 jul 2026"
+          }
+        },
+        "resena_ae_4": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Envío rápido, el producto es válido y resistente. Excelente relación calidad-precio.</p>",
+            "author": "D***i",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 01 oct 2026"
+          }
+        },
+        "resena_ae_5": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Muy cómodo, excelente ajuste, muy satisfecho con la compra.</p>",
+            "author": "G***t",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 20 jul 2026"
+          }
+        },
+        "resena_ae_6": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Muy contenta con mi almohada, es suave y muy ligera para mis brazos y mi cuello... la recomiendo.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 17 sep 2026"
+          }
+        },
+        "resena_ae_7": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Artículo tal como se describe - excelente precio - envío rápido. Vendedor recomendado.</p>",
+            "author": "M***i",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 16 sep 2026"
+          }
+        },
+        "resena_ae_8": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Muy bien hecho y coincide con lo anunciado.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 20 jul 2026"
+          }
+        },
+        "resena_ae_9": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Mejor artículo que he comprado.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar · 28 jul 2026"
+          }
+        },
+        "resena_ae_10": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>Se ve bien de calidad, falta probarla. Es tal y como se describe. Vendedor 100% recomendable.</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar"
+          }
+        },
+        "resena_ae_11": {
+          "type": "testimonial",
+          "settings": {
+            "stars_count": 5,
+            "text": "<p>¡Excelente producto, lo recomiendo! 👍😋</p>",
+            "author": "Anónimo",
+            "subcopy_author": "Comprador en AliExpress · artículo similar"
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading",
+        "heading",
+        "text",
+        "resena_ae_0",
+        "resena_ae_1",
+        "resena_ae_2",
+        "resena_ae_3",
+        "resena_ae_4",
+        "resena_ae_5",
+        "resena_ae_6",
+        "resena_ae_7",
+        "resena_ae_8",
+        "resena_ae_9",
+        "resena_ae_10",
+        "resena_ae_11"
+      ],
+      "settings": {
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "scrolling_velocity": 130,
+        "scrolling_velocity_mobile": 110,
+        "reverse_direction": false,
+        "pause_hover": true,
+        "slider_advanced": false,
+        "scrolling_gap": 16,
+        "scrolling_gap_mobile": 16,
+        "cards_mt": 32,
+        "cards_mt_mobile": 16,
+        "card_padding_advanced": false,
+        "card_width": 290,
+        "card_width_mobile": 290,
+        "card_padding_horizontal": 16,
+        "card_padding_horizontal_mobile": 16,
+        "card_padding_vertical": 16,
+        "card_padding_vertical_mobile": 16,
+        "card_radius": 16,
+        "card_border_thickness": 0,
+        "card_shadow": true,
+        "card_shadow_color": "#f2c4b3",
+        "card_content_align": "left",
+        "card_content_align_mobile": "left",
+        "author_image_size": 42,
+        "author_image_size_mobile": 42,
+        "author_image_radius": 40,
+        "author_image_border_thickness": 0,
+        "author_custom": false,
+        "author_font": "dm_sans_n7",
+        "author_size": 14,
+        "author_size_mobile": 14,
+        "author_height": 130,
+        "subcopy_author_custom": false,
+        "subcopy_author_font": "dm_sans_n4",
+        "subcopy_author_size": 12,
+        "subcopy_author_size_mobile": 12,
+        "subcopy_advanced": false,
+        "subcopy_author_height": 130,
+        "subcopy_author_mt": 4,
+        "subcopy_author_mt_mobile": 4,
+        "subcopy_text_length": 60,
+        "slide_stars_size": 18,
+        "slide_stars_size_mobile": 18,
+        "slide_stars_advanced": false,
+        "slide_stars_gap": 2,
+        "slide_stars_mt": 10,
+        "slide_stars_mt_mobile": 10,
+        "text_custom": false,
+        "text_font": "dm_sans_n4",
+        "text_size": 14,
+        "text_size_mobile": 14,
+        "text_advanced": false,
+        "text_height": 150,
+        "text_mt": 12,
+        "text_mt_mobile": 12,
+        "text_color": "#1b1f5e",
+        "text_bg_color": "#121212",
+        "author_color": "#1b1f5e",
+        "subcopy_author_color": "#585c85",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#f2c4b3",
+        "slide_stars_color": "#ffffff",
+        "slide_stars_bg_color": "#ffb400",
+        "slide_stars_bg_half_color": "#f2c4b3",
+        "author_image_color": "#ffffff",
+        "author_image_bg_color": "#ef4423",
+        "author_image_border_color": "#121212",
+        "background_style": "solid",
+        "background_color": "#fff8f2",
+        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
+        "border_color": "#f2c4b3",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
+    "resenas_judgeme": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "barra-compra": {
+      "type": "cervia-barra-compra",
+      "settings": {
+        "mostrar_movil": true,
+        "mostrar_escritorio": false,
+        "mostrar_miniatura": true,
+        "mostrar_titulo": true,
+        "titulo_corto": "",
+        "mostrar_tachado": true,
+        "usar_pack": true,
+        "posicion": "abajo",
+        "umbral": 1.2,
+        "cta_texto": "Comprar · [[precio]]",
+        "cta_accion": "carrito",
+        "cta_url": "",
+        "cta_cantidad": "1",
+        "cta_cargando": "Añadiendo…",
+        "cta_agotado": "Agotado",
+        "cta_alto": 56,
+        "cta_alto_movil": 52,
+        "cta_tam": 17,
+        "cta_tam_movil": 16,
+        "cta_radius": 30,
+        "cta_fondo": "#ef4423",
+        "cta_color": "#fff8f2",
+        "cta_borde": "#ef4423",
+        "cta_fondo_hover": "#c9321a",
+        "cta_color_hover": "#fff8f2",
+        "activar_tracking": true,
+        "color_fondo": "#fff8f2",
+        "color_texto": "#1b1f5e",
+        "color_borde": "#ffe3d6",
+        "sombra": true,
+        "ancho": 1400,
+        "padding_superior": 12,
+        "padding_inferior": 12,
+        "padding_superior_movil": 10,
+        "padding_inferior_movil": 10
+      }
     }
   },
   "order": [
