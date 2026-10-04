@@ -864,6 +864,208 @@
         "border_color": "#F2C4B3",
         "padding_top": 32,
         "padding_bottom": 32
+      },
+      "disabled": true
+    },
+    "opiniones_abajo": {
+      "type": "cervia-testimonios",
+      "blocks": {
+        "resena_0": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Compré esto como regalo de Navidad y resultó ser el obsequio perfecto. Dispone de tres modos de masaje diferentes y tres niveles de calor. El dispositivo cumple exactamente con lo descrito y funciona muy bien. La batería tiene una larga duración, la calidad es excelente y es muy fácil de usar. La entrega fue perfectamente puntual.",
+            "nombre": "C***s",
+            "fecha": "08 ene 2026",
+            "verificado": false
+          }
+        },
+        "resena_1": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Excelente calidad y funcionalidad, da un masaje muy agradable, pero ojo que aprieta fuerte en nivel 3, y a pieles sensibles podría raspar. Recomendadísimo.",
+            "nombre": "Anónimo",
+            "fecha": "03 ene 2026",
+            "verificado": false
+          }
+        },
+        "resena_2": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Primer masaje completado, te diré una cosa: el masajeador tiene una batería recargable interna. El resto es sobre la experiencia de masaje, ¡es increíble! Recomiendo comprar estas paletas de masaje.",
+            "nombre": "h***r",
+            "fecha": "09 dic 2025",
+            "verificado": false
+          }
+        },
+        "resena_3": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "¡Este masajeador de cuello es increíble! La presión profunda de los puntos de acupuntura combinada con la función de calentamiento puede aliviar inmediatamente la rigidez y el dolor en el cuello y los hombros. Solo lo utilizo durante 10 minutos después del trabajo cada día, lo que me hace sentir mucho más relajado. ¡Es muy adecuado para quienes trabajan mucho tiempo en su escritorio!",
+            "nombre": "Anónimo",
+            "fecha": "07 feb 2026",
+            "verificado": false
+          }
+        },
+        "resena_4": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Lo recomiendo para masajes de cuello y espalda. Tenía miedo de que tuviera un agarre débil, pero tiene 3 niveles y realmente ofrece un excelente masaje. Este tipo de masaje le ayuda mucho a mi esposo. Lo recomiendo. Vale la pena.",
+            "nombre": "Anónimo",
+            "fecha": "17 feb 2026",
+            "verificado": false
+          }
+        },
+        "resena_5": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "¡Excelente producto! Llegó muy rápido. Es un masajeador de espalda compacto pero potente con un alivio profundo y eficaz. Carga USB-C (solo cable, sin enchufe). Fácil de usar, resistente/duradero, apto para viajes y más eficaz que otros tipos de masajes. Los nudos rígidos en el cuello y los hombros se sienten significativamente más ligeros, como si fueran hechos a mano de verdad.",
+            "nombre": "Anónimo",
+            "fecha": "06 ene 2026",
+            "verificado": false
+          }
+        },
+        "resena_6": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "¡Entrega rápida! Empaquetado en una caja de alta calidad. Sí, masajea bien y deja tus manos libres. Masajea de forma más intensa en la zona del cuello y un poco más suavemente en la espalda. ¡Pero aun así, es muy bueno! Las correas son mitad de cuero y mitad elásticas, lo que te permite ajustar la posición tú mismo.",
+            "nombre": "N***n",
+            "fecha": "23 feb 2026",
+            "verificado": false
+          }
+        },
+        "resena_7": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "¡Oh, esto es una maravilla! ¡Un dispositivo maravilloso! Mi familia ahora lo llama la \"Pequeña Bestia\"! Un masajeador fantástico. Tiene un modo de calor. Masajea suavemente el cuello, produce un cosquilleo y calienta. ¡Lo recomiendo a todos!",
+            "nombre": "Anónimo",
+            "fecha": "03 jun 2026",
+            "verificado": false
+          }
+        },
+        "resena_8": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Materiales resistentes y de gran calidad, nada se siente barato aquí. 3 programas de masaje que alivian todo el estrés en solo 10 minutos. Viene en una caja elegante y con un envío rápido. ¡Sin duda, una excelente compra!",
+            "nombre": "Anónimo",
+            "fecha": "",
+            "verificado": false
+          }
+        },
+        "resena_9": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Llegó en perfectas condiciones, recomiendo que las primeras veces no usarlo más de quince o treinta minutos. La velocidad y la intensidad son ajustables. Recomendable al 100%.",
+            "nombre": "Cliente",
+            "fecha": "",
+            "verificado": false
+          }
+        }
+      },
+      "block_order": [
+        "resena_0",
+        "resena_1",
+        "resena_2",
+        "resena_3",
+        "resena_4",
+        "resena_5",
+        "resena_6",
+        "resena_7",
+        "resena_8",
+        "resena_9"
+      ],
+      "settings": {
+        "mostrar_eyebrow": true,
+        "eyebrow": "Opiniones de compradores",
+        "titulo": "Lo que dicen quienes lo usan",
+        "etiqueta": "h2",
+        "mostrar_sub": true,
+        "sub": "Reseñas reales de compradores de este masajeador en AliExpress (artículo similar).",
+        "alin_cabecera": "center",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "mostrar_resumen": false,
+        "nota": 4.8,
+        "num_resenas": "[Nº]",
+        "texto_num": "[[n]] reseñas verificadas",
+        "usar_app": false,
+        "layout": "texto",
+        "ratio": "4 / 5",
+        "guia_foto": "Aquí va la foto que te mandó el cliente con su almohada",
+        "texto_verificado": "",
+        "columnas": "4",
+        "estilo_movil": "lista",
+        "ancho_tarjeta": 85,
+        "color_estrellas": "#ffb400",
+        "color_estrella_vacia": "#ffe3d6",
+        "cta_mostrar": false,
+        "cta_texto": "Quiero mi masajeador · [[precio]]",
+        "cta_accion": "carrito",
+        "cta_url": "",
+        "cta_cantidad": "1",
+        "cta_cargando": "Añadiendo…",
+        "cta_agotado": "Agotado",
+        "cta_micro_mostrar": true,
+        "cta_micro": "Envío gratis · Pago seguro · 30 días de prueba",
+        "cta_estilo": "solido",
+        "cta_completo_movil": true,
+        "cta_completo_escritorio": false,
+        "cta_alto": 56,
+        "cta_alto_movil": 52,
+        "cta_tam": 17,
+        "cta_tam_movil": 16,
+        "cta_radius": 30,
+        "cta_fondo": "#ef4423",
+        "cta_color": "#fff8f2",
+        "cta_borde": "#ef4423",
+        "cta_fondo_hover": "#c9321a",
+        "cta_color_hover": "#fff8f2",
+        "activar_tracking": true,
+        "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
+        "color_fondo": "#fff1ea",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 40,
+        "padding_inferior": 40,
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12,
+        "ancla": "opiniones-masajeador",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
       }
     }
   },
@@ -880,6 +1082,7 @@
     "faq",
     "cta-final",
     "opiniones_clientes",
+    "opiniones_abajo",
     "resenas_judgeme",
     "barra-compra"
   ]
