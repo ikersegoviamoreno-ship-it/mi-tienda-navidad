@@ -1172,15 +1172,14 @@
         "layout": "texto",
         "texto_verificado": "",
         "columnas": "4",
-        "estilo_movil": "carrusel",
+        "estilo_movil": "lista",
         "cta_texto": "Quiero mi almohada · [[precio]]",
         "cta_micro": "Envío gratis · Pago seguro · 30 días de prueba",
         "padding_superior": 40,
         "padding_inferior": 40,
         "padding_superior_movil": 24,
         "padding_inferior_movil": 24
-      },
-      "disabled": true
+      }
     },
     "garantia": {
       "type": "cervia-garantia",
@@ -1975,7 +1974,8 @@
         "scrolling_velocity": 140,
         "scrolling_velocity_mobile": 120,
         "reverse_direction": true
-      }
+      },
+      "disabled": true
     }
   },
   "order": [
