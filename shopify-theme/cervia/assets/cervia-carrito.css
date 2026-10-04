@@ -217,3 +217,8 @@ cart-drawer input:focus-visible {
 
 /* Sin huecos extra entre secciones */
 #MainContent > .shopify-section + .shopify-section { margin-top: 0 !important; }
+
+/* Inicio compacto: títulos más pegados al contenido */
+@media screen and (min-width: 750px) {
+  html body #MainContent .cervia-s__cabecera { margin-bottom: 20px !important; }
+}

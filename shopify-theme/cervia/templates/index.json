@@ -22,8 +22,8 @@
         "boton2": "Ver el masajeador",
         "enlace2": "shopify://products/hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador",
         "sellos": "Envío gratis a toda España | 30 días de prueba | Pago seguro",
-        "padding_inferior": 8,
-        "padding_inferior_movil": 8
+        "padding_inferior": 4,
+        "padding_inferior_movil": 4
       }
     },
     "confianza": {
@@ -98,8 +98,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 20,
-        "padding_inferior": 20,
+        "padding_superior": 16,
+        "padding_inferior": 16,
         "padding_superior_movil": 8,
         "padding_inferior_movil": 8,
         "ancla": "",
@@ -122,8 +122,8 @@
         "boton": "Ver productos",
         "enlace": "shopify://collections/all",
         "color_fondo": "#FFF1EA",
-        "padding": 40,
-        "padding_movil": 20
+        "padding": 28,
+        "padding_movil": 16
       }
     },
     "marca": {
@@ -137,8 +137,8 @@
         "texto": "<p>Cervia nace de una idea sencilla: <strong>tu cuello lo aguanta todo</strong>. Horas frente al ordenador, el móvil, el coche, una mala postura al dormir… y casi nunca le prestamos atención.</p><p>Por eso no vendemos de todo. Elegimos pocos productos, pensados solo para cuidar tu cuello y tu descanso, y los explicamos con claridad para que sepas exactamente lo que compras.</p>",
         "boton": "",
         "color_fondo": "#FFF8F2",
-        "padding": 40,
-        "padding_movil": 20
+        "padding": 28,
+        "padding_movil": 16
       },
       "blocks": {
         "p1": {
@@ -260,8 +260,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 40,
-        "padding_inferior": 40,
+        "padding_superior": 24,
+        "padding_inferior": 24,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "",
@@ -437,8 +437,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 32,
-        "padding_inferior": 32,
+        "padding_superior": 24,
+        "padding_inferior": 24,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "opiniones-inicio",
@@ -506,8 +506,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 40,
-        "padding_inferior": 40,
+        "padding_superior": 24,
+        "padding_inferior": 24,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "",
@@ -607,8 +607,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 40,
-        "padding_inferior": 40,
+        "padding_superior": 24,
+        "padding_inferior": 24,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "",

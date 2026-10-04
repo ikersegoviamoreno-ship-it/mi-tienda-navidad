@@ -3,7 +3,7 @@
 {%- endcomment -%}
 {%- style -%}
   #shopify-section-{{ section.id }} .cervia-mc { background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; padding: {{ section.settings.padding }}px 16px; font-family: var(--font-body, var(--font-body-family)); }
-  #shopify-section-{{ section.id }} .cervia-mc__caja { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  #shopify-section-{{ section.id }} .cervia-mc__caja { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
   #shopify-section-{{ section.id }} .cervia-mc__caja.is-imagen-derecha .cervia-mc__media { order: 2; }
   #shopify-section-{{ section.id }} .cervia-mc__media { border-radius: 20px; overflow: hidden; background: {{ section.settings.color_borde }}; }
   #shopify-section-{{ section.id }} .cervia-mc__media img, #shopify-section-{{ section.id }} .cervia-mc__media svg { display: block; width: 100%; height: auto; {% if section.settings.ratio != 'auto' %}aspect-ratio: {{ section.settings.ratio }}; object-fit: cover;{% endif %} }
