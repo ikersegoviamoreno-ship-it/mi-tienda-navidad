@@ -198,3 +198,10 @@ cart-drawer input:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   cart-drawer * { transition-duration: .01ms !important; }
 }
+
+/* Catálogo: fotos enteras dentro del cuadro y botón de compra en coral */
+.card-wrapper .card__media .media img { object-fit: contain !important; background: #FFFFFF; }
+.card-wrapper .card__media .media { background: #FFFFFF; }
+.card-wrapper .quick-add__submit { background: #EF4423 !important; color: #FFFFFF !important; border: 0 !important; box-shadow: none !important; font-weight: 600; }
+.card-wrapper .quick-add__submit::before, .card-wrapper .quick-add__submit::after { box-shadow: none !important; }
+.card-wrapper .quick-add__submit:hover { background: #C9321A !important; }
