@@ -1463,37 +1463,37 @@
         "foto_0": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/almohada-boca-arriba-cama.webp"
+            "imagen": "shopify://shop_images/momento-pareja-almohada.jpg"
           }
         },
         "foto_1": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/almohada-dormir-de-lado-v2.jpg"
+            "imagen": "shopify://shop_images/momento-durmiendo-almohada.jpg"
           }
         },
         "foto_2": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/masajeador-cuello-verde.jpg"
+            "imagen": "shopify://shop_images/momento-abrazo-almohada.jpg"
           }
         },
         "foto_3": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/almohada-dormir-de-espalda-v2.jpg"
+            "imagen": "shopify://shop_images/almohada-boca-arriba-cama.webp"
           }
         },
         "foto_4": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/masajeador-brazo-verde.jpg"
+            "imagen": "shopify://shop_images/momento-chico-almohada.jpg"
           }
         },
         "foto_5": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/almohada-dormir-boca-abajo-v2.jpg"
+            "imagen": "shopify://shop_images/masajeador-cuello-verde.jpg"
           }
         }
       },
@@ -1509,8 +1509,8 @@
         "eyebrow": "Momentos Cervia",
         "titulo": "Descanso que <span>se nota</span>",
         "sub": "Para tu cuello, de día y de noche.",
-        "ratio": "1 / 1",
-        "duracion": 40
+        "ratio": "4 / 5",
+        "duracion": 70
       }
     },
     "opiniones_clientes": {
