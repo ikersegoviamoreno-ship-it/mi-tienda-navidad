@@ -1,0 +1,70 @@
+{%- comment -%}
+  Cervia: suscripción por correo en el pie de página (avisos de nuevos productos).
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .cervia-nl { background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; padding: {{ section.settings.padding }}px 16px; font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cervia-nl__caja { max-width: 640px; margin: 0 auto; text-align: center; }
+  #shopify-section-{{ section.id }} .cervia-nl__titulo { margin: 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(22px, 3.2vw, 30px); line-height: 1.2; font-weight: 700; color: {{ section.settings.color_texto }}; }
+  #shopify-section-{{ section.id }} .cervia-nl__titulo span { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cervia-nl__sub { margin: 8px 0 0; font-size: 15px; line-height: 1.5; opacity: .85; }
+  #shopify-section-{{ section.id }} .cervia-nl__form { margin-top: 20px; }
+  #shopify-section-{{ section.id }} .cervia-nl__fila { display: flex; gap: 8px; background: #FFFFFF; border-radius: 40px; padding: 6px; box-shadow: 0 2px 10px rgba(27,31,94,.12); }
+  #shopify-section-{{ section.id }} .cervia-nl__input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 10px 16px; font: inherit; font-size: 16px; color: #1B1F5E; }
+  #shopify-section-{{ section.id }} .cervia-nl__input:focus { outline: none; }
+  #shopify-section-{{ section.id }} .cervia-nl__fila:focus-within { box-shadow: 0 0 0 3px {{ section.settings.color_acento }}55; }
+  #shopify-section-{{ section.id }} .cervia-nl__btn { flex: none; border: 0; border-radius: 30px; padding: 12px 22px; background: {{ section.settings.color_acento }}; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; }
+  #shopify-section-{{ section.id }} .cervia-nl__btn:hover { filter: brightness(.92); }
+  #shopify-section-{{ section.id }} .cervia-nl__btn:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
+  #shopify-section-{{ section.id }} .cervia-nl__ok { margin: 16px 0 0; font-weight: 600; }
+  #shopify-section-{{ section.id }} .cervia-nl__error { margin: 10px 0 0; font-size: 14px; color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cervia-nl__legal { margin: 10px 0 0; font-size: 12px; opacity: .7; }
+  @media (max-width: 749px) {
+    #shopify-section-{{ section.id }} .cervia-nl { padding: {{ section.settings.padding_movil }}px 16px; }
+    #shopify-section-{{ section.id }} .cervia-nl__btn { padding: 12px 16px; }
+  }
+{%- endstyle -%}
+
+<section class="cervia-nl">
+  <div class="cervia-nl__caja">
+    {%- if section.settings.titulo != blank -%}<h2 class="cervia-nl__titulo">{{ section.settings.titulo }}</h2>{%- endif -%}
+    {%- if section.settings.sub != blank -%}<p class="cervia-nl__sub">{{ section.settings.sub }}</p>{%- endif -%}
+    {%- assign id_form = 'CerviaNewsletter-' | append: section.id -%}
+    {%- form 'customer', id: id_form, class: 'cervia-nl__form' -%}
+      {%- if form.posted_successfully? -%}
+        <p class="cervia-nl__ok" role="status" tabindex="-1" autofocus>{{ section.settings.texto_ok }}</p>
+      {%- else -%}
+        <input type="hidden" name="contact[tags]" value="newsletter, pie-de-pagina">
+        <input type="hidden" name="contact[accepts_marketing]" value="true">
+        <div class="cervia-nl__fila">
+          <label class="visually-hidden" for="CerviaNewsletter-email-{{ section.id }}">Correo electrónico</label>
+          <input class="cervia-nl__input" id="CerviaNewsletter-email-{{ section.id }}" type="email" name="contact[email]" placeholder="{{ section.settings.placeholder | escape }}" autocomplete="email" autocapitalize="off" spellcheck="false" required>
+          <button type="submit" class="cervia-nl__btn">{{ section.settings.texto_boton }}</button>
+        </div>
+        {%- if form.errors -%}<p class="cervia-nl__error" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>{%- endif -%}
+        {%- if section.settings.legal != blank -%}<p class="cervia-nl__legal">{{ section.settings.legal }}</p>{%- endif -%}
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cervia Suscripción",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "Sé el primero en <span>enterarte</span>" },
+    { "type": "text", "id": "sub", "label": "Subtítulo", "default": "Suscríbete y te avisamos por correo cuando lancemos un producto nuevo." },
+    { "type": "text", "id": "placeholder", "label": "Texto del campo", "default": "Tu correo electrónico" },
+    { "type": "text", "id": "texto_boton", "label": "Texto del botón", "default": "Suscribirme" },
+    { "type": "text", "id": "texto_ok", "label": "Mensaje al suscribirse", "default": "¡Gracias! Te avisaremos cuando haya novedades." },
+    { "type": "text", "id": "legal", "label": "Texto legal", "default": "Sin spam. Puedes darte de baja cuando quieras." },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#1B1F5E" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#FFF8F2" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#EF4423" },
+    { "type": "range", "id": "padding", "label": "Espacio arriba y abajo", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_movil", "label": "Espacio arriba y abajo (móvil)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 32 }
+  ],
+  "presets": [{ "name": "Cervia Suscripción" }]
+}
+{% endschema %}

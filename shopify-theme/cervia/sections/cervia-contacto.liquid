@@ -1,0 +1,109 @@
+{%- comment -%}
+  Cervia: página de contacto con texto, correo y formulario.
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .cervia-ct { background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; padding: {{ section.settings.padding_superior }}px 16px {{ section.settings.padding_inferior }}px; font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cervia-ct__caja { max-width: 760px; margin: 0 auto; }
+  #shopify-section-{{ section.id }} .cervia-ct__titulo { margin: 0; text-align: center; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(28px, 4.4vw, 42px); line-height: 1.15; font-weight: 700; color: {{ section.settings.color_texto }}; letter-spacing: -.01em; }
+  #shopify-section-{{ section.id }} .cervia-ct__titulo span { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cervia-ct__texto { margin: 16px auto 0; max-width: 640px; text-align: center; font-size: 16px; line-height: 1.75; color: {{ section.settings.color_suave }}; }
+  #shopify-section-{{ section.id }} .cervia-ct__texto p { margin: 0; }
+  #shopify-section-{{ section.id }} .cervia-ct__texto a { color: {{ section.settings.color_acento }}; text-decoration: none; font-weight: 600; }
+  #shopify-section-{{ section.id }} .cervia-ct__texto a:hover { text-decoration: underline; }
+  #shopify-section-{{ section.id }} .cervia-ct__form { margin-top: 36px; display: grid; gap: 16px; }
+  #shopify-section-{{ section.id }} .cervia-ct__fila { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 749px) {
+    #shopify-section-{{ section.id }} .cervia-ct { padding: {{ section.settings.padding_movil }}px 16px; }
+    #shopify-section-{{ section.id }} .cervia-ct__fila { grid-template-columns: 1fr; }
+    #shopify-section-{{ section.id }} .cervia-ct__form { margin-top: 24px; gap: 12px; }
+  }
+  #shopify-section-{{ section.id }} .cervia-ct__campo { display: grid; gap: 6px; }
+  #shopify-section-{{ section.id }} .cervia-ct__label { font-size: 14px; font-weight: 600; }
+  #shopify-section-{{ section.id }} .cervia-ct__input { width: 100%; box-sizing: border-box; border: 1.5px solid {{ section.settings.color_borde }}; background: #FFFFFF; border-radius: 12px; padding: 14px 16px; font: inherit; font-size: 16px; color: {{ section.settings.color_texto }}; transition: border-color .2s; }
+  #shopify-section-{{ section.id }} .cervia-ct__input::placeholder { color: {{ section.settings.color_suave }}; opacity: .7; }
+  #shopify-section-{{ section.id }} .cervia-ct__input:focus { outline: none; border-color: {{ section.settings.color_texto }}; box-shadow: 0 0 0 3px {{ section.settings.color_borde }}; }
+  #shopify-section-{{ section.id }} textarea.cervia-ct__input { min-height: 140px; resize: vertical; }
+  #shopify-section-{{ section.id }} .cervia-ct__btn { width: 100%; border: 0; border-radius: 30px; padding: 16px 24px; background: {{ section.settings.color_boton }}; color: {{ section.settings.color_boton_texto }}; font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; transition: background .2s; }
+  #shopify-section-{{ section.id }} .cervia-ct__btn:hover { background: {{ section.settings.color_boton_hover }}; }
+  #shopify-section-{{ section.id }} .cervia-ct__btn:focus-visible { outline: 2px solid {{ section.settings.color_texto }}; outline-offset: 3px; }
+  #shopify-section-{{ section.id }} .cervia-ct__ok, #shopify-section-{{ section.id }} .cervia-ct__error { margin: 0; padding: 14px 16px; border-radius: 12px; font-size: 15px; text-align: center; }
+  #shopify-section-{{ section.id }} .cervia-ct__ok { background: #E7F6EC; color: #1E6B3A; }
+  #shopify-section-{{ section.id }} .cervia-ct__error { background: #FFE3D6; color: #A3260F; }
+  #shopify-section-{{ section.id }} .cervia-ct__nota { margin: 0; font-size: 13px; text-align: center; color: {{ section.settings.color_suave }}; }
+{%- endstyle -%}
+
+<section class="cervia-ct">
+  <div class="cervia-ct__caja">
+    {%- if section.settings.titulo != blank -%}
+      <h1 class="cervia-ct__titulo">{{ section.settings.titulo }}</h1>
+    {%- endif -%}
+    <div class="cervia-ct__texto">
+      <p>
+        {{ section.settings.texto }}
+        {%- if section.settings.correo != blank %}
+          {{ section.settings.texto_correo }} <a href="mailto:{{ section.settings.correo }}">{{ section.settings.correo }}</a>{{ section.settings.texto_final }}
+        {%- endif -%}
+      </p>
+    </div>
+
+    {%- form 'contact', id: 'CerviaContacto', class: 'cervia-ct__form' -%}
+      {%- if form.posted_successfully? -%}
+        <p class="cervia-ct__ok" role="status" tabindex="-1" autofocus>{{ section.settings.texto_ok }}</p>
+      {%- elsif form.errors -%}
+        <p class="cervia-ct__error" role="alert" tabindex="-1" autofocus>{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>
+      {%- endif -%}
+      <div class="cervia-ct__fila">
+        <div class="cervia-ct__campo">
+          <label class="cervia-ct__label" for="CerviaContacto-nombre">Nombre</label>
+          <input class="cervia-ct__input" id="CerviaContacto-nombre" type="text" name="contact[Nombre]" autocomplete="name" placeholder="Tu nombre" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+        </div>
+        <div class="cervia-ct__campo">
+          <label class="cervia-ct__label" for="CerviaContacto-email">Correo electrónico <span aria-hidden="true">*</span></label>
+          <input class="cervia-ct__input" id="CerviaContacto-email" type="email" name="contact[email]" autocomplete="email" autocapitalize="off" spellcheck="false" required aria-required="true" placeholder="tu@correo.com" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"{% if form.errors contains 'email' %} aria-invalid="true"{% endif %}>
+        </div>
+      </div>
+      <div class="cervia-ct__campo">
+        <label class="cervia-ct__label" for="CerviaContacto-pedido">Número de pedido (opcional)</label>
+        <input class="cervia-ct__input" id="CerviaContacto-pedido" type="text" name="contact[Número de pedido]" placeholder="#1001">
+      </div>
+      <div class="cervia-ct__campo">
+        <label class="cervia-ct__label" for="CerviaContacto-mensaje">Mensaje</label>
+        <textarea class="cervia-ct__input" id="CerviaContacto-mensaje" name="contact[Mensaje]" placeholder="Cuéntanos en qué podemos ayudarte" required>{{ form.body }}</textarea>
+      </div>
+      <button type="submit" class="cervia-ct__btn">{{ section.settings.texto_boton }}</button>
+      {%- if section.settings.nota != blank -%}<p class="cervia-ct__nota">{{ section.settings.nota }}</p>{%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cervia Contacto",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "¿Necesitas ayuda? <span>Contáctanos</span>" },
+    { "type": "textarea", "id": "texto", "label": "Texto", "default": "Para cualquier duda sobre nuestros productos, envíos o tu pedido, rellena el formulario" },
+    { "type": "text", "id": "correo", "label": "Correo de atención al cliente", "info": "Si lo dejas vacío no se muestra" },
+    { "type": "text", "id": "texto_correo", "label": "Texto antes del correo", "default": "o escríbenos a" },
+    { "type": "text", "id": "texto_final", "label": "Texto después del correo", "default": ". Incluye tu número de pedido para responderte más rápido." },
+    { "type": "text", "id": "texto_boton", "label": "Texto del botón", "default": "Enviar mensaje" },
+    { "type": "text", "id": "texto_ok", "label": "Mensaje al enviar", "default": "¡Gracias! Hemos recibido tu mensaje y te responderemos lo antes posible." },
+    { "type": "text", "id": "nota", "label": "Nota bajo el botón", "default": "Te responderemos lo antes posible." },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFF8F2" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#1B1F5E" },
+    { "type": "color", "id": "color_suave", "label": "Texto suave", "default": "#585C85" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#EF4423" },
+    { "type": "color", "id": "color_borde", "label": "Bordes", "default": "#FFE3D6" },
+    { "type": "color", "id": "color_boton", "label": "Botón", "default": "#EF4423" },
+    { "type": "color", "id": "color_boton_hover", "label": "Botón al pasar", "default": "#C9321A" },
+    { "type": "color", "id": "color_boton_texto", "label": "Texto del botón", "default": "#FFFFFF" },
+    { "type": "header", "content": "Espaciado" },
+    { "type": "range", "id": "padding_superior", "label": "Espacio superior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_inferior", "label": "Espacio inferior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_movil", "label": "Espacio arriba y abajo (móvil)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 32 }
+  ],
+  "presets": [{ "name": "Cervia Contacto" }]
+}
+{% endschema %}

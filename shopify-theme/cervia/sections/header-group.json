@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -5,12 +14,43 @@
     "cervia-header": {
       "type": "cervia-header",
       "settings": {
-        "logo": "shopify://shop_images/cervia-logo.png",
-        "menu": "main-menu",
-        "destino_logo": "inicio",
+        "mostrar_anuncio": true,
         "anuncio": "🔥 Envío gratis a toda España · 30 días de prueba",
-        "anuncio_fondo": "#EF4423",
-        "anuncio_texto": "#FFFFFF"
+        "anuncio_fondo": "#ef4423",
+        "anuncio_texto": "#ffffff",
+        "tam_anuncio": 13,
+        "logo": "shopify://shop_images/cervia-logo.png",
+        "logo_texto": "Cervia",
+        "alto_logo": 30,
+        "alto_logo_movil": 24,
+        "posicion_logo": "centro",
+        "destino_logo": "inicio",
+        "logo_url": "",
+        "mostrar_menu": true,
+        "menu": "main-menu",
+        "estilo_menu": "enlaces",
+        "titulo_menu": "Menú",
+        "lado_menu": "izquierda",
+        "texto_cerrar": "Cerrar",
+        "mostrar_carrito": true,
+        "icono_carrito": "bolsa",
+        "mostrar_contador": true,
+        "texto_carrito": "Carrito",
+        "color_contador": "#ef4423",
+        "color_contador_texto": "#fff8f2",
+        "color_fondo": "#fff8f2",
+        "color_texto": "#1b1f5e",
+        "color_icono": "#1b1f5e",
+        "color_panel": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "sticky": false,
+        "borde_inferior": true,
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "padding_superior": 14,
+        "padding_inferior": 14,
+        "padding_superior_movil": 10,
+        "padding_inferior_movil": 10
       }
     }
   },

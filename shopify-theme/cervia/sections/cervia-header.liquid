@@ -31,6 +31,16 @@
   #shopify-section-{{ section.id }} .cervia-h__panel-cab { display: flex !important; align-items: center !important; justify-content: space-between !important; margin-bottom: 12px !important; font-weight: 600 !important; font-size: 16px !important; }
   #shopify-section-{{ section.id }} .cervia-h__panel ul { list-style: none !important; margin: 0 !important; padding: 0 !important; display: grid !important; }
   #shopify-section-{{ section.id }} .cervia-h__panel a.cervia-h__link { display: block !important; padding: 14px 0 !important; border-bottom: 1px solid {{ section.settings.color_borde }} !important; color: var(--c-texto) !important; text-decoration: none !important; font-size: 17px !important; }
+  #shopify-section-{{ section.id }} .cervia-h__nav { list-style: none !important; margin: 0 !important; padding: 0 !important; display: flex !important; align-items: center !important; gap: 24px !important; }
+  #shopify-section-{{ section.id }} .cervia-h__nav a { color: var(--c-texto) !important; text-decoration: none !important; font-size: 15px !important; font-weight: 500 !important; padding: 6px 0 !important; border-bottom: 2px solid transparent !important; transition: border-color .2s var(--ease), color .2s var(--ease) !important; }
+  #shopify-section-{{ section.id }} .cervia-h__nav a:hover, #shopify-section-{{ section.id }} .cervia-h__nav a[aria-current="page"] { color: {{ section.settings.color_contador }} !important; border-bottom-color: {{ section.settings.color_contador }} !important; }
+  #shopify-section-{{ section.id }} .cervia-h__nav a:focus-visible { outline: 2px solid var(--c-icono) !important; outline-offset: 2px !important; }
+  #shopify-section-{{ section.id }} .cervia-h__nav--movil { display: none !important; }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .cervia-h__izq .cervia-h__nav { display: none !important; }
+    #shopify-section-{{ section.id }} .cervia-h__nav--movil { display: flex !important; justify-content: center !important; gap: 22px !important; padding: 8px 16px 0 !important; margin-top: 6px !important; border-top: 1px solid {{ section.settings.color_borde }} !important; }
+    #shopify-section-{{ section.id }} .cervia-h__nav--movil a { font-size: 14px !important; }
+  }
   @media (prefers-reduced-motion: reduce) { #shopify-section-{{ section.id }} .cervia-h * { transition-duration: .01ms !important; } }
 {%- endstyle -%}
 {%- liquid
@@ -64,7 +74,13 @@
         {%- endif -%}
       </{% if logo_href != blank %}a{% else %}div{% endif %}>{%- endif -%}
       <div class="cervia-h__izq">
-        {%- if menu_ok -%}
+        {%- if menu_ok and section.settings.estilo_menu == 'enlaces' -%}
+          <ul class="cervia-h__nav" role="list">
+            {%- for link in linklists[section.settings.menu].links -%}
+              <li><a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
+            {%- endfor -%}
+          </ul>
+        {%- elsif menu_ok -%}
           <button type="button" class="cervia-h__btn" data-abrir-menu aria-controls="CerviaMenu-{{ section.id }}" aria-expanded="false" aria-label="{{ section.settings.titulo_menu | escape }}"><svg class="cervia-h-i" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
         {%- endif -%}
       </div>
@@ -85,8 +101,15 @@
         {%- endif -%}
       </div>
     </div>
+    {%- if menu_ok and section.settings.estilo_menu == 'enlaces' -%}
+      <ul class="cervia-h__nav cervia-h__nav--movil" role="list">
+        {%- for link in linklists[section.settings.menu].links -%}
+          <li><a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
   </header>
-  {%- if menu_ok -%}
+  {%- if menu_ok and section.settings.estilo_menu != 'enlaces' -%}
     <div class="cervia-h__menu" id="CerviaMenu-{{ section.id }}" aria-hidden="true">
       <button type="button" class="cervia-h__velo" data-cerrar-menu tabindex="-1" aria-label="{{ section.settings.texto_cerrar | escape }}"></button>
       <nav class="cervia-h__panel" role="dialog" aria-modal="true" aria-label="{{ section.settings.titulo_menu | escape }}">
@@ -272,7 +295,7 @@
     {
       "type": "checkbox",
       "id": "mostrar_menu",
-      "label": "Mostrar menú (icono a la izquierda)",
+      "label": "Mostrar menú",
       "default": false
     },
     {
@@ -280,6 +303,22 @@
       "id": "menu",
       "label": "Menú",
       "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "estilo_menu",
+      "label": "Cómo se muestra el menú",
+      "options": [
+        {
+          "value": "enlaces",
+          "label": "Enlaces a la vista"
+        },
+        {
+          "value": "panel",
+          "label": "Icono de 3 rayas"
+        }
+      ],
+      "default": "enlaces"
     },
     {
       "type": "text",
