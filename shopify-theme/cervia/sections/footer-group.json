@@ -131,6 +131,13 @@
             "texto": "Seguimiento de pedido",
             "url": "/pages/seguimiento-pedido"
           }
+        },
+        "red_tiktok": {
+          "type": "red",
+          "settings": {
+            "red": "tiktok",
+            "url": "https://www.tiktok.com/@cervia.shop"
+          }
         }
       },
       "block_order": [
@@ -149,7 +156,8 @@
         "legal_12",
         "legal_13",
         "legal_14",
-        "legal_15"
+        "legal_15",
+        "red_tiktok"
       ]
     },
     "cervia-popup": {
