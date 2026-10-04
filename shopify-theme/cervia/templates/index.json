@@ -1,35 +1,101 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "portada": {
+      "type": "cervia-hero",
+      "settings": {
+        "imagen": "shopify://shop_images/Gemini_Generated_Image_8syrxl8syrxl8syr.jpg",
+        "imagen_movil": "shopify://shop_images/portada-cervia-movil.jpg",
+        "alt": "Almohada cervical y masajeador cervical Cervia",
+        "titulo": "Tu descanso y bienestar <span>en un solo lugar</span>",
+        "sub": "Especialistas en ergonomía y alivio para tu cuello y tu descanso.",
+        "boton1": "Ver la almohada",
+        "enlace1": "shopify://products/butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow",
+        "boton2": "Ver el masajeador",
+        "enlace2": "shopify://products/hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador",
+        "sellos": "Envío gratis a toda España | 30 días de prueba | Pago seguro"
+      }
+    },
+    "confianza": {
+      "type": "cervia-confianza",
       "blocks": {
-        "button": {
-          "type": "buttons",
+        "item_0": {
+          "type": "item",
           "settings": {
-            "button_label_1": "Ver productos",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icono": "camion",
+            "titulo": "Envío gratis",
+            "texto": "A toda España"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icono": "ciclo",
+            "titulo": "30 días de prueba",
+            "texto": "Aunque lo hayas usado"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icono": "candado",
+            "titulo": "Pago seguro",
+            "texto": "Datos cifrados"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icono": "chat",
+            "titulo": "Te ayudamos",
+            "texto": "Respuesta a cada mensaje"
           }
         }
       },
       "block_order": [
-        "button"
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3"
       ],
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-1",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": true,
-        "image": "shopify://shop_images/banner-portada.jpg"
+        "mostrar_eyebrow": true,
+        "eyebrow": "",
+        "titulo": "",
+        "etiqueta": "h2",
+        "mostrar_sub": true,
+        "sub": "",
+        "alin_cabecera": "center",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "columnas": "4",
+        "columnas_movil": "2",
+        "tam_item": 15,
+        "tam_item_movil": 14,
+        "color_fondo": "#ffe3d6",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 32,
+        "padding_inferior": 32,
+        "padding_superior_movil": 8,
+        "padding_inferior_movil": 8,
+        "ancla": "",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
       }
     },
     "featured_collection": {
@@ -45,7 +111,7 @@
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -56,50 +122,537 @@
         "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 36,
+        "padding_bottom": 28
       }
     },
-    "179107888756d9bd54": {
-      "type": "apps",
+    "combo": {
+      "type": "cervia-marca",
+      "settings": {
+        "imagen": "shopify://shop_images/portada-cervia-movil.jpg",
+        "ratio": "auto",
+        "imagen_derecha": true,
+        "badge": "−15 % en los dos",
+        "eyebrow": "Combo descanso total",
+        "titulo": "Almohada + masajeador: <span>el cuidado completo</span>",
+        "texto": "<p>De día, el masajeador con calor suelta la tensión del cuello y los hombros. De noche, la almohada cervical mantiene tu cuello recto mientras duermes.</p><p>Añade los dos al carrito y te descontamos <strong>automáticamente un 15 % en ambos</strong>. Sin códigos.</p>",
+        "boton": "Ver productos",
+        "enlace": "shopify://collections/all",
+        "color_fondo": "#FFF1EA",
+        "padding": 56,
+        "padding_movil": 28
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "marca": {
+      "type": "cervia-marca",
+      "settings": {
+        "imagen": "shopify://shop_images/momento-chica-cama-almohada.jpg",
+        "ratio": "auto",
+        "imagen_derecha": false,
+        "eyebrow": "Nuestra marca",
+        "titulo": "Qué significa <span>Cervia</span> para nosotros",
+        "texto": "<p>Cervia nace de una idea sencilla: <strong>tu cuello lo aguanta todo</strong>. Horas frente al ordenador, el móvil, el coche, una mala postura al dormir… y casi nunca le prestamos atención.</p><p>Por eso no vendemos de todo. Elegimos pocos productos, pensados solo para cuidar tu cuello y tu descanso, y los explicamos con claridad para que sepas exactamente lo que compras.</p>",
+        "boton": "",
+        "color_fondo": "#FFF8F2",
+        "padding": 64,
+        "padding_movil": 28
+      },
       "blocks": {
-        "judge_me_reviews_review_snippet_widget_YzNAxf": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "p1": {
+          "type": "punto",
           "settings": {
-            "reviews_selection": "product",
-            "products": [],
-            "filter_pinned": true,
-            "filter_featured": true,
-            "filter_custom_tags": "",
-            "min_star_rating": "inherit",
-            "show_review_media": true,
-            "max_reviews": 5,
-            "review_length": "large",
-            "text_size": "medium",
-            "max_width": 1100,
-            "max_image_size": "small",
-            "arrows_visibility": "always_shown",
-            "transition_speed": 5,
-            "corner_styling": "inherit",
-            "text_color": "",
-            "card_color": "",
-            "stars_color": "",
-            "arrows_color": "",
-            "arrows_background_color": ""
+            "titulo": "Pocos productos, bien elegidos",
+            "texto": "Solo lo que de verdad ayuda a tu cuello, nada de relleno."
+          }
+        },
+        "p2": {
+          "type": "punto",
+          "settings": {
+            "titulo": "Información honesta",
+            "texto": "Medidas, materiales y uso explicados tal cual son."
+          }
+        },
+        "p3": {
+          "type": "punto",
+          "settings": {
+            "titulo": "Tú primero",
+            "texto": "Si algo no va bien, lo solucionamos contigo."
           }
         }
       },
       "block_order": [
-        "judge_me_reviews_review_snippet_widget_YzNAxf"
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    "beneficios": {
+      "type": "cervia-beneficios",
+      "blocks": {
+        "b_0": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "camion",
+            "titulo": "Envío gratis a toda España",
+            "texto": "Sin importe mínimo. Preparamos tu pedido en 1–2 días hábiles."
+          }
+        },
+        "b_1": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "ciclo",
+            "titulo": "30 días para probarlo",
+            "texto": "Pruébalo en casa. Si no es para ti, puedes devolverlo aunque lo hayas usado."
+          }
+        },
+        "b_2": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "candado",
+            "titulo": "Pago 100 % seguro",
+            "texto": "Pagos cifrados con tarjeta y otros métodos habituales."
+          }
+        },
+        "b_3": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "regalo",
+            "titulo": "Ahorra con los packs",
+            "texto": "Llévate 2 o 3 unidades a mejor precio, o el combo con un 15 % menos."
+          }
+        },
+        "b_4": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "caja",
+            "titulo": "Seguimiento de tu pedido",
+            "texto": "Te enviamos el número de seguimiento cuando sale tu paquete."
+          }
+        },
+        "b_5": {
+          "type": "beneficio",
+          "settings": {
+            "icono": "chat",
+            "titulo": "Atención cercana",
+            "texto": "Escríbenos desde la página de contacto y te respondemos."
+          }
+        }
+      },
+      "block_order": [
+        "b_0",
+        "b_1",
+        "b_2",
+        "b_3",
+        "b_4",
+        "b_5"
       ],
+      "settings": {
+        "mostrar_eyebrow": true,
+        "eyebrow": "Por qué comprar aquí",
+        "titulo": "Comprar en Cervia <span>es fácil y seguro</span>",
+        "etiqueta": "h2",
+        "mostrar_sub": true,
+        "sub": "Queremos que compres tranquilo, recibas rápido y, si algo no te convence, tengas una solución.",
+        "alin_cabecera": "center",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "columnas": "3",
+        "columnas_tablet": "2",
+        "columnas_movil": "1",
+        "forma_icono": "circulo",
+        "fondo_icono": "#ffe3d6",
+        "color_fondo": "#fff8f2",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 72,
+        "padding_inferior": 72,
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12,
+        "ancla": "",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
+      }
+    },
+    "opiniones": {
+      "type": "cervia-testimonios",
+      "blocks": {
+        "r_0": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Una almohada para el cuello absolutamente excelente, se duerme muy cómodamente con ella. Y el precio también es muy bueno. Llevo 3 semanas durmiendo con esta almohada todos los días, y puedo decir que es realmente buena.",
+            "nombre": "M***l",
+            "fecha": "Almohada · 12 jul 2026",
+            "verificado": false
+          }
+        },
+        "r_1": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Muy bien, justo lo que se describe, masajea el cuello sin problemas, aprieta depende como te lo pongas, a mí me gusta que apriete y se nota el calor la verdad, de momento estoy bastante contento y el envío ha sido muy rápido, satisfecho con el producto.",
+            "nombre": "Anónimo",
+            "fecha": "Masajeador · 25 sep 2026",
+            "verificado": false
+          }
+        },
+        "r_2": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Envío muy rápido. Almohada tal como se describe. La mejor almohada para evitar dolores de cabeza relacionados con el cuello por la mañana.",
+            "nombre": "Anónimo",
+            "fecha": "Almohada · 19 sep 2026",
+            "verificado": false
+          }
+        },
+        "r_3": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "¡Genial! Puede masajear casi como un humano y, si es necesario, de forma aún más intensa.",
+            "nombre": "Anónimo",
+            "fecha": "Masajeador · 21 sep 2026",
+            "verificado": false
+          }
+        },
+        "r_4": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Almohada increíble, ya no tengo dolor de cuello y por fin duermo toda la noche.",
+            "nombre": "B***i",
+            "fecha": "Almohada · 14 jul 2026",
+            "verificado": false
+          }
+        },
+        "r_5": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Compré este artículo porque suelo tener dolor de cuello. Después de unos minutos sentado en la posición 1, es muy agradable. 3 velocidades de masaje y dos funciones de calor. Buen producto y un diseño excepcional. Lo recomiendo.",
+            "nombre": "Anónimo",
+            "fecha": "Masajeador · 26 jun 2026",
+            "verificado": false
+          }
+        },
+        "r_6": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Muy contenta con mi almohada, es suave y muy ligera para mis brazos y mi cuello... la recomiendo.",
+            "nombre": "Anónimo",
+            "fecha": "Almohada · 17 sep 2026",
+            "verificado": false
+          }
+        },
+        "r_7": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Este es el segundo que he comprado. Es increíble :)",
+            "nombre": "Anónimo",
+            "fecha": "Masajeador · 22 sep 2026",
+            "verificado": false
+          }
+        }
+      },
+      "block_order": [
+        "r_0",
+        "r_1",
+        "r_2",
+        "r_3",
+        "r_4",
+        "r_5",
+        "r_6",
+        "r_7"
+      ],
+      "settings": {
+        "mostrar_eyebrow": true,
+        "eyebrow": "Opiniones",
+        "titulo": "Lo que dicen de <span>nuestros productos</span>",
+        "etiqueta": "h2",
+        "mostrar_sub": true,
+        "sub": "Opiniones reales de compradores de la almohada y el masajeador en AliExpress (artículo similar).",
+        "alin_cabecera": "center",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "mostrar_resumen": false,
+        "nota": 4.8,
+        "num_resenas": "[Nº]",
+        "texto_num": "[[n]] reseñas verificadas",
+        "usar_app": false,
+        "layout": "texto",
+        "ratio": "4 / 5",
+        "guia_foto": "Aquí va la foto que te mandó el cliente con su almohada",
+        "texto_verificado": "",
+        "columnas": "4",
+        "estilo_movil": "lista",
+        "ancho_tarjeta": 85,
+        "color_estrellas": "#ffb400",
+        "color_estrella_vacia": "#ffe3d6",
+        "cta_mostrar": false,
+        "cta_texto": "Quiero mi almohada · [[precio]]",
+        "cta_accion": "carrito",
+        "cta_url": "",
+        "cta_cantidad": "1",
+        "cta_cargando": "Añadiendo…",
+        "cta_agotado": "Agotado",
+        "cta_micro_mostrar": true,
+        "cta_micro": "Envío gratis · Pago seguro · 30 días de prueba",
+        "cta_estilo": "solido",
+        "cta_completo_movil": true,
+        "cta_completo_escritorio": false,
+        "cta_alto": 56,
+        "cta_alto_movil": 52,
+        "cta_tam": 17,
+        "cta_tam_movil": 16,
+        "cta_radius": 30,
+        "cta_fondo": "#ef4423",
+        "cta_color": "#fff8f2",
+        "cta_borde": "#ef4423",
+        "cta_fondo_hover": "#c9321a",
+        "cta_color_hover": "#fff8f2",
+        "activar_tracking": true,
+        "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
+        "color_fondo": "#fff1ea",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 40,
+        "padding_inferior": 40,
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12,
+        "ancla": "opiniones-inicio",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
+      }
+    },
+    "compromiso": {
+      "type": "cervia-garantia",
+      "settings": {
+        "mostrar_eyebrow": true,
+        "eyebrow": "Nuestro compromiso",
+        "titulo": "Agradarte es <span>nuestra prioridad</span>",
+        "etiqueta": "h2",
+        "alin_cabecera": "left",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "dias": 30,
+        "texto": "<p>Para nosotros, una venta no termina cuando pagas: termina cuando estás contento. Por eso tienes <strong>[[dias]] días</strong> para probar tu producto en casa, aunque ya lo hayas usado.</p><p>Si algo no va como esperabas, escríbenos desde la página de contacto y lo solucionamos contigo.</p>",
+        "mostrar_sello": true,
+        "unidad_sello": "días",
+        "tam_sello": 160,
+        "tam_sello_movil": 130,
+        "color_sello": "#1b1f5e",
+        "color_sello_texto": "#fff8f2",
+        "cta_mostrar": false,
+        "cta_texto": "Probarla sin riesgo · [[precio]]",
+        "cta_accion": "carrito",
+        "cta_url": "",
+        "cta_cantidad": "1",
+        "cta_cargando": "Añadiendo…",
+        "cta_agotado": "Agotado",
+        "cta_micro_mostrar": true,
+        "cta_micro": "Envío gratis · Pago seguro",
+        "cta_estilo": "solido",
+        "cta_completo_movil": true,
+        "cta_completo_escritorio": false,
+        "cta_alto": 56,
+        "cta_alto_movil": 52,
+        "cta_tam": 17,
+        "cta_tam_movil": 16,
+        "cta_radius": 30,
+        "cta_fondo": "#ef4423",
+        "cta_color": "#fff8f2",
+        "cta_borde": "#ef4423",
+        "cta_fondo_hover": "#c9321a",
+        "cta_color_hover": "#fff8f2",
+        "activar_tracking": true,
+        "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
+        "color_fondo": "#fff8f2",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff1ea",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 72,
+        "padding_inferior": 72,
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12,
+        "ancla": "",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
+      }
+    },
+    "faq": {
+      "type": "cervia-faq",
+      "blocks": {
+        "q_0": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cuánto tarda en llegar mi pedido?",
+            "respuesta": "<p>El envío es gratis a toda España. Preparamos tu pedido en 1–2 días hábiles y lo recibes en unos 7–12 días. Te enviamos el número de seguimiento por correo.</p>"
+          }
+        },
+        "q_1": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Puedo devolverlo si no me convence?",
+            "respuesta": "<p>Sí. Tienes 30 días desde que lo recibes para pedir la devolución, aunque ya lo hayas probado, siempre que esté completo y en buen estado.</p>"
+          }
+        },
+        "q_2": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Qué producto me conviene más?",
+            "respuesta": "<p>La almohada cervical es para dormir con el cuello bien apoyado toda la noche. El masajeador con calor es para relajar cuello y hombros durante el día. Muchos clientes se llevan los dos con el combo.</p>"
+          }
+        },
+        "q_3": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cómo funciona el descuento del combo?",
+            "respuesta": "<p>Si añades la almohada y el masajeador al carrito, se aplica solo un 15 % de descuento en los dos. No necesitas ningún código.</p>"
+          }
+        },
+        "q_4": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Es seguro pagar aquí?",
+            "respuesta": "<p>Sí. El pago se procesa de forma cifrada y no guardamos los datos de tu tarjeta.</p>"
+          }
+        },
+        "q_5": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cómo puedo contactar con vosotros?",
+            "respuesta": "<p>Desde la página de contacto. Indica tu número de pedido si ya has comprado y te ayudaremos lo antes posible.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q_0",
+        "q_1",
+        "q_2",
+        "q_3",
+        "q_4",
+        "q_5"
+      ],
+      "settings": {
+        "mostrar_eyebrow": true,
+        "eyebrow": "Preguntas frecuentes",
+        "titulo": "Preguntas <span>frecuentes</span>",
+        "etiqueta": "h2",
+        "mostrar_sub": true,
+        "sub": "¿Te queda alguna duda? Escríbenos desde la página de contacto.",
+        "alin_cabecera": "center",
+        "tam_titulo": 36,
+        "tam_titulo_movil": 26,
+        "tam_sub": 17,
+        "tam_sub_movil": 16,
+        "ancho_titulo": 760,
+        "espaciado_letras": -0.5,
+        "primera_abierta": true,
+        "una_abierta": true,
+        "icono": "plus",
+        "estilo": "tarjetas",
+        "tam_pregunta": 17,
+        "tam_pregunta_movil": 16,
+        "tam_respuesta": 15,
+        "color_separador": "#ffe3d6",
+        "ancho_lista": 820,
+        "color_fondo": "#fff8f2",
+        "gradiente": false,
+        "color_fondo_2": "#ffe3d6",
+        "angulo": 180,
+        "color_texto": "#1b1f5e",
+        "color_suave": "#585c85",
+        "color_acento": "#ef4423",
+        "color_tarjeta": "#fff8f2",
+        "color_borde": "#ffe3d6",
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "radius": 12,
+        "padding_superior": 72,
+        "padding_inferior": 72,
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12,
+        "ancla": "",
+        "animacion": "fade",
+        "ocultar_movil": false,
+        "ocultar_escritorio": false,
+        "clases": ""
+      }
+    },
+    "179107888756d9bd54": {
+      "type": "apps",
       "settings": {
         "include_margins": true
       }
     }
   },
   "order": [
-    "image_banner",
+    "portada",
+    "confianza",
     "featured_collection",
+    "combo",
+    "marca",
+    "beneficios",
+    "opiniones",
+    "compromiso",
+    "faq",
     "179107888756d9bd54"
   ]
 }

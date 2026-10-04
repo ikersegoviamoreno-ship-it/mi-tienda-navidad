@@ -1,0 +1,101 @@
+{%- comment -%}
+  Cervia: bloque de imagen + texto (historia de marca, ofertas, compromiso).
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .cervia-mc { background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; padding: {{ section.settings.padding }}px 16px; font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cervia-mc__caja { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  #shopify-section-{{ section.id }} .cervia-mc__caja.is-imagen-derecha .cervia-mc__media { order: 2; }
+  #shopify-section-{{ section.id }} .cervia-mc__media { border-radius: 20px; overflow: hidden; background: {{ section.settings.color_borde }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__media img, #shopify-section-{{ section.id }} .cervia-mc__media svg { display: block; width: 100%; height: 100%; aspect-ratio: {{ section.settings.ratio }}; object-fit: cover; }
+  #shopify-section-{{ section.id }} .cervia-mc__eyebrow { margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__titulo { margin: 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; font-weight: 700; letter-spacing: -.01em; color: {{ section.settings.color_texto }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__titulo span { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__texto { margin-top: 16px; font-size: 16px; line-height: 1.7; color: {{ section.settings.color_suave }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__texto p { margin: 0 0 12px; }
+  #shopify-section-{{ section.id }} .cervia-mc__texto p:last-child { margin-bottom: 0; }
+  #shopify-section-{{ section.id }} .cervia-mc__texto strong { color: {{ section.settings.color_texto }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__puntos { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 14px; }
+  #shopify-section-{{ section.id }} .cervia-mc__punto { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
+  #shopify-section-{{ section.id }} .cervia-mc__check { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: {{ section.settings.color_borde }}; color: {{ section.settings.color_acento }}; font-weight: 700; }
+  #shopify-section-{{ section.id }} .cervia-mc__punto strong { display: block; font-size: 16px; color: {{ section.settings.color_texto }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__punto span { display: block; margin-top: 2px; font-size: 15px; line-height: 1.5; color: {{ section.settings.color_suave }}; }
+  #shopify-section-{{ section.id }} .cervia-mc__badge { display: inline-block; margin-bottom: 14px; padding: 6px 14px; border-radius: 999px; background: {{ section.settings.color_acento }}; color: #FFFFFF; font-size: 13px; font-weight: 700; letter-spacing: .02em; }
+  #shopify-section-{{ section.id }} .cervia-mc__btn { display: inline-flex; align-items: center; justify-content: center; margin-top: 26px; min-height: 52px; padding: 0 30px; border-radius: 30px; background: {{ section.settings.color_acento }}; color: #FFFFFF; font-size: 16px; font-weight: 700; text-decoration: none; transition: background .2s; }
+  #shopify-section-{{ section.id }} .cervia-mc__btn:hover { background: #C9321A; }
+  #shopify-section-{{ section.id }} .cervia-mc__btn:focus-visible { outline: 2px solid {{ section.settings.color_texto }}; outline-offset: 3px; }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .cervia-mc { padding: {{ section.settings.padding_movil }}px 16px; }
+    #shopify-section-{{ section.id }} .cervia-mc__caja { grid-template-columns: 1fr; gap: 22px; }
+    #shopify-section-{{ section.id }} .cervia-mc__caja.is-imagen-derecha .cervia-mc__media { order: 0; }
+    #shopify-section-{{ section.id }} .cervia-mc__texto { font-size: 15px; }
+    #shopify-section-{{ section.id }} .cervia-mc__btn { width: 100%; }
+  }
+{%- endstyle -%}
+
+<section class="cervia-mc">
+  <div class="cervia-mc__caja{% if section.settings.imagen_derecha %} is-imagen-derecha{% endif %}">
+    <div class="cervia-mc__media">
+      {%- if section.settings.imagen != blank -%}
+        {{ section.settings.imagen | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 50vw, 100vw', widths: '500, 800, 1100, 1400', alt: section.settings.imagen.alt | default: section.settings.titulo | strip_html }}
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag }}
+      {%- endif -%}
+    </div>
+    <div class="cervia-mc__contenido">
+      {%- if section.settings.badge != blank -%}<span class="cervia-mc__badge">{{ section.settings.badge }}</span>{%- endif -%}
+      {%- if section.settings.eyebrow != blank -%}<p class="cervia-mc__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.titulo != blank -%}<h2 class="cervia-mc__titulo">{{ section.settings.titulo }}</h2>{%- endif -%}
+      {%- if section.settings.texto != blank -%}<div class="cervia-mc__texto">{{ section.settings.texto }}</div>{%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <ul class="cervia-mc__puntos" role="list">
+          {%- for block in section.blocks -%}
+            <li class="cervia-mc__punto" {{ block.shopify_attributes }}>
+              <span class="cervia-mc__check" aria-hidden="true">✓</span>
+              <div><strong>{{ block.settings.titulo }}</strong>{%- if block.settings.texto != blank -%}<span>{{ block.settings.texto }}</span>{%- endif -%}</div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+      {%- if section.settings.boton != blank -%}<a class="cervia-mc__btn" href="{{ section.settings.enlace | default: routes.all_products_collection_url }}">{{ section.settings.boton }}</a>{%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cervia Imagen y texto",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "imagen", "label": "Imagen" },
+    { "type": "select", "id": "ratio", "label": "Formato de la imagen", "options": [
+      { "value": "4 / 5", "label": "Vertical" },
+      { "value": "1 / 1", "label": "Cuadrado" },
+      { "value": "4 / 3", "label": "Horizontal" },
+      { "value": "auto", "label": "Original" }
+    ], "default": "4 / 5" },
+    { "type": "checkbox", "id": "imagen_derecha", "label": "Imagen a la derecha", "default": false },
+    { "type": "text", "id": "badge", "label": "Etiqueta destacada" },
+    { "type": "text", "id": "eyebrow", "label": "Frase superior", "default": "Nuestra marca" },
+    { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "Qué significa <span>Cervia</span>" },
+    { "type": "richtext", "id": "texto", "label": "Texto" },
+    { "type": "text", "id": "boton", "label": "Botón" },
+    { "type": "url", "id": "enlace", "label": "Enlace del botón" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFF8F2" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#1B1F5E" },
+    { "type": "color", "id": "color_suave", "label": "Texto suave", "default": "#585C85" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#EF4423" },
+    { "type": "color", "id": "color_borde", "label": "Detalles", "default": "#FFE3D6" },
+    { "type": "range", "id": "padding", "label": "Espacio arriba y abajo", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_movil", "label": "Espacio arriba y abajo (móvil)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 28 }
+  ],
+  "blocks": [
+    { "type": "punto", "name": "Punto", "settings": [
+      { "type": "text", "id": "titulo", "label": "Título", "default": "Un punto importante" },
+      { "type": "text", "id": "texto", "label": "Texto" }
+    ] }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Cervia Imagen y texto" }]
+}
+{% endschema %}

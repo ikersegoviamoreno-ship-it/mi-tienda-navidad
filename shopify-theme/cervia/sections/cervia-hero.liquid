@@ -1,0 +1,85 @@
+{%- comment -%}
+  Cervia: portada con imagen. En escritorio se ve la imagen completa (con su texto);
+  en móvil se muestra el título en texto real y una imagen recortada con los productos.
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .cervia-hero { background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cervia-hero__img { display: block; width: 100%; height: auto; }
+  #shopify-section-{{ section.id }} .cervia-hero__movil { display: none; }
+  #shopify-section-{{ section.id }} .cervia-hero__textos { display: none; }
+  #shopify-section-{{ section.id }} .cervia-hero__botones { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 24px 16px 14px; }
+  #shopify-section-{{ section.id }} .cervia-hero__btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 30px; border-radius: 30px; font-size: 16px; font-weight: 700; text-decoration: none; border: 2px solid {{ section.settings.color_acento }}; transition: background .2s, color .2s, transform .2s; }
+  #shopify-section-{{ section.id }} .cervia-hero__btn--1 { background: {{ section.settings.color_acento }}; color: #FFFFFF; }
+  #shopify-section-{{ section.id }} .cervia-hero__btn--1:hover { background: {{ section.settings.color_acento_hover }}; border-color: {{ section.settings.color_acento_hover }}; }
+  #shopify-section-{{ section.id }} .cervia-hero__btn--2 { background: transparent; color: {{ section.settings.color_texto }}; border-color: {{ section.settings.color_texto }}; }
+  #shopify-section-{{ section.id }} .cervia-hero__btn--2:hover { background: {{ section.settings.color_texto }}; color: #FFFFFF; }
+  #shopify-section-{{ section.id }} .cervia-hero__btn:focus-visible { outline: 2px solid {{ section.settings.color_texto }}; outline-offset: 3px; }
+  #shopify-section-{{ section.id }} .cervia-hero__sellos { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 18px; margin: 0; padding-inline: 16px; list-style: none; font-size: 14px; padding-bottom: {{ section.settings.padding_inferior }}px; color: {{ section.settings.color_suave }}; }
+  #shopify-section-{{ section.id }} .cervia-hero__sellos li::before { content: "✓"; color: {{ section.settings.color_acento }}; font-weight: 700; margin-right: 6px; }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .cervia-hero__img--escritorio { display: {% if section.settings.imagen_movil != blank %}none{% else %}block{% endif %}; }
+    #shopify-section-{{ section.id }} .cervia-hero__movil { display: block; }
+    #shopify-section-{{ section.id }} .cervia-hero__textos { display: block; padding: 22px 16px 14px; text-align: center; }
+    #shopify-section-{{ section.id }} .cervia-hero__titulo { margin: 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: 27px; line-height: 1.12; font-weight: 700; letter-spacing: -.01em; text-transform: uppercase; color: {{ section.settings.color_texto }}; }
+    #shopify-section-{{ section.id }} .cervia-hero__titulo span { color: {{ section.settings.color_acento }}; }
+    #shopify-section-{{ section.id }} .cervia-hero__sub { margin: 10px auto 0; max-width: 420px; font-size: 15px; line-height: 1.5; color: {{ section.settings.color_suave }}; }
+    #shopify-section-{{ section.id }} .cervia-hero__botones { padding: 16px 16px 10px; gap: 10px; }
+    #shopify-section-{{ section.id }} .cervia-hero__btn { flex: 1 1 140px; padding: 0 16px; min-height: 50px; font-size: 15px; }
+    #shopify-section-{{ section.id }} .cervia-hero__sellos { font-size: 13px; padding-bottom: {{ section.settings.padding_inferior_movil }}px; }
+  }
+{%- endstyle -%}
+
+<section class="cervia-hero">
+  <div class="cervia-hero__textos">
+    {%- if section.settings.titulo != blank -%}<h1 class="cervia-hero__titulo">{{ section.settings.titulo }}</h1>{%- endif -%}
+    {%- if section.settings.sub != blank -%}<p class="cervia-hero__sub">{{ section.settings.sub }}</p>{%- endif -%}
+  </div>
+  {%- if section.settings.imagen != blank -%}
+    {{ section.settings.imagen | image_url: width: 2400 | image_tag: class: 'cervia-hero__img cervia-hero__img--escritorio', loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '750, 1100, 1500, 2000, 2400', alt: section.settings.alt }}
+  {%- else -%}
+    {{ 'hero-apparel-1' | placeholder_svg_tag: 'cervia-hero__img placeholder-svg' }}
+  {%- endif -%}
+  {%- if section.settings.imagen_movil != blank -%}
+    {{ section.settings.imagen_movil | image_url: width: 1300 | image_tag: class: 'cervia-hero__img cervia-hero__movil', loading: 'eager', sizes: '100vw', widths: '400, 600, 800, 1000, 1300', alt: section.settings.alt }}
+  {%- endif -%}
+  {%- if section.settings.boton1 != blank or section.settings.boton2 != blank -%}
+    <div class="cervia-hero__botones">
+      {%- if section.settings.boton1 != blank -%}<a class="cervia-hero__btn cervia-hero__btn--1" href="{{ section.settings.enlace1 | default: routes.all_products_collection_url }}">{{ section.settings.boton1 }}</a>{%- endif -%}
+      {%- if section.settings.boton2 != blank -%}<a class="cervia-hero__btn cervia-hero__btn--2" href="{{ section.settings.enlace2 | default: routes.all_products_collection_url }}">{{ section.settings.boton2 }}</a>{%- endif -%}
+    </div>
+  {%- endif -%}
+  {%- if section.settings.sellos != blank -%}
+    <ul class="cervia-hero__sellos" role="list">
+      {%- assign sellos = section.settings.sellos | split: '|' -%}
+      {%- for s in sellos -%}<li>{{ s | strip }}</li>{%- endfor -%}
+    </ul>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Cervia Portada",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "imagen", "label": "Imagen (escritorio)" },
+    { "type": "image_picker", "id": "imagen_movil", "label": "Imagen (móvil)", "info": "Si la imagen de escritorio lleva texto, sube aquí una versión sin texto para el móvil" },
+    { "type": "text", "id": "alt", "label": "Descripción de la imagen", "default": "Almohada cervical y masajeador cervical Cervia" },
+    { "type": "inline_richtext", "id": "titulo", "label": "Título (solo móvil)", "default": "Tu descanso y bienestar <span>en un solo lugar</span>" },
+    { "type": "text", "id": "sub", "label": "Subtítulo (solo móvil)", "default": "Especialistas en ergonomía y alivio para tu cuello." },
+    { "type": "text", "id": "boton1", "label": "Botón 1", "default": "Ver la almohada" },
+    { "type": "url", "id": "enlace1", "label": "Enlace botón 1" },
+    { "type": "text", "id": "boton2", "label": "Botón 2", "default": "Ver el masajeador" },
+    { "type": "url", "id": "enlace2", "label": "Enlace botón 2" },
+    { "type": "text", "id": "sellos", "label": "Ventajas bajo los botones", "info": "Sepáralas con |", "default": "Envío gratis a toda España | 30 días de prueba | Pago seguro" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFF8F2" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#1B1F5E" },
+    { "type": "color", "id": "color_suave", "label": "Texto suave", "default": "#585C85" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#EF4423" },
+    { "type": "color", "id": "color_acento_hover", "label": "Acento al pasar", "default": "#C9321A" },
+    { "type": "range", "id": "padding_inferior", "label": "Espacio inferior", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_inferior_movil", "label": "Espacio inferior (móvil)", "min": 0, "max": 60, "step": 4, "unit": "px", "default": 16 }
+  ],
+  "presets": [{ "name": "Cervia Portada" }]
+}
+{% endschema %}
