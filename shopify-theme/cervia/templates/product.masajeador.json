@@ -675,7 +675,8 @@
         "sub": "Para tu cuello, de día y de noche.",
         "ratio": "4 / 5",
         "duracion": 70
-      }
+      },
+      "disabled": true
     },
     "opiniones_clientes": {
       "type": "ss-testimonials-48",
