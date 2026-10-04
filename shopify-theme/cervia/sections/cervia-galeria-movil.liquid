@@ -32,7 +32,17 @@
           <div class="cervia-gm__item"{% if vuelta > 1 %} aria-hidden="true"{% else %} {{ block.shopify_attributes }}{% endif %}>
             {%- if block.settings.imagen != blank -%}
               {%- assign alt = block.settings.imagen.alt | default: section.settings.titulo | strip_html -%}
-              {{ block.settings.imagen | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '320px', widths: '350, 500, 700', alt: alt }}
+              {%- liquid
+                assign ratio_img = block.settings.imagen.aspect_ratio | default: 1
+                assign ancho_necesario = 1000
+                if ratio_img > 0.8
+                  assign ancho_necesario = 1000 | times: ratio_img | divided_by: 0.8 | round
+                endif
+                if ancho_necesario > 2400
+                  assign ancho_necesario = 2400
+                endif
+              -%}
+              {{ block.settings.imagen | image_url: width: ancho_necesario | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 600px, 440px', widths: '500, 800, 1000, 1400, 1800, 2400', alt: alt }}
             {%- else -%}
               {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
