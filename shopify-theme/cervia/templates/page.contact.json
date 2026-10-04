@@ -11,7 +11,9 @@
   "sections": {
     "contacto": {
       "type": "cervia-contacto",
-      "settings": {}
+      "settings": {
+        "correo": "ikersegoviamoreno@gmail.com"
+      }
     }
   },
   "order": [
