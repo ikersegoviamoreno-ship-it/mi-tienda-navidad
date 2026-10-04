@@ -1,0 +1,111 @@
+{%- comment -%}
+  Cervia: franja de envío gratis y recomendación del otro producto en el carrito lateral.
+  Uso: {% render 'cervia-carrito-extras', parte: 'envio' %} / {% render 'cervia-carrito-extras', parte: 'upsell' %}
+{%- endcomment -%}
+{%- liquid
+  assign h_almohada = 'butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow'
+  assign h_masajeador = 'hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador'
+  assign tiene_almohada = false
+  assign tiene_masajeador = false
+  assign uds_cervia = 0
+  for item in cart.items
+    if item.product.handle == h_almohada
+      assign tiene_almohada = true
+      assign uds_cervia = uds_cervia | plus: item.quantity
+    elsif item.product.handle == h_masajeador
+      assign tiene_masajeador = true
+      assign uds_cervia = uds_cervia | plus: item.quantity
+    endif
+  endfor
+-%}
+{%- if parte == 'envio' and cart != empty -%}
+  <div class="cervia-cx-envio" role="status">
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>
+    <span>¡Tu pedido tiene <strong>envío GRATIS</strong> a toda España!</span>
+  </div>
+{%- endif -%}
+{%- if parte == 'upsell' -%}
+  {%- liquid
+    assign oferta = blank
+    if tiene_almohada and tiene_masajeador == false
+      assign oferta = all_products[h_masajeador]
+      assign titulo_oferta = 'Completa tu descanso'
+    elsif tiene_masajeador and tiene_almohada == false
+      assign oferta = all_products[h_almohada]
+      assign titulo_oferta = 'Duerme sin dolor de cuello'
+    endif
+  -%}
+  {%- if oferta != blank and oferta.available -%}
+    {%- assign v = oferta.selected_or_first_available_variant -%}
+    <div class="cervia-cx-upsell">
+      <p class="cervia-cx-upsell__titulo">{{ titulo_oferta }}</p>
+      {%- if uds_cervia == 1 -%}
+        <p class="cervia-cx-upsell__ahorro">Añádelo y ahorra un <strong>10 % en los dos</strong></p>
+      {%- elsif uds_cervia == 2 -%}
+        <p class="cervia-cx-upsell__ahorro">Añádelo y tu descuento sube al <strong>15 %</strong></p>
+      {%- endif -%}
+      <div class="cervia-cx-upsell__fila">
+        {%- if oferta.featured_image -%}
+          <a href="{{ oferta.url }}" class="cervia-cx-upsell__img">{{ oferta.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', width: 72, height: 72, alt: oferta.title }}</a>
+        {%- endif -%}
+        <div class="cervia-cx-upsell__info">
+          <a href="{{ oferta.url }}" class="cervia-cx-upsell__nombre">{{ oferta.title }}</a>
+          <span class="cervia-cx-upsell__precio">{{ v.price | money }}</span>
+        </div>
+        <button type="button" class="cervia-cx-upsell__btn" data-cervia-upsell="{{ v.id }}">Añadir</button>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+{%- if parte == 'assets' -%}
+  <style>
+    .cervia-cx-envio { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 0 8px; padding: 10px 14px; border-radius: 12px; background: #FFE3D6; color: #1B1F5E; font-size: 14px; line-height: 1.3; text-align: center; }
+    .cervia-cx-envio svg { color: #EF4423; flex: none; }
+    .cervia-cx-envio strong { color: #EF4423; }
+    .cervia-cx-upsell { margin: 16px 0 8px; padding: 14px; border: 2px dashed #EF4423; border-radius: 14px; background: #FFF1EA; color: #1B1F5E; }
+    .cervia-cx-upsell__titulo { margin: 0; font-weight: 700; font-size: 15px; }
+    .cervia-cx-upsell__ahorro { margin: 2px 0 0; font-size: 13px; }
+    .cervia-cx-upsell__ahorro strong { color: #EF4423; }
+    .cervia-cx-upsell__fila { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+    .cervia-cx-upsell__img img { width: 72px; height: 72px; object-fit: cover; border-radius: 10px; display: block; background: #fff; }
+    .cervia-cx-upsell__info { flex: 1; min-width: 0; display: grid; gap: 2px; }
+    .cervia-cx-upsell__nombre { color: inherit; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.25; }
+    .cervia-cx-upsell__precio { font-size: 14px; color: #EF4423; font-weight: 700; }
+    .cervia-cx-upsell__btn { flex: none; border: 0; border-radius: 30px; padding: 10px 18px; background: #EF4423; color: #fff; font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; }
+    .cervia-cx-upsell__btn:hover { background: #C9321A; }
+    .cervia-cx-upsell__btn[disabled] { opacity: .6; cursor: progress; }
+  </style>
+  <script>
+    (function () {
+      if (window.cerviaUpsellListo) return;
+      window.cerviaUpsellListo = true;
+      document.addEventListener('click', async function (e) {
+        const btn = e.target.closest('[data-cervia-upsell]');
+        if (!btn) return;
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Añadiendo…';
+        const drawer = document.querySelector('cart-drawer');
+        try {
+          const secciones = drawer && drawer.getSectionsToRender ? drawer.getSectionsToRender().map((s) => s.id) : [];
+          const r = await fetch('{{ routes.cart_add_url }}.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ items: [{ id: Number(btn.dataset.cerviaUpsell), quantity: 1 }], sections: secciones, sections_url: window.location.pathname })
+          });
+          const data = await r.json();
+          if (!r.ok) throw new Error(data.description || 'Error');
+          if (drawer && drawer.renderContents && data.sections) {
+            drawer.renderContents({ id: Number(btn.dataset.cerviaUpsell), sections: data.sections });
+          } else {
+            window.location.href = '{{ routes.cart_url }}';
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.textContent = 'Añadir';
+          window.location.href = '{{ routes.cart_url }}';
+        }
+      });
+    })();
+  </script>
+{%- endif -%}
