@@ -760,31 +760,25 @@
         "foto_0": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/momento-pareja-almohada.jpg"
+            "imagen": "shopify://shop_images/momento-masajeador-espalda.jpg"
           }
         },
         "foto_1": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/momento-abrazo-almohada.jpg"
+            "imagen": "shopify://shop_images/momento-masajeador-sillon.jpg"
           }
         },
         "foto_4": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/momento-chica-cama-almohada.jpg"
+            "imagen": "shopify://shop_images/momento-masajeador-cama.jpg"
           }
         },
         "foto_2": {
           "type": "foto",
           "settings": {
-            "imagen": "shopify://shop_images/momento-chico-almohada.jpg"
-          }
-        },
-        "foto_3": {
-          "type": "foto",
-          "settings": {
-            "imagen": "shopify://shop_images/momento-durmiendo-almohada.jpg"
+            "imagen": "shopify://shop_images/momento-masajeador-pie.jpg"
           }
         }
       },
@@ -792,14 +786,12 @@
         "foto_0",
         "foto_1",
         "foto_4",
-        "foto_2",
-        "foto_3"
+        "foto_2"
       ],
-      "disabled": true,
       "settings": {
         "eyebrow": "Momentos Cervia",
-        "titulo": "Descanso que <span>se nota</span>",
-        "sub": "Para tu cuello, de día y de noche.",
+        "titulo": "Alivio que <span>se nota</span>",
+        "sub": "En el sofá, en la cama o de pie: tu cuello, siempre a gusto.",
         "duracion": 70,
         "ancho": 320,
         "ancho_movil": 220,
@@ -2133,4 +2125,3 @@
     "barra-compra"
   ]
 }
-
