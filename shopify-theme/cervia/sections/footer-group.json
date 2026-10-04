@@ -130,9 +130,18 @@
         "legal_14",
         "legal_15"
       ]
+    },
+    "cervia-popup": {
+      "type": "cervia-popup",
+      "settings": {
+        "activar": true,
+        "imagen": "shopify://shop_images/almohada-boca-arriba-cama.webp",
+        "codigo": "BIENVENIDA10"
+      }
     }
   },
   "order": [
-    "cervia-footer"
+    "cervia-footer",
+    "cervia-popup"
   ]
 }

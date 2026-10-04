@@ -1,0 +1,143 @@
+{%- comment -%}
+  Cervia: pop-up de bienvenida con suscripción al newsletter y código de descuento.
+  Guarda el email en Clientes (acepta marketing) y muestra el código tras suscribirse.
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .cervia-pop { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; background: color-mix(in srgb, {{ section.settings.color_texto }} 55%, transparent); font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cervia-pop.is-abierto { display: flex; animation: cerviaPopIn .25s ease-out; }
+  @keyframes cerviaPopIn { from { opacity: 0; } to { opacity: 1; } }
+  #shopify-section-{{ section.id }} .cervia-pop__caja { position: relative; display: grid; grid-template-columns: 1fr 1fr; width: min(820px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+  #shopify-section-{{ section.id }} .cervia-pop__img { position: relative; min-height: 420px; background: {{ section.settings.color_acento_suave }}; }
+  #shopify-section-{{ section.id }} .cervia-pop__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #shopify-section-{{ section.id }} .cervia-pop__cuerpo { padding: 44px 36px 32px; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 14px; }
+  #shopify-section-{{ section.id }} .cervia-pop__titulo { margin: 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: 30px; line-height: 1.15; font-weight: 700; color: {{ section.settings.color_texto }}; }
+  #shopify-section-{{ section.id }} .cervia-pop__titulo span { color: {{ section.settings.color_boton }}; }
+  #shopify-section-{{ section.id }} .cervia-pop__texto { margin: 0; font-size: 16px; line-height: 1.45; opacity: .85; }
+  #shopify-section-{{ section.id }} .cervia-pop__form { display: grid; gap: 12px; margin-top: 10px; }
+  #shopify-section-{{ section.id }} .cervia-pop__input { width: 100%; box-sizing: border-box; padding: 15px 16px; font: inherit; font-size: 16px; color: {{ section.settings.color_texto }}; background: #FFFFFF; border: 1.5px solid {{ section.settings.color_borde }}; border-radius: 12px; outline: none; }
+  #shopify-section-{{ section.id }} .cervia-pop__input:focus { border-color: {{ section.settings.color_boton }}; }
+  #shopify-section-{{ section.id }} .cervia-pop__boton { width: 100%; padding: 15px 16px; font: inherit; font-size: 16px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #FFFFFF; background: {{ section.settings.color_boton }}; border: 0; border-radius: 30px; cursor: pointer; }
+  #shopify-section-{{ section.id }} .cervia-pop__boton:hover { filter: brightness(.92); }
+  #shopify-section-{{ section.id }} .cervia-pop__legal { margin: 6px 0 0; font-size: 12px; line-height: 1.45; opacity: .7; }
+  #shopify-section-{{ section.id }} .cervia-pop__legal a { color: inherit; }
+  #shopify-section-{{ section.id }} .cervia-pop__error { margin: 0; font-size: 14px; color: #B3261E; }
+  #shopify-section-{{ section.id }} .cervia-pop__codigo { display: inline-flex; align-items: center; justify-content: center; gap: 10px; margin: 6px auto 0; padding: 14px 22px; border: 2px dashed {{ section.settings.color_boton }}; border-radius: 12px; background: #FFFFFF; font-size: 24px; font-weight: 700; letter-spacing: .08em; color: {{ section.settings.color_texto }}; cursor: pointer; }
+  #shopify-section-{{ section.id }} .cervia-pop__copiado { font-size: 13px; color: {{ section.settings.color_boton }}; min-height: 1em; margin: 0; }
+  #shopify-section-{{ section.id }} .cervia-pop__cerrar { position: absolute; top: 10px; right: 10px; z-index: 2; width: 40px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255,255,255,.9); color: {{ section.settings.color_texto }}; cursor: pointer; }
+  #shopify-section-{{ section.id }} .cervia-pop__cerrar svg { width: 20px; height: 20px; }
+  @media (max-width: 699px) {
+    #shopify-section-{{ section.id }} .cervia-pop__caja { grid-template-columns: 1fr; }
+    #shopify-section-{{ section.id }} .cervia-pop__img { min-height: 0; aspect-ratio: 16 / 10; }
+    #shopify-section-{{ section.id }} .cervia-pop__cuerpo { padding: 24px 20px 22px; gap: 10px; }
+    #shopify-section-{{ section.id }} .cervia-pop__titulo { font-size: 24px; }
+    #shopify-section-{{ section.id }} .cervia-pop__texto { font-size: 15px; }
+  }
+{%- endstyle -%}
+
+{%- if section.settings.activar -%}
+<cervia-popup class="cervia-pop" role="dialog" aria-modal="true" aria-labelledby="CerviaPopTitulo-{{ section.id }}" data-retraso="{{ section.settings.retraso }}" data-dias="{{ section.settings.dias_ocultar }}" data-editor="{{ request.design_mode }}">
+  <div class="cervia-pop__caja">
+    <button type="button" class="cervia-pop__cerrar" data-cerrar aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="cervia-pop__img">
+      {%- if section.settings.imagen != blank -%}
+        {{ section.settings.imagen | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(min-width: 700px) 410px, 100vw', widths: '450, 700, 900', alt: section.settings.imagen.alt }}
+      {%- endif -%}
+    </div>
+    <div class="cervia-pop__cuerpo">
+      {%- form 'customer', class: 'cervia-pop__form-wrap', id: 'CerviaPopForm' -%}
+        {%- if form.posted_successfully? -%}
+          <h2 class="cervia-pop__titulo" id="CerviaPopTitulo-{{ section.id }}">{{ section.settings.titulo_exito }}</h2>
+          <p class="cervia-pop__texto">{{ section.settings.texto_exito }}</p>
+          <button type="button" class="cervia-pop__codigo" data-codigo="{{ section.settings.codigo | escape }}" aria-label="Copiar código {{ section.settings.codigo | escape }}">{{ section.settings.codigo }}</button>
+          <p class="cervia-pop__copiado" data-copiado aria-live="polite"></p>
+          <button type="button" class="cervia-pop__boton" data-cerrar>{{ section.settings.boton_exito }}</button>
+          <span data-exito hidden></span>
+        {%- else -%}
+          <h2 class="cervia-pop__titulo" id="CerviaPopTitulo-{{ section.id }}">{{ section.settings.titulo }}</h2>
+          <p class="cervia-pop__texto">{{ section.settings.texto }}</p>
+          <div class="cervia-pop__form">
+            <input type="hidden" name="contact[tags]" value="newsletter, popup-bienvenida">
+            <input type="hidden" name="contact[accepts_marketing]" value="true">
+            <label class="visually-hidden" for="CerviaPopEmail">Email</label>
+            <input class="cervia-pop__input" id="CerviaPopEmail" type="email" name="contact[email]" placeholder="{{ section.settings.placeholder | escape }}" autocomplete="email" autocorrect="off" autocapitalize="off" required>
+            {%- if form.errors -%}<p class="cervia-pop__error" data-error>{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>{%- endif -%}
+            <button type="submit" class="cervia-pop__boton">{{ section.settings.boton }}</button>
+          </div>
+          {%- assign url_privacidad = shop.privacy_policy.url | default: '/policies/privacy-policy' -%}
+          <p class="cervia-pop__legal">{{ section.settings.legal }} <a href="{{ url_privacidad }}">{{ section.settings.legal_enlace }}</a>.</p>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</cervia-popup>
+<script>
+  (() => {
+    if (customElements.get('cervia-popup')) return;
+    const CLAVE = 'cervia-popup-oculto';
+    const leer = () => { try { return Number(localStorage.getItem(CLAVE)) || 0; } catch (e) { return 0; } };
+    const guardar = (dias) => { try { localStorage.setItem(CLAVE, String(Date.now() + dias * 86400000)); } catch (e) {} };
+    class CerviaPopup extends HTMLElement {
+      connectedCallback() {
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', () => { if (this.isConnected) this.connectedCallback(); }, { once: true }); return; }
+        const dias = Number(this.dataset.dias) || 7;
+        const exito = !!this.querySelector('[data-exito]');
+        const error = !!this.querySelector('[data-error]');
+        this.querySelectorAll('[data-cerrar]').forEach((b) => b.addEventListener('click', () => this.cerrar(dias)));
+        this.addEventListener('click', (e) => { if (e.target === this) this.cerrar(dias); });
+        this.onKey = (e) => { if (e.key === 'Escape') this.cerrar(dias); };
+        const codigo = this.querySelector('[data-codigo]');
+        codigo?.addEventListener('click', async () => {
+          try { await navigator.clipboard.writeText(codigo.dataset.codigo); this.querySelector('[data-copiado]').textContent = '¡Código copiado!'; } catch (e) {}
+        });
+        if (exito) { guardar(3650); this.abrir(); return; }
+        if (error) { this.abrir(); return; }
+        if (this.dataset.editor === 'true') return;
+        if (leer() > Date.now()) return;
+        setTimeout(() => this.abrir(), (Number(this.dataset.retraso) || 4) * 1000);
+      }
+      abrir() { this.classList.add('is-abierto'); document.addEventListener('keydown', this.onKey); this.querySelector('input[type="email"], [data-codigo]')?.focus({ preventScroll: true }); }
+      cerrar(dias) { this.classList.remove('is-abierto'); document.removeEventListener('keydown', this.onKey); if (leer() < Date.now() + 86400000) guardar(dias); }
+    }
+    customElements.define('cervia-popup', CerviaPopup);
+    if (window.Shopify && window.Shopify.designMode) {
+      document.addEventListener('shopify:section:select', (e) => { const p = e.target.querySelector('cervia-popup'); if (p) p.abrir(); });
+      document.addEventListener('shopify:section:deselect', (e) => { const p = e.target.querySelector('cervia-popup'); if (p) p.classList.remove('is-abierto'); });
+    }
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Cervia Pop-up",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "checkbox", "id": "activar", "label": "Activar pop-up", "default": true },
+    { "type": "range", "id": "retraso", "label": "Aparece a los", "min": 0, "max": 30, "step": 1, "unit": "s", "default": 4 },
+    { "type": "range", "id": "dias_ocultar", "label": "Si lo cierran, no volver a mostrar durante", "min": 1, "max": 30, "step": 1, "unit": "d", "default": 7 },
+    { "type": "image_picker", "id": "imagen", "label": "Imagen" },
+    { "type": "header", "content": "Formulario" },
+    { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "¡Disfruta de un <span>10 %</span> en tu primer pedido!" },
+    { "type": "text", "id": "texto", "label": "Texto", "default": "Deja tu email y te damos tu código de descuento al momento." },
+    { "type": "text", "id": "placeholder", "label": "Texto del campo", "default": "Tu email" },
+    { "type": "text", "id": "boton", "label": "Botón", "default": "Suscribirme" },
+    { "type": "text", "id": "legal", "label": "Texto legal", "default": "Al suscribirte aceptas recibir emails de Cervia. Puedes darte de baja cuando quieras. Consulta nuestra" },
+    { "type": "text", "id": "legal_enlace", "label": "Texto del enlace a privacidad", "default": "política de privacidad" },
+    { "type": "header", "content": "Después de suscribirse" },
+    { "type": "text", "id": "codigo", "label": "Código de descuento", "info": "Debe existir en Descuentos de Shopify", "default": "BIENVENIDA10" },
+    { "type": "text", "id": "titulo_exito", "label": "Título", "default": "¡Ya eres parte de Cervia!" },
+    { "type": "text", "id": "texto_exito", "label": "Texto", "default": "Este es tu código del 10 %. Úsalo al pagar tu primer pedido:" },
+    { "type": "text", "id": "boton_exito", "label": "Botón", "default": "Seguir comprando" },
+    { "type": "header", "content": "Colores" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFF8F2" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#1B1F5E" },
+    { "type": "color", "id": "color_boton", "label": "Botón y acento", "default": "#EF4423" },
+    { "type": "color", "id": "color_borde", "label": "Borde del campo", "default": "#F2C4B3" },
+    { "type": "color", "id": "color_acento_suave", "label": "Fondo de la imagen", "default": "#FFE3D6" }
+  ],
+  "presets": [{ "name": "Cervia Pop-up" }]
+}
+{% endschema %}
