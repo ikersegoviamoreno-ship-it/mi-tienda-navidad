@@ -21,7 +21,9 @@
         "enlace1": "shopify://products/butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow",
         "boton2": "Ver el masajeador",
         "enlace2": "shopify://products/hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador",
-        "sellos": "Envío gratis a toda España | 30 días de prueba | Pago seguro"
+        "sellos": "Envío gratis a toda España | 30 días de prueba | Pago seguro",
+        "padding_inferior": 8,
+        "padding_inferior_movil": 8
       }
     },
     "confianza": {
@@ -96,8 +98,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 32,
-        "padding_inferior": 32,
+        "padding_superior": 20,
+        "padding_inferior": 20,
         "padding_superior_movil": 8,
         "padding_inferior_movil": 8,
         "ancla": "",
@@ -105,34 +107,6 @@
         "ocultar_movil": false,
         "ocultar_escritorio": false,
         "clases": ""
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Nuestros productos",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 28
       }
     },
     "combo": {
@@ -148,8 +122,8 @@
         "boton": "Ver productos",
         "enlace": "shopify://collections/all",
         "color_fondo": "#FFF1EA",
-        "padding": 56,
-        "padding_movil": 28
+        "padding": 40,
+        "padding_movil": 20
       }
     },
     "marca": {
@@ -163,8 +137,8 @@
         "texto": "<p>Cervia nace de una idea sencilla: <strong>tu cuello lo aguanta todo</strong>. Horas frente al ordenador, el móvil, el coche, una mala postura al dormir… y casi nunca le prestamos atención.</p><p>Por eso no vendemos de todo. Elegimos pocos productos, pensados solo para cuidar tu cuello y tu descanso, y los explicamos con claridad para que sepas exactamente lo que compras.</p>",
         "boton": "",
         "color_fondo": "#FFF8F2",
-        "padding": 64,
-        "padding_movil": 28
+        "padding": 40,
+        "padding_movil": 20
       },
       "blocks": {
         "p1": {
@@ -286,8 +260,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 72,
-        "padding_inferior": 72,
+        "padding_superior": 40,
+        "padding_inferior": 40,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "",
@@ -463,8 +437,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 40,
-        "padding_inferior": 40,
+        "padding_superior": 32,
+        "padding_inferior": 32,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "opiniones-inicio",
@@ -532,8 +506,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 72,
-        "padding_inferior": 72,
+        "padding_superior": 40,
+        "padding_inferior": 40,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "",
@@ -633,8 +607,8 @@
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 12,
-        "padding_superior": 72,
-        "padding_inferior": 72,
+        "padding_superior": 40,
+        "padding_inferior": 40,
         "padding_superior_movil": 12,
         "padding_inferior_movil": 12,
         "ancla": "",
@@ -654,7 +628,6 @@
   "order": [
     "portada",
     "confianza",
-    "featured_collection",
     "combo",
     "marca",
     "beneficios",
@@ -664,4 +637,3 @@
     "179107888756d9bd54"
   ]
 }
-

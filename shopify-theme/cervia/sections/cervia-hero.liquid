@@ -3,11 +3,13 @@
   en móvil se muestra el título en texto real y una imagen recortada con los productos.
 {%- endcomment -%}
 {%- style -%}
+  #shopify-section-{{ section.id }} { margin: 0 !important; }
+  #shopify-section-{{ section.id }} + .shopify-section { margin-top: 0 !important; }
   #shopify-section-{{ section.id }} .cervia-hero { background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; font-family: var(--font-body, var(--font-body-family)); }
   #shopify-section-{{ section.id }} .cervia-hero__img { display: block; width: 100%; height: auto; }
   #shopify-section-{{ section.id }} .cervia-hero__movil { display: none; }
   #shopify-section-{{ section.id }} .cervia-hero__textos { display: none; }
-  #shopify-section-{{ section.id }} .cervia-hero__botones { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 24px 16px 14px; }
+  #shopify-section-{{ section.id }} .cervia-hero__botones { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 20px 16px 12px; }
   #shopify-section-{{ section.id }} .cervia-hero__btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 30px; border-radius: 30px; font-size: 16px; font-weight: 700; text-decoration: none; border: 2px solid {{ section.settings.color_acento }}; transition: background .2s, color .2s, transform .2s; }
   #shopify-section-{{ section.id }} .cervia-hero__btn--1 { background: {{ section.settings.color_acento }}; color: #FFFFFF; }
   #shopify-section-{{ section.id }} .cervia-hero__btn--1:hover { background: {{ section.settings.color_acento_hover }}; border-color: {{ section.settings.color_acento_hover }}; }

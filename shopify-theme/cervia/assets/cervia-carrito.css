@@ -214,3 +214,6 @@ cart-drawer input:focus-visible {
   html body #MainContent .product__info-container > * + * { margin-top: 0.8rem; margin-bottom: 0; }
   html body #MainContent .product__media-wrapper { margin-bottom: 0; }
 }
+
+/* Sin huecos extra entre secciones */
+#MainContent > .shopify-section + .shopify-section { margin-top: 0 !important; }
