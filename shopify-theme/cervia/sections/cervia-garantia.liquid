@@ -36,9 +36,9 @@
   @media (prefers-reduced-motion: reduce) { #shopify-section-{{ section.id }} .cervia-s * { transition-duration: .01ms !important; } #shopify-section-{{ section.id }} .cervia-s.is-anim .cervia-anim { opacity: 1 !important; transform: none !important; } }
   #shopify-section-{{ section.id }} .cervia-gar__caja { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 24px !important; align-items: center !important; justify-items: center !important; text-align: center !important; padding: 32px var(--pad-card) !important; border-radius: var(--radius) !important; background: var(--c-tarjeta) !important; border: 1px solid var(--c-borde) !important; }
   @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-gar__caja { grid-template-columns: auto minmax(0, 1fr) !important; justify-items: start !important; text-align: left !important; gap: 48px !important; padding: 48px 56px !important; } #shopify-section-{{ section.id }} .cervia-gar__caja .cervia-cta { justify-items: start !important; } }
-  #shopify-section-{{ section.id }} .cervia-gar__sello { width: {{ section.settings.tam_sello_movil }}px !important; height: {{ section.settings.tam_sello_movil }}px !important; border-radius: 50% !important; display: grid !important; place-items: center !important; align-content: center !important; background: {{ section.settings.color_sello }} !important; color: {{ section.settings.color_sello_texto }} !important; position: relative !important; }
+  #shopify-section-{{ section.id }} .cervia-gar__sello { width: {{ section.settings.tam_sello_movil }}px !important; height: {{ section.settings.tam_sello_movil }}px !important; border-radius: {% if section.settings.forma_sello == 'cuadrado' %}22px{% else %}50%{% endif %} !important; display: grid !important; place-items: center !important; align-content: center !important; background: {{ section.settings.color_sello }} !important; color: {{ section.settings.color_sello_texto }} !important; position: relative !important; }
   @media screen and (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-gar__sello { width: {{ section.settings.tam_sello }}px !important; height: {{ section.settings.tam_sello }}px !important; } }
-  #shopify-section-{{ section.id }} .cervia-gar__sello::after { content: "" !important; position: absolute !important; inset: 8px !important; border-radius: 50% !important; border: 1.5px dashed color-mix(in srgb, {{ section.settings.color_sello_texto }} 45%, transparent) !important; }
+  #shopify-section-{{ section.id }} .cervia-gar__sello::after { content: "" !important; position: absolute !important; inset: 8px !important; border-radius: {% if section.settings.forma_sello == 'cuadrado' %}16px{% else %}50%{% endif %} !important; border: 1.5px dashed color-mix(in srgb, {{ section.settings.color_sello_texto }} 45%, transparent) !important; }
   #shopify-section-{{ section.id }} .cervia-gar__dias { font-family: var(--font-heading, var(--font-heading-family)) !important; font-size: 44px !important; font-weight: 700 !important; line-height: 1 !important; letter-spacing: -0.03em !important; }
   #shopify-section-{{ section.id }} .cervia-gar__unidad { font-size: 12px !important; font-weight: 600 !important; letter-spacing: .12em !important; text-transform: uppercase !important; margin-top: 4px !important; }
   #shopify-section-{{ section.id }} .cervia-gar__textos { display: grid !important; gap: 14px !important; }
@@ -363,6 +363,16 @@
       "id": "unidad_sello",
       "label": "Texto del sello",
       "default": "noches"
+    },
+    {
+      "type": "select",
+      "id": "forma_sello",
+      "label": "Forma del sello",
+      "options": [
+        { "value": "circulo", "label": "Círculo" },
+        { "value": "cuadrado", "label": "Cuadrado" }
+      ],
+      "default": "circulo"
     },
     {
       "type": "range",

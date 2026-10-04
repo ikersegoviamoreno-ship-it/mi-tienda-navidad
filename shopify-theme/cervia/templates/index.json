@@ -141,9 +141,7 @@
         "color_fondo": "#FFF1EA",
         "padding": 56,
         "padding_movil": 28
-      },
-      "blocks": {},
-      "block_order": []
+      }
     },
     "marca": {
       "type": "cervia-marca",
@@ -533,7 +531,8 @@
         "animacion": "fade",
         "ocultar_movil": false,
         "ocultar_escritorio": false,
-        "clases": ""
+        "clases": "",
+        "forma_sello": "cuadrado"
       }
     },
     "faq": {
