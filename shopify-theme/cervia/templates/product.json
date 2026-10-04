@@ -974,10 +974,10 @@
           "settings": {
             "mostrar": true,
             "estrellas": 5,
-            "texto": "[Pega aquí una reseña real]",
-            "nombre": "[Nombre del cliente]",
-            "fecha": "[Fecha]",
-            "verificado": true
+            "texto": "Llegó tal como se anunciaba ❤️❤️❤️",
+            "nombre": "Anónimo",
+            "fecha": "15 jun 2026 · AliExpress · artículo similar",
+            "verificado": false
           }
         },
         "resena_1": {
@@ -985,10 +985,10 @@
           "settings": {
             "mostrar": true,
             "estrellas": 5,
-            "texto": "[Pega aquí una reseña real]",
-            "nombre": "[Nombre del cliente]",
-            "fecha": "[Fecha]",
-            "verificado": true
+            "texto": "Tan pronto como lo recibí, le quité la funda y lo puse en la lavadora jaja. ¡Estoy muy emocionado por usarlo! Es un producto excelente y estoy feliz de haberlo comprado a un precio bajo.",
+            "nombre": "Anónimo",
+            "fecha": "30 sep 2026 · AliExpress · artículo similar",
+            "verificado": false
           }
         },
         "resena_2": {
@@ -996,10 +996,10 @@
           "settings": {
             "mostrar": true,
             "estrellas": 5,
-            "texto": "[Pega aquí una reseña real]",
-            "nombre": "[Nombre del cliente]",
-            "fecha": "[Fecha]",
-            "verificado": true
+            "texto": "Dormí maravillosamente con esta fantástica almohada.",
+            "nombre": "l***s",
+            "fecha": "27 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
           }
         },
         "resena_3": {
@@ -1007,21 +1007,21 @@
           "settings": {
             "mostrar": true,
             "estrellas": 5,
-            "texto": "[Pega aquí una reseña real]",
-            "nombre": "[Nombre del cliente]",
-            "fecha": "[Fecha]",
-            "verificado": true
+            "texto": "Super cómoda y funcional. Ahora se descansa mejor.",
+            "nombre": "Anónimo",
+            "fecha": "20 sep 2026 · AliExpress · artículo similar",
+            "verificado": false
           }
         },
         "resena_4": {
           "type": "resena",
           "settings": {
             "mostrar": true,
-            "estrellas": 5,
-            "texto": "[Pega aquí una reseña real]",
-            "nombre": "[Nombre del cliente]",
-            "fecha": "[Fecha]",
-            "verificado": true
+            "estrellas": 3,
+            "texto": "La calidad no es la mejor. En esta foto se puede ver la diferencia entre la almohada de mi esposo, que es de alta calidad, más gruesa y resistente, y la que yo compré. Sigo teniendo problemas graves de cuello después de usarla durante 5 días.",
+            "nombre": "Anónimo",
+            "fecha": "08 sep 2026 · AliExpress · artículo similar",
+            "verificado": false
           }
         },
         "resena_5": {
@@ -1029,10 +1029,120 @@
           "settings": {
             "mostrar": true,
             "estrellas": 5,
-            "texto": "[Pega aquí una reseña real]",
-            "nombre": "[Nombre del cliente]",
-            "fecha": "[Fecha]",
-            "verificado": true
+            "texto": "Una almohada muy buena, es cómoda para dormir. Gracias y saludos cordiales.",
+            "nombre": "Anónimo",
+            "fecha": "01 sep 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_6": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Lo recomiendo encarecidamente.",
+            "nombre": "D***k",
+            "fecha": "03 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_7": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Sueño muy reparador. Excelente producto.",
+            "nombre": "Anónimo",
+            "fecha": "19 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_8": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Estoy muy satisfecho. Trabajo de calidad y entrega rápida. A la República Checa en 5 días. Gracias.",
+            "nombre": "V***t",
+            "fecha": "27 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_9": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Súper cómodo, gracias.",
+            "nombre": "Anónimo",
+            "fecha": "25 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_10": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Genial, muy conveniente.",
+            "nombre": "P***r",
+            "fecha": "24 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_11": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Es muy bueno, recomiendo al vendedor y el producto; envío y entrega rápidos.",
+            "nombre": "Anónimo",
+            "fecha": "AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_12": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Estoy muy satisfecho.",
+            "nombre": "7***r",
+            "fecha": "10 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_13": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Espectacular.",
+            "nombre": "Anónimo",
+            "fecha": "03 sep 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_14": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Impecable, recomiendo al vendedor y el producto.",
+            "nombre": "Anónimo",
+            "fecha": "06 sep 2026 · AliExpress · artículo similar",
+            "verificado": false
+          }
+        },
+        "resena_15": {
+          "type": "resena",
+          "settings": {
+            "mostrar": true,
+            "estrellas": 5,
+            "texto": "Es un buen y muy bonito pilo.",
+            "nombre": "Anónimo",
+            "fecha": "29 ago 2026 · AliExpress · artículo similar",
+            "verificado": false
           }
         }
       },
@@ -1042,82 +1152,33 @@
         "resena_2",
         "resena_3",
         "resena_4",
-        "resena_5"
+        "resena_5",
+        "resena_6",
+        "resena_7",
+        "resena_8",
+        "resena_9",
+        "resena_10",
+        "resena_11",
+        "resena_12",
+        "resena_13",
+        "resena_14",
+        "resena_15"
       ],
-      "disabled": true,
       "settings": {
-        "mostrar_eyebrow": true,
-        "eyebrow": "Opiniones",
-        "titulo": "Lo que cuentan <span>quienes ya duermen</span> con ella",
-        "etiqueta": "h2",
-        "mostrar_sub": true,
-        "sub": "",
-        "alin_cabecera": "center",
-        "tam_titulo": 36,
-        "tam_titulo_movil": 26,
-        "tam_sub": 17,
-        "tam_sub_movil": 16,
-        "ancho_titulo": 760,
-        "espaciado_letras": -0.5,
-        "mostrar_resumen": true,
-        "nota": 4.8,
-        "num_resenas": "[Nº]",
-        "texto_num": "[[n]] reseñas verificadas",
-        "usar_app": false,
-        "layout": "ugc",
-        "ratio": "4 / 5",
-        "guia_foto": "Aquí va la foto que te mandó el cliente con su almohada",
-        "texto_verificado": "Compra verificada",
-        "columnas": "3",
+        "eyebrow": "Más opiniones",
+        "titulo": "Qué dicen <span>quienes ya duermen</span> con ella",
+        "sub": "Opiniones reales de compradores en AliExpress (artículo similar, medida 48 × 74 cm).",
+        "mostrar_resumen": false,
+        "layout": "texto",
+        "texto_verificado": "",
+        "columnas": "4",
         "estilo_movil": "carrusel",
-        "ancho_tarjeta": 85,
-        "color_estrellas": "#ffb400",
-        "color_estrella_vacia": "#ffe3d6",
-        "cta_mostrar": true,
-        "cta_texto": "Quiero mi Cervia · [[precio]]",
-        "cta_accion": "carrito",
-        "cta_url": "",
-        "cta_cantidad": "1",
-        "cta_cargando": "Añadiendo…",
-        "cta_agotado": "Agotado",
-        "cta_micro_mostrar": true,
-        "cta_micro": "Envío gratis · Pago seguro · Devolución fácil",
-        "cta_estilo": "solido",
-        "cta_completo_movil": true,
-        "cta_completo_escritorio": false,
-        "cta_alto": 56,
-        "cta_alto_movil": 52,
-        "cta_tam": 17,
-        "cta_tam_movil": 16,
-        "cta_radius": 30,
-        "cta_fondo": "#ef4423",
-        "cta_color": "#fff8f2",
-        "cta_borde": "#ef4423",
-        "cta_fondo_hover": "#c9321a",
-        "cta_color_hover": "#fff8f2",
-        "activar_tracking": true,
-        "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
-        "color_fondo": "#fff1ea",
-        "gradiente": false,
-        "color_fondo_2": "#ffe3d6",
-        "angulo": 180,
-        "color_texto": "#1b1f5e",
-        "color_suave": "#585c85",
-        "color_acento": "#ef4423",
-        "color_tarjeta": "#fff8f2",
-        "color_borde": "#ffe3d6",
-        "ancho": 1400,
-        "lateral_movil": 16,
-        "radius": 12,
-        "padding_superior": 72,
-        "padding_inferior": 72,
-        "padding_superior_movil": 40,
-        "padding_inferior_movil": 40,
-        "ancla": "resenas",
-        "animacion": "fade",
-        "ocultar_movil": false,
-        "ocultar_escritorio": false,
-        "clases": ""
+        "cta_texto": "Quiero mi almohada · [[precio]]",
+        "cta_micro": "Envío gratis · Pago seguro · 30 días de prueba",
+        "padding_superior": 40,
+        "padding_inferior": 40,
+        "padding_superior_movil": 24,
+        "padding_inferior_movil": 24
       }
     },
     "garantia": {
@@ -1697,8 +1758,8 @@
     "galeria_movil",
     "beneficios",
     "comparativa",
-    "testimonios",
     "garantia",
+    "testimonios",
     "faq",
     "cta-final",
     "opiniones_clientes",
