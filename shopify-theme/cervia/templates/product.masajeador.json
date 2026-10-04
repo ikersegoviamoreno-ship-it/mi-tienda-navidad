@@ -127,7 +127,7 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36,
-        "marca_padding_inferior_movil": 16
+        "marca_padding_inferior_movil": 8
       }
     },
     "confianza": {
@@ -173,8 +173,8 @@
         "item_3"
       ],
       "settings": {
-        "padding_superior_movil": 16,
-        "padding_inferior_movil": 16
+        "padding_superior_movil": 8,
+        "padding_inferior_movil": 8
       }
     },
     "problema": {
@@ -252,8 +252,8 @@
         "sub": "Horas de ordenador, móvil y estrés se acumulan en cervicales y hombros.",
         "titulo_sin": "Sin masajeador",
         "titulo_con": "Con Cervia",
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12
       }
     },
     "posturas": {
@@ -299,8 +299,8 @@
         "mostrar_imagenes": true,
         "ratio": "1 / 1",
         "cta_texto": "Quiero relajar mi cuello · [[precio]]",
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12
       }
     },
     "beneficios": {
@@ -367,8 +367,8 @@
         "eyebrow": "Por qué Cervia",
         "titulo": "Lo que notas <span>desde el primer uso</span>",
         "sub": "Un masaje de verdad, sin citas ni esperas.",
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12
       }
     },
     "comparativa": {
@@ -447,8 +447,8 @@
         "titulo": "Mejor que un <span>masaje casero</span>",
         "sub": "Lo que cambia cuando el masaje está pensado para tu cuello.",
         "col_otros": "Masaje casero",
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12
       }
     },
     "testimonios": {
@@ -519,8 +519,8 @@
       ],
       "disabled": true,
       "settings": {
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12
       }
     },
     "garantia": {
@@ -531,8 +531,8 @@
         "texto": "<p>Úsalo, nota la diferencia y decide con calma. Si en [[dias]] días no es para ti, escríbenos desde la página de contacto y te ayudamos con la devolución.</p>",
         "unidad_sello": "días",
         "cta_texto": "Probarlo sin riesgo · [[precio]]",
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12
       }
     },
     "faq": {
@@ -607,8 +607,8 @@
       ],
       "settings": {
         "sub": "¿Te queda alguna duda? Escríbenos desde la página de contacto.",
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12
       }
     },
     "cta-final": {
@@ -622,9 +622,9 @@
         "cta_texto": "Añadir almohada · [[precio]]",
         "cta_accion": "carrito",
         "cta_cantidad": "1",
-        "padding_superior_movil": 20,
-        "padding_inferior_movil": 20,
-        "padding_caja_movil": 20
+        "padding_superior_movil": 12,
+        "padding_inferior_movil": 12,
+        "padding_caja_movil": 16
       }
     },
     "barra-compra": {
@@ -698,7 +698,7 @@
         "sub": "Para tu cuello, de día y de noche.",
         "duracion": 70,
         "ratio": "4 / 5",
-        "padding_movil": 20
+        "padding_movil": 12
       }
     },
     "opiniones_clientes": {

@@ -137,7 +137,7 @@
       "type": "cervia-popup",
       "settings": {
         "activar": true,
-        "imagen": "shopify://shop_images/almohada-boca-arriba-cama.webp",
+        "imagen": "shopify://shop_images/almohada-boca-arriba-cama-cuadrada.jpg",
         "codigo": "BIENVENIDA10"
       }
     }

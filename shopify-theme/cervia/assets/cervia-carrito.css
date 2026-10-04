@@ -205,3 +205,12 @@ cart-drawer input:focus-visible {
 .card-wrapper .quick-add__submit { background: #EF4423 !important; color: #FFFFFF !important; border: 0 !important; box-shadow: none !important; font-weight: 600; }
 .card-wrapper .quick-add__submit::before, .card-wrapper .quick-add__submit::after { box-shadow: none !important; }
 .card-wrapper .quick-add__submit:hover { background: #C9321A !important; }
+
+/* Móvil compacto: menos aire entre cabeceras y contenido */
+@media screen and (max-width: 749px) {
+  html body #MainContent .cervia-s__cabecera { margin-bottom: 16px !important; }
+  html body #MainContent .cervia-s__sub { margin-top: 6px !important; }
+  html body #MainContent .cervia-gm__cabecera { margin-bottom: 12px !important; }
+  html body #MainContent .product__info-container > * + * { margin-top: 0.8rem; margin-bottom: 0; }
+  html body #MainContent .product__media-wrapper { margin-bottom: 0; }
+}
