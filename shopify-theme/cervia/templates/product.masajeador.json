@@ -586,12 +586,14 @@
     "cta-final": {
       "type": "cervia-cta-final",
       "settings": {
-        "eyebrow": "Tu momento de desconexión",
-        "titulo": "Suelta la tensión <span>hoy mismo</span>",
-        "sub": "Envío gratis y 30 días para probarlo en casa.",
-        "imagen": "shopify://shop_images/S97975568bebd4c80a2f16ffcff7a95d8u.webp",
+        "eyebrow": "Completa tu descanso",
+        "titulo": "Y por la noche: <span>almohada cervical</span>",
+        "sub": "Memory foam con contorno que mantiene tu cuello alineado mientras duermes. Envío gratis a toda España.",
         "guia": "",
-        "cta_texto": "Quiero mi masajeador · [[precio]]"
+        "cta_texto": "Añadir almohada · [[precio]]",
+        "producto": "butterfly-sleep-memory-neck-pillow-slow-rebound-comfortable-memory-foam-sleep-pillow-cervical-orthopedic-neck-massage-bed-pillow",
+        "cta_cantidad": "1",
+        "cta_accion": "carrito"
       }
     },
     "barra-compra": {

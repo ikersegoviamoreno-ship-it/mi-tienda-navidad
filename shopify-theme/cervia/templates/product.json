@@ -1315,11 +1315,11 @@
       "type": "cervia-cta-final",
       "settings": {
         "mostrar_eyebrow": true,
-        "eyebrow": "Tu descanso, desde esta noche",
-        "titulo": "Despierta sin el <span>cuello rígido</span>",
+        "eyebrow": "Completa tu descanso",
+        "titulo": "Y para el día: <span>masajeador cervical</span>",
         "etiqueta": "h2",
         "mostrar_sub": true,
-        "sub": "Envío gratis a toda España y 30 noches para probarla en casa.",
+        "sub": "Amasado 4D con calor y sin cables para soltar la tensión de cuello y hombros. Envío gratis a toda España.",
         "alin_cabecera": "left",
         "tam_titulo": 36,
         "tam_titulo_movil": 26,
@@ -1328,7 +1328,6 @@
         "ancho_titulo": 760,
         "espaciado_letras": -0.5,
         "mostrar_imagen": true,
-        "imagen": "shopify://shop_images/Sc5f9ae2be29b49dba3f8fb4e1e048746Z.webp",
         "guia": "",
         "ratio": "1 / 1",
         "mostrar_precio": true,
@@ -1350,7 +1349,7 @@
         "logo_bizum": true,
         "logo_klarna": false,
         "cta_mostrar": true,
-        "cta_texto": "Quiero dormir mejor · [[precio]]",
+        "cta_texto": "Añadir masajeador · [[precio]]",
         "cta_accion": "carrito",
         "cta_url": "",
         "cta_cantidad": "1",
@@ -1393,7 +1392,8 @@
         "animacion": "fade",
         "ocultar_movil": false,
         "ocultar_escritorio": false,
-        "clases": ""
+        "clases": "",
+        "producto": "hot-bionic-finger-neck-shoulder-massager-wireless-neck-cervical-trapezius-kneading-massage-shawl-brushless-motor-neck-masajeador"
       }
     },
     "barra-compra": {

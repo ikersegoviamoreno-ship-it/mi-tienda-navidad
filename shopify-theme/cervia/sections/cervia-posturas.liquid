@@ -167,7 +167,7 @@
         this.precio = Number(this.dataset.precio);
         this.disponible = this.dataset.disponible === 'true';
         this.boton?.addEventListener('click', () => this.accion());
-        if (typeof subscribe === 'function') {
+        if (this.dataset.externo !== 'true' && typeof subscribe === 'function') {
           this.unsubscribe = subscribe(PUB_SUB_EVENTS.variantChange, ({ data }) => {
             if (!data.variant) { this.disponible = false; this.render(); return; }
             this.variantId = data.variant.id; this.precio = data.variant.price; this.disponible = data.variant.available; this.render();
@@ -176,6 +176,7 @@
       }
       disconnectedCallback() { this.unsubscribe?.(); }
       idActual() {
+        if (this.dataset.externo === 'true') return this.variantId;
         const input = document.querySelector('form[id^="product-form-"] input[name="id"]');
         return input && input.value ? Number(input.value) : this.variantId;
       }

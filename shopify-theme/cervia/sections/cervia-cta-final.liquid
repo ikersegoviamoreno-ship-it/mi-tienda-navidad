@@ -68,12 +68,22 @@
     assign sec_ancla = section.settings.ancla
   endif
 -%}
+{%- liquid
+  assign p_cta = product
+  assign cta_externo = false
+  if section.settings.producto != blank
+    assign p_cta = section.settings.producto
+    if product == blank or section.settings.producto.id != product.id
+      assign cta_externo = true
+    endif
+  endif
+-%}
 <section id="{{ sec_ancla | escape }}" class="cervia-s cervia-final{% if section.settings.ocultar_movil %} is-oculto-movil{% endif %}{% if section.settings.ocultar_escritorio %} is-oculto-escritorio{% endif %}{% if section.settings.animacion == 'slide' %} is-slide{% endif %} {{ section.settings.clases | escape }}" data-anim="{{ section.settings.animacion }}" data-tracking="{{ section.settings.activar_tracking }}">
   <div class="cervia-s__contenedor">
     <div class="cervia-final__caja cervia-anim">
       {%- if section.settings.mostrar_imagen -%}
         <div class="cervia-media">
-          {%- assign img_final = section.settings.imagen | default: product.featured_image -%}
+          {%- assign img_final = section.settings.imagen | default: p_cta.featured_image -%}
           {%- if img_final != blank -%}
             {{ img_final | image_url: width: 1200 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 50vw, 100vw', widths: '375, 550, 750, 1100' }}
           {%- else -%}
@@ -89,8 +99,8 @@
           {%- if section.settings.mostrar_sub and section.settings.sub != blank -%}<p class="cervia-s__sub">{{ section.settings.sub }}</p>{%- endif -%}
         </div>
         {%- if section.settings.mostrar_precio -%}
-          {%- assign fv = product.selected_or_first_available_variant -%}
-          <div class="cervia-final__precio" data-final-precio data-texto-ahorro="{{ section.settings.texto_ahorro | escape }}">
+          {%- assign fv = p_cta.selected_or_first_available_variant -%}
+          <div class="cervia-final__precio" data-final-precio{% if cta_externo %} data-externo{% endif %} data-texto-ahorro="{{ section.settings.texto_ahorro | escape }}">
             <span class="cervia-final__actual" data-precio>{{ fv.price | money }}</span>
             {%- if fv.compare_at_price > fv.price -%}
               {%- assign pct = fv.compare_at_price | minus: fv.price | times: 100 | divided_by: fv.compare_at_price | append: '%' -%}
@@ -105,12 +115,12 @@
         {%- endif -%}
 {%- if section.settings.cta_mostrar -%}
   {%- liquid
-    assign cta_v = product.selected_or_first_available_variant
+    assign cta_v = p_cta.selected_or_first_available_variant
     assign cta_total = cta_v.price | times: section.settings.cta_cantidad
     assign cta_precio = cta_total | money
     assign cta_texto = section.settings.cta_texto | replace: '[[precio]]', cta_precio
   -%}
-  <cervia-cta class="cervia-cta" data-accion="{{ section.settings.cta_accion }}" data-url="{{ section.settings.cta_url | escape }}" data-cantidad="{{ section.settings.cta_cantidad }}" data-variant-id="{{ cta_v.id }}" data-precio="{{ cta_v.price }}" data-disponible="{{ cta_v.available }}" data-texto="{{ section.settings.cta_texto | escape }}" data-texto-cargando="{{ section.settings.cta_cargando | escape }}" data-texto-agotado="{{ section.settings.cta_agotado | escape }}" data-tracking="{{ section.settings.activar_tracking }}">
+  <cervia-cta class="cervia-cta"{% if cta_externo %} data-externo="true"{% endif %} data-accion="{{ section.settings.cta_accion }}" data-url="{{ section.settings.cta_url | escape }}" data-cantidad="{{ section.settings.cta_cantidad }}" data-variant-id="{{ cta_v.id }}" data-precio="{{ cta_v.price }}" data-disponible="{{ cta_v.available }}" data-texto="{{ section.settings.cta_texto | escape }}" data-texto-cargando="{{ section.settings.cta_cargando | escape }}" data-texto-agotado="{{ section.settings.cta_agotado | escape }}" data-tracking="{{ section.settings.activar_tracking }}">
     <button type="button" class="cervia-cta__boton" data-boton{% unless cta_v.available %} disabled{% endunless %}>
       <span data-texto-boton>{%- if cta_v.available or section.settings.cta_accion == 'formulario' or section.settings.cta_accion == 'url' -%}{{ cta_texto }}{%- else -%}{{ section.settings.cta_agotado }}{%- endif -%}</span>
       <svg class="cervia-cta__spinner" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="40 60"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg>
@@ -139,7 +149,7 @@
 <script>
   (() => {
     const caja = document.querySelector('#shopify-section-{{ section.id }} [data-final-precio]');
-    if (!caja || typeof subscribe !== 'function') return;
+    if (!caja || caja.hasAttribute('data-externo') || typeof subscribe !== 'function') return;
     const money = (c) => new Intl.NumberFormat(document.documentElement.lang || 'es', { style: 'currency', currency: (window.Shopify && Shopify.currency && Shopify.currency.active) || 'EUR' }).format(c / 100);
     subscribe(PUB_SUB_EVENTS.variantChange, ({ data }) => {
       const v = data.variant;
@@ -207,7 +217,7 @@
         this.precio = Number(this.dataset.precio);
         this.disponible = this.dataset.disponible === 'true';
         this.boton?.addEventListener('click', () => this.accion());
-        if (typeof subscribe === 'function') {
+        if (this.dataset.externo !== 'true' && typeof subscribe === 'function') {
           this.unsubscribe = subscribe(PUB_SUB_EVENTS.variantChange, ({ data }) => {
             if (!data.variant) { this.disponible = false; this.render(); return; }
             this.variantId = data.variant.id; this.precio = data.variant.price; this.disponible = data.variant.available; this.render();
@@ -216,6 +226,7 @@
       }
       disconnectedCallback() { this.unsubscribe?.(); }
       idActual() {
+        if (this.dataset.externo === 'true') return this.variantId;
         const input = document.querySelector('form[id^="product-form-"] input[name="id"]');
         return input && input.value ? Number(input.value) : this.variantId;
       }
@@ -403,6 +414,12 @@
       "id": "mostrar_imagen",
       "label": "Mostrar imagen",
       "default": true
+    },
+    {
+      "type": "product",
+      "id": "producto",
+      "label": "Producto a mostrar",
+      "info": "Déjalo vacío para usar el producto de la página. Elige otro para ofrecerlo aquí (venta cruzada)."
     },
     {
       "type": "image_picker",
