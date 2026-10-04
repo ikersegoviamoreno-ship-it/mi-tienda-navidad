@@ -599,6 +599,25 @@
     "barra-compra": {
       "type": "cervia-barra-compra",
       "settings": {}
+    },
+    "resenas_judgeme": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -612,6 +631,7 @@
     "garantia",
     "faq",
     "cta-final",
+    "resenas_judgeme",
     "barra-compra"
   ]
 }
