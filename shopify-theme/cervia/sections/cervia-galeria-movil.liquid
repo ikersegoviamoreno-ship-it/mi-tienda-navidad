@@ -1,0 +1,77 @@
+{%- comment -%}
+  Cervia: franja de fotos que se desplaza sola (carrusel infinito).
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .cervia-gm { background: {{ section.settings.color_fondo }}; color: {{ section.settings.color_texto }}; padding: {{ section.settings.padding_superior }}px 0 {{ section.settings.padding_inferior }}px; overflow: hidden; font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cervia-gm__cabecera { max-width: 900px; margin: 0 auto 28px; padding: 0 16px; text-align: center; }
+  #shopify-section-{{ section.id }} .cervia-gm__eyebrow { margin: 0 0 8px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cervia-gm__titulo { margin: 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(26px, 4vw, 40px); line-height: 1.15; font-weight: 700; color: {{ section.settings.color_texto }}; }
+  #shopify-section-{{ section.id }} .cervia-gm__titulo span { color: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cervia-gm__sub { margin: 10px 0 0; font-size: 16px; opacity: .8; }
+  #shopify-section-{{ section.id }} .cervia-gm__viewport { position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  #shopify-section-{{ section.id }} .cervia-gm__pista { display: flex; gap: {{ section.settings.separacion }}px; width: max-content; animation: cerviaGm-{{ section.id }} {{ section.settings.duracion }}s linear infinite; }
+  #shopify-section-{{ section.id }} .cervia-gm__viewport:hover .cervia-gm__pista { animation-play-state: paused; }
+  #shopify-section-{{ section.id }} .cervia-gm__item { flex: 0 0 auto; width: {{ section.settings.ancho_movil }}px; aspect-ratio: {{ section.settings.ratio }}; border-radius: 16px; overflow: hidden; background: {{ section.settings.color_acento }}1a; }
+  @media (min-width: 750px) { #shopify-section-{{ section.id }} .cervia-gm__item { width: {{ section.settings.ancho }}px; } }
+  #shopify-section-{{ section.id }} .cervia-gm__item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #shopify-section-{{ section.id }} .cervia-gm__item .placeholder-svg { width: 100%; height: 100%; }
+  @keyframes cerviaGm-{{ section.id }} { from { transform: translateX(0); } to { transform: translateX(calc(-50% - {{ section.settings.separacion | divided_by: 2.0 }}px)); } }
+  @media (prefers-reduced-motion: reduce) {
+    #shopify-section-{{ section.id }} .cervia-gm__pista { animation: none; overflow-x: auto; width: auto; }
+    #shopify-section-{{ section.id }} .cervia-gm__pista [aria-hidden="true"] { display: none; }
+  }
+{%- endstyle -%}
+
+<section class="cervia-gm">
+  {%- if section.settings.eyebrow != blank or section.settings.titulo != blank or section.settings.sub != blank -%}
+    <div class="cervia-gm__cabecera">
+      {%- if section.settings.eyebrow != blank -%}<p class="cervia-gm__eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.titulo != blank -%}<h2 class="cervia-gm__titulo">{{ section.settings.titulo }}</h2>{%- endif -%}
+      {%- if section.settings.sub != blank -%}<p class="cervia-gm__sub">{{ section.settings.sub }}</p>{%- endif -%}
+    </div>
+  {%- endif -%}
+  <div class="cervia-gm__viewport">
+    <div class="cervia-gm__pista">
+      {%- for vuelta in (1..2) -%}
+        {%- for block in section.blocks -%}
+          <div class="cervia-gm__item"{% if vuelta == 2 %} aria-hidden="true"{% else %} {{ block.shopify_attributes }}{% endif %}>
+            {%- if block.settings.imagen != blank -%}
+              {%- assign alt = block.settings.imagen.alt | default: section.settings.titulo | strip_html -%}
+              {{ block.settings.imagen | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '320px', widths: '350, 500, 700', alt: alt }}
+            {%- else -%}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cervia Galería en movimiento",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Frase superior", "default": "Momentos Cervia" },
+    { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "Descanso que <span>se nota</span>" },
+    { "type": "text", "id": "sub", "label": "Subtítulo" },
+    { "type": "range", "id": "duracion", "label": "Velocidad (segundos por vuelta, más = más lento)", "min": 10, "max": 120, "step": 5, "unit": "s", "default": 40 },
+    { "type": "range", "id": "ancho", "label": "Ancho de cada foto (escritorio)", "min": 180, "max": 460, "step": 10, "unit": "px", "default": 320 },
+    { "type": "range", "id": "ancho_movil", "label": "Ancho de cada foto (móvil)", "min": 140, "max": 340, "step": 10, "unit": "px", "default": 220 },
+    { "type": "range", "id": "separacion", "label": "Separación", "min": 0, "max": 40, "step": 2, "unit": "px", "default": 16 },
+    { "type": "select", "id": "ratio", "label": "Formato de las fotos", "options": [{ "value": "4 / 5", "label": "Vertical 4:5" }, { "value": "3 / 4", "label": "Vertical 3:4" }, { "value": "1 / 1", "label": "Cuadrado" }], "default": "4 / 5" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFF8F2" },
+    { "type": "color", "id": "color_texto", "label": "Texto", "default": "#1B1F5E" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#EF4423" },
+    { "type": "range", "id": "padding_superior", "label": "Espacio superior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_inferior", "label": "Espacio inferior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 }
+  ],
+  "blocks": [
+    { "type": "foto", "name": "Foto", "settings": [ { "type": "image_picker", "id": "imagen", "label": "Imagen" } ] }
+  ],
+  "max_blocks": 20,
+  "presets": [{ "name": "Cervia Galería en movimiento", "blocks": [{ "type": "foto" }, { "type": "foto" }, { "type": "foto" }, { "type": "foto" }, { "type": "foto" }] }]
+}
+{% endschema %}

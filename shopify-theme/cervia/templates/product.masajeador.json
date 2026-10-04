@@ -627,6 +627,62 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "galeria_movil": {
+      "type": "cervia-galeria-movil",
+      "blocks": {
+        "foto_0": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/masajeador-cuello-verde.jpg"
+          }
+        },
+        "foto_1": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/almohada-boca-arriba-cama.webp"
+          }
+        },
+        "foto_2": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/masajeador-brazo-verde.jpg"
+          }
+        },
+        "foto_3": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/almohada-dormir-de-lado-v2.jpg"
+          }
+        },
+        "foto_4": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/masajeador-piernas-verde.jpg"
+          }
+        },
+        "foto_5": {
+          "type": "foto",
+          "settings": {
+            "imagen": "shopify://shop_images/masajeador-principal-v2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "foto_0",
+        "foto_1",
+        "foto_2",
+        "foto_3",
+        "foto_4",
+        "foto_5"
+      ],
+      "settings": {
+        "eyebrow": "Momentos Cervia",
+        "titulo": "Descanso que <span>se nota</span>",
+        "sub": "Para tu cuello, de día y de noche.",
+        "ratio": "1 / 1",
+        "duracion": 40
+      }
     }
   },
   "order": [
@@ -634,6 +690,7 @@
     "confianza",
     "problema",
     "posturas",
+    "galeria_movil",
     "beneficios",
     "comparativa",
     "testimonios",
