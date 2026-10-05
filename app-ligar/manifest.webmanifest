@@ -1,0 +1,15 @@
+{
+  "name": "Chispa — ideas para ligar con respeto",
+  "short_name": "Chispa",
+  "description": "Rompehielos, ideas de cita, revisor de bio y guía para conocer gente.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF6F5",
+  "theme_color": "#E2475F",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

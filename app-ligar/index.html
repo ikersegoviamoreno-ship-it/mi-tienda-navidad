@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#E2475F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Chispa">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<!--APP-START-->
+<title>Chispa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: app de una columna (máx. 520px), cabecera compacta, contenido con scroll y barra de pestañas fija abajo */
+:root {
+  --bg: #FBF6F5;
+  --surface: #FFFFFF;
+  --surface-2: #F5ECEA;
+  --fg: #241A1F;
+  --muted: #76666C;
+  --line: #EADDDA;
+  --accent: #E2475F;
+  --accent-fg: #FFFFFF;
+  --accent-soft: #FCE3E7;
+  --teal: #0F7A73;
+  --teal-soft: #DDF1EE;
+  --warn: #B4610B;
+  --warn-soft: #FBEBD6;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Figtree", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --radius: 18px;
+  --nav-h: 64px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171215; --surface: #221B1F; --surface-2: #2C2328; --fg: #F6ECEE; --muted: #B3A1A7;
+    --line: #3A2F35; --accent: #FF6B80; --accent-fg: #2A0A11; --accent-soft: #46202A;
+    --teal: #4FC9BE; --teal-soft: #173430; --warn: #F2A54A; --warn-soft: #3A2A16;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171215; --surface: #221B1F; --surface-2: #2C2328; --fg: #F6ECEE; --muted: #B3A1A7;
+  --line: #3A2F35; --accent: #FF6B80; --accent-fg: #2A0A11; --accent-soft: #46202A;
+  --teal: #4FC9BE; --teal-soft: #173430; --warn: #F2A54A; --warn-soft: #3A2A16;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 16px/1.5 var(--body);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.12; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.app {
+  max-width: 520px; margin: 0 auto;
+  padding-inline: 16px;
+  padding-block: 12px calc(var(--nav-h) + 28px + env(safe-area-inset-bottom, 0px));
+}
+.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-block: 8px 16px;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand svg { width: 34px; height: 34px; flex: none; }
+.brand b { font: 800 24px/1 var(--display); letter-spacing: -0.02em; }
+.streak {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 12px; font-size: 13px; font-weight: 600; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.streak svg { width: 16px; height: 16px; color: var(--accent); }
+
+.view { display: grid; gap: 16px; animation: rise .28s ease-out; }
+@keyframes rise { from { transform: translateY(6px); opacity: .6; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .view, .card-phrase { animation: none !important; } }
+
+.eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+.h-xl { font-size: clamp(28px, 8vw, 36px); font-weight: 800; letter-spacing: -0.025em; }
+.h-l { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.sub { color: var(--muted); }
+
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; display: grid; gap: 12px; min-width: 0;
+}
+.hero {
+  background: var(--accent); color: var(--accent-fg); border: 0; border-radius: 24px;
+  padding: 22px 20px; display: grid; gap: 14px; position: relative; overflow: hidden;
+}
+.hero .eyebrow { color: inherit; opacity: .85; }
+.hero p.big { font: 700 clamp(21px, 6vw, 26px)/1.25 var(--display); letter-spacing: -0.01em; }
+.hero::after {
+  content: ""; position: absolute; right: -40px; top: -40px; width: 140px; height: 140px;
+  border-radius: 50%; border: 18px solid currentColor; opacity: .09; pointer-events: none;
+}
+
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+  padding: 10px 16px; font-weight: 600; font-size: 15px; min-height: 44px;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: transparent; }
+.btn.ghost-on-accent { background: transparent; border-color: currentColor; color: inherit; }
+.btn.solid-on-accent { background: var(--accent-fg); color: var(--accent); border-color: transparent; }
+.btn.icon { padding: 10px; width: 44px; }
+.btn[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.btn.grow { flex: 1 1 auto; }
+
+.chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+  padding: 8px 14px; font-size: 14px; font-weight: 600; color: var(--muted); min-height: 38px;
+}
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+.card-phrase {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
+  padding: 24px 20px 18px; display: grid; gap: 18px; min-height: 230px; align-content: space-between;
+  animation: rise .25s ease-out;
+}
+.card-phrase .quote { font: 700 clamp(22px, 6.4vw, 27px)/1.28 var(--display); letter-spacing: -0.01em; }
+.card-phrase .why { color: var(--muted); font-size: 14px; border-top: 1px dashed var(--line); padding-top: 12px; }
+.counter { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.list { display: grid; gap: 10px; }
+.item {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px;
+  display: grid; gap: 6px; min-width: 0;
+}
+.item h3 { font-size: 17px; font-weight: 700; }
+.item p { color: var(--muted); font-size: 15px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: var(--surface-2); color: var(--muted); }
+.tag.t-teal { background: var(--teal-soft); color: var(--teal); }
+.tag.t-accent { background: var(--accent-soft); color: var(--accent); }
+
+.seg { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); background: var(--surface-2); border-radius: 12px; padding: 4px; gap: 4px; }
+.seg button { border: 0; background: transparent; border-radius: 9px; padding: 8px 6px; font-weight: 600; font-size: 14px; color: var(--muted); min-height: 38px; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+.field-label { font-size: 13px; font-weight: 700; color: var(--muted); }
+
+textarea {
+  width: 100%; min-height: 150px; resize: vertical; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--bg); padding: 12px 14px; line-height: 1.5; font-size: 16px;
+}
+textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+
+.score { display: flex; align-items: center; gap: 16px; }
+.dial { width: 84px; height: 84px; flex: none; }
+.dial .trk { stroke: var(--surface-2); }
+.dial .val { stroke: var(--accent); transition: stroke-dashoffset .5s ease; }
+.dial text { fill: var(--fg); font: 800 26px var(--display); }
+.dial text.of { fill: var(--muted); font: 600 11px var(--body); }
+.verdict h3 { font-size: 20px; }
+.check { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; padding: 10px 12px; border-radius: 12px; font-size: 15px; }
+.check svg { width: 20px; height: 20px; margin-top: 2px; }
+.check.ok { background: var(--teal-soft); } .check.ok svg { color: var(--teal); }
+.check.warn { background: var(--warn-soft); } .check.warn svg { color: var(--warn); }
+.check b { font-weight: 700; }
+
+details.guide { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+details.guide summary {
+  list-style: none; padding: 16px; display: grid; grid-template-columns: 40px 1fr 20px; gap: 12px; align-items: center; cursor: pointer;
+}
+details.guide summary::-webkit-details-marker { display: none; }
+details.guide summary .ico { width: 40px; height: 40px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+details.guide summary .ico svg { width: 22px; height: 22px; }
+details.guide summary h3 { font-size: 17px; }
+details.guide summary small { display: block; color: var(--muted); font-size: 13px; font-family: var(--body); font-weight: 500; }
+details.guide summary .chev { width: 20px; height: 20px; color: var(--muted); transition: transform .2s; }
+details.guide[open] summary .chev { transform: rotate(180deg); }
+details.guide .body { padding: 0 16px 16px 68px; display: grid; gap: 10px; color: var(--fg); font-size: 15px; }
+details.guide .body ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+details.guide .body li::marker { color: var(--accent); }
+@media (max-width: 380px) { details.guide .body { padding-left: 16px; } }
+
+.challenge { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; }
+.done-badge { font-size: 13px; font-weight: 700; color: var(--teal); }
+
+.empty { text-align: center; padding: 28px 16px; color: var(--muted); border: 1px dashed var(--line); border-radius: 16px; }
+
+nav.tabs {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  background: var(--surface); border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+nav.tabs .inner { max-width: 520px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); height: var(--nav-h); }
+nav.tabs button {
+  border: 0; background: none; display: grid; justify-items: center; align-content: center; gap: 3px;
+  font-size: 11px; font-weight: 600; color: var(--muted); min-width: 0;
+}
+nav.tabs button svg { width: 24px; height: 24px; }
+nav.tabs button[aria-current="page"] { color: var(--accent); }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(var(--nav-h) + 16px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 10px 16px;
+  border-radius: 999px; font-size: 14px; font-weight: 600; z-index: 20; max-width: calc(100% - 32px);
+}
+.note { font-size: 13px; color: var(--muted); }
+</style>
+<!--APP-HEAD-END-->
+</head>
+<body>
+<!--APP-BODY-START-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5c.6 4.6 2.9 6.9 7.5 7.5-4.6.6-6.9 2.9-7.5 7.5-.6-4.6-2.9-6.9-7.5-7.5 4.6-.6 6.9-2.9 7.5-7.5Z" fill="currentColor"/><circle cx="19" cy="19" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5 12 4l8.5 6.5V20a1 1 0 0 1-1 1h-5v-6h-5v6h-5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.1A8 8 0 1 1 20 12Z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="m12 17.3-2.2-2.1a1.3 1.3 0 0 1 1.9-1.9l.3.3.3-.3a1.3 1.3 0 0 1 1.9 1.9Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M7.5 17.5c1-2 2.6-3 4.5-3s3.5 1 4.5 3"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20Z"/></symbol>
+    <symbol id="i-heart-f" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20Z" fill="currentColor"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h4v4M4 20 20 4M20 16v4h-4M15 15l5 5M4 4l5 5"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c4 0 7-2.8 7-6.8 0-3.6-2.4-5.8-4-8.2-.6 2-1.6 3-3 3.5.4-3-.8-5.8-3.5-8.5C8.3 6 5 8.6 5 14.8 5 19 8 22 12 22Z" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.7 2.7L16 9.6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5h.01"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></symbol>
+    <symbol id="i-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+  </defs>
+</svg>
+
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="var(--accent)"/><use href="#i-spark" x="5" y="5" width="24" height="24" style="color:var(--accent-fg)"/></svg>
+      <b>Chispa</b>
+    </div>
+    <span class="streak" id="streak" title="Retos completados"><svg><use href="#i-flame"/></svg><span id="streakN">0</span> retos</span>
+  </header>
+
+  <main id="main" aria-live="polite"></main>
+</div>
+
+<nav class="tabs" aria-label="Secciones">
+  <div class="inner" id="tabs"></div>
+</nav>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(() => {
+  "use strict";
+
+  /* ---------- Contenido ---------- */
+  const OPENERS = {
+    apps: {
+      label: "Apps de citas",
+      items: [
+        ["Tu foto en la montaña me ha dejado con una duda: ¿subiste por las vistas o por el bocadillo de arriba?", "Comenta un detalle concreto de su perfil. Demuestra que has mirado más allá de la primera foto."],
+        ["Pregunta seria para filtrar desde el principio: ¿tortilla con cebolla o sin cebolla?", "Un debate ligero da pie a bromear y a defender posturas sin riesgo."],
+        ["Veo que te gusta cocinar. ¿Cuál es el plato que te sale tan bien que lo usarías para impresionar a alguien?", "Pregunta abierta sobre algo que ya ha mencionado: le das el protagonismo."],
+        ["Tengo que decirlo: tu perfil es de los pocos que dan ganas de seguir leyendo. ¿Lo de aprender a bucear va en serio?", "Halago sobre algo que ha elegido (lo que escribe), no sobre su físico, y pregunta para seguir."],
+        ["Si tu perfil fuera una película, ¿de qué género sería? El mío sería comedia con algún giro inesperado.", "Le das una respuesta tuya de ejemplo, así es más fácil contestar."],
+        ["Dos verdades y una mentira, versión rápida: he vivido en Lisboa, sé tocar el ukelele y nunca he visto Titanic. ¿Cuál es la falsa?", "Juego corto que invita a responder con el suyo."],
+        ["Plan de domingo perfecto en tres palabras. Yo empiezo: churros, paseo, siesta.", "Respuesta fácil y concreta. Ya tienes una pista para una cita."],
+        ["Me ha hecho gracia tu bio. Ahora necesito saber la historia detrás de esa foto con disfraz.", "Las fotos con historia son una invitación a preguntar."]
+      ]
+    },
+    persona: {
+      label: "En persona",
+      items: [
+        ["Perdona, tengo que preguntarlo: ¿qué estás leyendo? Llevo un rato intentando ver la portada.", "Contexto real y sincero. Si responde con una palabra y vuelve al libro, despídete con amabilidad."],
+        ["Tienes pinta de saber qué se pide aquí. ¿Qué me recomiendas?", "Pedir una recomendación es natural y no presiona."],
+        ["Hola, soy Álex. Te he visto antes y me he dicho que si no venía a saludarte me iba a arrepentir.", "Directo y honesto. Funciona mejor de lo que parece si lo dices con calma."],
+        ["Esta canción está sonando demasiado alta para hablar, pero lo voy a intentar igual: ¿cómo te llamas?", "Usa el entorno para quitar hierro al momento."],
+        ["Me ha encantado lo que has dicho antes sobre los viajes en tren. ¿Cuál ha sido el mejor?", "Retoma algo que ha dicho en grupo. Demuestra que escuchas."],
+        ["No conozco a nadie aquí y tú pareces la persona más simpática del sitio. ¿Te importa si me uno?", "Reconocer tu situación te hace cercano."],
+        ["¿Vienes mucho por aquí o también es tu primera vez y estás disimulando como yo?", "Humor sobre ti mismo. Baja la tensión de los dos."]
+      ]
+    },
+    divertidas: {
+      label: "Divertidas",
+      items: [
+        ["Si fueras un ingrediente de pizza, ¿cuál serías y por qué no serías piña?", "Absurda pero fácil de contestar. Marca un tono juguetón."],
+        ["Necesito tu opinión urgente: ¿los perros deberían llevar pantalones en las dos patas o en las cuatro?", "Pregunta tonta que suele acabar en risas y en un buen intercambio."],
+        ["Estoy formando un equipo para un apocalipsis zombi. ¿Qué habilidad aportas?", "Imaginativa. Permite que cada uno se luzca."],
+        ["Dime tu peor talento oculto y yo te digo el mío.", "Vulnerabilidad con humor y en igualdad de condiciones."],
+        ["¿Cuál es la opinión más impopular que defenderías hasta el final?", "Da pie a debates divertidos y a conocer su carácter."],
+        ["Escenario: nos toca la lotería mañana. ¿Qué es lo primero completamente innecesario que te compras?", "Fantasía compartida, revela gustos sin ser intrusiva."],
+        ["Elige: poder hablar con los animales o hablar todos los idiomas del mundo.", "Dilema clásico, siempre da conversación."]
+      ]
+    },
+    profundas: {
+      label: "Profundas",
+      items: [
+        ["¿Qué es algo que te hace perder la noción del tiempo?", "Habla de pasiones sin preguntar directamente “¿qué te gusta?”."],
+        ["¿Cuál es el mejor consejo que te han dado y quién te lo dio?", "Conecta con personas importantes de su vida."],
+        ["¿Qué te hacía ilusión de pequeño/a que todavía te hace ilusión hoy?", "Nostalgia y autenticidad. Para cuando ya hay algo de confianza."],
+        ["¿En qué has cambiado de opinión en los últimos años?", "Muestra curiosidad por cómo piensa, no solo por lo que hace."],
+        ["¿Qué tendría que pasar para que dijeras que este año ha sido un gran año?", "Habla de metas sin que suene a entrevista de trabajo."],
+        ["¿Con quién de tu vida te gustaría pasar más tiempo?", "Íntima pero amable. Escucha la respuesta con atención."],
+        ["¿Qué cosa pequeña te alegra el día casi siempre?", "Fácil de responder y te da ideas para tener un detalle más adelante."]
+      ]
+    },
+    retomar: {
+      label: "Retomar chat",
+      items: [
+        ["Me he acordado de ti al ver un bar de tapas que parece sacado de tu lista. ¿Seguimos con lo de la tortilla?", "Retoma algo de la conversación anterior. Sin reproches por el silencio."],
+        ["Se nos quedó a medias el debate más importante del siglo: ¿al final la pizza con piña sí o no?", "Recupera un tema concreto con humor."],
+        ["Oye, que la semana se me comió. ¿Qué tal fue lo de tu examen?", "Asume tu parte y muestra que recordabas algo suyo."],
+        ["Te propongo algo para dejar de escribirnos tanto: un café este jueves o viernes. ¿Cuál te viene mejor?", "Pasar a la cita con dos opciones concretas facilita el sí."],
+        ["Sin presión: si te apetece seguir hablando, aquí estoy. Y si no, ¡que te vaya genial!", "Sale con elegancia y deja la puerta abierta. Respeta su respuesta o su silencio."]
+      ]
+    }
+  };
+
+  const TIPS = [
+    "Haz preguntas abiertas: empiezan por qué, cómo o cuál. Las de sí o no cortan la conversación.",
+    "Propón la primera cita en un sitio público y con hora de fin natural, como un café o un paseo.",
+    "Escuchar bien es atractivo. Retoma algo que la otra persona dijo hace un rato.",
+    "Pasa de la app a una cita en unos días. Semanas de chat crean expectativas difíciles de cumplir.",
+    "Un “no” o un silencio también son respuestas. Acéptalo con elegancia y sigue con tu día.",
+    "Tu primera foto debe mostrar tu cara sin gafas de sol y con buena luz natural.",
+    "Halaga elecciones (su estilo, su humor, lo que escribe) más que rasgos físicos.",
+    "Evita hablar de tus ex en la primera cita. Habla de lo que te ilusiona ahora.",
+    "Propón planes concretos: “¿Café el jueves a las 7?” funciona mejor que “a ver si quedamos”.",
+    "Responde con el mismo nivel de energía que recibes. Ni agobiar ni desaparecer.",
+    "La confianza se nota en lo pequeño: postura abierta, mirar a los ojos y no tener prisa al hablar.",
+    "Ten un plan B para la cita (si el bar está lleno, conoces otro cerca). Da tranquilidad.",
+    "No hace falta ser gracioso todo el rato. Ser amable y curioso es suficiente.",
+    "Comparte algo personal después de preguntar. Una conversación es un intercambio, no una entrevista."
+  ];
+
+  const CHALLENGES = [
+    "Haz un cumplido sincero a alguien hoy (no sobre su físico).",
+    "Inicia una conversación con alguien nuevo, aunque sea preguntar una recomendación.",
+    "Revisa tu bio en la pestaña Bio y súbela al menos a un 7.",
+    "Manda un mensaje con una pregunta abierta en vez de “hola, ¿qué tal?”.",
+    "Mantén el contacto visual y sonríe a tres personas hoy.",
+    "Propón un plan concreto, con día y hora, a alguien con quien llevas tiempo hablando.",
+    "Escribe tres cosas que te hacen interesante. Te servirán para tu perfil y tus citas.",
+    "Pide a un amigo o amiga que elija tu mejor foto para el perfil.",
+    "Practica escuchar: en tu próxima charla haz dos preguntas de seguimiento antes de hablar de ti."
+  ];
+
+  // budget: 0 gratis, 1 €, 2 €€ · when: dia | noche | ambos · first: buena primera cita
+  const DATES = [
+    { t: "Café y paseo", d: "Una hora de café y un paseo corto. Fácil de alargar si va bien y de cerrar si no.", budget: 1, when: "dia", first: true },
+    { t: "Mercado de abastos", d: "Recorred los puestos y probad algo de cada uno. Siempre hay de qué hablar.", budget: 1, when: "dia", first: true },
+    { t: "Atardecer en un mirador", d: "Llevad algo de picar y buscad el mejor sitio para ver ponerse el sol.", budget: 0, when: "noche", first: true },
+    { t: "Exposición o museo", d: "Muchos museos son gratis ciertos días. Elegid cada uno vuestra obra favorita y defendedla.", budget: 0, when: "dia", first: true },
+    { t: "Ruta de tapas", d: "Tres bares, una tapa en cada uno. Si os gusta el primero, os quedáis.", budget: 2, when: "noche", first: true },
+    { t: "Noche de juegos de mesa", d: "Un bar de juegos rompe el hielo. La competición sana une.", budget: 1, when: "noche", first: true },
+    { t: "Picnic en el parque", d: "Cada uno lleva dos cosas sorpresa para compartir.", budget: 0, when: "dia", first: false },
+    { t: "Clase de cocina o cerámica", d: "Aprender algo juntos crea complicidad. Mejor para una segunda o tercera cita.", budget: 2, when: "ambos", first: false },
+    { t: "Concierto pequeño o jam session", d: "Música en directo en una sala pequeña. Dejad hueco para hablar después.", budget: 1, when: "noche", first: false },
+    { t: "Ruta de senderismo corta", d: "Un sendero sencillo cerca de la ciudad y almuerzo al final.", budget: 0, when: "dia", first: false },
+    { t: "Escape room", d: "Descubriréis cómo trabajáis en equipo bajo presión. Divertido a partir de la segunda cita.", budget: 2, when: "ambos", first: false },
+    { t: "Helado y librería", d: "Un helado y un rato en una librería eligiendo un libro para el otro.", budget: 1, when: "dia", first: true },
+    { t: "Monólogos o micro abierto", d: "Reír juntos es buena señal. Las noches de micro abierto suelen ser baratas.", budget: 1, when: "noche", first: true },
+    { t: "Paseo en bici", d: "Alquilad bicis y recorred un carril bici con parada para tomar algo.", budget: 1, when: "dia", first: false },
+    { t: "Cine de verano", d: "Una película al aire libre y luego comentarla dando una vuelta.", budget: 1, when: "noche", first: false },
+    { t: "Cena en casa cocinando juntos", d: "Plan más íntimo. Resérvalo para cuando ya haya confianza.", budget: 1, when: "noche", first: false }
+  ];
+
+  const GUIDE = [
+    { ico: "i-coffee", t: "La primera cita", s: "Cómo prepararla y qué hacer durante", body: [
+      "Elige un sitio público, cómodo y que conozcas. Llegar puntual ya es una buena primera impresión.",
+      ["Proponla con día, hora y lugar concretos.", "Pregunta y escucha más de lo que hablas, pero comparte también cosas tuyas.", "Deja el móvil en el bolsillo.", "Si va bien, dilo: “Me lo he pasado muy bien, me gustaría repetir”."]
+    ]},
+    { ico: "i-eye", t: "Señales de interés", s: "Cómo saber si la otra persona está a gusto", body: [
+      "Ninguna señal sola es definitiva. Fíjate en el conjunto y, si dudas, pregunta.",
+      ["Te hace preguntas y retoma lo que dices.", "Propone planes o acepta los tuyos con fechas concretas.", "Responde con energía parecida a la tuya.", "Respuestas cortas, excusas repetidas o cambios de tema son señal de dar espacio."]
+    ]},
+    { ico: "i-shield", t: "Consentimiento y respeto", s: "Lo más importante, siempre", body: [
+      "El consentimiento es claro, entusiasta y se puede retirar en cualquier momento. Sin un sí claro, es no.",
+      ["Pregunta antes de dar un paso: “¿Te apetece…?”.", "Un “no sé” o un silencio no son un sí.", "El alcohol no da permiso para nada.", "Insistir después de un no no es romántico, es presión."]
+    ]},
+    { ico: "i-flag", t: "Red flags", s: "Señales para cuidarte", body: [
+      "Si algo te incomoda, puedes irte. No le debes a nadie terminar una cita.",
+      ["Presiona para quedar en su casa o en sitios aislados enseguida.", "Pide dinero, fotos íntimas o datos personales.", "Se enfada si no respondes rápido o controla con quién hablas.", "Su historia no cuadra o evita las videollamadas siempre."]
+    ]},
+    { ico: "i-shield", t: "Seguridad en citas de apps", s: "Antes de quedar con alguien de internet", body: [
+      "Unos pocos hábitos hacen las citas mucho más seguras.",
+      ["Haz una videollamada corta antes de quedar.", "Cuenta a alguien de confianza dónde y con quién estás.", "Ve y vuelve por tu cuenta.", "No compartas tu dirección hasta que haya confianza."]
+    ]},
+    { ico: "i-bounce", t: "Encajar un rechazo", s: "Forma parte del juego", body: [
+      "Un rechazo dice más de la compatibilidad que de tu valor. Le pasa a todo el mundo.",
+      ["Responde con amabilidad: “Gracias por decírmelo, ¡suerte!”.", "No pidas explicaciones ni insistas.", "Date un rato para sentirlo y vuelve a intentarlo.", "Cada intento es práctica: cuantos más, más natural te sale."]
+    ]}
+  ];
+
+  const SAMPLE_BIO = "Me gusta viajar, salir con amigos y Netflix. No busco dramas. Si no te gusta el perro, desliza a la izquierda. Pregúntame lo que quieras 😜😎🔥";
+
+  /* ---------- Estado (preferencias locales) ---------- */
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem("chispa:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+    set(k, v) { try { localStorage.setItem("chispa:" + k, JSON.stringify(v)); } catch {} }
+  };
+  const state = {
+    tab: store.get("tab", "hoy"),
+    cat: store.get("cat", "apps"),
+    idx: 0,
+    favs: store.get("favs", []),
+    budget: store.get("budget", "todos"),
+    when: store.get("when", "todos"),
+    firstOnly: store.get("firstOnly", true),
+    bio: store.get("bio", SAMPLE_BIO),
+    doneDays: store.get("doneDays", [])
+  };
+
+  /* ---------- Utilidades ---------- */
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const icon = (id) => `<svg aria-hidden="true"><use href="#${id}"/></svg>`;
+  const today = () => { const d = new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
+  const dayNum = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
+  let toastT;
+  function toast(msg) {
+    const t = $("#toast"); t.textContent = msg; t.hidden = false;
+    clearTimeout(toastT); toastT = setTimeout(() => (t.hidden = true), 1800);
+  }
+  async function copy(text) {
+    try { await navigator.clipboard.writeText(text); toast("Copiado"); }
+    catch { toast("No se pudo copiar. Mantén pulsado el texto para copiarlo."); }
+  }
+  const favKey = (cat, i) => `${cat}:${i}`;
+  function toggleFav(key) {
+    const i = state.favs.indexOf(key);
+    if (i >= 0) state.favs.splice(i, 1); else state.favs.push(key);
+    store.set("favs", state.favs);
+    toast(i >= 0 ? "Quitada de guardadas" : "Guardada");
+  }
+
+  /* ---------- Pestañas ---------- */
+  const TABS = [
+    { id: "hoy", label: "Hoy", ico: "i-home" },
+    { id: "frases", label: "Frases", ico: "i-chat" },
+    { id: "citas", label: "Citas", ico: "i-cal" },
+    { id: "bio", label: "Bio", ico: "i-user" },
+    { id: "guia", label: "Guía", ico: "i-book" }
+  ];
+  function renderTabs() {
+    $("#tabs").innerHTML = TABS.map((t) =>
+      `<button type="button" data-tab="${t.id}" ${state.tab === t.id ? 'aria-current="page"' : ""}>${icon(t.ico)}<span>${t.label}</span></button>`
+    ).join("");
+  }
+  function go(tab) {
+    state.tab = tab; store.set("tab", tab);
+    renderTabs(); render(); window.scrollTo({ top: 0 });
+  }
+
+  /* ---------- Vistas ---------- */
+  function viewHoy() {
+    const n = dayNum();
+    const tip = TIPS[n % TIPS.length];
+    const ch = CHALLENGES[n % CHALLENGES.length];
+    const done = state.doneDays.includes(today());
+    const allCats = Object.keys(OPENERS);
+    const cat = allCats[n % allCats.length];
+    const op = OPENERS[cat].items[n % OPENERS[cat].items.length];
+    const h = new Date().getHours();
+    const hello = h < 6 ? "Buenas noches" : h < 14 ? "Buenos días" : h < 21 ? "Buenas tardes" : "Buenas noches";
+    return `
+      <section class="view">
+        <div>
+          <p class="eyebrow">${hello}</p>
+          <h1 class="h-xl">Hoy toca ser tú, con un poco más de valor.</h1>
+        </div>
+        <article class="hero">
+          <p class="eyebrow">Consejo del día</p>
+          <p class="big">${esc(tip)}</p>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">Reto del día</p>
+          <div class="challenge">
+            <p>${esc(ch)}</p>
+            ${done
+              ? `<span class="done-badge">Hecho</span>`
+              : `<button class="btn primary" type="button" data-act="done">${icon("i-check")}Hecho</button>`}
+          </div>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">Frase de hoy · ${esc(OPENERS[cat].label)}</p>
+          <p class="h-l">${esc(op[0])}</p>
+          <p class="sub">${esc(op[1])}</p>
+          <div class="row">
+            <button class="btn" type="button" data-copy="${esc(op[0])}">${icon("i-copy")}Copiar</button>
+            <button class="btn" type="button" data-go="frases">Más frases</button>
+          </div>
+        </article>
+        <p class="note">Chispa da ideas para conocer gente con respeto. Nada de trucos para manipular: lo que funciona es la curiosidad, la amabilidad y aceptar un no.</p>
+      </section>`;
+  }
+
+  function viewFrases() {
+    const isFav = state.cat === "favs";
+    const cats = Object.entries(OPENERS).map(([k, v]) => [k, v.label]).concat([["favs", `Guardadas (${state.favs.length})`]]);
+    const chips = `<div class="chips" role="group" aria-label="Categorías">${cats.map(([k, l]) =>
+      `<button class="chip" type="button" data-cat="${k}" aria-pressed="${state.cat === k}">${esc(l)}</button>`).join("")}</div>`;
+
+    let body;
+    if (isFav) {
+      const list = state.favs.map((key) => {
+        const [c, i] = key.split(":"); const it = OPENERS[c]?.items[+i];
+        return it ? { key, it, label: OPENERS[c].label } : null;
+      }).filter(Boolean);
+      body = list.length ? `<div class="list">${list.map(({ key, it, label }) => `
+        <div class="item">
+          <span class="tags"><span class="tag">${esc(label)}</span></span>
+          <h3>${esc(it[0])}</h3>
+          <div class="row">
+            <button class="btn" type="button" data-copy="${esc(it[0])}">${icon("i-copy")}Copiar</button>
+            <button class="btn" type="button" data-unfav="${key}">Quitar</button>
+          </div>
+        </div>`).join("")}</div>`
+        : `<div class="empty">Aún no has guardado frases. Pulsa el corazón en cualquier frase para tenerla aquí.</div>`;
+    } else {
+      const items = OPENERS[state.cat].items;
+      state.idx = ((state.idx % items.length) + items.length) % items.length;
+      const it = items[state.idx];
+      const key = favKey(state.cat, state.idx);
+      const saved = state.favs.includes(key);
+      body = `
+        <article class="card-phrase" key="${key}">
+          <p class="quote">${esc(it[0])}</p>
+          <p class="why"><b>Por qué funciona:</b> ${esc(it[1])}</p>
+        </article>
+        <div class="row">
+          <button class="btn primary grow" type="button" data-act="next">${icon("i-shuffle")}Otra frase</button>
+          <button class="btn icon" type="button" data-act="copy" aria-label="Copiar frase">${icon("i-copy")}</button>
+          <button class="btn icon" type="button" data-act="fav" aria-pressed="${saved}" aria-label="${saved ? "Quitar de guardadas" : "Guardar frase"}">${icon(saved ? "i-heart-f" : "i-heart")}</button>
+        </div>
+        <p class="counter">${state.idx + 1} de ${items.length} en ${esc(OPENERS[state.cat].label)}</p>`;
+    }
+    return `
+      <section class="view">
+        <div><p class="eyebrow">Rompehielos</p><h1 class="h-xl">¿Cómo empiezo la conversación?</h1></div>
+        ${chips}
+        ${body}
+      </section>`;
+  }
+
+  function viewCitas() {
+    const seg = (name, opts, cur) => `<div class="seg" role="group">${opts.map(([v, l]) =>
+      `<button type="button" data-${name}="${v}" aria-pressed="${cur === v}">${l}</button>`).join("")}</div>`;
+    const money = ["Gratis", "€", "€€"];
+    const list = DATES.filter((d) =>
+      (state.budget === "todos" || d.budget === +state.budget) &&
+      (state.when === "todos" || d.when === state.when || d.when === "ambos") &&
+      (!state.firstOnly || d.first));
+    return `
+      <section class="view">
+        <div><p class="eyebrow">Ideas de cita</p><h1 class="h-xl">Planes que dan conversación</h1></div>
+        <div class="panel">
+          <span class="field-label">Presupuesto</span>
+          ${seg("budget", [["todos", "Todos"], ["0", "Gratis"], ["1", "€"], ["2", "€€"]], state.budget)}
+          <span class="field-label">Momento</span>
+          ${seg("when", [["todos", "Cualquiera"], ["dia", "De día"], ["noche", "De noche"]], state.when)}
+          <span class="field-label">Tipo de cita</span>
+          ${seg("first", [["1", "Primera cita"], ["0", "Todas"]], state.firstOnly ? "1" : "0")}
+        </div>
+        <p class="counter">${list.length} ${list.length === 1 ? "idea" : "ideas"}</p>
+        ${list.length ? `<div class="list">${list.map((d) => `
+          <div class="item">
+            <h3>${esc(d.t)}</h3>
+            <p>${esc(d.d)}</p>
+            <span class="tags">
+              <span class="tag">${money[d.budget]}</span>
+              <span class="tag">${d.when === "dia" ? "De día" : d.when === "noche" ? "De noche" : "Día o noche"}</span>
+              ${d.first ? `<span class="tag t-teal">Buena 1.ª cita</span>` : `<span class="tag t-accent">Con más confianza</span>`}
+            </span>
+          </div>`).join("")}</div>`
+          : `<div class="empty">No hay ideas con esos filtros. Prueba con otro presupuesto o momento.</div>`}
+      </section>`;
+  }
+
+  /* Analizador de bio: reglas simples, sin enviar nada a ningún servidor */
+  const CLICHES = ["me gusta viajar", "amante de los viajes", "pregúntame", "preguntame", "vive la vida", "buen rollo", "carpe diem", "netflix", "salir con amigos", "foodie", "disfrutar de la vida", "aventurer", "sin complicaciones", "lo que surja"];
+  const NEGATIVE = ["no busco", "abstenerse", "si no te gusta", "nada de", "odio", "no quiero", "dramas", "desliza a la izquierda"];
+  function analyzeBio(text) {
+    const t = text.trim();
+    const low = t.toLowerCase();
+    const words = t ? t.split(/\s+/).length : 0;
+    const emojis = (t.match(/\p{Extended_Pictographic}/gu) || []).length;
+    const out = [];
+    let score = 5;
+    if (!t) return { score: 0, out: [{ ok: false, h: "Escribe tu bio", p: "Pega aquí el texto de tu perfil para analizarlo." }] };
+
+    if (words < 12) { score -= 1; out.push({ ok: false, h: "Muy corta", p: `Tiene ${words} palabras. Con 25–80 das más temas para empezar a hablar.` }); }
+    else if (words > 110) { score -= 1; out.push({ ok: false, h: "Algo larga", p: `Tiene ${words} palabras. Quédate con lo más tuyo y deja algo para la conversación.` }); }
+    else { score += 1; out.push({ ok: true, h: "Buena longitud", p: `${words} palabras: suficiente para conocerte sin aburrir.` }); }
+
+    const cl = CLICHES.filter((c) => low.includes(c));
+    if (cl.length) { score -= Math.min(2, cl.length); out.push({ ok: false, h: "Frases muy vistas", p: `“${cl.join("”, “")}” aparece en miles de perfiles. Cambia “me gusta viajar” por “el mejor viaje que he hecho fue a…”.` }); }
+    else { score += 1; out.push({ ok: true, h: "Sin tópicos", p: "No usas las frases que aparecen en todos los perfiles." }); }
+
+    const ng = NEGATIVE.filter((c) => low.includes(c));
+    if (ng.length) { score -= Math.min(2, ng.length); out.push({ ok: false, h: "Tono negativo", p: "Decir lo que no quieres echa para atrás. Cuenta lo que sí buscas: “busco a alguien con quien probar restaurantes nuevos”." }); }
+    else { score += 1; out.push({ ok: true, h: "Tono positivo", p: "Hablas de lo que te gusta, no de lo que rechazas." }); }
+
+    if (t.includes("?")) { score += 1; out.push({ ok: true, h: "Invita a responder", p: "Una pregunta en la bio da una forma fácil de escribirte." }); }
+    else out.push({ ok: false, h: "Añade una pregunta o reto", p: "Termina con algo fácil de contestar: “¿Cuál es tu bar de tapas favorito?”." });
+
+    const specific = /\d/.test(t) || /(?:^|[^.!?]\s)[A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,}/.test(t.slice(1));
+    if (specific) { score += 1; out.push({ ok: true, h: "Detalles concretos", p: "Nombres, lugares o números hacen tu perfil memorable." }); }
+    else out.push({ ok: false, h: "Sé más concreto", p: "Menciona un sitio, un libro, un plato o una cifra. Lo concreto se recuerda." });
+
+    if (emojis > 4) { score -= 1; out.push({ ok: false, h: "Demasiados emojis", p: `Llevas ${emojis}. Con uno o dos basta para dar tono.` }); }
+
+    return { score: Math.max(1, Math.min(10, score)), out };
+  }
+  function bioResult(text) {
+    const { score, out } = analyzeBio(text);
+    const C = 2 * Math.PI * 34;
+    const verdict = score >= 8 ? ["Perfil con chispa", "Tu bio da ganas de escribirte."]
+      : score >= 6 ? ["Vas bien", "Unos retoques y destacará."]
+      : score > 0 ? ["Se puede mejorar", "Mira las sugerencias de abajo."]
+      : ["Sin texto", "Escribe tu bio arriba."];
+    return `
+      <div class="score">
+        <svg class="dial" viewBox="0 0 84 84" role="img" aria-label="Puntuación ${score} de 10">
+          <circle class="trk" cx="42" cy="42" r="34" fill="none" stroke-width="9"/>
+          <circle class="val" cx="42" cy="42" r="34" fill="none" stroke-width="9" stroke-linecap="round"
+            stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${(C * (1 - score / 10)).toFixed(1)}" transform="rotate(-90 42 42)"/>
+          <text x="42" y="46" text-anchor="middle">${score}</text>
+          <text class="of" x="42" y="60" text-anchor="middle">de 10</text>
+        </svg>
+        <div class="verdict"><h3>${verdict[0]}</h3><p class="sub">${verdict[1]}</p></div>
+      </div>
+      <div class="list">${out.map((o) => `
+        <div class="check ${o.ok ? "ok" : "warn"}">${icon(o.ok ? "i-check" : "i-alert")}<div><b>${esc(o.h)}.</b> ${esc(o.p)}</div></div>`).join("")}
+      </div>`;
+  }
+  function viewBio() {
+    const isSample = state.bio === SAMPLE_BIO;
+    return `
+      <section class="view">
+        <div><p class="eyebrow">Revisor de perfil</p><h1 class="h-xl">¿Tu bio da ganas de escribirte?</h1></div>
+        <div class="panel">
+          <label class="field-label" for="bioText">${isSample ? "Bio de ejemplo. Bórrala y pega la tuya" : "Tu bio"}</label>
+          <textarea id="bioText" spellcheck="true">${esc(state.bio)}</textarea>
+          <div class="row">
+            <button class="btn" type="button" data-act="clearbio">Borrar</button>
+            <button class="btn" type="button" data-act="samplebio">Ver ejemplo</button>
+          </div>
+          <p class="note">El análisis se hace en tu móvil. Tu texto no se envía a ningún sitio.</p>
+        </div>
+        <div class="panel" id="bioOut">${bioResult(state.bio)}</div>
+      </section>`;
+  }
+
+  function viewGuia() {
+    return `
+      <section class="view">
+        <div><p class="eyebrow">Guía</p><h1 class="h-xl">Lo que conviene saber</h1></div>
+        ${GUIDE.map((g, i) => `
+          <details class="guide" ${i === 0 ? "open" : ""}>
+            <summary>
+              <span class="ico">${icon(g.ico)}</span>
+              <span><h3>${esc(g.t)}</h3><small>${esc(g.s)}</small></span>
+              <svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </summary>
+            <div class="body">
+              <p>${esc(g.body[0])}</p>
+              <ul>${g.body[1].map((li) => `<li>${esc(li)}</li>`).join("")}</ul>
+            </div>
+          </details>`).join("")}
+        <p class="note">Si te sientes en peligro en una cita, llama al 112.</p>
+      </section>`;
+  }
+
+  const VIEWS = { hoy: viewHoy, frases: viewFrases, citas: viewCitas, bio: viewBio, guia: viewGuia };
+  function render() {
+    if (!VIEWS[state.tab]) state.tab = "hoy";
+    $("#main").innerHTML = VIEWS[state.tab]();
+    $("#streakN").textContent = state.doneDays.length;
+  }
+
+  /* ---------- Eventos ---------- */
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    const d = b.dataset;
+    if (d.tab) return go(d.tab);
+    if (d.go) return go(d.go);
+    if (d.copy) return copy(d.copy);
+    if (d.cat) { state.cat = d.cat; state.idx = 0; store.set("cat", d.cat); return render(); }
+    if (d.unfav) { toggleFav(d.unfav); return render(); }
+    if (d.budget) { state.budget = d.budget; store.set("budget", d.budget); return render(); }
+    if (d.when) { state.when = d.when; store.set("when", d.when); return render(); }
+    if (d.first) { state.firstOnly = d.first === "1"; store.set("firstOnly", state.firstOnly); return render(); }
+    switch (d.act) {
+      case "next": {
+        const len = OPENERS[state.cat].items.length;
+        let n = state.idx;
+        if (len > 1) while (n === state.idx) n = Math.floor(Math.random() * len);
+        state.idx = n; return render();
+      }
+      case "copy": return copy(OPENERS[state.cat].items[state.idx][0]);
+      case "fav": toggleFav(favKey(state.cat, state.idx)); return render();
+      case "done":
+        if (!state.doneDays.includes(today())) state.doneDays.push(today());
+        store.set("doneDays", state.doneDays); toast("Reto completado"); return render();
+      case "clearbio": state.bio = ""; store.set("bio", ""); render(); return $("#bioText").focus();
+      case "samplebio": state.bio = SAMPLE_BIO; store.set("bio", SAMPLE_BIO); return render();
+    }
+  });
+  document.addEventListener("input", (e) => {
+    if (e.target.id !== "bioText") return;
+    state.bio = e.target.value; store.set("bio", state.bio);
+    $("#bioOut").innerHTML = bioResult(state.bio);
+  });
+
+  renderTabs();
+  render();
+
+  // Instalable y offline cuando se sirve como web normal (en vistas incrustadas se ignora)
+  if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  }
+})();
+</script>
+<!--APP-END-->
+</body>
+</html>
