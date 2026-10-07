@@ -1,0 +1,7 @@
+{
+  "budget_usd": 2.50,
+  "items": [
+    { "what": "K_world (qwen-image-3.0)", "run_id": "01M4A1JHAW9QCST2QE5ZBJVGN5", "usd": 0.03, "status": "ok", "note": "no descargada: aliyuncs.com bloqueado por la red de la sesión" }
+  ],
+  "total_usd": 0.03
+}
