@@ -1,7 +1,25 @@
 {
-  "budget_usd": 2.50,
+  "budget_usd": 2.5,
   "items": [
-    { "what": "K_world (qwen-image-3.0)", "run_id": "01M4A1JHAW9QCST2QE5ZBJVGN5", "usd": 0.03, "status": "ok", "note": "no descargada: aliyuncs.com bloqueado por la red de la sesión" }
+    {
+      "what": "K_world (qwen-image-3.0)",
+      "run_id": "01M4A1JHAW9QCST2QE5ZBJVGN5",
+      "usd": 0.03,
+      "status": "ok",
+      "note": "no descargada: aliyuncs.com bloqueado por la red de la sesión"
+    },
+    {
+      "what": "E_tierra",
+      "run_id": "01M4A1TCBVK2JS6YN9W4M53DEG",
+      "usd": 0.033,
+      "status": "ok"
+    },
+    {
+      "what": "E_universo (1er intento)",
+      "run_id": "01M4A1TFWEDDWANQHP6AVRSFSG",
+      "usd": 0,
+      "status": "429 límite de peticiones, sin coste"
+    }
   ],
-  "total_usd": 0.03
+  "total_usd": 0.063
 }

@@ -6,7 +6,8 @@
     "E_universo": "01M4A1TFWEDDWANQHP6AVRSFSG"
   },
   "urls": {
-    "K_world": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/b7/20261007/a9be8f0a/d4fe34cc-2d72-9336-be4e-93cd260c1130_qwen_image3_serving_output_0.png?Expires=1791425026&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=XLfnU%2F3fQHDjCngFfpgBlVCI8YE%3D"
+    "K_world": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/b7/20261007/a9be8f0a/d4fe34cc-2d72-9336-be4e-93cd260c1130_qwen_image3_serving_output_0.png?Expires=1791425026&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=XLfnU%2F3fQHDjCngFfpgBlVCI8YE%3D",
+    "E_tierra": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/72/20261007/a9be8f0a/641d9a58-b542-9458-ac9e-1a3ab0071a09_qwen_image3_serving_output_0.png?Expires=1791425246&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=ojYqxlRV3Ivc4d1FxsnJh5yrcs4%3D"
   },
   "note": "URLs caducan ~24 h: descargar a keyframes/ en cuanto la red lo permita"
 }
