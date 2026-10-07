@@ -19,7 +19,19 @@
       "run_id": "01M4A1TFWEDDWANQHP6AVRSFSG",
       "usd": 0,
       "status": "429 límite de peticiones, sin coste"
+    },
+    {
+      "what": "E_portal",
+      "run_id": "01M4A1TDSYFSEJFHC36XZNFEJA",
+      "usd": 0.033,
+      "status": "ok"
+    },
+    {
+      "what": "E_universo",
+      "run_id": "01M4A1XDR5ZZ1NFNAE9MK7NJ57",
+      "usd": 0.033,
+      "status": "ok"
     }
   ],
-  "total_usd": 0.063
+  "total_usd": 0.129
 }
