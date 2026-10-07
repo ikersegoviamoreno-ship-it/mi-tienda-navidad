@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barber Shop Crew | La única barbería de su universo</title>
+  <meta name="description" content="Viaja desde el espacio hasta Barber Shop Crew, la barbería de la Av. Ancha de Castelar 187 en Sant Vicent del Raspeig. 4,8 estrellas en Google.">
+  <meta property="og:image" content="world/poster.webp">
+  <link rel="preload" href="world/manifest.json" as="fetch" crossorigin>
+  <link rel="preload" href="world/poster.webp" as="image">
+  <!-- Fuentes del kit de marca (cámbialas por las suyas) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scroll-world.css">
+  <style>
+    /* Kit de marca → variables del escenario */
+    body { --sw-font-display: "Inter", system-ui, sans-serif; }
+    :root {
+      --sw-bg: #05050a;
+      --sw-ink: #ffffff;
+      --sw-accent: #ff3b47;
+    }
+    body { margin: 0; background: var(--sw-bg); color: var(--sw-ink); font-family: var(--sw-font-body); }
+    .after { padding: 18vh var(--sw-gutter); text-align: center; }
+  </style>
+  <script>document.documentElement.classList.add('sw-js')</script>
+</head>
+<body>
+
+<section data-sw-root data-sw-manifest="world/manifest.json" aria-label="Recorrido por el mundo de Barber Shop Crew">
+  <div data-sw-stage style="--sw-poster: url(world/poster.webp)">
+    <canvas data-sw-canvas aria-hidden="true"></canvas>
+
+    <header class="sw-hero">
+      <h1>Barber Shop Crew</h1>
+      <p>La única barbería de su universo.</p>
+      <p class="sw-scroll-hint">Desliza para entrar ↓</p>
+    </header>
+
+    <!-- Un <article> por capítulo, en el mismo orden que world.json.
+         data-side = lado con aire en el fotograma interior (copy_side). -->
+    <article data-sw-chapter="0" data-side="left">
+      <p class="sw-kicker">01 · Sant Vicent del Raspeig</p>
+      <h2>Rumbo a la Tierra</h2>
+      <p>Atravesamos el espacio hasta un punto concreto: Av. Ancha de Castelar, 187.</p>
+    </article>
+    <article data-sw-chapter="1" data-side="right">
+      <p class="sw-kicker">02 · El portal</p>
+      <h2>Al otro lado</h2>
+      <p>Degradados, barba, color y diseño. Cruza el portal y deja el resto del mundo fuera.</p>
+    </article>
+    <article data-sw-chapter="2" data-side="left">
+      <p class="sw-kicker">03 · Solo existe la barbería</p>
+      <h2>Universo Crew</h2>
+      <p>4,8 ★ con 356 reseñas en Google. Lunes a viernes, 10:00–13:30 y 16:30–20:30.</p>
+      <a href="tel:+34966170982">Llamar · 966 17 09 82</a>
+    </article>
+
+    <nav class="sw-rail" aria-label="Capítulos">
+      <button type="button" data-go="0" aria-label="Rumbo a la Tierra"></button>
+      <button type="button" data-go="1" aria-label="Al otro lado"></button>
+      <button type="button" data-go="2" aria-label="Universo Crew"></button>
+    </nav>
+    <div class="sw-bar" aria-hidden="true"></div>
+    <div class="sw-loader" aria-hidden="true"></div>
+  </div>
+
+  <!-- Sin JavaScript: las mismas escenas como imágenes fijas, con su texto. -->
+  <div class="sw-static">
+    <figure><img src="world/stills/chapter_0.webp" alt="Avenida de noche frente a un portal de luz roja, blanca y azul" loading="lazy"><figcaption><h2>Rumbo a la Tierra</h2><p>Atravesamos el espacio hasta un punto concreto: Av. Ancha de Castelar, 187.</p></figcaption></figure>
+    <figure><img src="world/stills/chapter_1.webp" alt="Túnel de luz con rayas de poste de barbero y tijeras flotando" loading="lazy"><figcaption><h2>Al otro lado</h2><p>Degradados, barba, color y diseño. Cruza el portal y deja el resto del mundo fuera.</p></figcaption></figure>
+    <figure><img src="world/stills/chapter_2.webp" alt="Interior de la barbería con sillón de cuero y lámparas industriales" loading="lazy"><figcaption><h2>Universo Crew</h2><p>4,8 ★ con 356 reseñas en Google. Lunes a viernes, 10:00–13:30 y 16:30–20:30.</p></figcaption></figure>
+  </div>
+</section>
+
+<section class="after">
+  <h2>Te esperamos en la Tierra</h2>
+  <p>Av. Ancha de Castelar, 187, Local 4 · 03690 Sant Vicent del Raspeig · <a href="tel:+34966170982" style="color:var(--sw-accent)">966 17 09 82</a> · <a href="https://www.instagram.com/barbershop_crew/" style="color:var(--sw-accent)">Instagram</a> · <a href="../" style="color:var(--sw-accent)">Ver la web</a></p>
+</section>
+
+<script src="scroll-world.js"></script>
+<script>
+  const root = document.querySelector('[data-sw-root]');
+  const dots = [...document.querySelectorAll('.sw-rail [data-go]')];
+  const world = ScrollWorld.mount(root, {
+    onChapter: i => dots.forEach((d, k) => d.classList.toggle('is-active', k === i))
+  });
+  dots.forEach(d => d.addEventListener('click', () => world.goToChapter(+d.dataset.go)));
+</script>
+</body>
+</html>
