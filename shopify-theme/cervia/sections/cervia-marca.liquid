@@ -19,8 +19,8 @@
   #shopify-section-{{ section.id }} .cervia-mc__check { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: {{ section.settings.color_borde }}; color: {{ section.settings.color_acento }}; font-weight: 700; }
   #shopify-section-{{ section.id }} .cervia-mc__punto strong { display: block; font-size: 16px; color: {{ section.settings.color_texto }}; }
   #shopify-section-{{ section.id }} .cervia-mc__punto span { display: block; margin-top: 2px; font-size: 15px; line-height: 1.5; color: {{ section.settings.color_suave }}; }
-  #shopify-section-{{ section.id }} .cervia-mc__badge { display: inline-block; margin-bottom: 14px; padding: 6px 14px; border-radius: 999px; background: {{ section.settings.color_acento }}; color: #FFFFFF; font-size: 13px; font-weight: 700; letter-spacing: .02em; }
-  #shopify-section-{{ section.id }} .cervia-mc__btn { display: inline-flex; align-items: center; justify-content: center; margin-top: 26px; min-height: 52px; padding: 0 30px; border-radius: 30px; background: {{ section.settings.color_acento }}; color: #FFFFFF; font-size: 16px; font-weight: 700; text-decoration: none; transition: background .2s; }
+  #shopify-section-{{ section.id }} .cervia-mc__badge { display: inline-block; margin-bottom: 14px; padding: 6px 14px; border-radius: 999px; background: {{ section.settings.color_acento }}; color: {{ section.settings.color_acento_texto }}; font-size: 13px; font-weight: 700; letter-spacing: .02em; }
+  #shopify-section-{{ section.id }} .cervia-mc__btn { display: inline-flex; align-items: center; justify-content: center; margin-top: 26px; min-height: 52px; padding: 0 30px; border-radius: 30px; background: {{ section.settings.color_acento }}; color: {{ section.settings.color_acento_texto }}; font-size: 16px; font-weight: 700; text-decoration: none; transition: background .2s; }
   #shopify-section-{{ section.id }} .cervia-mc__btn:hover { filter: brightness(.9); }
   #shopify-section-{{ section.id }} .cervia-mc__btn:focus-visible { outline: 2px solid {{ section.settings.color_texto }}; outline-offset: 3px; }
   @media screen and (max-width: 749px) {
@@ -86,6 +86,7 @@
     { "type": "color", "id": "color_texto", "label": "Texto", "default": "#1B1F5E" },
     { "type": "color", "id": "color_suave", "label": "Texto suave", "default": "#585C85" },
     { "type": "color", "id": "color_acento", "label": "Acento", "default": "#EF4423" },
+    { "type": "color", "id": "color_acento_texto", "label": "Texto sobre el acento", "default": "#FFFFFF" },
     { "type": "color", "id": "color_borde", "label": "Detalles", "default": "#FFE3D6" },
     { "type": "range", "id": "padding", "label": "Espacio arriba y abajo", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
     { "type": "range", "id": "padding_movil", "label": "Espacio arriba y abajo (móvil)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 28 }

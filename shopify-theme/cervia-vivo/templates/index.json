@@ -26,8 +26,9 @@
         "padding_movil": 32,
         "color_texto": "#3B2A30",
         "color_suave": "#7A6268",
-        "color_acento": "#CF5068",
-        "color_borde": "#FFFFFF"
+        "color_acento": "#D9899A",
+        "color_borde": "#FFFFFF",
+        "color_acento_texto": "#3B2A30"
       }
     },
     "marca": {
@@ -73,8 +74,9 @@
         "padding_movil": 32,
         "color_texto": "#3B2A30",
         "color_suave": "#7A6268",
-        "color_acento": "#E5677D",
-        "color_borde": "#FCE4E8"
+        "color_acento": "#D9899A",
+        "color_borde": "#FCE4E8",
+        "color_acento_texto": "#3B2A30"
       }
     },
     "opiniones": {
@@ -205,7 +207,7 @@
         "columnas": "4",
         "estilo_movil": "lista",
         "ancho_tarjeta": 85,
-        "color_estrellas": "#E5677D",
+        "color_estrellas": "#D9899A",
         "color_estrella_vacia": "#F6DCE1",
         "cta_mostrar": false,
         "cta_texto": "Quiero mi almohada · [[precio]]",
@@ -224,11 +226,11 @@
         "cta_tam": 17,
         "cta_tam_movil": 16,
         "cta_radius": 30,
-        "cta_fondo": "#E5677D",
-        "cta_color": "#FFFFFF",
-        "cta_borde": "#E5677D",
-        "cta_fondo_hover": "#CF5068",
-        "cta_color_hover": "#FFFFFF",
+        "cta_fondo": "#F4B8C2",
+        "cta_color": "#3B2A30",
+        "cta_borde": "#F4B8C2",
+        "cta_fondo_hover": "#EFA3B0",
+        "cta_color_hover": "#3B2A30",
         "activar_tracking": true,
         "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
         "color_fondo": "#FFF6F7",
@@ -237,7 +239,7 @@
         "angulo": 180,
         "color_texto": "#3B2A30",
         "color_suave": "#7A6268",
-        "color_acento": "#E5677D",
+        "color_acento": "#D9899A",
         "color_tarjeta": "#FFFFFF",
         "color_borde": "#F6DCE1",
         "ancho": 1400,
@@ -275,8 +277,8 @@
         "forma_sello": "cuadrado",
         "tam_sello": 160,
         "tam_sello_movil": 130,
-        "color_sello": "#E5677D",
-        "color_sello_texto": "#FFFFFF",
+        "color_sello": "#F4B8C2",
+        "color_sello_texto": "#3B2A30",
         "cta_mostrar": false,
         "cta_texto": "Probarla sin riesgo · [[precio]]",
         "cta_accion": "carrito",
@@ -294,11 +296,11 @@
         "cta_tam": 17,
         "cta_tam_movil": 16,
         "cta_radius": 30,
-        "cta_fondo": "#E5677D",
-        "cta_color": "#FFFFFF",
-        "cta_borde": "#E5677D",
-        "cta_fondo_hover": "#CF5068",
-        "cta_color_hover": "#FFFFFF",
+        "cta_fondo": "#F4B8C2",
+        "cta_color": "#3B2A30",
+        "cta_borde": "#F4B8C2",
+        "cta_fondo_hover": "#EFA3B0",
+        "cta_color_hover": "#3B2A30",
         "activar_tracking": true,
         "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
         "color_fondo": "#FFFFFF",
@@ -307,7 +309,7 @@
         "angulo": 180,
         "color_texto": "#3B2A30",
         "color_suave": "#7A6268",
-        "color_acento": "#E5677D",
+        "color_acento": "#D9899A",
         "color_tarjeta": "#FFF6F7",
         "color_borde": "#F6DCE1",
         "ancho": 1400,
@@ -407,7 +409,7 @@
         "angulo": 180,
         "color_texto": "#3B2A30",
         "color_suave": "#7A6268",
-        "color_acento": "#E5677D",
+        "color_acento": "#D9899A",
         "color_tarjeta": "#FFFFFF",
         "color_borde": "#F6DCE1",
         "ancho": 1400,
@@ -453,8 +455,8 @@
             "enlace2": "shopify://collections/all",
             "color_fondo": "#FCE4E8",
             "color_texto": "#3B2A30",
-            "color_boton": "#E5677D",
-            "color_boton_texto": "#FFFFFF"
+            "color_boton": "#F4B8C2",
+            "color_boton_texto": "#3B2A30"
           }
         },
         "s2": {
@@ -471,8 +473,8 @@
             "enlace2": "",
             "color_fondo": "#FFFFFF",
             "color_texto": "#3B2A30",
-            "color_boton": "#E5677D",
-            "color_boton_texto": "#FFFFFF"
+            "color_boton": "#F4B8C2",
+            "color_boton_texto": "#3B2A30"
           }
         },
         "s3": {
@@ -487,10 +489,10 @@
             "enlace": "shopify://collections/all",
             "boton2": "",
             "enlace2": "",
-            "color_fondo": "#E5677D",
-            "color_texto": "#FFFFFF",
+            "color_fondo": "#F4B8C2",
+            "color_texto": "#3B2A30",
             "color_boton": "#FFFFFF",
-            "color_boton_texto": "#CF5068"
+            "color_boton_texto": "#3B2A30"
           }
         }
       },
@@ -507,8 +509,8 @@
         "tam": 16,
         "alto": 14,
         "velocidad": 35,
-        "color_fondo": "#E5677D",
-        "color_texto": "#FFFFFF",
+        "color_fondo": "#F4B8C2",
+        "color_texto": "#3B2A30",
         "color_estrella": "#FFFFFF"
       }
     },
@@ -526,11 +528,13 @@
         "color_media": "#FFF6F7",
         "color_texto": "#3B2A30",
         "color_suave": "#7A6268",
-        "color_acento": "#E5677D",
-        "color_acento_2": "#CF5068",
-        "color_boton": "#E5677D",
+        "color_acento": "#D9899A",
+        "color_acento_2": "#D9899A",
+        "color_boton": "#F4B8C2",
         "padding": 64,
-        "padding_movil": 36
+        "padding_movil": 36,
+        "color_boton_hover": "#EFA3B0",
+        "color_boton_texto": "#3B2A30"
       },
       "blocks": {
         "p1": {
@@ -570,7 +574,8 @@
         "color_fondo": "#FFF6F7",
         "color_titulo": "#3B2A30",
         "padding": 64,
-        "padding_movil": 36
+        "padding_movil": 36,
+        "color_acento": "#D9899A"
       },
       "blocks": {
         "c1": {

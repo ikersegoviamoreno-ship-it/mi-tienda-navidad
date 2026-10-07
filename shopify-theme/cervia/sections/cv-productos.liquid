@@ -18,7 +18,7 @@
   #shopify-section-{{ section.id }} .cv-pr__card:hover .cv-pr__img2 { opacity: 1; }
   #shopify-section-{{ section.id }} .cv-pr__card:hover .cv-pr__img1 { transform: scale(1.04); }
   #shopify-section-{{ section.id }} .cv-pr__badges { position: absolute; top: 14px; left: 14px; display: flex; flex-direction: column; gap: 6px; z-index: 1; }
-  #shopify-section-{{ section.id }} .cv-pr__badge { padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .03em; color: #FFFFFF; }
+  #shopify-section-{{ section.id }} .cv-pr__badge { padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .03em; color: {{ section.settings.color_boton_texto }}; }
   #shopify-section-{{ section.id }} .cv-pr__badge--dto { background: {{ section.settings.color_acento }}; }
   #shopify-section-{{ section.id }} .cv-pr__badge--extra { background: {{ section.settings.color_acento_2 }}; }
   #shopify-section-{{ section.id }} .cv-pr__info { display: flex; flex-direction: column; flex: 1; padding: 18px 20px 20px; }
@@ -31,8 +31,8 @@
   #shopify-section-{{ section.id }} .cv-pr__ahora { font-size: 22px; font-weight: 800; color: {{ section.settings.color_texto }}; }
   #shopify-section-{{ section.id }} .cv-pr__antes { font-size: 15px; color: {{ section.settings.color_suave }}; text-decoration: line-through; }
   #shopify-section-{{ section.id }} .cv-pr__form { margin: 14px 0 0; }
-  #shopify-section-{{ section.id }} .cv-pr__btn { width: 100%; min-height: 50px; border: 0; border-radius: 999px; background: {{ section.settings.color_boton }}; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; transition: background .2s, transform .2s; }
-  #shopify-section-{{ section.id }} .cv-pr__btn:hover { background: {{ section.settings.color_acento }}; }
+  #shopify-section-{{ section.id }} .cv-pr__btn { width: 100%; min-height: 50px; border: 0; border-radius: 999px; background: {{ section.settings.color_boton }}; color: {{ section.settings.color_boton_texto }}; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; transition: background .2s, transform .2s; }
+  #shopify-section-{{ section.id }} .cv-pr__btn:hover { background: {{ section.settings.color_boton_hover }}; }
   #shopify-section-{{ section.id }} .cv-pr__btn:focus-visible { outline: 3px solid {{ section.settings.color_acento_2 }}; outline-offset: 2px; }
   #shopify-section-{{ section.id }} .cv-pr__btn[disabled] { opacity: .5; cursor: not-allowed; }
   @media screen and (max-width: 989px) {
@@ -133,7 +133,9 @@
     { "type": "color", "id": "color_suave", "label": "Texto suave", "default": "#7A6268" },
     { "type": "color", "id": "color_acento", "label": "Acento principal", "default": "#E5677D" },
     { "type": "color", "id": "color_acento_2", "label": "Acento secundario", "default": "#CF5068" },
-    { "type": "color", "id": "color_boton", "label": "Botón", "default": "#3B2A30" },
+    { "type": "color", "id": "color_boton", "label": "Botón", "default": "#F4B8C2" },
+    { "type": "color", "id": "color_boton_hover", "label": "Botón al pasar", "default": "#EFA3B0" },
+    { "type": "color", "id": "color_boton_texto", "label": "Texto del botón y etiquetas", "default": "#3B2A30" },
     { "type": "range", "id": "padding", "label": "Espacio arriba y abajo", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
     { "type": "range", "id": "padding_movil", "label": "Espacio arriba y abajo (móvil)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 36 }
   ],
