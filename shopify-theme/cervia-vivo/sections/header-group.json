@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "cervia-header": {
+      "type": "cervia-header",
+      "settings": {
+        "mostrar_anuncio": true,
+        "anuncio": "🎁 Almohada + masajeador: −15 % en los dos · Envío gratis a toda España",
+        "anuncio_fondo": "#0B1033",
+        "anuncio_texto": "#FFFFFF",
+        "tam_anuncio": 13,
+        "logo": "shopify://shop_images/cervia-logo.png",
+        "logo_texto": "Cervia",
+        "alto_logo": 30,
+        "alto_logo_movil": 24,
+        "posicion_logo": "centro",
+        "destino_logo": "inicio",
+        "logo_url": "",
+        "mostrar_menu": true,
+        "menu": "main-menu",
+        "estilo_menu": "enlaces",
+        "titulo_menu": "Menú",
+        "lado_menu": "izquierda",
+        "texto_cerrar": "Cerrar",
+        "mostrar_carrito": true,
+        "icono_carrito": "bolsa",
+        "mostrar_contador": true,
+        "texto_carrito": "Carrito",
+        "color_contador": "#FF4A1C",
+        "color_contador_texto": "#FFFFFF",
+        "color_fondo": "#FFFFFF",
+        "color_texto": "#0B1033",
+        "color_icono": "#0B1033",
+        "color_panel": "#FFFFFF",
+        "color_borde": "#ECEEF6",
+        "sticky": true,
+        "borde_inferior": true,
+        "ancho": 1400,
+        "lateral_movil": 16,
+        "padding_superior": 14,
+        "padding_inferior": 14,
+        "padding_superior_movil": 10,
+        "padding_inferior_movil": 10
+      }
+    }
+  },
+  "order": [
+    "cervia-header"
+  ]
+}

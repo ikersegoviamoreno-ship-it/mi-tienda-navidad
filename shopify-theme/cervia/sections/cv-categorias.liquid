@@ -1,0 +1,80 @@
+{%- comment -%}
+  Cervia Vivo: tarjetas grandes de color para comprar por necesidad.
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} .cv-ca { background: {{ section.settings.color_fondo }}; padding: {{ section.settings.padding }}px 16px; font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cv-ca__caja { max-width: 1240px; margin: 0 auto; }
+  #shopify-section-{{ section.id }} .cv-ca__titulo { margin: 0 0 24px; text-align: center; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; font-weight: 800; letter-spacing: -.02em; color: {{ section.settings.color_titulo }}; }
+  #shopify-section-{{ section.id }} .cv-ca__titulo span { color: #FF4A1C; }
+  #shopify-section-{{ section.id }} .cv-ca__grid { display: grid; grid-template-columns: repeat({{ section.blocks.size | at_most: 3 | at_least: 1 }}, minmax(0, 1fr)); gap: 20px; }
+  #shopify-section-{{ section.id }} .cv-ca__tile { position: relative; display: grid; grid-template-rows: auto 1fr; min-height: 420px; border-radius: 28px; overflow: hidden; text-decoration: none; isolation: isolate; transition: transform .25s; }
+  #shopify-section-{{ section.id }} .cv-ca__tile:hover { transform: translateY(-4px); }
+  #shopify-section-{{ section.id }} .cv-ca__txt { position: relative; z-index: 2; padding: 30px 30px 0; }
+  #shopify-section-{{ section.id }} .cv-ca__eyebrow { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+  #shopify-section-{{ section.id }} .cv-ca__nombre { margin: 8px 0 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(28px, 3vw, 40px); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
+  #shopify-section-{{ section.id }} .cv-ca__flecha { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 18px; border-radius: 999px; background: #FFFFFF; color: #0B1033; font-size: 14px; font-weight: 700; }
+  #shopify-section-{{ section.id }} .cv-ca__img { position: relative; }
+  #shopify-section-{{ section.id }} .cv-ca__img img, #shopify-section-{{ section.id }} .cv-ca__img svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .cv-ca { padding: {{ section.settings.padding_movil }}px 16px; }
+    #shopify-section-{{ section.id }} .cv-ca__grid { grid-template-columns: 1fr; gap: 14px; }
+    #shopify-section-{{ section.id }} .cv-ca__tile { min-height: 340px; border-radius: 22px; }
+    #shopify-section-{{ section.id }} .cv-ca__txt { padding: 22px 22px 0; }
+  }
+{%- endstyle -%}
+
+<section class="cv-ca">
+  <div class="cv-ca__caja">
+    {%- if section.settings.titulo != blank -%}<h2 class="cv-ca__titulo">{{ section.settings.titulo }}</h2>{%- endif -%}
+    <div class="cv-ca__grid">
+      {%- for block in section.blocks -%}
+        <a class="cv-ca__tile" href="{{ block.settings.enlace | default: routes.all_products_collection_url }}" style="background: {{ block.settings.color_fondo }}; color: {{ block.settings.color_texto }};" {{ block.shopify_attributes }}>
+          <div class="cv-ca__txt">
+            {%- if block.settings.eyebrow != blank -%}<p class="cv-ca__eyebrow">{{ block.settings.eyebrow }}</p>{%- endif -%}
+            <h3 class="cv-ca__nombre">{{ block.settings.nombre }}</h3>
+            {%- if block.settings.boton != blank -%}<span class="cv-ca__flecha">{{ block.settings.boton }} <span aria-hidden="true">→</span></span>{%- endif -%}
+          </div>
+          <div class="cv-ca__img">
+            {%- if block.settings.imagen != blank -%}
+              {{ block.settings.imagen | image_url: width: 1000 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 50vw, 100vw', widths: '400, 700, 1000', alt: '' }}
+            {%- else -%}
+              {{ 'lifestyle-2' | placeholder_svg_tag }}
+            {%- endif -%}
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cervia Vivo · Categorías",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "¿Qué necesitas <span>hoy</span>?" },
+    { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFFFFF" },
+    { "type": "color", "id": "color_titulo", "label": "Título", "default": "#0B1033" },
+    { "type": "range", "id": "padding", "label": "Espacio arriba y abajo", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_movil", "label": "Espacio arriba y abajo (móvil)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 36 }
+  ],
+  "blocks": [
+    {
+      "type": "tarjeta",
+      "name": "Tarjeta",
+      "settings": [
+        { "type": "image_picker", "id": "imagen", "label": "Imagen" },
+        { "type": "text", "id": "eyebrow", "label": "Frase superior" },
+        { "type": "text", "id": "nombre", "label": "Título", "default": "Dormir mejor" },
+        { "type": "text", "id": "boton", "label": "Texto del botón", "default": "Comprar" },
+        { "type": "url", "id": "enlace", "label": "Enlace" },
+        { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#2D5BFF" },
+        { "type": "color", "id": "color_texto", "label": "Texto", "default": "#FFFFFF" }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [{ "name": "Cervia Vivo · Categorías", "blocks": [{ "type": "tarjeta" }, { "type": "tarjeta" }] }]
+}
+{% endschema %}

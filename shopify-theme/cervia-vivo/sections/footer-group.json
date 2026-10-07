@@ -1,0 +1,196 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "cervia-footer": {
+      "type": "cervia-footer",
+      "settings": {
+        "logo": "shopify://shop_images/cervia-logo-claro.png",
+        "banda_titulo": "Cuida tu cuello desde hoy",
+        "frase": "Descanso y alivio para tu cuello, cada día.",
+        "cta_texto": "Ver la almohada · [[precio]]",
+        "padding_superior_movil": 28,
+        "padding_inferior_movil": 28,
+        "color_fondo": "#0B1033",
+        "color_texto": "#FFFFFF",
+        "color_suave": "#B9C2E8",
+        "color_acento": "#FFD23F",
+        "cta_fondo": "#FF4A1C",
+        "cta_color": "#FFFFFF",
+        "cta_fondo_hover": "#E03A10",
+        "cta_color_hover": "#FFFFFF",
+        "marquee_fondo": "#2D5BFF",
+        "marquee_texto": "#FFFFFF",
+        "cta_borde": "#FF4A1C"
+      },
+      "blocks": {
+        "promesa_0": {
+          "type": "promesa",
+          "settings": {
+            "icono": "camion",
+            "texto": "Envío gratis a toda España"
+          }
+        },
+        "promesa_1": {
+          "type": "promesa",
+          "settings": {
+            "icono": "luna",
+            "texto": "30 noches de prueba"
+          }
+        },
+        "promesa_2": {
+          "type": "promesa",
+          "settings": {
+            "icono": "candado",
+            "texto": "Pago 100 % seguro"
+          }
+        },
+        "promesa_3": {
+          "type": "promesa",
+          "settings": {
+            "icono": "almohada",
+            "texto": "Memory foam con contorno"
+          }
+        },
+        "promesa_4": {
+          "type": "promesa",
+          "settings": {
+            "icono": "ciclo",
+            "texto": "Devolución fácil"
+          }
+        },
+        "confianza_5": {
+          "type": "confianza",
+          "settings": {
+            "icono": "camion",
+            "titulo": "Envío gratis",
+            "texto": "Preparamos tu pedido en 1–2 días laborables."
+          }
+        },
+        "confianza_6": {
+          "type": "confianza",
+          "settings": {
+            "icono": "ciclo",
+            "titulo": "Prueba sin riesgo",
+            "texto": "30 días para decidir con calma."
+          }
+        },
+        "confianza_7": {
+          "type": "confianza",
+          "settings": {
+            "icono": "escudo_check",
+            "titulo": "Pago seguro",
+            "texto": "Tarjeta, PayPal, Bizum y más, con cifrado."
+          }
+        },
+        "confianza_8": {
+          "type": "confianza",
+          "settings": {
+            "icono": "chat",
+            "titulo": "Te ayudamos",
+            "texto": "Escríbenos desde la página de contacto."
+          }
+        },
+        "legal_11": {
+          "type": "legal",
+          "settings": {
+            "tipo": "privacidad",
+            "texto": "Privacidad"
+          }
+        },
+        "legal_12": {
+          "type": "legal",
+          "settings": {
+            "tipo": "devoluciones",
+            "texto": "Devoluciones"
+          }
+        },
+        "legal_13": {
+          "type": "legal",
+          "settings": {
+            "tipo": "envio",
+            "texto": "Envíos"
+          }
+        },
+        "legal_14": {
+          "type": "legal",
+          "settings": {
+            "tipo": "terminos",
+            "texto": "Términos",
+            "url": "/pages/terminos-y-condiciones"
+          }
+        },
+        "legal_15": {
+          "type": "legal",
+          "settings": {
+            "tipo": "contacto",
+            "texto": "Contacto"
+          }
+        },
+        "legal_nosotros": {
+          "type": "legal",
+          "settings": {
+            "tipo": "otro",
+            "texto": "Sobre nosotros",
+            "url": "/pages/sobre-nosotros"
+          }
+        },
+        "legal_seguimiento": {
+          "type": "legal",
+          "settings": {
+            "tipo": "otro",
+            "texto": "Seguimiento de pedido",
+            "url": "/pages/seguimiento-pedido"
+          }
+        },
+        "red_tiktok": {
+          "type": "red",
+          "settings": {
+            "red": "tiktok",
+            "url": "https://www.tiktok.com/@cervia.shop"
+          }
+        }
+      },
+      "block_order": [
+        "promesa_0",
+        "promesa_1",
+        "promesa_2",
+        "promesa_3",
+        "promesa_4",
+        "confianza_5",
+        "confianza_6",
+        "confianza_7",
+        "confianza_8",
+        "legal_nosotros",
+        "legal_seguimiento",
+        "legal_11",
+        "legal_12",
+        "legal_13",
+        "legal_14",
+        "legal_15",
+        "red_tiktok"
+      ]
+    },
+    "cervia-popup": {
+      "type": "cervia-popup",
+      "settings": {
+        "activar": true,
+        "imagen": "shopify://shop_images/almohada-boca-arriba-cama-cuadrada.jpg",
+        "codigo": "BIENVENIDA10"
+      }
+    },
+    "suscripcion": {
+      "type": "cervia-newsletter",
+      "settings": {
+        "color_fondo": "#2D5BFF",
+        "color_texto": "#FFFFFF",
+        "color_acento": "#FF4A1C"
+      }
+    }
+  },
+  "order": [
+    "suscripcion",
+    "cervia-footer",
+    "cervia-popup"
+  ]
+}

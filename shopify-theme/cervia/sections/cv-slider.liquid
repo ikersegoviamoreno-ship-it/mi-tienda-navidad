@@ -1,0 +1,146 @@
+{%- comment -%}
+  Cervia Vivo: carrusel de portada a pantalla completa.
+  Cada diapositiva es un bloque con fondo de color vivo, texto a un lado e imagen al otro.
+{%- endcomment -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} { margin: 0 !important; }
+  #shopify-section-{{ section.id }} + .shopify-section { margin-top: 0 !important; }
+  #shopify-section-{{ section.id }} .cv-sl { position: relative; font-family: var(--font-body, var(--font-body-family)); }
+  #shopify-section-{{ section.id }} .cv-sl__pista { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+  #shopify-section-{{ section.id }} .cv-sl__pista::-webkit-scrollbar { display: none; }
+  #shopify-section-{{ section.id }} .cv-sl__slide { flex: 0 0 100%; scroll-snap-align: start; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: {{ section.settings.alto }}px; }
+  #shopify-section-{{ section.id }} .cv-sl__texto { display: flex; flex-direction: column; justify-content: center; padding: 48px clamp(24px, 6vw, 96px); }
+  #shopify-section-{{ section.id }} .cv-sl__badge { align-self: flex-start; margin-bottom: 18px; padding: 7px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  #shopify-section-{{ section.id }} .cv-sl__eyebrow { margin: 0 0 10px; font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+  #shopify-section-{{ section.id }} .cv-sl__titulo { margin: 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(34px, 4.6vw, 64px); line-height: 1.02; font-weight: 800; letter-spacing: -.02em; }
+  #shopify-section-{{ section.id }} .cv-sl__desc { margin: 18px 0 0; max-width: 460px; font-size: 18px; line-height: 1.55; opacity: .9; }
+  #shopify-section-{{ section.id }} .cv-sl__btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  #shopify-section-{{ section.id }} .cv-sl__btn { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 32px; border-radius: 999px; font-size: 16px; font-weight: 700; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+  #shopify-section-{{ section.id }} .cv-sl__btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+  #shopify-section-{{ section.id }} .cv-sl__btn--2 { background: transparent !important; border: 2px solid currentColor; }
+  #shopify-section-{{ section.id }} .cv-sl__media { position: relative; overflow: hidden; }
+  #shopify-section-{{ section.id }} .cv-sl__media img, #shopify-section-{{ section.id }} .cv-sl__media svg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #shopify-section-{{ section.id }} .cv-sl__puntos { position: absolute; left: 0; right: 0; bottom: 18px; display: flex; justify-content: center; gap: 8px; }
+  #shopify-section-{{ section.id }} .cv-sl__punto { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: rgba(255,255,255,.55); cursor: pointer; transition: width .3s, background .3s; }
+  #shopify-section-{{ section.id }} .cv-sl__punto[aria-current="true"] { width: 28px; background: #FFFFFF; }
+  #shopify-section-{{ section.id }} .cv-sl__flecha { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border: 0; border-radius: 50%; background: #FFFFFF; color: #0B1033; font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 6px 18px rgba(11,16,51,.18); }
+  #shopify-section-{{ section.id }} .cv-sl__flecha--prev { left: 18px; }
+  #shopify-section-{{ section.id }} .cv-sl__flecha--next { right: 18px; }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .cv-sl__slide { grid-template-columns: 1fr; min-height: 0; }
+    #shopify-section-{{ section.id }} .cv-sl__media { order: -1; aspect-ratio: 4 / 3.4; }
+    #shopify-section-{{ section.id }} .cv-sl__texto { padding: 26px 20px 52px; text-align: center; align-items: center; }
+    #shopify-section-{{ section.id }} .cv-sl__badge { align-self: center; }
+    #shopify-section-{{ section.id }} .cv-sl__desc { font-size: 16px; margin-top: 12px; }
+    #shopify-section-{{ section.id }} .cv-sl__btns { justify-content: center; margin-top: 20px; width: 100%; }
+    #shopify-section-{{ section.id }} .cv-sl__btn { flex: 1 1 140px; min-height: 50px; padding: 0 18px; font-size: 15px; }
+    #shopify-section-{{ section.id }} .cv-sl__flecha { display: none; }
+  }
+{%- endstyle -%}
+
+<section class="cv-sl" aria-roledescription="carrusel" aria-label="{{ section.settings.etiqueta | escape }}" data-cv-slider data-autoplay="{{ section.settings.autoplay }}" data-segundos="{{ section.settings.segundos }}">
+  <div class="cv-sl__pista" data-pista>
+    {%- for block in section.blocks -%}
+      {%- assign alt_img = block.settings.imagen.alt | default: block.settings.titulo | strip_html | escape -%}
+      <div class="cv-sl__slide" role="group" aria-roledescription="diapositiva" aria-label="{{ forloop.index }} / {{ section.blocks.size }}" style="background: {{ block.settings.color_fondo }}; color: {{ block.settings.color_texto }};" {{ block.shopify_attributes }}>
+        <div class="cv-sl__texto">
+          {%- if block.settings.badge != blank -%}<span class="cv-sl__badge" style="background: {{ block.settings.color_texto }}; color: {{ block.settings.color_fondo }};">{{ block.settings.badge }}</span>{%- endif -%}
+          {%- if block.settings.eyebrow != blank -%}<p class="cv-sl__eyebrow">{{ block.settings.eyebrow }}</p>{%- endif -%}
+          {%- if forloop.first -%}<h1 class="cv-sl__titulo">{{ block.settings.titulo }}</h1>{%- else -%}<h2 class="cv-sl__titulo">{{ block.settings.titulo }}</h2>{%- endif -%}
+          {%- if block.settings.texto != blank -%}<p class="cv-sl__desc">{{ block.settings.texto }}</p>{%- endif -%}
+          {%- if block.settings.boton != blank or block.settings.boton2 != blank -%}
+            <div class="cv-sl__btns">
+              {%- if block.settings.boton != blank -%}<a class="cv-sl__btn" href="{{ block.settings.enlace | default: routes.all_products_collection_url }}" style="background: {{ block.settings.color_boton }}; color: {{ block.settings.color_boton_texto }};">{{ block.settings.boton }}</a>{%- endif -%}
+              {%- if block.settings.boton2 != blank -%}<a class="cv-sl__btn cv-sl__btn--2" href="{{ block.settings.enlace2 | default: routes.all_products_collection_url }}" style="color: {{ block.settings.color_texto }};">{{ block.settings.boton2 }}</a>{%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+        <div class="cv-sl__media">
+          {%- if block.settings.imagen != blank -%}
+            {%- if forloop.first -%}{%- assign carga = 'eager' -%}{%- else -%}{%- assign carga = 'lazy' -%}{%- endif -%}
+            {{ block.settings.imagen | image_url: width: 1600 | image_tag: loading: carga, sizes: '(min-width: 750px) 50vw, 100vw', widths: '500, 800, 1100, 1600', alt: alt_img }}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag }}
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+  {%- if section.blocks.size > 1 -%}
+    <button type="button" class="cv-sl__flecha cv-sl__flecha--prev" data-prev aria-label="Anterior">‹</button>
+    <button type="button" class="cv-sl__flecha cv-sl__flecha--next" data-next aria-label="Siguiente">›</button>
+    <div class="cv-sl__puntos">
+      {%- for block in section.blocks -%}
+        <button type="button" class="cv-sl__punto" data-punto="{{ forloop.index0 }}" aria-label="Ir a la diapositiva {{ forloop.index }}"{% if forloop.first %} aria-current="true"{% endif %}></button>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+
+<script>
+  (function () {
+    var raiz = document.querySelector('#shopify-section-{{ section.id }} [data-cv-slider]');
+    if (!raiz || raiz.dataset.listo) return;
+    raiz.dataset.listo = '1';
+    var pista = raiz.querySelector('[data-pista]');
+    var puntos = raiz.querySelectorAll('[data-punto]');
+    var total = pista.children.length;
+    if (total < 2) return;
+    var actual = 0, timer = null;
+    function ir(i) { actual = (i + total) % total; pista.scrollTo({ left: pista.clientWidth * actual, behavior: 'smooth' }); }
+    function marcar() {
+      actual = Math.round(pista.scrollLeft / pista.clientWidth);
+      puntos.forEach(function (p, i) { p.setAttribute('aria-current', i === actual ? 'true' : 'false'); });
+    }
+    pista.addEventListener('scroll', function () { window.requestAnimationFrame(marcar); }, { passive: true });
+    puntos.forEach(function (p) { p.addEventListener('click', function () { ir(+p.dataset.punto); reiniciar(); }); });
+    raiz.querySelector('[data-prev]').addEventListener('click', function () { ir(actual - 1); reiniciar(); });
+    raiz.querySelector('[data-next]').addEventListener('click', function () { ir(actual + 1); reiniciar(); });
+    var reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function reiniciar() {
+      clearInterval(timer);
+      if (raiz.dataset.autoplay === 'true' && !reducido) timer = setInterval(function () { ir(actual + 1); }, (+raiz.dataset.segundos || 5) * 1000);
+    }
+    raiz.addEventListener('mouseenter', function () { clearInterval(timer); });
+    raiz.addEventListener('mouseleave', reiniciar);
+    raiz.addEventListener('touchstart', function () { clearInterval(timer); }, { passive: true });
+    reiniciar();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Cervia Vivo · Carrusel",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "etiqueta", "label": "Nombre del carrusel (accesibilidad)", "default": "Novedades de Cervia" },
+    { "type": "range", "id": "alto", "label": "Alto en escritorio", "min": 360, "max": 720, "step": 20, "unit": "px", "default": 540 },
+    { "type": "checkbox", "id": "autoplay", "label": "Pasar solo", "default": true },
+    { "type": "range", "id": "segundos", "label": "Segundos por diapositiva", "min": 3, "max": 10, "step": 1, "default": 5 }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Diapositiva",
+      "settings": [
+        { "type": "image_picker", "id": "imagen", "label": "Imagen" },
+        { "type": "text", "id": "badge", "label": "Etiqueta" },
+        { "type": "text", "id": "eyebrow", "label": "Frase superior" },
+        { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "Tu cuello, en buenas manos" },
+        { "type": "text", "id": "texto", "label": "Texto" },
+        { "type": "text", "id": "boton", "label": "Botón", "default": "Comprar ahora" },
+        { "type": "url", "id": "enlace", "label": "Enlace del botón" },
+        { "type": "text", "id": "boton2", "label": "Botón secundario" },
+        { "type": "url", "id": "enlace2", "label": "Enlace del botón secundario" },
+        { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FF4A1C" },
+        { "type": "color", "id": "color_texto", "label": "Texto", "default": "#FFFFFF" },
+        { "type": "color", "id": "color_boton", "label": "Botón", "default": "#FFFFFF" },
+        { "type": "color", "id": "color_boton_texto", "label": "Texto del botón", "default": "#0B1033" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [{ "name": "Cervia Vivo · Carrusel", "blocks": [{ "type": "slide" }, { "type": "slide" }] }]
+}
+{% endschema %}
