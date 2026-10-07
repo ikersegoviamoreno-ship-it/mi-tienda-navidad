@@ -55,7 +55,13 @@
       "run_id": "01M4A200784AN2VSHD3GQ7Y1CR",
       "usd": 0.284,
       "status": "ok"
+    },
+    {
+      "what": "clip dive_tierra (Seedance 2.0 480p 4s)",
+      "run_id": "01M4A2EV0QSVV6Z0EC315TW1XH",
+      "usd": 0.284,
+      "status": "ok"
     }
   ],
-  "total_usd": 0.512
+  "total_usd": 0.796
 }
