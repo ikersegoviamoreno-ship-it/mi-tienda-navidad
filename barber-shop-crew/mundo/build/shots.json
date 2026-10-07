@@ -110,18 +110,6 @@
       "file": "keyframes/I_tierra.png"
     },
     {
-      "id": "E_portal",
-      "role": "exterior",
-      "chapter": 1,
-      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Approach view of one area of the world: the glowing shop front opening into a swirling vortex made of rotating red, white and blue barber-pole stripes of light Camera outside and slightly above this area, area fills the middle third of the frame, neighbouring areas soft at the edges. Clear visible entry point for the camera: the bright centre of the spinning spiral. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
-      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
-      "reference_images": [
-        "K_world"
-      ],
-      "aspect": "16:9",
-      "file": "keyframes/E_portal.png"
-    },
-    {
       "id": "I_portal",
       "role": "interior",
       "chapter": 1,
@@ -168,7 +156,7 @@
       "start_frame": "K_world",
       "end_frame": "E_tierra",
       "seconds": 4,
-      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera descends from high above the whole world and glides toward Rumbo a la Tierra. Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "prompt": "(hecho) espacio → órbita",
       "file": "clips/intro.mp4"
     },
     {
@@ -178,27 +166,17 @@
       "start_frame": "E_tierra",
       "end_frame": "I_tierra",
       "seconds": 4,
-      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera pushes forward through a break in the clouds right above the pulsing point of light and flies inside, settling on: flying low over a quiet night-time Spanish avenue with palm trees and wet asphalt reflecting neon, a single shop front glowing red and blue at the end of the street Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "prompt": "(hecho) nubes → ciudad → avenida frente al portal",
       "file": "clips/dive_tierra.mp4"
-    },
-    {
-      "id": "transit_tierra",
-      "kind": "transit",
-      "chapter": 0,
-      "start_frame": "I_tierra",
-      "end_frame": "E_portal",
-      "seconds": 4,
-      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera rises up and back out of Rumbo a la Tierra, glides over the world and arrives in front of Al otro lado. Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
-      "file": "clips/transit_tierra.mp4"
     },
     {
       "id": "dive_portal",
       "kind": "dive",
       "chapter": 1,
-      "start_frame": "E_portal",
+      "start_frame": "I_tierra",
       "end_frame": "I_portal",
       "seconds": 4,
-      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera pushes forward through the bright centre of the spinning spiral and flies inside, settling on: inside a long tunnel of spinning red, white and blue light stripes, chrome scissors and straight razors floating weightless like asteroids Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "prompt": "One continuous single-take camera move, no cuts. Starting exactly on @Image1 (night avenue facing a glowing red-white-blue spiral portal in a shop doorway), the camera glides forward along the wet street, enters the spinning spiral portal and flies inside a tunnel of spinning red, white and blue light stripes with floating chrome scissors and razors, arriving exactly on @Image2. Constant smooth speed, no shake. No text, no logos.",
       "file": "clips/dive_portal.mp4"
     },
     {
@@ -208,7 +186,7 @@
       "start_frame": "I_portal",
       "end_frame": "E_universo",
       "seconds": 4,
-      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera rises up and back out of Al otro lado, glides over the world and arrives in front of Universo Crew. Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "prompt": "One continuous single-take camera move, no cuts. Starting exactly on @Image1 (inside a tunnel of spinning red, white and blue light), the camera rushes toward the bright light at the end of the tunnel, bursts out into a strange violet universe and slows down in front of a single barbershop floating like an island, arriving exactly on @Image2. Constant smooth speed, no shake. No text, no logos.",
       "file": "clips/transit_portal.mp4"
     },
     {
@@ -218,7 +196,7 @@
       "start_frame": "E_universo",
       "end_frame": "I_universo",
       "seconds": 4,
-      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera pushes forward through the open glass front of the floating barbershop and flies inside, settling on: inside the barbershop: vintage leather barber chair in the centre under industrial pendant lamps, exposed silver ventilation ducts on the dark ceiling, wood-look floor, framed pictures and a guitar on the wall, the alien violet universe visible through the windows Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "prompt": "One continuous single-take camera move, no cuts. Starting exactly on @Image1 (a barbershop floating like an island in a violet universe, its glass front open), the camera glides forward through the open glass front into the barbershop and settles at eye level facing the vintage leather barber chair under industrial pendant lamps, arriving exactly on @Image2. Constant smooth speed, no shake. No text, no logos.",
       "file": "clips/dive_universo.mp4"
     }
   ],
@@ -227,8 +205,7 @@
       "type": "hold",
       "after": null,
       "scroll": 0.35,
-      "chapter": null,
-      "note": "pantalla de entrada (hero)"
+      "chapter": null
     },
     {
       "type": "clip",
@@ -238,18 +215,13 @@
     {
       "type": "clip",
       "id": "dive_tierra",
-      "scroll": 1.4
+      "scroll": 1.6
     },
     {
       "type": "hold",
       "after": "dive_tierra",
       "scroll": 0.7,
       "chapter": 0
-    },
-    {
-      "type": "clip",
-      "id": "transit_tierra",
-      "scroll": 1.4
     },
     {
       "type": "clip",
@@ -275,7 +247,7 @@
     {
       "type": "hold",
       "after": "dive_universo",
-      "scroll": 0.7,
+      "scroll": 0.9,
       "chapter": 2
     }
   ],
@@ -285,6 +257,6 @@
     "keyframes": 7,
     "video_usd_estimate": 1.61,
     "price_source": "Monid Seedance 2.0 480p, 2026-10-07",
-    "note": "Solo vídeo. Añade las imágenes (créditos de Higgsfield) y ~20 % de margen para repeticiones."
+    "note": "Cadena revisada: 5 clips (2 hechos). E_portal eliminado por duplicar I_tierra; I_portal e I_universo regenerados sin imagen de referencia."
   }
 }

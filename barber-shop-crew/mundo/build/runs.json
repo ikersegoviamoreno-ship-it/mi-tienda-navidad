@@ -5,9 +5,9 @@
     "E_portal": "01M4A1TDSYFSEJFHC36XZNFEJA",
     "E_universo": "01M4A1XDR5ZZ1NFNAE9MK7NJ57",
     "I_tierra": "01M4A1ZMQHRFQ664J0T509KQ5E",
-    "I_portal": "01M4A1ZP2AFY54W1P6KDDPNGXW",
+    "I_portal": "01M4A304872NE15R1BNHFBWEA9",
     "clip_intro": "01M4A200784AN2VSHD3GQ7Y1CR",
-    "I_universo": "01M4A22C3V165SES7VWFJ2FSFP",
+    "I_universo": "01M4A305NWM4050CNQHV9R9K6Q",
     "clip_dive_tierra": "01M4A2EV0QSVV6Z0EC315TW1XH"
   },
   "note": "Las URL firmadas no se guardan en el repo (contienen IDs de clave del proveedor y caducan en ~24 h). Se recuperan con monid_get_run <run_id>."

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "fps": 24,
+  "width": 864,
+  "height": 496,
+  "poster": "poster.webp",
+  "frames": {
+    "pattern": "frames/f_{i}.webp",
+    "count": 193,
+    "pad": 5
+  },
+  "timeline": [
+    {
+      "type": "hold",
+      "at": 0,
+      "scroll": 0.35
+    },
+    {
+      "type": "clip",
+      "id": "intro",
+      "from": 0,
+      "to": 96,
+      "scroll": 1.4
+    },
+    {
+      "type": "clip",
+      "id": "dive_tierra",
+      "from": 96,
+      "to": 192,
+      "scroll": 1.6
+    },
+    {
+      "type": "hold",
+      "at": 192,
+      "scroll": 0.7,
+      "chapter": 0
+    }
+  ],
+  "chapters": [
+    {
+      "id": "tierra",
+      "title": "Rumbo a la Tierra",
+      "copy": "Atravesamos el espacio hasta un punto concreto: Av. Ancha de Castelar, 187.",
+      "cta": null,
+      "still": "stills/chapter_0.webp"
+    },
+    {
+      "id": "portal",
+      "title": "Al otro lado",
+      "copy": "Degradados, barba, color y diseño. Pasa por el portal y deja el resto del mundo fuera.",
+      "cta": null,
+      "still": "stills/chapter_1.webp"
+    },
+    {
+      "id": "universo",
+      "title": "Universo Crew",
+      "copy": "4,8 ★ con 356 reseñas en Google. Lunes a viernes, 10:00–13:30 y 16:30–20:30. Llama al 966 17 09 82.",
+      "cta": {
+        "label": "Llamar · 966 17 09 82",
+        "url": "tel:+34966170982"
+      },
+      "still": "stills/chapter_2.webp"
+    }
+  ],
+  "seams": [
+    {
+      "clip": "intro",
+      "frames": 97,
+      "start_vs_keyframe": 3.173032522201538,
+      "end_vs_keyframe": 9.604938507080078,
+      "seam_vs_previous": null
+    },
+    {
+      "clip": "dive_tierra",
+      "frames": 97,
+      "start_vs_keyframe": 9.038579940795898,
+      "end_vs_keyframe": 13.427854537963867,
+      "seam_vs_previous": 1.426311731338501
+    }
+  ]
+}

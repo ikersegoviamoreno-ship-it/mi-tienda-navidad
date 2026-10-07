@@ -61,7 +61,19 @@
       "run_id": "01M4A2EV0QSVV6Z0EC315TW1XH",
       "usd": 0.284,
       "status": "ok"
+    },
+    {
+      "what": "I_portal v2 (sin referencia)",
+      "run_id": "01M4A304872NE15R1BNHFBWEA9",
+      "usd": 0.03,
+      "status": "ok"
+    },
+    {
+      "what": "I_universo v2 (sin referencia)",
+      "run_id": "01M4A305NWM4050CNQHV9R9K6Q",
+      "usd": 0.03,
+      "status": "ok"
     }
   ],
-  "total_usd": 0.796
+  "total_usd": 0.856
 }
