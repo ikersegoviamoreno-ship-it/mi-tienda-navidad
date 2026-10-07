@@ -6,7 +6,7 @@
   "poster": "poster.webp",
   "frames": {
     "pattern": "frames/f_{i}.webp",
-    "count": 193,
+    "count": 481,
     "pad": 5
   },
   "timeline": [
@@ -34,6 +34,39 @@
       "at": 192,
       "scroll": 0.7,
       "chapter": 0
+    },
+    {
+      "type": "clip",
+      "id": "dive_portal",
+      "from": 192,
+      "to": 288,
+      "scroll": 1.4
+    },
+    {
+      "type": "hold",
+      "at": 288,
+      "scroll": 0.7,
+      "chapter": 1
+    },
+    {
+      "type": "clip",
+      "id": "transit_portal",
+      "from": 288,
+      "to": 384,
+      "scroll": 1.4
+    },
+    {
+      "type": "clip",
+      "id": "dive_universo",
+      "from": 384,
+      "to": 480,
+      "scroll": 1.4
+    },
+    {
+      "type": "hold",
+      "at": 480,
+      "scroll": 0.9,
+      "chapter": 2
     }
   ],
   "chapters": [
@@ -74,8 +107,29 @@
       "clip": "dive_tierra",
       "frames": 97,
       "start_vs_keyframe": 9.035880088806152,
-      "end_vs_keyframe": 14.604744911193848,
+      "end_vs_keyframe": 24.421875,
       "seam_vs_previous": 1.4452160596847534
+    },
+    {
+      "clip": "dive_portal",
+      "frames": 97,
+      "start_vs_keyframe": 24.61111068725586,
+      "end_vs_keyframe": 13.373842239379883,
+      "seam_vs_previous": 2.5140817165374756
+    },
+    {
+      "clip": "transit_portal",
+      "frames": 97,
+      "start_vs_keyframe": 13.257908821105957,
+      "end_vs_keyframe": 7.723572731018066,
+      "seam_vs_previous": 1.7907021045684814
+    },
+    {
+      "clip": "dive_universo",
+      "frames": 97,
+      "start_vs_keyframe": 7.399112701416016,
+      "end_vs_keyframe": 7.075231552124023,
+      "seam_vs_previous": 1.2515431642532349
     }
   ]
 }

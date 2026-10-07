@@ -73,7 +73,25 @@
       "run_id": "01M4A305NWM4050CNQHV9R9K6Q",
       "usd": 0.03,
       "status": "ok"
+    },
+    {
+      "what": "clip dive_portal (Seedance 2.0 480p 4s)",
+      "run_id": "01M4A3BCPFHQSTBXAFSQ8VYAK0",
+      "usd": 0.284,
+      "status": "ok"
+    },
+    {
+      "what": "clip transit_portal (Seedance 2.0 480p 4s)",
+      "run_id": "01M4A3BE56TC6PGDEDXCMW8WPW",
+      "usd": 0.284,
+      "status": "ok"
+    },
+    {
+      "what": "clip dive_universo (Seedance 2.0 480p 4s)",
+      "run_id": "01M4A3BFF6C9RDZ4WNYQT4ENTD",
+      "usd": 0.284,
+      "status": "ok"
     }
   ],
-  "total_usd": 0.856
+  "total_usd": 1.708
 }
