@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-07",
+  "video": {
+    "channel": "monid-mcp", "provider": "bytedance", "model": "seedance-2.0",
+    "endpoint": "/v1/video/seedance-2.0", "first_last_frame": true,
+    "durations_s": "4-15", "resolutions": ["480p", "720p", "1080p", "4k"],
+    "price": { "usd_per_1M_tokens": { "480p": 7, "720p": 7, "1080p": 7.7 },
+               "tokens_per_second_note": "≈ ancho × alto × 24 / 1024 (720p 16:9 ≈ 21.600 tok/s; 480p ≈ 9.600 tok/s)",
+               "usd_per_second_estimate": { "480p": 0.0672, "720p": 0.1512 },
+               "source": "monid_inspect bytedance /v1/video/seedance-2.0, 2026-10-07" },
+    "constraints": ["imágenes de entrada solo por URL https pública (no base64)", "rechaza caras humanas reales en referencias", "URL del vídeo caduca en ~24 h"]
+  },
+  "images": {
+    "channel": "monid-mcp", "provider": "alibaba", "model": "qwen-image-3.0",
+    "reference_images": "hasta 3, por URL pública", "price_usd": { "per_output": 0.03, "per_input": 0.003 },
+    "note": "Higgsfield no está conectado; se usa el modelo de imagen disponible en Monid"
+  },
+  "wallet_usd": 1.00,
+  "user_budget_usd": 2.50,
+  "fallback_used": false
+}

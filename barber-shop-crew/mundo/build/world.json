@@ -3,8 +3,17 @@
     "name": "Barber Shop Crew",
     "tagline": "La única barbería de su universo",
     "voice": "cercana, segura, con humor; tuteo",
-    "colors": { "bg": "#05050a", "ink": "#ffffff", "accent": "#ff3b47", "secondary": "#2b5cff", "metal": "#e8e8ed" },
-    "fonts": { "display": "Inter", "body": "Inter" },
+    "colors": {
+      "bg": "#05050a",
+      "ink": "#ffffff",
+      "accent": "#ff3b47",
+      "secondary": "#2b5cff",
+      "metal": "#e8e8ed"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter"
+    },
     "logo": "solo en la interfaz (no dentro de las imágenes)"
   },
   "art_direction": {
@@ -45,7 +54,10 @@
       "title": "Universo Crew",
       "kicker": "Solo existe la barbería",
       "copy": "4,8 ★ con 356 reseñas en Google. Lunes a viernes, 10:00–13:30 y 16:30–20:30. Llama al 966 17 09 82.",
-      "cta": { "label": "Llamar · 966 17 09 82", "url": "tel:+34966170982" },
+      "cta": {
+        "label": "Llamar · 966 17 09 82",
+        "url": "tel:+34966170982"
+      },
       "scene": "a strange empty universe of violet fog and floating light particles where the only thing that exists is one industrial barbershop interior floating like an island, with exposed silver ducts, hanging industrial pendant lamps and vintage leather barber chairs",
       "entry": "the open glass front of the floating barbershop",
       "interior": "inside the barbershop: vintage leather barber chair in the centre under industrial pendant lamps, exposed silver ventilation ducts on the dark ceiling, wood-look floor, framed pictures and a guitar on the wall, the alien violet universe visible through the windows",
@@ -53,5 +65,10 @@
       "reference_photo": "build/refs/local.webp"
     }
   ],
-  "camera": { "clip_seconds": 5, "clip_scroll": 1.4, "hold_scroll": 0.7, "outro": true }
+  "camera": {
+    "clip_seconds": 4,
+    "clip_scroll": 1.4,
+    "hold_scroll": 0.7,
+    "outro": false
+  }
 }
