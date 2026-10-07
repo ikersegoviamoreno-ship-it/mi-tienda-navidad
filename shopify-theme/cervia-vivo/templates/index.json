@@ -21,13 +21,13 @@
         "texto": "<p>De día, el masajeador con calor suelta la tensión del cuello y los hombros. De noche, la almohada cervical mantiene tu cuello recto mientras duermes.</p><p>Añade los dos al carrito y te descontamos <strong>automáticamente un 15 % en ambos</strong>. Sin códigos.</p>",
         "boton": "Ver productos",
         "enlace": "shopify://collections/all",
-        "color_fondo": "#FFF0EB",
+        "color_fondo": "#FCE4E8",
         "padding": 56,
         "padding_movil": 32,
-        "color_texto": "#0B1033",
-        "color_suave": "#5A6080",
-        "color_acento": "#FF4A1C",
-        "color_borde": "#FFD9CC"
+        "color_texto": "#3B2A30",
+        "color_suave": "#7A6268",
+        "color_acento": "#CF5068",
+        "color_borde": "#FFFFFF"
       }
     },
     "marca": {
@@ -71,10 +71,10 @@
         "color_fondo": "#FFFFFF",
         "padding": 56,
         "padding_movil": 32,
-        "color_texto": "#0B1033",
-        "color_suave": "#5A6080",
-        "color_acento": "#2D5BFF",
-        "color_borde": "#E3E9FF"
+        "color_texto": "#3B2A30",
+        "color_suave": "#7A6268",
+        "color_acento": "#E5677D",
+        "color_borde": "#FCE4E8"
       }
     },
     "opiniones": {
@@ -205,8 +205,8 @@
         "columnas": "4",
         "estilo_movil": "lista",
         "ancho_tarjeta": 85,
-        "color_estrellas": "#ffb400",
-        "color_estrella_vacia": "#E3E9FF",
+        "color_estrellas": "#E5677D",
+        "color_estrella_vacia": "#F6DCE1",
         "cta_mostrar": false,
         "cta_texto": "Quiero mi almohada · [[precio]]",
         "cta_accion": "carrito",
@@ -224,22 +224,22 @@
         "cta_tam": 17,
         "cta_tam_movil": 16,
         "cta_radius": 30,
-        "cta_fondo": "#FF4A1C",
+        "cta_fondo": "#E5677D",
         "cta_color": "#FFFFFF",
-        "cta_borde": "#FF4A1C",
-        "cta_fondo_hover": "#E03A10",
-        "cta_color_hover": "#fff8f2",
+        "cta_borde": "#E5677D",
+        "cta_fondo_hover": "#CF5068",
+        "cta_color_hover": "#FFFFFF",
         "activar_tracking": true,
         "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
-        "color_fondo": "#F4F6FF",
+        "color_fondo": "#FFF6F7",
         "gradiente": false,
-        "color_fondo_2": "#F4F6FF",
+        "color_fondo_2": "#FFF6F7",
         "angulo": 180,
-        "color_texto": "#0B1033",
-        "color_suave": "#5A6080",
-        "color_acento": "#FF4A1C",
+        "color_texto": "#3B2A30",
+        "color_suave": "#7A6268",
+        "color_acento": "#E5677D",
         "color_tarjeta": "#FFFFFF",
-        "color_borde": "#E3E9FF",
+        "color_borde": "#F6DCE1",
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 20,
@@ -275,7 +275,7 @@
         "forma_sello": "cuadrado",
         "tam_sello": 160,
         "tam_sello_movil": 130,
-        "color_sello": "#2D5BFF",
+        "color_sello": "#E5677D",
         "color_sello_texto": "#FFFFFF",
         "cta_mostrar": false,
         "cta_texto": "Probarla sin riesgo · [[precio]]",
@@ -294,22 +294,22 @@
         "cta_tam": 17,
         "cta_tam_movil": 16,
         "cta_radius": 30,
-        "cta_fondo": "#FF4A1C",
+        "cta_fondo": "#E5677D",
         "cta_color": "#FFFFFF",
-        "cta_borde": "#FF4A1C",
-        "cta_fondo_hover": "#E03A10",
-        "cta_color_hover": "#fff8f2",
+        "cta_borde": "#E5677D",
+        "cta_fondo_hover": "#CF5068",
+        "cta_color_hover": "#FFFFFF",
         "activar_tracking": true,
         "aviso_drawer": "Activa el carrito en modo cajón: Configuración del tema → Carrito → Tipo de carrito: Cajón",
         "color_fondo": "#FFFFFF",
         "gradiente": false,
         "color_fondo_2": "#FFFFFF",
         "angulo": 180,
-        "color_texto": "#0B1033",
-        "color_suave": "#5A6080",
-        "color_acento": "#FF4A1C",
-        "color_tarjeta": "#F4F6FF",
-        "color_borde": "#E3E9FF",
+        "color_texto": "#3B2A30",
+        "color_suave": "#7A6268",
+        "color_acento": "#E5677D",
+        "color_tarjeta": "#FFF6F7",
+        "color_borde": "#F6DCE1",
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 20,
@@ -399,17 +399,17 @@
         "tam_pregunta": 17,
         "tam_pregunta_movil": 16,
         "tam_respuesta": 15,
-        "color_separador": "#E3E9FF",
+        "color_separador": "#F6DCE1",
         "ancho_lista": 820,
-        "color_fondo": "#F4F6FF",
+        "color_fondo": "#FFF6F7",
         "gradiente": false,
-        "color_fondo_2": "#F4F6FF",
+        "color_fondo_2": "#FFF6F7",
         "angulo": 180,
-        "color_texto": "#0B1033",
-        "color_suave": "#5A6080",
-        "color_acento": "#FF4A1C",
+        "color_texto": "#3B2A30",
+        "color_suave": "#7A6268",
+        "color_acento": "#E5677D",
         "color_tarjeta": "#FFFFFF",
-        "color_borde": "#E3E9FF",
+        "color_borde": "#F6DCE1",
         "ancho": 1400,
         "lateral_movil": 16,
         "radius": 20,
@@ -451,10 +451,10 @@
             "enlace": "shopify://products/almohada-cervical-cervia",
             "boton2": "Ver todo",
             "enlace2": "shopify://collections/all",
-            "color_fondo": "#FF4A1C",
-            "color_texto": "#FFFFFF",
-            "color_boton": "#FFFFFF",
-            "color_boton_texto": "#0B1033"
+            "color_fondo": "#FCE4E8",
+            "color_texto": "#3B2A30",
+            "color_boton": "#E5677D",
+            "color_boton_texto": "#FFFFFF"
           }
         },
         "s2": {
@@ -469,10 +469,10 @@
             "enlace": "shopify://products/masajeador-cervical-cervia",
             "boton2": "",
             "enlace2": "",
-            "color_fondo": "#2D5BFF",
-            "color_texto": "#FFFFFF",
-            "color_boton": "#FFFFFF",
-            "color_boton_texto": "#0B1033"
+            "color_fondo": "#FFFFFF",
+            "color_texto": "#3B2A30",
+            "color_boton": "#E5677D",
+            "color_boton_texto": "#FFFFFF"
           }
         },
         "s3": {
@@ -487,10 +487,10 @@
             "enlace": "shopify://collections/all",
             "boton2": "",
             "enlace2": "",
-            "color_fondo": "#0B1033",
+            "color_fondo": "#E5677D",
             "color_texto": "#FFFFFF",
-            "color_boton": "#FF4A1C",
-            "color_boton_texto": "#FFFFFF"
+            "color_boton": "#FFFFFF",
+            "color_boton_texto": "#CF5068"
           }
         }
       },
@@ -507,9 +507,9 @@
         "tam": 16,
         "alto": 14,
         "velocidad": 35,
-        "color_fondo": "#2D5BFF",
+        "color_fondo": "#E5677D",
         "color_texto": "#FFFFFF",
-        "color_estrella": "#FFD23F"
+        "color_estrella": "#FFFFFF"
       }
     },
     "productos": {
@@ -522,13 +522,13 @@
         "columnas": "2",
         "columnas_movil": "2",
         "ancho": 980,
-        "color_fondo": "#F4F6FF",
-        "color_media": "#FFFFFF",
-        "color_texto": "#0B1033",
-        "color_suave": "#5A6080",
-        "color_acento": "#FF4A1C",
-        "color_acento_2": "#2D5BFF",
-        "color_boton": "#0B1033",
+        "color_fondo": "#FFFFFF",
+        "color_media": "#FFF6F7",
+        "color_texto": "#3B2A30",
+        "color_suave": "#7A6268",
+        "color_acento": "#E5677D",
+        "color_acento_2": "#CF5068",
+        "color_boton": "#E5677D",
         "padding": 64,
         "padding_movil": 36
       },
@@ -567,8 +567,8 @@
       "type": "cv-categorias",
       "settings": {
         "titulo": "¿Qué necesitas <span>hoy</span>?",
-        "color_fondo": "#FFFFFF",
-        "color_titulo": "#0B1033",
+        "color_fondo": "#FFF6F7",
+        "color_titulo": "#3B2A30",
         "padding": 64,
         "padding_movil": 36
       },
@@ -581,8 +581,8 @@
             "nombre": "Dormir mejor",
             "boton": "Ver la almohada",
             "enlace": "shopify://products/almohada-cervical-cervia",
-            "color_fondo": "#2D5BFF",
-            "color_texto": "#FFFFFF"
+            "color_fondo": "#F7CFD6",
+            "color_texto": "#3B2A30"
           }
         },
         "c2": {
@@ -593,8 +593,8 @@
             "nombre": "Relajar la tensión",
             "boton": "Ver el masajeador",
             "enlace": "shopify://products/masajeador-cervical-cervia",
-            "color_fondo": "#FF4A1C",
-            "color_texto": "#FFFFFF"
+            "color_fondo": "#FCE4E8",
+            "color_texto": "#3B2A30"
           }
         }
       },

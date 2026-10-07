@@ -5,23 +5,23 @@
     "cervia-footer": {
       "type": "cervia-footer",
       "settings": {
-        "logo": "shopify://shop_images/cervia-logo-claro.png",
+        "logo": "shopify://shop_images/cervia-logo.png",
         "banda_titulo": "Cuida tu cuello desde hoy",
         "frase": "Descanso y alivio para tu cuello, cada día.",
         "cta_texto": "Ver la almohada · [[precio]]",
         "padding_superior_movil": 28,
         "padding_inferior_movil": 28,
-        "color_fondo": "#0B1033",
-        "color_texto": "#FFFFFF",
-        "color_suave": "#B9C2E8",
-        "color_acento": "#FFD23F",
-        "cta_fondo": "#FF4A1C",
+        "color_fondo": "#FFF6F7",
+        "color_texto": "#3B2A30",
+        "color_suave": "#7A6268",
+        "color_acento": "#E5677D",
+        "cta_fondo": "#E5677D",
         "cta_color": "#FFFFFF",
-        "cta_fondo_hover": "#E03A10",
+        "cta_fondo_hover": "#CF5068",
         "cta_color_hover": "#FFFFFF",
-        "marquee_fondo": "#2D5BFF",
-        "marquee_texto": "#FFFFFF",
-        "cta_borde": "#FF4A1C"
+        "marquee_fondo": "#FCE4E8",
+        "marquee_texto": "#3B2A30",
+        "cta_borde": "#E5677D"
       },
       "blocks": {
         "promesa_0": {
@@ -182,9 +182,9 @@
     "suscripcion": {
       "type": "cervia-newsletter",
       "settings": {
-        "color_fondo": "#2D5BFF",
+        "color_fondo": "#E5677D",
         "color_texto": "#FFFFFF",
-        "color_acento": "#FF4A1C"
+        "color_acento": "#3B2A30"
       }
     }
   },

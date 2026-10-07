@@ -5,14 +5,14 @@
   #shopify-section-{{ section.id }} .cv-ca { background: {{ section.settings.color_fondo }}; padding: {{ section.settings.padding }}px 16px; font-family: var(--font-body, var(--font-body-family)); }
   #shopify-section-{{ section.id }} .cv-ca__caja { max-width: 1240px; margin: 0 auto; }
   #shopify-section-{{ section.id }} .cv-ca__titulo { margin: 0 0 24px; text-align: center; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; font-weight: 800; letter-spacing: -.02em; color: {{ section.settings.color_titulo }}; }
-  #shopify-section-{{ section.id }} .cv-ca__titulo span { color: #FF4A1C; }
+  #shopify-section-{{ section.id }} .cv-ca__titulo span { color: {{ section.settings.color_acento }}; }
   #shopify-section-{{ section.id }} .cv-ca__grid { display: grid; grid-template-columns: repeat({{ section.blocks.size | at_most: 3 | at_least: 1 }}, minmax(0, 1fr)); gap: 20px; }
   #shopify-section-{{ section.id }} .cv-ca__tile { position: relative; display: grid; grid-template-rows: auto 1fr; min-height: 420px; border-radius: 28px; overflow: hidden; text-decoration: none; isolation: isolate; transition: transform .25s; }
   #shopify-section-{{ section.id }} .cv-ca__tile:hover { transform: translateY(-4px); }
   #shopify-section-{{ section.id }} .cv-ca__txt { position: relative; z-index: 2; padding: 30px 30px 0; }
   #shopify-section-{{ section.id }} .cv-ca__eyebrow { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
   #shopify-section-{{ section.id }} .cv-ca__nombre { margin: 8px 0 0; font-family: var(--font-heading, var(--font-heading-family)); font-size: clamp(28px, 3vw, 40px); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
-  #shopify-section-{{ section.id }} .cv-ca__flecha { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 18px; border-radius: 999px; background: #FFFFFF; color: #0B1033; font-size: 14px; font-weight: 700; }
+  #shopify-section-{{ section.id }} .cv-ca__flecha { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 10px 18px; border-radius: 999px; background: #FFFFFF; color: #3B2A30; font-size: 14px; font-weight: 700; }
   #shopify-section-{{ section.id }} .cv-ca__img { position: relative; }
   #shopify-section-{{ section.id }} .cv-ca__img img, #shopify-section-{{ section.id }} .cv-ca__img svg { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   @media screen and (max-width: 749px) {
@@ -55,7 +55,8 @@
   "settings": [
     { "type": "inline_richtext", "id": "titulo", "label": "Título", "default": "¿Qué necesitas <span>hoy</span>?" },
     { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#FFFFFF" },
-    { "type": "color", "id": "color_titulo", "label": "Título", "default": "#0B1033" },
+    { "type": "color", "id": "color_titulo", "label": "Título", "default": "#3B2A30" },
+    { "type": "color", "id": "color_acento", "label": "Acento", "default": "#E5677D" },
     { "type": "range", "id": "padding", "label": "Espacio arriba y abajo", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
     { "type": "range", "id": "padding_movil", "label": "Espacio arriba y abajo (móvil)", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 36 }
   ],
@@ -69,7 +70,7 @@
         { "type": "text", "id": "nombre", "label": "Título", "default": "Dormir mejor" },
         { "type": "text", "id": "boton", "label": "Texto del botón", "default": "Comprar" },
         { "type": "url", "id": "enlace", "label": "Enlace" },
-        { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#2D5BFF" },
+        { "type": "color", "id": "color_fondo", "label": "Fondo", "default": "#CF5068" },
         { "type": "color", "id": "color_texto", "label": "Texto", "default": "#FFFFFF" }
       ]
     }
