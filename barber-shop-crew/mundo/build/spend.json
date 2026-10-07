@@ -31,7 +31,19 @@
       "run_id": "01M4A1XDR5ZZ1NFNAE9MK7NJ57",
       "usd": 0.033,
       "status": "ok"
+    },
+    {
+      "what": "I_tierra",
+      "run_id": "01M4A1ZMQHRFQ664J0T509KQ5E",
+      "usd": 0.033,
+      "status": "ok"
+    },
+    {
+      "what": "I_portal",
+      "run_id": "01M4A1ZP2AFY54W1P6KDDPNGXW",
+      "usd": 0.033,
+      "status": "ok"
     }
   ],
-  "total_usd": 0.129
+  "total_usd": 0.195
 }
