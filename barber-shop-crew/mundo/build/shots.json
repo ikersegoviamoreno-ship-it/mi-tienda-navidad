@@ -258,5 +258,9 @@
     "video_usd_estimate": 1.61,
     "price_source": "Monid Seedance 2.0 480p, 2026-10-07",
     "note": "Cadena revisada: 5 clips (2 hechos). E_portal eliminado por duplicar I_tierra; I_portal e I_universo regenerados sin imagen de referencia."
+  },
+  "postprocess": {
+    "dive_tierra": "clean_speckles.sh dive_tierra_raw.mp4 dive_tierra.mp4 in 50 70 (mediana radio 1, entra en la calle)",
+    "dive_portal": "PENDIENTE al generarlo: clean_speckles.sh dive_portal_raw.mp4 dive_portal.mp4 out 0 24 (empieza limpio para casar con el final de dive_tierra)"
   }
 }

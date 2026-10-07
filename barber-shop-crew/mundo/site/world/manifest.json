@@ -73,9 +73,9 @@
     {
       "clip": "dive_tierra",
       "frames": 97,
-      "start_vs_keyframe": 9.038579940795898,
-      "end_vs_keyframe": 13.427854537963867,
-      "seam_vs_previous": 1.426311731338501
+      "start_vs_keyframe": 9.035880088806152,
+      "end_vs_keyframe": 14.604744911193848,
+      "seam_vs_previous": 1.4452160596847534
     }
   ]
 }
