@@ -1,0 +1,326 @@
+{
+  "world": {
+    "brand": {
+      "name": "Barber Shop Crew",
+      "tagline": "La única barbería de su universo",
+      "voice": "cercana, segura, con humor; tuteo",
+      "colors": {
+        "bg": "#05050a",
+        "ink": "#ffffff",
+        "accent": "#ff3b47",
+        "secondary": "#2b5cff",
+        "metal": "#e8e8ed"
+      },
+      "fonts": {
+        "display": "Inter",
+        "body": "Inter"
+      },
+      "logo": "solo en la interfaz (no dentro de las imágenes)"
+    },
+    "art_direction": {
+      "id": "cosmic-scifi",
+      "style_block": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel.",
+      "lighting": "Same cold rim light from the upper right and warm red-blue neon glow as accent in every image.",
+      "motion_style": "Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "aspect": "16:9",
+      "style_refs": []
+    },
+    "world": {
+      "overview": "Deep space: the planet Earth glowing blue in the distance, the Mediterranean coast of Spain catching the first light, and beyond it a faint red-white-blue spiral rift in space that hints at another universe."
+    },
+    "chapters": [
+      {
+        "id": "tierra",
+        "title": "Rumbo a la Tierra",
+        "kicker": "Sant Vicent del Raspeig",
+        "copy": "Atravesamos el espacio hasta un punto concreto: Av. Ancha de Castelar, 187.",
+        "scene": "planet Earth seen from low orbit, night side, the city lights of Alicante and Sant Vicent del Raspeig glowing, one tiny point pulsing red and blue",
+        "entry": "a break in the clouds right above the pulsing point of light",
+        "interior": "flying low over a quiet night-time Spanish avenue with palm trees and wet asphalt reflecting neon, a single shop front glowing red and blue at the end of the street",
+        "copy_side": "left"
+      },
+      {
+        "id": "portal",
+        "title": "Al otro lado",
+        "kicker": "El portal",
+        "copy": "Degradados, barba, color y diseño. Pasa por el portal y deja el resto del mundo fuera.",
+        "scene": "the glowing shop front opening into a swirling vortex made of rotating red, white and blue barber-pole stripes of light",
+        "entry": "the bright centre of the spinning spiral",
+        "interior": "inside a long tunnel of spinning red, white and blue light stripes, chrome scissors and straight razors floating weightless like asteroids",
+        "copy_side": "right"
+      },
+      {
+        "id": "universo",
+        "title": "Universo Crew",
+        "kicker": "Solo existe la barbería",
+        "copy": "4,8 ★ con 356 reseñas en Google. Lunes a viernes, 10:00–13:30 y 16:30–20:30. Llama al 966 17 09 82.",
+        "cta": {
+          "label": "Llamar · 966 17 09 82",
+          "url": "tel:+34966170982"
+        },
+        "scene": "a strange empty universe of violet fog and floating light particles where the only thing that exists is one industrial barbershop interior floating like an island, with exposed silver ducts, hanging industrial pendant lamps and vintage leather barber chairs",
+        "entry": "the open glass front of the floating barbershop",
+        "interior": "inside the barbershop: vintage leather barber chair in the centre under industrial pendant lamps, exposed silver ventilation ducts on the dark ceiling, wood-look floor, framed pictures and a guitar on the wall, the alien violet universe visible through the windows",
+        "copy_side": "left",
+        "reference_photo": "build/refs/local.webp"
+      }
+    ],
+    "camera": {
+      "clip_seconds": 5,
+      "clip_scroll": 1.4,
+      "hold_scroll": 0.7,
+      "outro": true
+    }
+  },
+  "keyframes": [
+    {
+      "id": "K_world",
+      "role": "overview",
+      "chapter": null,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. The whole world seen from high above: Deep space: the planet Earth glowing blue in the distance, the Mediterranean coast of Spain catching the first light, and beyond it a faint red-white-blue spiral rift in space that hints at another universe. All 3 areas are visible as distinct connected zones: (1) planet Earth seen from low orbit, night side, the city lights of Alicante and Sant Vicent del Raspeig glowing, one tiny point pulsing red and blue; (2) the glowing shop front opening into a swirling vortex made of rotating red, white and blue barber-pole stripes of light; (3) a strange empty universe of violet fog and floating light particles where the only thing that exists is one industrial barbershop interior floating like an island, with exposed silver ducts, hanging industrial pendant lamps and vintage leather barber chairs. Wide establishing view, three-quarter isometric angle, whole world centered with breathing room. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [],
+      "aspect": "16:9",
+      "file": "keyframes/K_world.png"
+    },
+    {
+      "id": "E_tierra",
+      "role": "exterior",
+      "chapter": 0,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Approach view of one area of the world: planet Earth seen from low orbit, night side, the city lights of Alicante and Sant Vicent del Raspeig glowing, one tiny point pulsing red and blue Camera outside and slightly above this area, area fills the middle third of the frame, neighbouring areas soft at the edges. Clear visible entry point for the camera: a break in the clouds right above the pulsing point of light. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [
+        "K_world"
+      ],
+      "aspect": "16:9",
+      "file": "keyframes/E_tierra.png"
+    },
+    {
+      "id": "I_tierra",
+      "role": "interior",
+      "chapter": 0,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Inside the same area: flying low over a quiet night-time Spanish avenue with palm trees and wet asphalt reflecting neon, a single shop front glowing red and blue at the end of the street Camera inside at eye level of the miniature, hero composition, calm negative space on the left third for the headline text. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [
+        "K_world",
+        "E_tierra"
+      ],
+      "aspect": "16:9",
+      "file": "keyframes/I_tierra.png"
+    },
+    {
+      "id": "E_portal",
+      "role": "exterior",
+      "chapter": 1,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Approach view of one area of the world: the glowing shop front opening into a swirling vortex made of rotating red, white and blue barber-pole stripes of light Camera outside and slightly above this area, area fills the middle third of the frame, neighbouring areas soft at the edges. Clear visible entry point for the camera: the bright centre of the spinning spiral. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [
+        "K_world"
+      ],
+      "aspect": "16:9",
+      "file": "keyframes/E_portal.png"
+    },
+    {
+      "id": "I_portal",
+      "role": "interior",
+      "chapter": 1,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Inside the same area: inside a long tunnel of spinning red, white and blue light stripes, chrome scissors and straight razors floating weightless like asteroids Camera inside at eye level of the miniature, hero composition, calm negative space on the right third for the headline text. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [
+        "K_world",
+        "E_portal"
+      ],
+      "aspect": "16:9",
+      "file": "keyframes/I_portal.png"
+    },
+    {
+      "id": "E_universo",
+      "role": "exterior",
+      "chapter": 2,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Approach view of one area of the world: a strange empty universe of violet fog and floating light particles where the only thing that exists is one industrial barbershop interior floating like an island, with exposed silver ducts, hanging industrial pendant lamps and vintage leather barber chairs Camera outside and slightly above this area, area fills the middle third of the frame, neighbouring areas soft at the edges. Clear visible entry point for the camera: the open glass front of the floating barbershop. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [
+        "K_world",
+        "refs/local.webp"
+      ],
+      "aspect": "16:9",
+      "file": "keyframes/E_universo.png"
+    },
+    {
+      "id": "I_universo",
+      "role": "interior",
+      "chapter": 2,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Inside the same area: inside the barbershop: vintage leather barber chair in the centre under industrial pendant lamps, exposed silver ventilation ducts on the dark ceiling, wood-look floor, framed pictures and a guitar on the wall, the alien violet universe visible through the windows Camera inside at eye level of the miniature, hero composition, calm negative space on the left third for the headline text. Color palette strictly limited to bg #05050a, ink #ffffff, accent #ff3b47, secondary #2b5cff, metal #e8e8ed. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [
+        "K_world",
+        "E_universo",
+        "refs/local.webp"
+      ],
+      "aspect": "16:9",
+      "file": "keyframes/I_universo.png"
+    },
+    {
+      "id": "K_end",
+      "role": "outro",
+      "chapter": null,
+      "prompt": "Cinematic futuristic sci-fi, photoreal CGI, deep black space with subtle purple and teal nebula haze, barber-pole color accents of red, white and electric blue as glowing light, volumetric light rays, anamorphic film look, high contrast, crisp detail, 35mm lens feel. Pulled far back: the floating barbershop island glowing red and blue, alone in the violet universe, tiny in the frame, calm and final. Same angle family as the opening overview. Same cold rim light from the upper right and warm red-blue neon glow as accent in every image. No text, no letters, no logos, no watermarks, no people looking at camera.",
+      "negative": "text, letters, logos, watermark, people's faces, cartoon, low quality, blurry, extra limbs",
+      "reference_images": [
+        "K_world"
+      ],
+      "aspect": "16:9",
+      "file": "keyframes/K_end.png"
+    }
+  ],
+  "clips": [
+    {
+      "id": "intro",
+      "kind": "intro",
+      "chapter": 0,
+      "start_frame": "K_world",
+      "end_frame": "E_tierra",
+      "seconds": 5,
+      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera descends from high above the whole world and glides toward Rumbo a la Tierra. Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "file": "clips/intro.mp4"
+    },
+    {
+      "id": "dive_tierra",
+      "kind": "dive",
+      "chapter": 0,
+      "start_frame": "E_tierra",
+      "end_frame": "I_tierra",
+      "seconds": 5,
+      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera pushes forward through a break in the clouds right above the pulsing point of light and flies inside, settling on: flying low over a quiet night-time Spanish avenue with palm trees and wet asphalt reflecting neon, a single shop front glowing red and blue at the end of the street Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "file": "clips/dive_tierra.mp4"
+    },
+    {
+      "id": "transit_tierra",
+      "kind": "transit",
+      "chapter": 0,
+      "start_frame": "I_tierra",
+      "end_frame": "E_portal",
+      "seconds": 5,
+      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera rises up and back out of Rumbo a la Tierra, glides over the world and arrives in front of Al otro lado. Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "file": "clips/transit_tierra.mp4"
+    },
+    {
+      "id": "dive_portal",
+      "kind": "dive",
+      "chapter": 1,
+      "start_frame": "E_portal",
+      "end_frame": "I_portal",
+      "seconds": 5,
+      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera pushes forward through the bright centre of the spinning spiral and flies inside, settling on: inside a long tunnel of spinning red, white and blue light stripes, chrome scissors and straight razors floating weightless like asteroids Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "file": "clips/dive_portal.mp4"
+    },
+    {
+      "id": "transit_portal",
+      "kind": "transit",
+      "chapter": 1,
+      "start_frame": "I_portal",
+      "end_frame": "E_universo",
+      "seconds": 5,
+      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera rises up and back out of Al otro lado, glides over the world and arrives in front of Universo Crew. Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "file": "clips/transit_portal.mp4"
+    },
+    {
+      "id": "dive_universo",
+      "kind": "dive",
+      "chapter": 2,
+      "start_frame": "E_universo",
+      "end_frame": "I_universo",
+      "seconds": 5,
+      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera pushes forward through the open glass front of the floating barbershop and flies inside, settling on: inside the barbershop: vintage leather barber chair in the centre under industrial pendant lamps, exposed silver ventilation ducts on the dark ceiling, wood-look floor, framed pictures and a guitar on the wall, the alien violet universe visible through the windows Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "file": "clips/dive_universo.mp4"
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "chapter": 2,
+      "start_frame": "I_universo",
+      "end_frame": "K_end",
+      "seconds": 5,
+      "prompt": "One continuous single-take camera move, no cuts, no transitions, no scene change. The camera pulls up and back out, revealing the whole world from high above. Constant smooth speed, stable horizon, no shake, no zoom pulsing. Start exactly on the first frame and land exactly on the last frame. Smooth unbroken spacecraft-like flight, constant speed, gentle banking, no shake; scale and lighting stay consistent. No text, no logos.",
+      "file": "clips/outro.mp4"
+    }
+  ],
+  "timeline": [
+    {
+      "type": "hold",
+      "after": null,
+      "scroll": 0.35,
+      "chapter": null,
+      "note": "pantalla de entrada (hero)"
+    },
+    {
+      "type": "clip",
+      "id": "intro",
+      "scroll": 1.4
+    },
+    {
+      "type": "clip",
+      "id": "dive_tierra",
+      "scroll": 1.4
+    },
+    {
+      "type": "hold",
+      "after": "dive_tierra",
+      "scroll": 0.7,
+      "chapter": 0
+    },
+    {
+      "type": "clip",
+      "id": "transit_tierra",
+      "scroll": 1.4
+    },
+    {
+      "type": "clip",
+      "id": "dive_portal",
+      "scroll": 1.4
+    },
+    {
+      "type": "hold",
+      "after": "dive_portal",
+      "scroll": 0.7,
+      "chapter": 1
+    },
+    {
+      "type": "clip",
+      "id": "transit_portal",
+      "scroll": 1.4
+    },
+    {
+      "type": "clip",
+      "id": "dive_universo",
+      "scroll": 1.4
+    },
+    {
+      "type": "hold",
+      "after": "dive_universo",
+      "scroll": 0.7,
+      "chapter": 2
+    },
+    {
+      "type": "clip",
+      "id": "outro",
+      "scroll": 1.4
+    },
+    {
+      "type": "hold",
+      "after": "outro",
+      "scroll": 0.6,
+      "chapter": null,
+      "note": "cierre / CTA final"
+    }
+  ],
+  "cost": {
+    "clips": 7,
+    "seconds_total": 35,
+    "keyframes": 8,
+    "video_usd_estimate": null,
+    "price_source": "pendiente de verificar (Paso 4)",
+    "note": "Solo vídeo. Añade las imágenes (créditos de Higgsfield) y ~20 % de margen para repeticiones."
+  }
+}
