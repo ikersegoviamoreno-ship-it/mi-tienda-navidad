@@ -9,13 +9,5 @@
     "clip_intro": "01M4A200784AN2VSHD3GQ7Y1CR",
     "I_universo": "01M4A22C3V165SES7VWFJ2FSFP"
   },
-  "urls": {
-    "K_world": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/b7/20261007/a9be8f0a/d4fe34cc-2d72-9336-be4e-93cd260c1130_qwen_image3_serving_output_0.png?Expires=1791425026&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=XLfnU%2F3fQHDjCngFfpgBlVCI8YE%3D",
-    "E_tierra": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/72/20261007/a9be8f0a/641d9a58-b542-9458-ac9e-1a3ab0071a09_qwen_image3_serving_output_0.png?Expires=1791425246&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=ojYqxlRV3Ivc4d1FxsnJh5yrcs4%3D",
-    "E_portal": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/7b/20261007/a9be8f0a/4a6f5485-6f2f-97e1-9266-827f71e8fc7e_qwen_image3_serving_output_0.png?Expires=1791425308&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=UOpIF7jK2HPKHnvo13GJBK6qFKc%3D",
-    "E_universo": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/07/20261007/a9be8f0a/3fd8f38b-cd8d-91d7-a0a1-e9eef05322e9_qwen_image3_serving_output_0.png?Expires=1791425364&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=Rt6Q%2FD2hkQnY%2FYvtjYSwsKdyXJI%3D",
-    "I_tierra": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/95/20261007/a9be8f0a/5d8277b1-b946-915d-b2a3-2a4f2e8576c3_qwen_image3_serving_output_0.png?Expires=1791425431&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=nOAWgR8fRd8SlVIED61Sh%2FcTaj0%3D",
-    "I_portal": "https://dashscope-463f.oss-accelerate.aliyuncs.com/1d/08/20261007/a9be8f0a/fef51ed9-291e-90a8-a8e7-d2790242f8c4_qwen_image3_serving_output_0.png?Expires=1791425425&OSSAccessKeyId=LTAI5tRcsWJEymQaTsKbKqGf&Signature=jupqnakrs4Ttksic9Nak0WCt%2Ffw%3D"
-  },
-  "note": "URLs caducan ~24 h: descargar a keyframes/ en cuanto la red lo permita"
+  "note": "Las URL firmadas no se guardan en el repo (contienen IDs de clave del proveedor y caducan en ~24 h). Se recuperan con monid_get_run <run_id>."
 }
